@@ -13,7 +13,7 @@ move MOVE_KARATE_CHOP,         0x002B,    SPLIT_PHYSICAL,              40,    TY
 move MOVE_DOUBLE_SLAP,         0x001D,    SPLIT_PHYSICAL,              30,    TYPE_NORMAL,          85,       10,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_TOUGH
 move MOVE_COMET_PUNCH,         0x001D,    SPLIT_PHYSICAL,              30,    TYPE_NORMAL,          85,       15,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_TOUGH
 move MOVE_MEGA_PUNCH,          0x0000,    SPLIT_PHYSICAL,              80,    TYPE_NORMAL,          85,       20,            0,      0x0000,         0,       0x33,      0x12,    CONTEST_TOUGH
-move MOVE_PAY_DAY,             0x0022,    SPLIT_PHYSICAL,              40,    TYPE_NORMAL,          100,      20,            0,      0x0000,         0,       0x32,      0x17,    CONTEST_SMART
+move MOVE_PAY_DAY,             0x0022,    SPLIT_PHYSICAL,              90,    TYPE_STEEL,           100,      20,            0,      0x0000,         0,       0x32,      0x17,    CONTEST_SMART
 move MOVE_FIRE_PUNCH,          0x0004,    SPLIT_PHYSICAL,              90,    TYPE_FIRE,            100,      15,            10,     0x0000,         0,       0x13,      0x11,    CONTEST_BEAUTY
 move MOVE_ICE_PUNCH,           0x0005,    SPLIT_PHYSICAL,              90,    TYPE_ICE,             100,      15,            10,     0x0000,         0,       0x13,      0x11,    CONTEST_BEAUTY
 move MOVE_THUNDER_PUNCH,       0x0006,    SPLIT_PHYSICAL,              90,    TYPE_ELECTRIC,        100,      15,            10,     0x0000,         0,       0x13,      0x11,    CONTEST_COOL
@@ -259,7 +259,7 @@ move MOVE_FUTURE_SIGHT,        0x0094,    SPLIT_SPECIAL,               120,   TY
 move MOVE_ROCK_SMASH,          0x0045,    SPLIT_PHYSICAL,              40,    TYPE_FIGHTING,        100,      15,            50,     0x0000,         0,       0x13,      0x12,    CONTEST_TOUGH
 move MOVE_WHIRLPOOL,           0x0105,    SPLIT_SPECIAL,               15,    TYPE_WATER,           70,       15,            0,      0x0000,         0,       0xB2,      0x15,    CONTEST_BEAUTY
 move MOVE_BEAT_UP,             0x009A,    SPLIT_PHYSICAL,              10,    TYPE_DARK,            100,      10,            0,      0x0000,         0,       0x72,      0x07,    CONTEST_SMART
-move MOVE_FAKE_OUT,            0x009E,    SPLIT_PHYSICAL,              40,    TYPE_NORMAL,          100,      10,            100,    0x0000,         1,       0x13,      0x11,    CONTEST_CUTE
+move MOVE_FAKE_OUT,            0x009E,    SPLIT_PHYSICAL,              40,    TYPE_NORMAL,          100,      10,            100,    0x0000,         4,       0x13,      0x11,    CONTEST_CUTE
 move MOVE_UPROAR,              0x009F,    SPLIT_SPECIAL,               50,    TYPE_NORMAL,          100,      10,            0,      0x0002,         0,       0x32,      0x0A,    CONTEST_CUTE
 move MOVE_STOCKPILE,           0x00A0,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0010,         0,       0x48,      0x0B,    CONTEST_TOUGH
 move MOVE_SPIT_UP,             0x00A1,    SPLIT_SPECIAL,               1,     TYPE_NORMAL,          100,      10,            0,      0x0000,         0,       0x22,      0x12,    CONTEST_TOUGH
