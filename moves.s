@@ -5,8 +5,6 @@
 .include "constants.s"
 .include "movenums.s"
 
-
-//   movenum            battleeffect               pss        basepower            type   accuracy      pp   effectchance    target   priority     flags    appeal       contesttype
 move MOVE_NONE
     battleeffect 0x0000
     pss SPLIT_PHYSICAL
