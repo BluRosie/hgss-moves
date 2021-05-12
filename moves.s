@@ -5,478 +5,7070 @@
 .include "constants.s"
 .include "movenums.s"
 
+move MOVE_NONE
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 0
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x00
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
 
-//   movenum,            battleeffect,               pss,        basepower,            type,   accuracy,      pp,   effectchance,    target,   priority,     flags,    appeal,       contesttype
-move MOVE_NONE,                0x0000,    SPLIT_PHYSICAL,              0,     TYPE_NORMAL,          0,        0,             0,      0x0000,         0,       0x00,      0x00,    CONTEST_COOL
-move MOVE_POUND,               0x0000,    SPLIT_PHYSICAL,              40,    TYPE_NORMAL,          100,      35,            0,      0x0000,         1,       0x73,      0x05,    CONTEST_TOUGH
-move MOVE_KARATE_CHOP,         0x002B,    SPLIT_PHYSICAL,              40,    TYPE_FIGHTING,        100,      25,            0,      0x0000,         1,       0x73,      0x05,    CONTEST_TOUGH
-move MOVE_DOUBLE_SLAP,         0x001D,    SPLIT_PHYSICAL,              30,    TYPE_NORMAL,          85,       10,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_TOUGH
-move MOVE_COMET_PUNCH,         0x001D,    SPLIT_PHYSICAL,              30,    TYPE_NORMAL,          85,       15,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_TOUGH
-move MOVE_MEGA_PUNCH,          0x0000,    SPLIT_PHYSICAL,              80,    TYPE_NORMAL,          85,       20,            0,      0x0000,         0,       0x33,      0x12,    CONTEST_TOUGH
-move MOVE_PAY_DAY,             0x0022,    SPLIT_PHYSICAL,              90,    TYPE_STEEL,           100,      20,            0,      0x0000,         0,       0x32,      0x17,    CONTEST_SMART
-move MOVE_FIRE_PUNCH,          0x0004,    SPLIT_PHYSICAL,              90,    TYPE_FIRE,            100,      15,            10,     0x0000,         0,       0x13,      0x11,    CONTEST_BEAUTY
-move MOVE_ICE_PUNCH,           0x0005,    SPLIT_PHYSICAL,              90,    TYPE_ICE,             100,      15,            10,     0x0000,         0,       0x13,      0x11,    CONTEST_BEAUTY
-move MOVE_THUNDER_PUNCH,       0x0006,    SPLIT_PHYSICAL,              90,    TYPE_ELECTRIC,        100,      15,            10,     0x0000,         0,       0x13,      0x11,    CONTEST_COOL
-move MOVE_SCRATCH,             0x002B,    SPLIT_PHYSICAL,              40,    TYPE_NORMAL,          100,      35,            0,      0x0000,         1,       0x73,      0x05,    CONTEST_TOUGH
-move MOVE_VICE_GRIP,           0x0000,    SPLIT_PHYSICAL,              55,    TYPE_NORMAL,          100,      30,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_TOUGH
-move MOVE_GUILLOTINE,          0x0026,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          30,       5,             0,      0x0000,         0,       0x13,      0x09,    CONTEST_COOL
-move MOVE_RAZOR_WIND,          0x0027,    SPLIT_SPECIAL,               80,    TYPE_NORMAL,          100,      10,            0,      0x0004,         0,       0x32,      0x06,    CONTEST_COOL
-move MOVE_SWORDS_DANCE,        0x0032,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0010,         0,       0x48,      0x0B,    CONTEST_BEAUTY
-move MOVE_CUT,                 0x0000,    SPLIT_PHYSICAL,              50,    TYPE_NORMAL,          95,       30,            0,      0x0000,         0,       0x73,      0x05,    CONTEST_COOL
-move MOVE_GUST,                0x0095,    SPLIT_SPECIAL,               40,    TYPE_FLYING,          100,      35,            0,      0x0000,         1,       0x32,      0x05,    CONTEST_SMART
-move MOVE_WING_ATTACK,         0x0000,    SPLIT_PHYSICAL,              60,    TYPE_FLYING,          100,      35,            0,      0x0000,         0,       0x73,      0x05,    CONTEST_COOL
-move MOVE_WHIRLWIND,           0x001C,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      20,            0,      0x0000,         -6,      0x52,      0x09,    CONTEST_SMART
-move MOVE_FLY,                 0x009B,    SPLIT_PHYSICAL,              90,    TYPE_FLYING,          95,       15,            0,      0x0000,         0,       0xB3,      0x06,    CONTEST_SMART
-move MOVE_BIND,                0x002A,    SPLIT_PHYSICAL,              15,    TYPE_NORMAL,          85,       20,            0,      0x0000,         0,       0x73,      0x15,    CONTEST_TOUGH
-move MOVE_SLAM,                0x0000,    SPLIT_PHYSICAL,              80,    TYPE_NORMAL,          75,       20,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_TOUGH
-move MOVE_VINE_WHIP,           0x0000,    SPLIT_PHYSICAL,              40,    TYPE_GRASS,           100,      25,            0,      0x0000,         1,       0x73,      0x05,    CONTEST_COOL
-move MOVE_STOMP,               0x0096,    SPLIT_PHYSICAL,              65,    TYPE_NORMAL,          100,      20,            30,     0x0000,         0,       0x53,      0x05,    CONTEST_TOUGH
-move MOVE_DOUBLE_KICK,         0x002C,    SPLIT_PHYSICAL,              50,    TYPE_FIGHTING,        100,      30,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_COOL
-move MOVE_MEGA_KICK,           0x0000,    SPLIT_PHYSICAL,              120,   TYPE_NORMAL,          75,       5,             0,      0x0000,         0,       0xB3,      0x12,    CONTEST_COOL
-move MOVE_JUMP_KICK,           0x002D,    SPLIT_PHYSICAL,              100,   TYPE_FIGHTING,        95,       10,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_ROLLING_KICK,        0x001F,    SPLIT_PHYSICAL,              60,    TYPE_FIGHTING,        85,       15,            30,     0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_SAND_ATTACK,         0x0017,    SPLIT_STATUS,                0,     TYPE_GROUND,          100,      15,            0,      0x0000,         -1,      0x16,      0x13,    CONTEST_CUTE
-move MOVE_HEADBUTT,            0x001F,    SPLIT_PHYSICAL,              70,    TYPE_NORMAL,          100,      15,            30,     0x0000,         0,       0x53,      0x05,    CONTEST_TOUGH
-move MOVE_HORN_ATTACK,         0x0000,    SPLIT_PHYSICAL,              65,    TYPE_NORMAL,          100,      25,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_FURY_ATTACK,         0x001D,    SPLIT_PHYSICAL,              15,    TYPE_NORMAL,          85,       20,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_COOL
-move MOVE_HORN_DRILL,          0x0026,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          30,       5,             0,      0x0000,         0,       0x13,      0x09,    CONTEST_COOL
-move MOVE_TACKLE,              0x0046,    SPLIT_PHYSICAL,              50,    TYPE_NORMAL,          100,      35,            50,     0x0000,         1,       0x73,      0x05,    CONTEST_TOUGH
-move MOVE_BODY_SLAM,           0x0006,    SPLIT_PHYSICAL,              85,    TYPE_NORMAL,          100,      15,            30,     0x0000,         0,       0x53,      0x05,    CONTEST_TOUGH
-move MOVE_WRAP,                0x002A,    SPLIT_PHYSICAL,              15,    TYPE_NORMAL,          85,       20,            0,      0x0000,         0,       0x33,      0x15,    CONTEST_TOUGH
-move MOVE_TAKE_DOWN,           0x0030,    SPLIT_PHYSICAL,              90,    TYPE_NORMAL,          85,       20,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_TOUGH
-move MOVE_THRASH,              0x001B,    SPLIT_PHYSICAL,              90,    TYPE_NORMAL,          100,      20,            0,      0x0002,         0,       0x33,      0x07,    CONTEST_TOUGH
-move MOVE_DOUBLE_EDGE,         0x00C6,    SPLIT_PHYSICAL,              120,   TYPE_NORMAL,          100,      15,            0,      0x0000,         0,       0xB3,      0x09,    CONTEST_TOUGH
-move MOVE_TAIL_WHIP,           0x0013,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      30,            0,      0x0004,         3,       0x56,      0x13,    CONTEST_CUTE
-move MOVE_POISON_STING,        0x0002,    SPLIT_PHYSICAL,              40,    TYPE_POISON,          100,      35,            30,     0x0000,         1,       0x12,      0x13,    CONTEST_SMART
-move MOVE_TWINEEDLE,           0x004D,    SPLIT_PHYSICAL,              50,    TYPE_BUG,             100,      20,            20,     0x0000,         0,       0x52,      0x07,    CONTEST_COOL
-move MOVE_PIN_MISSILE,         0x001D,    SPLIT_PHYSICAL,              30,    TYPE_BUG,             85,       20,            0,      0x0000,         0,       0x72,      0x07,    CONTEST_COOL
-move MOVE_LEER,                0x0013,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      30,            0,      0x0004,         3,       0x16,      0x13,    CONTEST_COOL
-move MOVE_BITE,                0x001F,    SPLIT_PHYSICAL,              60,    TYPE_DARK,            100,      25,            30,     0x0000,         0,       0x13,      0x05,    CONTEST_TOUGH
-move MOVE_GROWL,               0x0012,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      40,            0,      0x0004,         3,       0x56,      0x13,    CONTEST_CUTE
-move MOVE_ROAR,                0x001C,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      20,            0,      0x0000,         -6,      0x52,      0x13,    CONTEST_COOL
-move MOVE_SING,                0x0001,    SPLIT_STATUS,                0,     TYPE_NORMAL,          55,       15,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_CUTE
-move MOVE_SUPERSONIC,          0x0031,    SPLIT_STATUS,                0,     TYPE_NORMAL,          55,       20,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_SMART
-move MOVE_SONIC_BOOM,          0x0082,    SPLIT_SPECIAL,               1,     TYPE_NORMAL,          90,       20,            0,      0x0000,         0,       0x72,      0x05,    CONTEST_COOL
-move MOVE_DISABLE,             0x0056,    SPLIT_STATUS,                0,     TYPE_NORMAL,          80,       20,            0,      0x0000,         0,       0x12,      0x13,    CONTEST_SMART
-move MOVE_ACID,                0x0048,    SPLIT_SPECIAL,               40,    TYPE_POISON,          100,      30,            10,     0x0004,         1,       0x12,      0x05,    CONTEST_SMART
-move MOVE_EMBER,               0x0004,    SPLIT_SPECIAL,               40,    TYPE_FIRE,            100,      25,            10,     0x0000,         1,       0x52,      0x05,    CONTEST_BEAUTY
-move MOVE_FLAMETHROWER,        0x0004,    SPLIT_SPECIAL,               95,    TYPE_FIRE,            100,      15,            10,     0x0000,         0,       0x12,      0x11,    CONTEST_BEAUTY
-move MOVE_MIST,                0x002E,    SPLIT_STATUS,                0,     TYPE_ICE,             0,        30,            0,      0x0020,         0,       0x08,      0x0D,    CONTEST_BEAUTY
-move MOVE_WATER_GUN,           0x0000,    SPLIT_SPECIAL,               40,    TYPE_WATER,           100,      25,            0,      0x0000,         1,       0x32,      0x05,    CONTEST_CUTE
-move MOVE_HYDRO_PUMP,          0x0000,    SPLIT_SPECIAL,               120,   TYPE_WATER,           80,       5,             0,      0x0000,         0,       0xB2,      0x11,    CONTEST_BEAUTY
-move MOVE_SURF,                0x0101,    SPLIT_SPECIAL,               95,    TYPE_WATER,           100,      15,            0,      0x0008,         0,       0x32,      0x11,    CONTEST_BEAUTY
-move MOVE_ICE_BEAM,            0x0005,    SPLIT_SPECIAL,               95,    TYPE_ICE,             100,      10,            10,     0x0000,         0,       0x12,      0x11,    CONTEST_BEAUTY
-move MOVE_BLIZZARD,            0x0104,    SPLIT_SPECIAL,               130,   TYPE_ICE,             85,       5,             20,     0x0004,         0,       0x92,      0x11,    CONTEST_BEAUTY
-move MOVE_PSYBEAM,             0x004C,    SPLIT_SPECIAL,               65,    TYPE_PSYCHIC,         100,      20,            10,     0x0000,         0,       0x12,      0x11,    CONTEST_BEAUTY
-move MOVE_BUBBLE_BEAM,         0x0046,    SPLIT_SPECIAL,               65,    TYPE_WATER,           100,      20,            10,     0x0000,         0,       0x12,      0x02,    CONTEST_BEAUTY
-move MOVE_AURORA_BEAM,         0x0044,    SPLIT_SPECIAL,               65,    TYPE_ICE,             100,      20,            10,     0x0000,         0,       0x12,      0x11,    CONTEST_BEAUTY
-move MOVE_HYPER_BEAM,          0x0050,    SPLIT_SPECIAL,               200,   TYPE_NORMAL,          100,      5,             0,      0x0000,         0,       0xB2,      0x16,    CONTEST_COOL
-move MOVE_PECK,                0x0000,    SPLIT_PHYSICAL,              40,    TYPE_FLYING,          100,      35,            0,      0x0000,         1,       0x73,      0x05,    CONTEST_COOL
-move MOVE_DRILL_PECK,          0x0000,    SPLIT_PHYSICAL,              80,    TYPE_FLYING,          100,      20,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_SUBMISSION,          0x0030,    SPLIT_PHYSICAL,              80,    TYPE_FIGHTING,        80,       25,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_LOW_KICK,            0x00C4,    SPLIT_PHYSICAL,              1,     TYPE_FIGHTING,        100,      20,            0,      0x0000,         0,       0x73,      0x05,    CONTEST_TOUGH
-move MOVE_COUNTER,             0x0059,    SPLIT_PHYSICAL,              1,     TYPE_FIGHTING,        100,      20,            0,      0x0001,         -5,      0x01,      0x0F,    CONTEST_TOUGH
-move MOVE_SEISMIC_TOSS,        0x0057,    SPLIT_PHYSICAL,              1,     TYPE_FIGHTING,        100,      20,            0,      0x0000,         0,       0xB3,      0x05,    CONTEST_TOUGH
-move MOVE_STRENGTH,            0x0000,    SPLIT_PHYSICAL,              80,    TYPE_NORMAL,          100,      15,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_TOUGH
-move MOVE_ABSORB,              0x0003,    SPLIT_SPECIAL,               40,    TYPE_GRASS,           100,      25,            0,      0x0000,         1,       0x12,      0x14,    CONTEST_SMART
-move MOVE_MEGA_DRAIN,          0x0003,    SPLIT_SPECIAL,               95,    TYPE_GRASS,           100,      15,            0,      0x0000,         0,       0x12,      0x14,    CONTEST_SMART
-move MOVE_LEECH_SEED,          0x0054,    SPLIT_STATUS,                0,     TYPE_GRASS,           90,       10,            0,      0x0000,         3,       0x16,      0x15,    CONTEST_SMART
-move MOVE_GROWTH,              0x000D,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        40,            0,      0x0010,         0,       0x48,      0x0B,    CONTEST_BEAUTY
-move MOVE_RAZOR_LEAF,          0x002B,    SPLIT_PHYSICAL,              55,    TYPE_GRASS,           95,       25,            0,      0x0004,         0,       0x32,      0x05,    CONTEST_COOL
-move MOVE_SOLAR_BEAM,          0x0097,    SPLIT_SPECIAL,               120,   TYPE_GRASS,           100,      10,            0,      0x0000,         0,       0x32,      0x06,    CONTEST_COOL
-move MOVE_POISON_POWDER,       0x0042,    SPLIT_STATUS,                0,     TYPE_POISON,          75,       35,            0,      0x0000,         0,       0x56,      0x13,    CONTEST_SMART
-move MOVE_STUN_SPORE,          0x0043,    SPLIT_STATUS,                0,     TYPE_GRASS,           75,       30,            0,      0x0000,         0,       0x56,      0x13,    CONTEST_SMART
-move MOVE_SLEEP_POWDER,        0x0001,    SPLIT_STATUS,                0,     TYPE_GRASS,           75,       15,            0,      0x0000,         0,       0x56,      0x13,    CONTEST_SMART
-move MOVE_PETAL_DANCE,         0x001B,    SPLIT_SPECIAL,               90,    TYPE_GRASS,           100,      20,            0,      0x0002,         0,       0x33,      0x15,    CONTEST_BEAUTY
-move MOVE_STRING_SHOT,         0x0014,    SPLIT_STATUS,                0,     TYPE_BUG,             95,       40,            0,      0x0004,         0,       0x16,      0x13,    CONTEST_SMART
-move MOVE_DRAGON_RAGE,         0x0029,    SPLIT_SPECIAL,               1,     TYPE_DRAGON,          100,      10,            0,      0x0000,         0,       0x32,      0x05,    CONTEST_COOL
-move MOVE_FIRE_SPIN,           0x002A,    SPLIT_SPECIAL,               35,    TYPE_FIRE,            70,       15,            0,      0x0000,         0,       0x32,      0x15,    CONTEST_BEAUTY
-move MOVE_THUNDER_SHOCK,       0x0006,    SPLIT_SPECIAL,               40,    TYPE_ELECTRIC,        100,      30,            10,     0x0000,         1,       0x12,      0x05,    CONTEST_COOL
-move MOVE_THUNDERBOLT,         0x0006,    SPLIT_SPECIAL,               95,    TYPE_ELECTRIC,        100,      15,            10,     0x0000,         0,       0x12,      0x11,    CONTEST_COOL
-move MOVE_THUNDER_WAVE,        0x0043,    SPLIT_STATUS,                0,     TYPE_ELECTRIC,        100,      20,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_COOL
-move MOVE_THUNDER,             0x0098,    SPLIT_SPECIAL,               130,   TYPE_ELECTRIC,        85,       10,            20,     0x0000,         0,       0x92,      0x11,    CONTEST_COOL
-move MOVE_ROCK_THROW,          0x0000,    SPLIT_PHYSICAL,              40,    TYPE_ROCK,            90,       15,            0,      0x0000,         1,       0x32,      0x05,    CONTEST_TOUGH
-move MOVE_EARTHQUAKE,          0x0093,    SPLIT_PHYSICAL,              100,   TYPE_GROUND,          100,      10,            0,      0x0008,         0,       0x32,      0x12,    CONTEST_TOUGH
-move MOVE_FISSURE,             0x0026,    SPLIT_PHYSICAL,              1,     TYPE_GROUND,          30,       5,             0,      0x0000,         0,       0x92,      0x09,    CONTEST_TOUGH
-move MOVE_DIG,                 0x0100,    SPLIT_PHYSICAL,              100,   TYPE_GROUND,          100,      10,            0,      0x0000,         0,       0x33,      0x06,    CONTEST_SMART
-move MOVE_TOXIC,               0x0021,    SPLIT_STATUS,                0,     TYPE_POISON,          85,       10,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_SMART
-move MOVE_CONFUSION,           0x004C,    SPLIT_SPECIAL,               40,    TYPE_PSYCHIC,         100,      25,            10,     0x0000,         1,       0x12,      0x05,    CONTEST_SMART
-move MOVE_PSYCHIC,             0x0048,    SPLIT_SPECIAL,               90,    TYPE_PSYCHIC,         100,      10,            10,     0x0000,         0,       0x12,      0x11,    CONTEST_SMART
-move MOVE_HYPNOSIS,            0x0001,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         60,       20,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_SMART
-move MOVE_MEDITATE,            0x000A,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        40,            0,      0x0010,         0,       0x08,      0x0B,    CONTEST_BEAUTY
-move MOVE_AGILITY,             0x0034,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        30,            0,      0x0010,         0,       0x88,      0x01,    CONTEST_COOL
-move MOVE_QUICK_ATTACK,        0x0067,    SPLIT_PHYSICAL,              40,    TYPE_NORMAL,          100,      30,            0,      0x0000,         2,       0x73,      0x01,    CONTEST_COOL
-move MOVE_RAGE,                0x0051,    SPLIT_PHYSICAL,              20,    TYPE_NORMAL,          100,      20,            0,      0x0000,         0,       0x33,      0x0B,    CONTEST_COOL
-move MOVE_TELEPORT,            0x0099,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        20,            0,      0x0010,         0,       0x00,      0x01,    CONTEST_COOL
-move MOVE_NIGHT_SHADE,         0x0057,    SPLIT_SPECIAL,               1,     TYPE_GHOST,           100,      15,            0,      0x0000,         0,       0x32,      0x05,    CONTEST_SMART
-move MOVE_MIMIC,               0x0052,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0000,         0,       0x02,      0x0C,    CONTEST_CUTE
-move MOVE_SCREECH,             0x003B,    SPLIT_STATUS,                0,     TYPE_NORMAL,          85,       40,            0,      0x0000,         0,       0x56,      0x0A,    CONTEST_SMART
-move MOVE_DOUBLE_TEAM,         0x0010,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        15,            0,      0x0010,         -1,      0x48,      0x01,    CONTEST_COOL
-move MOVE_RECOVER,             0x0020,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         0,       0x48,      0x08,    CONTEST_SMART
-move MOVE_HARDEN,              0x000B,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        30,            0,      0x0010,         0,       0x48,      0x0D,    CONTEST_TOUGH
-move MOVE_MINIMIZE,            0x006C,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0010,         -1,      0x08,      0x0D,    CONTEST_CUTE
-move MOVE_SMOKESCREEN,         0x0017,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      20,            0,      0x0000,         -1,      0x16,      0x0A,    CONTEST_SMART
-move MOVE_CONFUSE_RAY,         0x0031,    SPLIT_STATUS,                0,     TYPE_GHOST,           100,      10,            0,      0x0000,         0,       0x16,      0x0A,    CONTEST_SMART
-move MOVE_WITHDRAW,            0x000B,    SPLIT_STATUS,                0,     TYPE_WATER,           0,        40,            0,      0x0010,         0,       0x48,      0x0D,    CONTEST_CUTE
-move MOVE_DEFENSE_CURL,        0x009C,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        40,            0,      0x0010,         3,       0x48,      0x0D,    CONTEST_CUTE
-move MOVE_BARRIER,             0x0033,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        30,            0,      0x0010,         0,       0x48,      0x0D,    CONTEST_COOL
-move MOVE_LIGHT_SCREEN,        0x0023,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        30,            0,      0x0020,         0,       0x48,      0x0D,    CONTEST_BEAUTY
-move MOVE_HAZE,                0x0019,    SPLIT_STATUS,                0,     TYPE_ICE,             0,        30,            0,      0x0040,         0,       0x00,      0x0D,    CONTEST_BEAUTY
-move MOVE_REFLECT,             0x0041,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        20,            0,      0x0020,         0,       0x48,      0x0D,    CONTEST_SMART
-move MOVE_FOCUS_ENERGY,        0x002F,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        30,            0,      0x0010,         0,       0x48,      0x0B,    CONTEST_COOL
-move MOVE_BIDE,                0x001A,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          0,        10,            0,      0x0010,         1,       0x63,      0x0F,    CONTEST_TOUGH
-move MOVE_METRONOME,           0x0053,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0001,         0,       0x40,      0x0E,    CONTEST_CUTE
-move MOVE_MIRROR_MOVE,         0x0009,    SPLIT_STATUS,                0,     TYPE_FLYING,          0,        20,            0,      0x0001,         0,       0x00,      0x0F,    CONTEST_SMART
-move MOVE_SELF_DESTRUCT,       0x0007,    SPLIT_PHYSICAL,              200,   TYPE_NORMAL,          100,      5,             0,      0x0008,         0,       0x32,      0x09,    CONTEST_BEAUTY
-move MOVE_EGG_BOMB,            0x0000,    SPLIT_PHYSICAL,              100,   TYPE_NORMAL,          75,       10,            0,      0x0000,         0,       0x32,      0x05,    CONTEST_TOUGH
-move MOVE_LICK,                0x0006,    SPLIT_PHYSICAL,              20,    TYPE_GHOST,           100,      30,            30,     0x0000,         0,       0x53,      0x10,    CONTEST_TOUGH
-move MOVE_SMOG,                0x0002,    SPLIT_SPECIAL,               20,    TYPE_POISON,          70,       20,            40,     0x0000,         0,       0x12,      0x05,    CONTEST_TOUGH
-move MOVE_SLUDGE,              0x0002,    SPLIT_SPECIAL,               65,    TYPE_POISON,          100,      20,            30,     0x0000,         0,       0x12,      0x12,    CONTEST_TOUGH
-move MOVE_BONE_CLUB,           0x001F,    SPLIT_PHYSICAL,              65,    TYPE_GROUND,          85,       20,            10,     0x0000,         0,       0x52,      0x05,    CONTEST_TOUGH
-move MOVE_FIRE_BLAST,          0x0004,    SPLIT_SPECIAL,               130,   TYPE_FIRE,            85,       5,             20,     0x0000,         0,       0x92,      0x11,    CONTEST_BEAUTY
-move MOVE_WATERFALL,           0x001F,    SPLIT_PHYSICAL,              80,    TYPE_WATER,           100,      15,            20,     0x0000,         0,       0xB3,      0x05,    CONTEST_TOUGH
-move MOVE_CLAMP,               0x002A,    SPLIT_PHYSICAL,              35,    TYPE_WATER,           75,       10,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_TOUGH
-move MOVE_SWIFT,               0x0011,    SPLIT_SPECIAL,               60,    TYPE_NORMAL,          0,        20,            0,      0x0004,         0,       0x32,      0x11,    CONTEST_COOL
-move MOVE_SKULL_BASH,          0x0091,    SPLIT_PHYSICAL,              150,   TYPE_NORMAL,          100,      15,            100,    0x0000,         0,       0x33,      0x06,    CONTEST_TOUGH
-move MOVE_SPIKE_CANNON,        0x001D,    SPLIT_PHYSICAL,              20,    TYPE_NORMAL,          100,      15,            0,      0x0000,         0,       0x32,      0x07,    CONTEST_COOL
-move MOVE_CONSTRICT,           0x0046,    SPLIT_PHYSICAL,              10,    TYPE_NORMAL,          100,      35,            10,     0x0000,         0,       0x13,      0x15,    CONTEST_TOUGH
-move MOVE_AMNESIA,             0x0036,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        20,            0,      0x0010,         0,       0x08,      0x0B,    CONTEST_CUTE
-move MOVE_KINESIS,             0x0017,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         80,       15,            0,      0x0000,         0,       0x56,      0x0B,    CONTEST_SMART
-move MOVE_SOFT_BOILED,         0x0020,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         0,       0x48,      0x08,    CONTEST_BEAUTY
-move MOVE_HI_JUMP_KICK,        0x002D,    SPLIT_PHYSICAL,              100,   TYPE_FIGHTING,        90,       20,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_GLARE,               0x0043,    SPLIT_STATUS,                0,     TYPE_NORMAL,          75,       30,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_TOUGH
-move MOVE_DREAM_EATER,         0x0008,    SPLIT_SPECIAL,               100,   TYPE_PSYCHIC,         100,      15,            0,      0x0000,         0,       0x12,      0x14,    CONTEST_SMART
-move MOVE_POISON_GAS,          0x0042,    SPLIT_STATUS,                0,     TYPE_POISON,          55,       40,            0,      0x0000,         0,       0x16,      0x05,    CONTEST_SMART
-move MOVE_BARRAGE,             0x001D,    SPLIT_PHYSICAL,              15,    TYPE_NORMAL,          85,       20,            0,      0x0000,         0,       0x72,      0x07,    CONTEST_TOUGH
-move MOVE_LEECH_LIFE,          0x0003,    SPLIT_PHYSICAL,              90,    TYPE_BUG,             100,      15,            0,      0x0000,         0,       0x13,      0x14,    CONTEST_SMART
-move MOVE_LOVELY_KISS,         0x0001,    SPLIT_STATUS,                0,     TYPE_NORMAL,          75,       10,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_BEAUTY
-move MOVE_SKY_ATTACK,          0x004B,    SPLIT_PHYSICAL,              140,   TYPE_FLYING,          90,       5,             30,     0x0000,         0,       0x32,      0x06,    CONTEST_COOL
-move MOVE_TRANSFORM,           0x0039,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0000,         0,       0x40,      0x17,    CONTEST_SMART
-move MOVE_BUBBLE,              0x0046,    SPLIT_SPECIAL,               20,    TYPE_WATER,           100,      30,            10,     0x0004,         0,       0x12,      0x02,    CONTEST_CUTE
-move MOVE_DIZZY_PUNCH,         0x004C,    SPLIT_PHYSICAL,              90,    TYPE_PSYCHIC,         100,      10,            20,     0x0000,         0,       0x13,      0x10,    CONTEST_COOL
-move MOVE_SPORE,               0x0001,    SPLIT_STATUS,                0,     TYPE_GRASS,           100,      15,            0,      0x0000,         0,       0x16,      0x0A,    CONTEST_BEAUTY
-move MOVE_FLASH,               0x0017,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      20,            0,      0x0000,         -1,      0x96,      0x0A,    CONTEST_BEAUTY
-move MOVE_PSYWAVE,             0x0058,    SPLIT_SPECIAL,               1,     TYPE_PSYCHIC,         80,       15,            0,      0x0000,         0,       0x32,      0x05,    CONTEST_SMART
-move MOVE_SPLASH,              0x0055,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        40,            0,      0x0010,         0,       0x40,      0x10,    CONTEST_CUTE
-move MOVE_ACID_ARMOR,          0x0033,    SPLIT_STATUS,                0,     TYPE_POISON,          0,        40,            0,      0x0010,         0,       0x48,      0x0B,    CONTEST_TOUGH
-move MOVE_CRABHAMMER,          0x002B,    SPLIT_PHYSICAL,              90,    TYPE_WATER,           85,       10,            0,      0x0000,         0,       0x73,      0x12,    CONTEST_TOUGH
-move MOVE_EXPLOSION,           0x0007,    SPLIT_PHYSICAL,              250,   TYPE_NORMAL,          100,      5,             0,      0x0008,         0,       0x32,      0x09,    CONTEST_BEAUTY
-move MOVE_FURY_SWIPES,         0x001D,    SPLIT_PHYSICAL,              30,    TYPE_NORMAL,          80,       15,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_TOUGH
-move MOVE_BONEMERANG,          0x002C,    SPLIT_PHYSICAL,              50,    TYPE_GROUND,          90,       10,            0,      0x0000,         0,       0x72,      0x07,    CONTEST_TOUGH
-move MOVE_REST,                0x0025,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0010,         0,       0x48,      0x08,    CONTEST_CUTE
-move MOVE_ROCK_SLIDE,          0x001F,    SPLIT_PHYSICAL,              75,    TYPE_ROCK,            90,       10,            30,     0x0004,         0,       0x12,      0x05,    CONTEST_TOUGH
-move MOVE_HYPER_FANG,          0x001F,    SPLIT_PHYSICAL,              80,    TYPE_NORMAL,          90,       15,            10,     0x0000,         0,       0x13,      0x12,    CONTEST_COOL
-move MOVE_SHARPEN,             0x000A,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        30,            0,      0x0010,         3,       0x48,      0x0B,    CONTEST_CUTE
-move MOVE_CONVERSION,          0x001E,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        30,            0,      0x0010,         0,       0x40,      0x17,    CONTEST_BEAUTY
-move MOVE_TRI_ATTACK,          0x0024,    SPLIT_SPECIAL,               80,    TYPE_NORMAL,          100,      10,            20,     0x0000,         0,       0x12,      0x05,    CONTEST_BEAUTY
-move MOVE_SUPER_FANG,          0x0028,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          90,       10,            0,      0x0000,         0,       0x53,      0x05,    CONTEST_TOUGH
-move MOVE_SLASH,               0x002B,    SPLIT_PHYSICAL,              70,    TYPE_NORMAL,          100,      20,            0,      0x0000,         0,       0x73,      0x05,    CONTEST_COOL
-move MOVE_SUBSTITUTE,          0x004F,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         0,       0x48,      0x17,    CONTEST_SMART
-move MOVE_STRUGGLE,            0x00FE,    SPLIT_PHYSICAL,              50,    TYPE_NORMAL,          0,        1,             0,      0x0000,         0,       0x63,      0x05,    CONTEST_COOL
-move MOVE_SKETCH,              0x005F,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        1,             0,      0x0000,         0,       0x00,      0x17,    CONTEST_SMART
-move MOVE_TRIPLE_KICK,         0x0068,    SPLIT_PHYSICAL,              30,    TYPE_FIGHTING,        90,       10,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_COOL
-move MOVE_THIEF,               0x0069,    SPLIT_PHYSICAL,              40,    TYPE_DARK,            100,      10,            0,      0x0000,         0,       0x53,      0x0C,    CONTEST_TOUGH
-move MOVE_SPIDER_WEB,          0x006A,    SPLIT_STATUS,                0,     TYPE_BUG,             0,        10,            0,      0x0000,         0,       0x16,      0x0D,    CONTEST_SMART
-move MOVE_MIND_READER,         0x005E,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        5,             0,      0x0000,         0,       0x12,      0x14,    CONTEST_SMART
-move MOVE_NIGHTMARE,           0x006B,    SPLIT_STATUS,                0,     TYPE_GHOST,           100,      15,            0,      0x0000,         0,       0x12,      0x13,    CONTEST_SMART
-move MOVE_FLAME_WHEEL,         0x007D,    SPLIT_PHYSICAL,              60,    TYPE_FIRE,            100,      25,            10,     0x0000,         0,       0x13,      0x07,    CONTEST_BEAUTY
-move MOVE_SNORE,               0x005C,    SPLIT_SPECIAL,               40,    TYPE_NORMAL,          100,      15,            30,     0x0000,         0,       0x32,      0x05,    CONTEST_CUTE
-move MOVE_CURSE,               0x006D,    SPLIT_STATUS,                0,     TYPE_MYSTERY,         0,        10,            0,      0x0000,         0,       0x40,      0x15,    CONTEST_TOUGH
-move MOVE_FLAIL,               0x0063,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          100,      15,            0,      0x0000,         0,       0x73,      0x0F,    CONTEST_CUTE
-move MOVE_CONVERSION_2,        0x005D,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        30,            0,      0x0010,         0,       0x00,      0x17,    CONTEST_BEAUTY
-move MOVE_AEROBLAST,           0x002B,    SPLIT_SPECIAL,               100,   TYPE_FLYING,          95,       5,             0,      0x0000,         0,       0xB2,      0x16,    CONTEST_COOL
-move MOVE_COTTON_SPORE,        0x003C,    SPLIT_STATUS,                0,     TYPE_GRASS,           85,       40,            0,      0x0000,         0,       0x56,      0x01,    CONTEST_BEAUTY
-move MOVE_REVERSAL,            0x0063,    SPLIT_PHYSICAL,              1,     TYPE_FIGHTING,        100,      15,            0,      0x0000,         0,       0x73,      0x0F,    CONTEST_COOL
-move MOVE_SPITE,               0x0064,    SPLIT_STATUS,                0,     TYPE_GHOST,           100,      10,            0,      0x0000,         0,       0x12,      0x13,    CONTEST_TOUGH
-move MOVE_POWDER_SNOW,         0x0005,    SPLIT_SPECIAL,               40,    TYPE_ICE,             100,      25,            10,     0x0004,         1,       0x12,      0x05,    CONTEST_BEAUTY
-move MOVE_PROTECT,             0x006F,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         3,       0x00,      0x10,    CONTEST_CUTE
-move MOVE_MACH_PUNCH,          0x0067,    SPLIT_PHYSICAL,              40,    TYPE_FIGHTING,        100,      30,            0,      0x0000,         1,       0x73,      0x01,    CONTEST_COOL
-move MOVE_SCARY_FACE,          0x003C,    SPLIT_STATUS,                0,     TYPE_NORMAL,          90,       10,            0,      0x0000,         0,       0x16,      0x02,    CONTEST_TOUGH
-move MOVE_FAINT_ATTACK,        0x0011,    SPLIT_PHYSICAL,              60,    TYPE_DARK,            0,        20,            0,      0x0000,         0,       0x33,      0x12,    CONTEST_SMART
-move MOVE_SWEET_KISS,          0x0031,    SPLIT_STATUS,                0,     TYPE_NORMAL,          75,       10,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_CUTE
-move MOVE_BELLY_DRUM,          0x008E,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         0,       0x48,      0x0B,    CONTEST_CUTE
-move MOVE_SLUDGE_BOMB,         0x0002,    SPLIT_SPECIAL,               90,    TYPE_POISON,          100,      10,            30,     0x0000,         0,       0x12,      0x12,    CONTEST_TOUGH
-move MOVE_MUD_SLAP,            0x0049,    SPLIT_SPECIAL,               20,    TYPE_GROUND,          100,      10,            100,    0x0000,         0,       0x12,      0x05,    CONTEST_CUTE
-move MOVE_OCTAZOOKA,           0x0049,    SPLIT_SPECIAL,               65,    TYPE_WATER,           85,       10,            50,     0x0000,         0,       0x12,      0x04,    CONTEST_TOUGH
-move MOVE_SPIKES,              0x0070,    SPLIT_STATUS,                0,     TYPE_GROUND,          0,        20,            0,      0x0080,         0,       0x00,      0x0D,    CONTEST_SMART
-move MOVE_ZAP_CANNON,          0x0006,    SPLIT_SPECIAL,               120,   TYPE_ELECTRIC,        50,       5,             100,    0x0000,         0,       0x92,      0x04,    CONTEST_COOL
-move MOVE_FORESIGHT,           0x0071,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        40,            0,      0x0000,         0,       0x52,      0x14,    CONTEST_SMART
-move MOVE_DESTINY_BOND,        0x0062,    SPLIT_STATUS,                0,     TYPE_GHOST,           0,        5,             0,      0x0010,         0,       0x00,      0x09,    CONTEST_SMART
-move MOVE_PERISH_SONG,         0x0072,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        5,             0,      0x0040,         0,       0x80,      0x0A,    CONTEST_BEAUTY
-move MOVE_ICY_WIND,            0x0046,    SPLIT_SPECIAL,               55,    TYPE_ICE,             95,       15,            100,    0x0004,         0,       0x12,      0x02,    CONTEST_BEAUTY
-move MOVE_DETECT,              0x006F,    SPLIT_STATUS,                0,     TYPE_FIGHTING,        0,        5,             0,      0x0010,         3,       0x00,      0x10,    CONTEST_COOL
-move MOVE_BONE_RUSH,           0x001D,    SPLIT_PHYSICAL,              25,    TYPE_GROUND,          80,       10,            0,      0x0000,         0,       0x72,      0x07,    CONTEST_TOUGH
-move MOVE_LOCK_ON,             0x005E,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        5,             0,      0x0000,         0,       0x12,      0x14,    CONTEST_SMART
-move MOVE_OUTRAGE,             0x001B,    SPLIT_PHYSICAL,              120,   TYPE_DRAGON,          100,      15,            0,      0x0002,         0,       0xB3,      0x07,    CONTEST_COOL
-move MOVE_SANDSTORM,           0x0073,    SPLIT_STATUS,                0,     TYPE_ROCK,            0,        10,            0,      0x0040,         0,       0x00,      0x0D,    CONTEST_TOUGH
-move MOVE_GIGA_DRAIN,          0x0003,    SPLIT_SPECIAL,               125,   TYPE_GRASS,           85,       10,            0,      0x0000,         0,       0x12,      0x14,    CONTEST_SMART
-move MOVE_ENDURE,              0x0074,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         3,       0x40,      0x0D,    CONTEST_TOUGH
-move MOVE_CHARM,               0x003A,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      20,            0,      0x0000,         0,       0x56,      0x13,    CONTEST_CUTE
-move MOVE_ROLLOUT,             0x0075,    SPLIT_PHYSICAL,              30,    TYPE_ROCK,            90,       20,            0,      0x0000,         0,       0x33,      0x07,    CONTEST_TOUGH
-move MOVE_FALSE_SWIPE,         0x0065,    SPLIT_PHYSICAL,              40,    TYPE_NORMAL,          100,      40,            0,      0x0000,         0,       0x73,      0x10,    CONTEST_COOL
-move MOVE_SWAGGER,             0x0076,    SPLIT_STATUS,                0,     TYPE_NORMAL,          90,       15,            0,      0x0000,         0,       0x56,      0x13,    CONTEST_CUTE
-move MOVE_MILK_DRINK,          0x0020,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         0,       0x08,      0x08,    CONTEST_CUTE
-move MOVE_SPARK,               0x0006,    SPLIT_PHYSICAL,              65,    TYPE_ELECTRIC,        100,      20,            30,     0x0000,         0,       0x13,      0x05,    CONTEST_COOL
-move MOVE_FURY_CUTTER,         0x0077,    SPLIT_PHYSICAL,              40,    TYPE_BUG,             95,       20,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_COOL
-move MOVE_STEEL_WING,          0x008A,    SPLIT_PHYSICAL,              70,    TYPE_STEEL,           90,       25,            100,    0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_MEAN_LOOK,           0x006A,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        5,             0,      0x0000,         0,       0x16,      0x0A,    CONTEST_BEAUTY
-move MOVE_ATTRACT,             0x0078,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      15,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_CUTE
-move MOVE_SLEEP_TALK,          0x0061,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0001,         0,       0x00,      0x05,    CONTEST_CUTE
-move MOVE_HEAL_BELL,           0x0066,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        5,             0,      0x0020,         0,       0x48,      0x08,    CONTEST_BEAUTY
-move MOVE_RETURN,              0x0079,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          100,      20,            0,      0x0000,         0,       0x73,      0x11,    CONTEST_CUTE
-move MOVE_PRESENT,             0x007A,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          90,       15,            0,      0x0000,         0,       0x12,      0x10,    CONTEST_CUTE
-move MOVE_FRUSTRATION,         0x007B,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          100,      20,            0,      0x0000,         0,       0x73,      0x12,    CONTEST_CUTE
-move MOVE_SAFEGUARD,           0x007C,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        25,            0,      0x0020,         0,       0x48,      0x0D,    CONTEST_BEAUTY
-move MOVE_PAIN_SPLIT,          0x005B,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0000,         0,       0x12,      0x0A,    CONTEST_SMART
-move MOVE_SACRED_FIRE,         0x007D,    SPLIT_PHYSICAL,              100,   TYPE_FIRE,            95,       5,             50,     0x0000,         0,       0x92,      0x16,    CONTEST_BEAUTY
-move MOVE_MAGNITUDE,           0x007E,    SPLIT_PHYSICAL,              1,     TYPE_GROUND,          100,      30,            0,      0x0008,         0,       0x32,      0x12,    CONTEST_TOUGH
-move MOVE_DYNAMIC_PUNCH,       0x004C,    SPLIT_PHYSICAL,              100,   TYPE_FIGHTING,        50,       5,             100,    0x0000,         0,       0x93,      0x12,    CONTEST_COOL
-move MOVE_MEGAHORN,            0x0000,    SPLIT_PHYSICAL,              120,   TYPE_BUG,             85,       10,            0,      0x0000,         0,       0xB3,      0x12,    CONTEST_COOL
-move MOVE_DRAGON_BREATH,       0x0024,    SPLIT_SPECIAL,               40,    TYPE_DRAGON,          100,      20,            10,     0x0000,         1,       0x32,      0x11,    CONTEST_COOL
-move MOVE_BATON_PASS,          0x007F,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        40,            0,      0x0010,         0,       0x00,      0x10,    CONTEST_CUTE
-move MOVE_ENCORE,              0x005A,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      5,             0,      0x0000,         0,       0x12,      0x14,    CONTEST_CUTE
-move MOVE_PURSUIT,             0x0080,    SPLIT_PHYSICAL,              40,    TYPE_DARK,            100,      20,            0,      0x0000,         0,       0x93,      0x14,    CONTEST_SMART
-move MOVE_RAPID_SPIN,          0x0081,    SPLIT_PHYSICAL,              20,    TYPE_NORMAL,          100,      40,            0,      0x0000,         0,       0x33,      0x11,    CONTEST_COOL
-move MOVE_SWEET_SCENT,         0x0018,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      20,            0,      0x0004,         0,       0x16,      0x13,    CONTEST_CUTE
-move MOVE_IRON_TAIL,           0x0045,    SPLIT_PHYSICAL,              100,   TYPE_STEEL,           75,       15,            100,    0x0000,         0,       0x13,      0x12,    CONTEST_COOL
-move MOVE_METAL_CLAW,          0x008B,    SPLIT_PHYSICAL,              40,    TYPE_STEEL,           100,      35,            100,    0x0000,         1,       0x13,      0x12,    CONTEST_COOL
-move MOVE_VITAL_THROW,         0x004E,    SPLIT_PHYSICAL,              70,    TYPE_FIGHTING,        0,        10,            0,      0x0000,         -1,      0x33,      0x02,    CONTEST_COOL
-move MOVE_MORNING_SUN,         0x0084,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        5,             0,      0x0010,         0,       0x08,      0x08,    CONTEST_BEAUTY
-move MOVE_SYNTHESIS,           0x0084,    SPLIT_STATUS,                0,     TYPE_GRASS,           0,        5,             0,      0x0010,         0,       0x48,      0x08,    CONTEST_SMART
-move MOVE_MOONLIGHT,           0x0084,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        5,             0,      0x0010,         0,       0x88,      0x08,    CONTEST_BEAUTY
-move MOVE_HIDDEN_POWER,        0x0087,    SPLIT_SPECIAL,               1,     TYPE_NORMAL,          100,      15,            0,      0x0000,         0,       0x32,      0x17,    CONTEST_SMART
-move MOVE_CROSS_CHOP,          0x002B,    SPLIT_PHYSICAL,              100,   TYPE_FIGHTING,        80,       5,             0,      0x0000,         0,       0x33,      0x12,    CONTEST_COOL
-move MOVE_TWISTER,             0x0024,    SPLIT_SPECIAL,               40,    TYPE_DRAGON,          100,      20,            10,     0x0004,         0,       0x32,      0x05,    CONTEST_COOL
-move MOVE_RAIN_DANCE,          0x0088,    SPLIT_STATUS,                0,     TYPE_WATER,           0,        5,             0,      0x0040,         0,       0x00,      0x0D,    CONTEST_TOUGH
-move MOVE_SUNNY_DAY,           0x0089,    SPLIT_STATUS,                0,     TYPE_FIRE,            0,        5,             0,      0x0040,         0,       0x00,      0x0D,    CONTEST_BEAUTY
-move MOVE_CRUNCH,              0x0045,    SPLIT_PHYSICAL,              80,    TYPE_DARK,            100,      15,            20,     0x0000,         0,       0x13,      0x12,    CONTEST_TOUGH
-move MOVE_MIRROR_COAT,         0x0090,    SPLIT_SPECIAL,               1,     TYPE_PSYCHIC,         100,      20,            0,      0x0001,         -5,      0x00,      0x0F,    CONTEST_BEAUTY
-move MOVE_PSYCH_UP,            0x008F,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0000,         0,       0x48,      0x0B,    CONTEST_SMART
-move MOVE_EXTREME_SPEED,       0x0067,    SPLIT_PHYSICAL,              80,    TYPE_NORMAL,          100,      5,             0,      0x0000,         1,       0xB3,      0x01,    CONTEST_COOL
-move MOVE_ANCIENT_POWER,       0x008C,    SPLIT_SPECIAL,               60,    TYPE_ROCK,            100,      5,             100,    0x0000,         -1,      0x12,      0x12,    CONTEST_TOUGH
-move MOVE_SHADOW_BALL,         0x0048,    SPLIT_SPECIAL,               80,    TYPE_GHOST,           100,      15,            20,     0x0000,         0,       0x12,      0x11,    CONTEST_SMART
-move MOVE_FUTURE_SIGHT,        0x0094,    SPLIT_SPECIAL,               120,   TYPE_PSYCHIC,         90,       10,            0,      0x0000,         0,       0x00,      0x11,    CONTEST_SMART
-move MOVE_ROCK_SMASH,          0x0045,    SPLIT_PHYSICAL,              40,    TYPE_FIGHTING,        100,      15,            50,     0x0000,         0,       0x13,      0x12,    CONTEST_TOUGH
-move MOVE_WHIRLPOOL,           0x0105,    SPLIT_SPECIAL,               15,    TYPE_WATER,           70,       15,            0,      0x0000,         0,       0xB2,      0x15,    CONTEST_BEAUTY
-move MOVE_BEAT_UP,             0x009A,    SPLIT_PHYSICAL,              10,    TYPE_DARK,            100,      10,            0,      0x0000,         0,       0x72,      0x07,    CONTEST_SMART
-move MOVE_FAKE_OUT,            0x009E,    SPLIT_PHYSICAL,              40,    TYPE_NORMAL,          100,      10,            100,    0x0000,         4,       0x13,      0x11,    CONTEST_CUTE
-move MOVE_UPROAR,              0x009F,    SPLIT_SPECIAL,               50,    TYPE_NORMAL,          100,      10,            0,      0x0002,         0,       0x32,      0x0A,    CONTEST_CUTE
-move MOVE_STOCKPILE,           0x00A0,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0010,         0,       0x48,      0x0B,    CONTEST_TOUGH
-move MOVE_SPIT_UP,             0x00A1,    SPLIT_SPECIAL,               1,     TYPE_NORMAL,          100,      10,            0,      0x0000,         0,       0x22,      0x12,    CONTEST_TOUGH
-move MOVE_SWALLOW,             0x00A2,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         0,       0x48,      0x08,    CONTEST_TOUGH
-move MOVE_HEAT_WAVE,           0x0004,    SPLIT_SPECIAL,               100,   TYPE_FIRE,            90,       10,            10,     0x0004,         0,       0x12,      0x11,    CONTEST_BEAUTY
-move MOVE_HAIL,                0x00A4,    SPLIT_STATUS,                0,     TYPE_ICE,             0,        10,            0,      0x0040,         0,       0x00,      0x0D,    CONTEST_BEAUTY
-move MOVE_TORMENT,             0x00A5,    SPLIT_STATUS,                0,     TYPE_DARK,            100,      15,            0,      0x0000,         0,       0x52,      0x10,    CONTEST_TOUGH
-move MOVE_FLATTER,             0x00A6,    SPLIT_STATUS,                0,     TYPE_DARK,            100,      15,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_SMART
-move MOVE_WILL_O_WISP,         0x00A7,    SPLIT_STATUS,                0,     TYPE_FIRE,            75,       15,            0,      0x0000,         0,       0x16,      0x11,    CONTEST_BEAUTY
-move MOVE_MEMENTO,             0x00A8,    SPLIT_STATUS,                0,     TYPE_DARK,            100,      10,            0,      0x0000,         0,       0x12,      0x09,    CONTEST_TOUGH
-move MOVE_FACADE,              0x00A9,    SPLIT_PHYSICAL,              70,    TYPE_NORMAL,          100,      20,            0,      0x0000,         0,       0x53,      0x0F,    CONTEST_CUTE
-move MOVE_FOCUS_PUNCH,         0x00AA,    SPLIT_PHYSICAL,              150,   TYPE_FIGHTING,        100,      20,            0,      0x0000,         -3,      0x83,      0x06,    CONTEST_TOUGH
-move MOVE_SMELLING_SALT,       0x00AB,    SPLIT_PHYSICAL,              60,    TYPE_NORMAL,          100,      10,            0,      0x0000,         0,       0x13,      0x10,    CONTEST_SMART
-move MOVE_FOLLOW_ME,           0x00AC,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0010,         3,       0x00,      0x0E,    CONTEST_CUTE
-move MOVE_NATURE_POWER,        0x00AD,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0001,         0,       0x40,      0x0E,    CONTEST_BEAUTY
-move MOVE_CHARGE,              0x00AE,    SPLIT_STATUS,                0,     TYPE_ELECTRIC,        0,        20,            0,      0x0010,         0,       0x08,      0x0B,    CONTEST_SMART
-move MOVE_TAUNT,               0x00AF,    SPLIT_STATUS,                0,     TYPE_DARK,            100,      20,            0,      0x0000,         0,       0x52,      0x10,    CONTEST_SMART
-move MOVE_HELPING_HAND,        0x00B0,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0100,         5,       0x00,      0x14,    CONTEST_SMART
-move MOVE_TRICK,               0x00B1,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         100,      10,            0,      0x0000,         0,       0x12,      0x0C,    CONTEST_SMART
-move MOVE_ROLE_PLAY,           0x00B2,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0000,         0,       0x00,      0x17,    CONTEST_CUTE
-move MOVE_WISH,                0x00B3,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         0,       0x80,      0x08,    CONTEST_CUTE
-move MOVE_ASSIST,              0x00B4,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0001,         0,       0x00,      0x0E,    CONTEST_CUTE
-move MOVE_INGRAIN,             0x00B5,    SPLIT_STATUS,                0,     TYPE_GRASS,           0,        20,            0,      0x0010,         0,       0x48,      0x15,    CONTEST_SMART
-move MOVE_SUPERPOWER,          0x00B6,    SPLIT_PHYSICAL,              120,   TYPE_FIGHTING,        100,      5,             0,      0x0000,         0,       0x93,      0x12,    CONTEST_TOUGH
-move MOVE_MAGIC_COAT,          0x00B7,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        15,            0,      0x0001,         4,       0x00,      0x0F,    CONTEST_BEAUTY
-move MOVE_RECYCLE,             0x00B8,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         0,       0x40,      0x0C,    CONTEST_SMART
-move MOVE_REVENGE,             0x00B9,    SPLIT_PHYSICAL,              60,    TYPE_FIGHTING,        100,      10,            0,      0x0000,         -4,      0x33,      0x0F,    CONTEST_TOUGH
-move MOVE_BRICK_BREAK,         0x00BA,    SPLIT_PHYSICAL,              75,    TYPE_FIGHTING,        100,      15,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_YAWN,                0x00BB,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_CUTE
-move MOVE_KNOCK_OFF,           0x00BC,    SPLIT_PHYSICAL,              20,    TYPE_DARK,            100,      20,            0,      0x0000,         0,       0x13,      0x05,    CONTEST_SMART
-move MOVE_ENDEAVOR,            0x00BD,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          100,      5,             0,      0x0000,         0,       0x73,      0x0F,    CONTEST_TOUGH
-move MOVE_ERUPTION,            0x00BE,    SPLIT_SPECIAL,               150,   TYPE_FIRE,            100,      5,             0,      0x0004,         0,       0x32,      0x12,    CONTEST_BEAUTY
-move MOVE_SKILL_SWAP,          0x00BF,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0000,         0,       0x12,      0x0C,    CONTEST_SMART
-move MOVE_IMPRISON,            0x00C0,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0010,         0,       0x00,      0x14,    CONTEST_SMART
-move MOVE_REFRESH,             0x00C1,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0010,         0,       0x08,      0x08,    CONTEST_CUTE
-move MOVE_GRUDGE,              0x00C2,    SPLIT_STATUS,                0,     TYPE_GHOST,           0,        5,             0,      0x0010,         0,       0x00,      0x0A,    CONTEST_TOUGH
-move MOVE_SNATCH,              0x00C3,    SPLIT_STATUS,                0,     TYPE_DARK,            0,        10,            0,      0x0001,         4,       0x00,      0x0C,    CONTEST_SMART
-move MOVE_SECRET_POWER,        0x00C5,    SPLIT_PHYSICAL,              70,    TYPE_NORMAL,          100,      20,            30,     0x0000,         0,       0x12,      0x0E,    CONTEST_SMART
-move MOVE_DIVE,                0x00FF,    SPLIT_PHYSICAL,              100,   TYPE_WATER,           100,      10,            0,      0x0000,         0,       0x33,      0x06,    CONTEST_BEAUTY
-move MOVE_ARM_THRUST,          0x001D,    SPLIT_PHYSICAL,              15,    TYPE_FIGHTING,        100,      20,            0,      0x0000,         0,       0x73,      0x07,    CONTEST_TOUGH
-move MOVE_CAMOUFLAGE,          0x00D5,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0010,         0,       0x48,      0x0D,    CONTEST_SMART
-move MOVE_TAIL_GLOW,           0x0035,    SPLIT_STATUS,                0,     TYPE_BUG,             0,        20,            0,      0x0010,         0,       0x08,      0x0B,    CONTEST_BEAUTY
-move MOVE_LUSTER_PURGE,        0x0048,    SPLIT_SPECIAL,               70,    TYPE_PSYCHIC,         100,      5,             50,     0x0000,         0,       0x12,      0x16,    CONTEST_SMART
-move MOVE_MIST_BALL,           0x0047,    SPLIT_SPECIAL,               70,    TYPE_PSYCHIC,         100,      5,             50,     0x0000,         0,       0x92,      0x16,    CONTEST_SMART
-move MOVE_FEATHER_DANCE,       0x003A,    SPLIT_STATUS,                0,     TYPE_FLYING,          100,      15,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_BEAUTY
-move MOVE_TEETER_DANCE,        0x00C7,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      20,            0,      0x0008,         0,       0x12,      0x0E,    CONTEST_CUTE
-move MOVE_BLAZE_KICK,          0x00C8,    SPLIT_PHYSICAL,              85,    TYPE_FIRE,            90,       10,            10,     0x0000,         0,       0x13,      0x11,    CONTEST_BEAUTY
-move MOVE_MUD_SPORT,           0x00C9,    SPLIT_STATUS,                0,     TYPE_GROUND,          0,        15,            0,      0x0040,         0,       0x00,      0x0D,    CONTEST_CUTE
-move MOVE_ICE_BALL,            0x0075,    SPLIT_PHYSICAL,              30,    TYPE_ICE,             90,       20,            0,      0x0000,         0,       0x33,      0x07,    CONTEST_BEAUTY
-move MOVE_NEEDLE_ARM,          0x001F,    SPLIT_PHYSICAL,              60,    TYPE_GRASS,           100,      15,            30,     0x0000,         0,       0x13,      0x05,    CONTEST_SMART
-move MOVE_SLACK_OFF,           0x0020,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        10,            0,      0x0010,         0,       0x48,      0x08,    CONTEST_CUTE
-move MOVE_HYPER_VOICE,         0x0000,    SPLIT_SPECIAL,               90,    TYPE_NORMAL,          100,      10,            0,      0x0004,         0,       0x12,      0x05,    CONTEST_COOL
-move MOVE_POISON_FANG,         0x00CA,    SPLIT_PHYSICAL,              50,    TYPE_POISON,          100,      15,            30,     0x0000,         0,       0x13,      0x04,    CONTEST_SMART
-move MOVE_CRUSH_CLAW,          0x0045,    SPLIT_PHYSICAL,              75,    TYPE_NORMAL,          95,       10,            50,     0x0000,         0,       0x13,      0x05,    CONTEST_COOL
-move MOVE_BLAST_BURN,          0x0050,    SPLIT_SPECIAL,               200,   TYPE_FIRE,            100,      5,             0,      0x0000,         0,       0x32,      0x16,    CONTEST_BEAUTY
-move MOVE_HYDRO_CANNON,        0x0050,    SPLIT_SPECIAL,               200,   TYPE_WATER,           100,      5,             0,      0x0000,         0,       0xB2,      0x16,    CONTEST_BEAUTY
-move MOVE_METEOR_MASH,         0x008B,    SPLIT_PHYSICAL,              100,   TYPE_STEEL,           85,       10,            100,    0x0000,         0,       0x33,      0x12,    CONTEST_COOL
-move MOVE_ASTONISH,            0x001F,    SPLIT_PHYSICAL,              40,    TYPE_GHOST,           100,      15,            30,     0x0000,         1,       0x53,      0x05,    CONTEST_SMART
-move MOVE_WEATHER_BALL,        0x00CB,    SPLIT_SPECIAL,               50,    TYPE_NORMAL,          100,      10,            0,      0x0000,         0,       0x32,      0x04,    CONTEST_SMART
-move MOVE_AROMATHERAPY,        0x0066,    SPLIT_STATUS,                0,     TYPE_GRASS,           0,        5,             0,      0x0020,         0,       0x08,      0x08,    CONTEST_SMART
-move MOVE_FAKE_TEARS,          0x003E,    SPLIT_STATUS,                0,     TYPE_DARK,            100,      20,            0,      0x0000,         0,       0x56,      0x13,    CONTEST_SMART
-move MOVE_AIR_CUTTER,          0x002B,    SPLIT_SPECIAL,               55,    TYPE_FLYING,          95,       25,            0,      0x0004,         0,       0x32,      0x05,    CONTEST_COOL
-move MOVE_OVERHEAT,            0x00CC,    SPLIT_SPECIAL,               140,   TYPE_FIRE,            90,       5,             100,    0x0000,         0,       0xB2,      0x16,    CONTEST_BEAUTY
-move MOVE_ODOR_SLEUTH,         0x0071,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        40,            0,      0x0000,         0,       0x52,      0x14,    CONTEST_SMART
-move MOVE_ROCK_TOMB,           0x0046,    SPLIT_PHYSICAL,              50,    TYPE_ROCK,            80,       10,            100,    0x0000,         0,       0x12,      0x02,    CONTEST_SMART
-move MOVE_SILVER_WIND,         0x008C,    SPLIT_SPECIAL,               60,    TYPE_BUG,             100,      5,             100,    0x0000,         -1,      0x32,      0x04,    CONTEST_BEAUTY
-move MOVE_METAL_SOUND,         0x003E,    SPLIT_STATUS,                0,     TYPE_STEEL,           85,       40,            0,      0x0000,         0,       0x16,      0x0A,    CONTEST_SMART
-move MOVE_GRASS_WHISTLE,       0x0001,    SPLIT_STATUS,                0,     TYPE_GRASS,           55,       15,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_SMART
-move MOVE_TICKLE,              0x00CD,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      20,            0,      0x0000,         0,       0x56,      0x13,    CONTEST_CUTE
-move MOVE_COSMIC_POWER,        0x00CE,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        20,            0,      0x0010,         0,       0x88,      0x0B,    CONTEST_COOL
-move MOVE_WATER_SPOUT,         0x00BE,    SPLIT_SPECIAL,               150,   TYPE_WATER,           100,      5,             0,      0x0004,         0,       0x12,      0x16,    CONTEST_BEAUTY
-move MOVE_SIGNAL_BEAM,         0x004C,    SPLIT_SPECIAL,               75,    TYPE_BUG,             100,      15,            10,     0x0000,         0,       0x32,      0x04,    CONTEST_BEAUTY
-move MOVE_SHADOW_PUNCH,        0x0011,    SPLIT_PHYSICAL,              60,    TYPE_GHOST,           0,        20,            0,      0x0000,         0,       0x33,      0x11,    CONTEST_SMART
-move MOVE_EXTRASENSORY,        0x001F,    SPLIT_SPECIAL,               80,    TYPE_PSYCHIC,         100,      30,            10,     0x0000,         0,       0x12,      0x11,    CONTEST_COOL
-move MOVE_SKY_UPPERCUT,        0x00CF,    SPLIT_PHYSICAL,              85,    TYPE_FIGHTING,        90,       15,            0,      0x0000,         0,       0xB3,      0x11,    CONTEST_COOL
-move MOVE_SAND_TOMB,           0x002A,    SPLIT_PHYSICAL,              15,    TYPE_GROUND,          70,       15,            0,      0x0000,         0,       0x32,      0x15,    CONTEST_SMART
-move MOVE_SHEER_COLD,          0x0026,    SPLIT_SPECIAL,               1,     TYPE_ICE,             30,       5,             0,      0x0000,         0,       0x12,      0x09,    CONTEST_BEAUTY
-move MOVE_MUDDY_WATER,         0x0049,    SPLIT_SPECIAL,               95,    TYPE_WATER,           85,       10,            30,     0x0004,         0,       0x32,      0x12,    CONTEST_TOUGH
-move MOVE_BULLET_SEED,         0x001D,    SPLIT_PHYSICAL,              30,    TYPE_GRASS,           100,      30,            0,      0x0000,         0,       0x72,      0x07,    CONTEST_COOL
-move MOVE_AERIAL_ACE,          0x0011,    SPLIT_PHYSICAL,              60,    TYPE_FLYING,          0,        20,            0,      0x0000,         0,       0x33,      0x11,    CONTEST_COOL
-move MOVE_ICICLE_SPEAR,        0x001D,    SPLIT_PHYSICAL,              30,    TYPE_ICE,             100,      30,            0,      0x0000,         0,       0x72,      0x07,    CONTEST_BEAUTY
-move MOVE_IRON_DEFENSE,        0x0033,    SPLIT_STATUS,                0,     TYPE_STEEL,           0,        15,            0,      0x0010,         0,       0x48,      0x0D,    CONTEST_TOUGH
-move MOVE_BLOCK,               0x006A,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        5,             0,      0x0000,         0,       0x16,      0x0D,    CONTEST_CUTE
-move MOVE_HOWL,                0x000A,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        40,            0,      0x0010,         3,       0x08,      0x0B,    CONTEST_COOL
-move MOVE_DRAGON_CLAW,         0x0024,    SPLIT_PHYSICAL,              80,    TYPE_DRAGON,          100,      15,            10,     0x0000,         0,       0x33,      0x11,    CONTEST_COOL
-move MOVE_FRENZY_PLANT,        0x0050,    SPLIT_SPECIAL,               200,   TYPE_GRASS,           100,      5,             0,      0x0000,         0,       0xB2,      0x16,    CONTEST_COOL
-move MOVE_BULK_UP,             0x00D0,    SPLIT_STATUS,                0,     TYPE_FIGHTING,        0,        20,            0,      0x0010,         0,       0x48,      0x0B,    CONTEST_BEAUTY
-move MOVE_BOUNCE,              0x0107,    SPLIT_PHYSICAL,              100,   TYPE_FLYING,          85,       5,             30,     0x0000,         0,       0x33,      0x06,    CONTEST_CUTE
-move MOVE_MUD_SHOT,            0x0046,    SPLIT_SPECIAL,               40,    TYPE_GROUND,          95,       15,            100,    0x0000,         1,       0x32,      0x02,    CONTEST_TOUGH
-move MOVE_POISON_TAIL,         0x00D1,    SPLIT_PHYSICAL,              50,    TYPE_POISON,          100,      25,            10,     0x0000,         0,       0x33,      0x04,    CONTEST_SMART
-move MOVE_COVET,               0x0069,    SPLIT_PHYSICAL,              60,    TYPE_NORMAL,          100,      40,            0,      0x0000,         0,       0x13,      0x0C,    CONTEST_CUTE
-move MOVE_VOLT_TACKLE,         0x0106,    SPLIT_PHYSICAL,              120,   TYPE_ELECTRIC,        100,      15,            10,     0x0000,         0,       0xB3,      0x16,    CONTEST_COOL
-move MOVE_MAGICAL_LEAF,        0x0011,    SPLIT_SPECIAL,               60,    TYPE_GRASS,           0,        20,            0,      0x0000,         0,       0x32,      0x11,    CONTEST_BEAUTY
-move MOVE_WATER_SPORT,         0x00D2,    SPLIT_STATUS,                0,     TYPE_WATER,           0,        15,            0,      0x0040,         0,       0x00,      0x0D,    CONTEST_CUTE
-move MOVE_CALM_MIND,           0x00D3,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        20,            0,      0x0010,         0,       0x08,      0x0B,    CONTEST_SMART
-move MOVE_LEAF_BLADE,          0x002B,    SPLIT_PHYSICAL,              90,    TYPE_GRASS,           100,      15,            0,      0x0000,         0,       0x33,      0x11,    CONTEST_COOL
-move MOVE_DRAGON_DANCE,        0x00D4,    SPLIT_STATUS,                0,     TYPE_DRAGON,          0,        20,            0,      0x0010,         0,       0x08,      0x0B,    CONTEST_COOL
-move MOVE_ROCK_BLAST,          0x001D,    SPLIT_PHYSICAL,              25,    TYPE_ROCK,            80,       10,            0,      0x0000,         0,       0x32,      0x07,    CONTEST_TOUGH
-move MOVE_SHOCK_WAVE,          0x0011,    SPLIT_SPECIAL,               60,    TYPE_ELECTRIC,        0,        20,            0,      0x0000,         0,       0x32,      0x11,    CONTEST_COOL
-move MOVE_WATER_PULSE,         0x004C,    SPLIT_SPECIAL,               60,    TYPE_WATER,           100,      20,            20,     0x0000,         0,       0xB2,      0x11,    CONTEST_BEAUTY
-move MOVE_DOOM_DESIRE,         0x0094,    SPLIT_SPECIAL,               140,   TYPE_STEEL,           85,       5,             0,      0x0000,         0,       0x80,      0x11,    CONTEST_COOL
-move MOVE_PSYCHO_BOOST,        0x00CC,    SPLIT_SPECIAL,               140,   TYPE_PSYCHIC,         90,       5,             100,    0x0000,         0,       0xB2,      0x16,    CONTEST_SMART
-move MOVE_ROOST,               0x00D6,    SPLIT_STATUS,                0,     TYPE_FLYING,          0,        10,            0,      0x0010,         0,       0x48,      0x08,    CONTEST_COOL
-move MOVE_GRAVITY,             0x00D7,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        5,             0,      0x0040,         0,       0x00,      0x0D,    CONTEST_BEAUTY
-move MOVE_MIRACLE_EYE,         0x00D8,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        40,            0,      0x0000,         0,       0x12,      0x14,    CONTEST_CUTE
-move MOVE_WAKE_UP_SLAP,        0x00D9,    SPLIT_PHYSICAL,              60,    TYPE_FIGHTING,        100,      10,            0,      0x0000,         0,       0x33,      0x10,    CONTEST_SMART
-move MOVE_HAMMER_ARM,          0x00DA,    SPLIT_PHYSICAL,              100,   TYPE_FIGHTING,        90,       10,            0,      0x0000,         0,       0x33,      0x02,    CONTEST_COOL
-move MOVE_GYRO_BALL,           0x00DB,    SPLIT_PHYSICAL,              1,     TYPE_STEEL,           100,      5,             0,      0x0000,         0,       0x33,      0x0F,    CONTEST_BEAUTY
-move MOVE_HEALING_WISH,        0x00DC,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0010,         0,       0x00,      0x08,    CONTEST_CUTE
-move MOVE_BRINE,               0x00DD,    SPLIT_SPECIAL,               65,    TYPE_WATER,           100,      10,            0,      0x0000,         0,       0x32,      0x04,    CONTEST_SMART
-move MOVE_NATURAL_GIFT,        0x00DE,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          100,      15,            0,      0x0000,         0,       0x52,      0x12,    CONTEST_COOL
-move MOVE_FEINT,               0x00DF,    SPLIT_PHYSICAL,              30,    TYPE_NORMAL,          100,      10,            0,      0x0000,         2,       0x00,      0x10,    CONTEST_BEAUTY
-move MOVE_PLUCK,               0x00E0,    SPLIT_PHYSICAL,              60,    TYPE_FLYING,          100,      20,            0,      0x0000,         0,       0x73,      0x0C,    CONTEST_CUTE
-move MOVE_TAILWIND,            0x00E1,    SPLIT_STATUS,                0,     TYPE_FLYING,          0,        30,            0,      0x0020,         0,       0x08,      0x01,    CONTEST_SMART
-move MOVE_ACUPRESSURE,         0x00E2,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        30,            0,      0x0200,         3,       0x48,      0x0B,    CONTEST_COOL
-move MOVE_METAL_BURST,         0x00E3,    SPLIT_PHYSICAL,              1,     TYPE_STEEL,           100,      10,            0,      0x0001,         0,       0x10,      0x0F,    CONTEST_BEAUTY
-move MOVE_U_TURN,              0x00E4,    SPLIT_PHYSICAL,              70,    TYPE_BUG,             100,      20,            0,      0x0000,         0,       0x33,      0x10,    CONTEST_CUTE
-move MOVE_CLOSE_COMBAT,        0x00E5,    SPLIT_PHYSICAL,              120,   TYPE_FIGHTING,        100,      5,             0,      0x0000,         0,       0xB3,      0x16,    CONTEST_SMART
-move MOVE_PAYBACK,             0x00E6,    SPLIT_PHYSICAL,              50,    TYPE_DARK,            100,      10,            0,      0x0000,         0,       0x33,      0x06,    CONTEST_COOL
-move MOVE_ASSURANCE,           0x00E7,    SPLIT_PHYSICAL,              50,    TYPE_DARK,            100,      10,            0,      0x0000,         0,       0x33,      0x0F,    CONTEST_BEAUTY
-move MOVE_EMBARGO,             0x00E8,    SPLIT_STATUS,                0,     TYPE_DARK,            100,      15,            0,      0x0000,         0,       0x12,      0x0D,    CONTEST_CUTE
-move MOVE_FLING,               0x00E9,    SPLIT_PHYSICAL,              1,     TYPE_DARK,            100,      10,            0,      0x0000,         0,       0x12,      0x17,    CONTEST_TOUGH
-move MOVE_PSYCHO_SHIFT,        0x00EA,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         90,       10,            0,      0x0000,         0,       0x12,      0x10,    CONTEST_COOL
-move MOVE_TRUMP_CARD,          0x00EB,    SPLIT_SPECIAL,               1,     TYPE_NORMAL,          0,        5,             0,      0x0000,         0,       0x33,      0x15,    CONTEST_COOL
-move MOVE_HEAL_BLOCK,          0x00EC,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         100,      15,            0,      0x0004,         0,       0x12,      0x0D,    CONTEST_CUTE
-move MOVE_WRING_OUT,           0x00ED,    SPLIT_SPECIAL,               1,     TYPE_NORMAL,          100,      5,             0,      0x0000,         0,       0x33,      0x16,    CONTEST_SMART
-move MOVE_POWER_TRICK,         0x00EE,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0010,         3,       0x40,      0x10,    CONTEST_COOL
-move MOVE_GASTRO_ACID,         0x00EF,    SPLIT_STATUS,                0,     TYPE_POISON,          100,      10,            0,      0x0000,         0,       0x16,      0x0D,    CONTEST_BEAUTY
-move MOVE_LUCKY_CHANT,         0x00F0,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        30,            0,      0x0020,         0,       0x40,      0x0D,    CONTEST_CUTE
-move MOVE_ME_FIRST,            0x00F1,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0400,         0,       0x02,      0x01,    CONTEST_CUTE
-move MOVE_COPYCAT,             0x00F2,    SPLIT_STATUS,                0,     TYPE_NORMAL,          0,        20,            0,      0x0001,         0,       0x00,      0x0C,    CONTEST_COOL
-move MOVE_POWER_SWAP,          0x00F3,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0000,         0,       0x12,      0x10,    CONTEST_BEAUTY
-move MOVE_GUARD_SWAP,          0x00F4,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0000,         0,       0x12,      0x10,    CONTEST_CUTE
-move MOVE_PUNISHMENT,          0x00F5,    SPLIT_PHYSICAL,              1,     TYPE_DARK,            100,      5,             0,      0x0000,         0,       0x73,      0x17,    CONTEST_SMART
-move MOVE_LAST_RESORT,         0x00F6,    SPLIT_PHYSICAL,              130,   TYPE_NORMAL,          100,      5,             0,      0x0000,         0,       0x33,      0x15,    CONTEST_CUTE
-move MOVE_WORRY_SEED,          0x00F7,    SPLIT_STATUS,                0,     TYPE_GRASS,           100,      10,            0,      0x0000,         0,       0x16,      0x13,    CONTEST_BEAUTY
-move MOVE_SUCKER_PUNCH,        0x00F8,    SPLIT_PHYSICAL,              80,    TYPE_DARK,            100,      5,             0,      0x0000,         1,       0x73,      0x01,    CONTEST_SMART
-move MOVE_TOXIC_SPIKES,        0x00F9,    SPLIT_STATUS,                0,     TYPE_POISON,          0,        20,            0,      0x0080,         0,       0x40,      0x0D,    CONTEST_SMART
-move MOVE_HEART_SWAP,          0x00FA,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0000,         0,       0x12,      0x10,    CONTEST_COOL
-move MOVE_AQUA_RING,           0x00FB,    SPLIT_STATUS,                0,     TYPE_WATER,           0,        20,            0,      0x0010,         0,       0x00,      0x08,    CONTEST_BEAUTY
-move MOVE_MAGNET_RISE,         0x00FC,    SPLIT_STATUS,                0,     TYPE_ELECTRIC,        0,        10,            0,      0x0010,         3,       0x00,      0x0D,    CONTEST_CUTE
-move MOVE_FLARE_BLITZ,         0x00FD,    SPLIT_PHYSICAL,              120,   TYPE_FIRE,            100,      15,            10,     0x0000,         0,       0x93,      0x16,    CONTEST_SMART
-move MOVE_FORCE_PALM,          0x0006,    SPLIT_PHYSICAL,              60,    TYPE_FIGHTING,        100,      10,            30,     0x0000,         0,       0x33,      0x12,    CONTEST_COOL
-move MOVE_AURA_SPHERE,         0x0011,    SPLIT_SPECIAL,               90,    TYPE_FIGHTING,        0,        20,            0,      0x0000,         0,       0xB2,      0x11,    CONTEST_BEAUTY
-move MOVE_ROCK_POLISH,         0x0034,    SPLIT_STATUS,                0,     TYPE_ROCK,            0,        20,            0,      0x0010,         0,       0x08,      0x01,    CONTEST_TOUGH
-move MOVE_POISON_JAB,          0x0002,    SPLIT_PHYSICAL,              80,    TYPE_POISON,          100,      20,            30,     0x0000,         0,       0x33,      0x04,    CONTEST_SMART
-move MOVE_DARK_PULSE,          0x001F,    SPLIT_SPECIAL,               80,    TYPE_DARK,            100,      15,            20,     0x0000,         0,       0x32,      0x11,    CONTEST_COOL
-move MOVE_NIGHT_SLASH,         0x002B,    SPLIT_PHYSICAL,              70,    TYPE_DARK,            100,      15,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_BEAUTY
-move MOVE_AQUA_TAIL,           0x0000,    SPLIT_PHYSICAL,              90,    TYPE_WATER,           90,       10,            0,      0x0000,         0,       0x33,      0x05,    CONTEST_CUTE
-move MOVE_SEED_BOMB,           0x0000,    SPLIT_PHYSICAL,              80,    TYPE_GRASS,           100,      15,            0,      0x0000,         0,       0x32,      0x05,    CONTEST_SMART
-move MOVE_AIR_SLASH,           0x001F,    SPLIT_SPECIAL,               75,    TYPE_FLYING,          95,       20,            30,     0x0000,         0,       0x32,      0x11,    CONTEST_COOL
-move MOVE_X_SCISSOR,           0x0000,    SPLIT_PHYSICAL,              80,    TYPE_BUG,             100,      15,            0,      0x0000,         0,       0x33,      0x11,    CONTEST_BEAUTY
-move MOVE_BUG_BUZZ,            0x0048,    SPLIT_SPECIAL,               90,    TYPE_BUG,             100,      10,            10,     0x0000,         0,       0x12,      0x04,    CONTEST_CUTE
-move MOVE_DRAGON_PULSE,        0x0024,    SPLIT_SPECIAL,               90,    TYPE_DRAGON,          100,      10,            10,     0x0000,         0,       0x32,      0x04,    CONTEST_SMART
-move MOVE_DRAGON_RUSH,         0x0024,    SPLIT_PHYSICAL,              100,   TYPE_DRAGON,          75,       10,            10,     0x0000,         0,       0x33,      0x12,    CONTEST_COOL
-move MOVE_POWER_GEM,           0x0000,    SPLIT_SPECIAL,               70,    TYPE_ROCK,            100,      20,            0,      0x0000,         0,       0x32,      0x05,    CONTEST_BEAUTY
-move MOVE_DRAIN_PUNCH,         0x0003,    SPLIT_PHYSICAL,              90,    TYPE_FIGHTING,        100,      10,            0,      0x0000,         0,       0x33,      0x14,    CONTEST_BEAUTY
-move MOVE_VACUUM_WAVE,         0x0067,    SPLIT_SPECIAL,               40,    TYPE_FIGHTING,        100,      30,            0,      0x0000,         1,       0x32,      0x01,    CONTEST_SMART
-move MOVE_FOCUS_BLAST,         0x0048,    SPLIT_SPECIAL,               120,   TYPE_FIGHTING,        70,       5,             10,     0x0000,         0,       0x92,      0x11,    CONTEST_COOL
-move MOVE_ENERGY_BALL,         0x0048,    SPLIT_SPECIAL,               80,    TYPE_GRASS,           100,      10,            10,     0x0000,         0,       0x12,      0x11,    CONTEST_BEAUTY
-move MOVE_BRAVE_BIRD,          0x00C6,    SPLIT_PHYSICAL,              120,   TYPE_FLYING,          100,      15,            0,      0x0000,         0,       0xB3,      0x12,    CONTEST_CUTE
-move MOVE_EARTH_POWER,         0x0048,    SPLIT_SPECIAL,               90,    TYPE_GROUND,          100,      10,            10,     0x0000,         0,       0x32,      0x12,    CONTEST_SMART
-move MOVE_SWITCHEROO,          0x00B1,    SPLIT_STATUS,                0,     TYPE_DARK,            100,      10,            0,      0x0000,         0,       0x12,      0x0C,    CONTEST_COOL
-move MOVE_GIGA_IMPACT,         0x0050,    SPLIT_PHYSICAL,              200,   TYPE_NORMAL,          100,      5,             0,      0x0000,         0,       0xB3,      0x16,    CONTEST_BEAUTY
-move MOVE_NASTY_PLOT,          0x0035,    SPLIT_STATUS,                0,     TYPE_DARK,            0,        20,            0,      0x0010,         0,       0x48,      0x0B,    CONTEST_CUTE
-move MOVE_BULLET_PUNCH,        0x0067,    SPLIT_PHYSICAL,              40,    TYPE_STEEL,           100,      30,            0,      0x0000,         1,       0x73,      0x01,    CONTEST_SMART
-move MOVE_AVALANCHE,           0x00B9,    SPLIT_PHYSICAL,              60,    TYPE_ICE,             100,      10,            0,      0x0000,         -4,      0x33,      0x0F,    CONTEST_COOL
-move MOVE_ICE_SHARD,           0x0067,    SPLIT_PHYSICAL,              40,    TYPE_ICE,             100,      30,            0,      0x0000,         1,       0x32,      0x01,    CONTEST_BEAUTY
-move MOVE_SHADOW_CLAW,         0x002B,    SPLIT_PHYSICAL,              70,    TYPE_GHOST,           100,      15,            0,      0x0000,         0,       0x73,      0x11,    CONTEST_CUTE
-move MOVE_THUNDER_FANG,        0x0113,    SPLIT_PHYSICAL,              65,    TYPE_ELECTRIC,        95,       15,            10,     0x0000,         0,       0x33,      0x05,    CONTEST_SMART
-move MOVE_ICE_FANG,            0x0112,    SPLIT_PHYSICAL,              65,    TYPE_ICE,             95,       15,            10,     0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_FIRE_FANG,           0x0111,    SPLIT_PHYSICAL,              65,    TYPE_FIRE,            95,       15,            10,     0x0000,         0,       0x33,      0x05,    CONTEST_BEAUTY
-move MOVE_SHADOW_SNEAK,        0x0067,    SPLIT_PHYSICAL,              40,    TYPE_GHOST,           100,      30,            0,      0x0000,         1,       0x33,      0x01,    CONTEST_SMART
-move MOVE_MUD_BOMB,            0x0049,    SPLIT_SPECIAL,               65,    TYPE_GROUND,          85,       10,            30,     0x0000,         0,       0x32,      0x12,    CONTEST_SMART
-move MOVE_PSYCHO_CUT,          0x002B,    SPLIT_PHYSICAL,              70,    TYPE_PSYCHIC,         100,      20,            0,      0x0000,         0,       0x32,      0x11,    CONTEST_COOL
-move MOVE_ZEN_HEADBUTT,        0x001F,    SPLIT_PHYSICAL,              80,    TYPE_PSYCHIC,         90,       15,            20,     0x0000,         0,       0x33,      0x12,    CONTEST_BEAUTY
-move MOVE_MIRROR_SHOT,         0x0049,    SPLIT_SPECIAL,               75,    TYPE_STEEL,           100,      10,            30,     0x0000,         0,       0x32,      0x11,    CONTEST_CUTE
-move MOVE_FLASH_CANNON,        0x0048,    SPLIT_SPECIAL,               80,    TYPE_STEEL,           100,      10,           100,     0x0000,         0,       0x32,      0x11,    CONTEST_SMART
-move MOVE_ROCK_CLIMB,          0x004C,    SPLIT_PHYSICAL,              90,    TYPE_NORMAL,          85,       20,            20,     0x0000,         0,       0x33,      0x12,    CONTEST_COOL
-move MOVE_DEFOG,               0x0102,    SPLIT_STATUS,                0,     TYPE_FLYING,          0,        15,            0,      0x0000,         0,       0x12,      0x0D,    CONTEST_BEAUTY
-move MOVE_TRICK_ROOM,          0x0103,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        5,             0,      0x0040,         3,       0x10,      0x0E,    CONTEST_CUTE
-move MOVE_DRACO_METEOR,        0x00CC,    SPLIT_SPECIAL,               140,   TYPE_DRAGON,          90,       5,             100,    0x0000,         0,       0x32,      0x16,    CONTEST_SMART
-move MOVE_DISCHARGE,           0x0006,    SPLIT_SPECIAL,               80,    TYPE_ELECTRIC,        100,      15,            30,     0x0008,         0,       0x32,      0x11,    CONTEST_COOL
-move MOVE_LAVA_PLUME,          0x0004,    SPLIT_SPECIAL,               80,    TYPE_FIRE,            100,      15,            30,     0x0008,         0,       0x32,      0x11,    CONTEST_TOUGH
-move MOVE_LEAF_STORM,          0x00CC,    SPLIT_SPECIAL,               140,   TYPE_GRASS,           90,       5,             100,    0x0000,         0,       0xB2,      0x16,    CONTEST_CUTE
-move MOVE_POWER_WHIP,          0x0000,    SPLIT_PHYSICAL,              120,   TYPE_GRASS,           85,       10,            0,      0x0000,         0,       0xB3,      0x05,    CONTEST_BEAUTY
-move MOVE_ROCK_WRECKER,        0x0050,    SPLIT_PHYSICAL,              200,   TYPE_ROCK,            100,      5,             0,      0x0000,         0,       0xB2,      0x16,    CONTEST_TOUGH
-move MOVE_CROSS_POISON,        0x00D1,    SPLIT_PHYSICAL,              70,    TYPE_POISON,          100,      20,            10,     0x0000,         0,       0x33,      0x05,    CONTEST_COOL
-move MOVE_GUNK_SHOT,           0x0002,    SPLIT_PHYSICAL,              120,   TYPE_POISON,          70,       5,             30,     0x0000,         0,       0xB2,      0x05,    CONTEST_COOL
-move MOVE_IRON_HEAD,           0x001F,    SPLIT_PHYSICAL,              80,    TYPE_STEEL,           100,      15,            30,     0x0000,         0,       0x33,      0x12,    CONTEST_TOUGH
-move MOVE_MAGNET_BOMB,         0x0011,    SPLIT_PHYSICAL,              60,    TYPE_STEEL,           0,        20,            0,      0x0000,         0,       0x32,      0x05,    CONTEST_COOL
-move MOVE_STONE_EDGE,          0x002B,    SPLIT_PHYSICAL,              100,   TYPE_ROCK,            80,       5,             0,      0x0000,         0,       0x32,      0x04,    CONTEST_TOUGH
-move MOVE_CAPTIVATE,           0x0109,    SPLIT_STATUS,                0,     TYPE_NORMAL,          100,      20,            0,      0x0004,         0,       0x56,      0x13,    CONTEST_BEAUTY
-move MOVE_STEALTH_ROCK,        0x010A,    SPLIT_STATUS,                0,     TYPE_ROCK,            0,        20,            0,      0x0080,         0,       0x00,      0x0D,    CONTEST_COOL
-move MOVE_GRASS_KNOT,          0x00C4,    SPLIT_SPECIAL,               1,     TYPE_GRASS,           100,      20,            0,      0x0000,         0,       0x73,      0x04,    CONTEST_SMART
-move MOVE_CHATTER,             0x010B,    SPLIT_SPECIAL,               60,    TYPE_FLYING,          100,      20,            0,      0x0000,         0,       0x42,      0x17,    CONTEST_SMART
-move MOVE_JUDGMENT,            0x010C,    SPLIT_SPECIAL,               100,   TYPE_NORMAL,          100,      10,            0,      0x0000,         0,       0x32,      0x0E,    CONTEST_SMART
-move MOVE_BUG_BITE,            0x00E0,    SPLIT_PHYSICAL,              40,    TYPE_BUG,             100,      20,            0,      0x0000,         1,       0x73,      0x0C,    CONTEST_TOUGH
-move MOVE_CHARGE_BEAM,         0x0114,    SPLIT_SPECIAL,               50,    TYPE_ELECTRIC,        90,       10,            70,     0x0000,         0,       0x32,      0x11,    CONTEST_BEAUTY
-move MOVE_WOOD_HAMMER,         0x00C6,    SPLIT_PHYSICAL,              120,   TYPE_GRASS,           100,      15,            0,      0x0000,         0,       0x33,      0x12,    CONTEST_TOUGH
-move MOVE_AQUA_JET,            0x0067,    SPLIT_PHYSICAL,              40,    TYPE_WATER,           100,      20,            0,      0x0000,         1,       0x33,      0x01,    CONTEST_BEAUTY
-move MOVE_ATTACK_ORDER,        0x002B,    SPLIT_PHYSICAL,              90,    TYPE_BUG,             100,      15,            0,      0x0000,         0,       0x32,      0x04,    CONTEST_SMART
-move MOVE_DEFEND_ORDER,        0x00CE,    SPLIT_STATUS,                0,     TYPE_BUG,             0,        10,            0,      0x0010,         0,       0x08,      0x0B,    CONTEST_SMART
-move MOVE_HEAL_ORDER,          0x0020,    SPLIT_STATUS,                0,     TYPE_BUG,             0,        10,            0,      0x0010,         0,       0x08,      0x08,    CONTEST_SMART
-move MOVE_HEAD_SMASH,          0x010D,    SPLIT_PHYSICAL,              150,   TYPE_ROCK,            80,       5,             0,      0x0000,         0,       0xB3,      0x16,    CONTEST_TOUGH
-move MOVE_DOUBLE_HIT,          0x002C,    SPLIT_PHYSICAL,              35,    TYPE_NORMAL,          90,       10,            0,      0x0000,         0,       0x33,      0x07,    CONTEST_SMART
-move MOVE_ROAR_OF_TIME,        0x0050,    SPLIT_SPECIAL,               200,   TYPE_DRAGON,          100,      5,             0,      0x0000,         0,       0x32,      0x16,    CONTEST_COOL
-move MOVE_SPACIAL_REND,        0x0024,    SPLIT_SPECIAL,               100,   TYPE_DRAGON,          95,       5,             10,     0x0000,         0,       0xB2,      0x04,    CONTEST_TOUGH
-move MOVE_LUNAR_DANCE,         0x010E,    SPLIT_STATUS,                0,     TYPE_PSYCHIC,         0,        10,            0,      0x0010,         0,       0x80,      0x08,    CONTEST_BEAUTY
-move MOVE_CRUSH_GRIP,          0x00ED,    SPLIT_PHYSICAL,              1,     TYPE_NORMAL,          100,      5,             0,      0x0000,         0,       0x33,      0x0F,    CONTEST_TOUGH
-move MOVE_MAGMA_STORM,         0x002A,    SPLIT_SPECIAL,               120,   TYPE_FIRE,            70,       5,             0,      0x0000,         0,       0xB2,      0x07,    CONTEST_TOUGH
-move MOVE_DARK_VOID,           0x0001,    SPLIT_STATUS,                0,     TYPE_DARK,            80,       10,            0,      0x0004,         0,       0x96,      0x13,    CONTEST_SMART
-move MOVE_SEED_FLARE,          0x010F,    SPLIT_SPECIAL,               120,   TYPE_GRASS,           85,       5,             40,     0x0000,         0,       0xB2,      0x16,    CONTEST_COOL
-move MOVE_OMINOUS_WIND,        0x008C,    SPLIT_SPECIAL,               60,    TYPE_GHOST,           100,      5,             100,    0x0000,         -1,      0x32,      0x0B,    CONTEST_SMART
-move MOVE_SHADOW_FORCE,        0x0110,    SPLIT_PHYSICAL,              120,   TYPE_GHOST,           100,      5,             0,      0x0000,         0,       0x31,      0x16,    CONTEST_SMART
-move MOVE_SHADOW_FORCE+1,      0x0000,    SPLIT_SPECIAL,               100,   TYPE_NORMAL,          100,      10,            0,      0x0000,         0,       0x32,      0x10,    CONTEST_BEAUTY
-move MOVE_SHADOW_FORCE+2,      0x0000,    SPLIT_SPECIAL,               100,   TYPE_NORMAL,          100,      10,            0,      0x0000,         0,       0x32,      0x11,    CONTEST_CUTE
-move MOVE_SHADOW_FORCE+3,      0x0000,    SPLIT_SPECIAL,               100,   TYPE_NORMAL,          100,      10,            0,      0x0000,         0,       0x32,      0x12,    CONTEST_SMART
+move MOVE_POUND
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_NORMAL
+    accuracy 100
+    pp 35
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_KARATE_CHOP
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 25
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_DOUBLE_SLAP
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_NORMAL
+    accuracy 85
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_COMET_PUNCH
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_NORMAL
+    accuracy 85
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_MEGA_PUNCH
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_NORMAL
+    accuracy 85
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_PAY_DAY
+    battleeffect 0x0022
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_STEEL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x17
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FIRE_PUNCH
+    battleeffect 0x0004
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_FIRE
+    accuracy 100
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_ICE_PUNCH
+    battleeffect 0x0005
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_ICE
+    accuracy 100
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_THUNDER_PUNCH
+    battleeffect 0x0006
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_ELECTRIC
+    accuracy 100
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SCRATCH
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_NORMAL
+    accuracy 100
+    pp 35
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_VICE_GRIP
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 55
+    type TYPE_NORMAL
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_GUILLOTINE
+    battleeffect 0x0026
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 30
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x09
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RAZOR_WIND
+    battleeffect 0x0027
+    pss SPLIT_SPECIAL
+    basepower 80
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x32
+    appeal 0x06
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SWORDS_DANCE
+    battleeffect 0x0032
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_CUT
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_NORMAL
+    accuracy 95
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GUST
+    battleeffect 0x0095
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_FLYING
+    accuracy 100
+    pp 35
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_WING_ATTACK
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_FLYING
+    accuracy 100
+    pp 35
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WHIRLWIND
+    battleeffect 0x001C
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority -6
+    flags 0x52
+    appeal 0x09
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FLY
+    battleeffect 0x009B
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_FLYING
+    accuracy 95
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x06
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_BIND
+    battleeffect 0x002A
+    pss SPLIT_PHYSICAL
+    basepower 15
+    type TYPE_NORMAL
+    accuracy 85
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x15
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SLAM
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_NORMAL
+    accuracy 75
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_VINE_WHIP
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_GRASS
+    accuracy 100
+    pp 25
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STOMP
+    battleeffect 0x0096
+    pss SPLIT_PHYSICAL
+    basepower 65
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x53
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_DOUBLE_KICK
+    battleeffect 0x002C
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x07
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_MEGA_KICK
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_NORMAL
+    accuracy 75
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_JUMP_KICK
+    battleeffect 0x002D
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_FIGHTING
+    accuracy 95
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ROLLING_KICK
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_FIGHTING
+    accuracy 85
+    pp 15
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SAND_ATTACK
+    battleeffect 0x0017
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GROUND
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority -1
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_HEADBUTT
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x53
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_HORN_ATTACK
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 65
+    type TYPE_NORMAL
+    accuracy 100
+    pp 25
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FURY_ATTACK
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 15
+    type TYPE_NORMAL
+    accuracy 85
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x07
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HORN_DRILL
+    battleeffect 0x0026
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 30
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x09
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TACKLE
+    battleeffect 0x0046
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_NORMAL
+    accuracy 100
+    pp 35
+    effectchance 50
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_BODY_SLAM
+    battleeffect 0x0006
+    pss SPLIT_PHYSICAL
+    basepower 85
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x53
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_WRAP
+    battleeffect 0x002A
+    pss SPLIT_PHYSICAL
+    basepower 15
+    type TYPE_NORMAL
+    accuracy 85
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x15
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_TAKE_DOWN
+    battleeffect 0x0030
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_NORMAL
+    accuracy 85
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_THRASH
+    battleeffect 0x001B
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0002
+    priority 0
+    flags 0x33
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_DOUBLE_EDGE
+    battleeffect 0x00C6
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x09
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_TAIL_WHIP
+    battleeffect 0x0013
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0004
+    priority 3
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_POISON_STING
+    battleeffect 0x0002
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_POISON
+    accuracy 100
+    pp 35
+    effectchance 30
+    target 0x0000
+    priority 1
+    flags 0x12
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_TWINEEDLE
+    battleeffect 0x004D
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_BUG
+    accuracy 100
+    pp 20
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x52
+    appeal 0x07
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_PIN_MISSILE
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_BUG
+    accuracy 85
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x72
+    appeal 0x07
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_LEER
+    battleeffect 0x0013
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0004
+    priority 3
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BITE
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_DARK
+    accuracy 100
+    pp 25
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_GROWL
+    battleeffect 0x0012
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 40
+    effectchance 0
+    target 0x0004
+    priority 3
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_ROAR
+    battleeffect 0x001C
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority -6
+    flags 0x52
+    appeal 0x13
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SING
+    battleeffect 0x0001
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 55
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_SUPERSONIC
+    battleeffect 0x0031
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 55
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SONIC_BOOM
+    battleeffect 0x0082
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 90
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x72
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DISABLE
+    battleeffect 0x0056
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 80
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ACID
+    battleeffect 0x0048
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_POISON
+    accuracy 100
+    pp 30
+    effectchance 10
+    target 0x0004
+    priority 1
+    flags 0x12
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_EMBER
+    battleeffect 0x0004
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_FIRE
+    accuracy 100
+    pp 25
+    effectchance 10
+    target 0x0000
+    priority 1
+    flags 0x52
+    appeal 0x05
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_FLAMETHROWER
+    battleeffect 0x0004
+    pss SPLIT_SPECIAL
+    basepower 95
+    type TYPE_FIRE
+    accuracy 100
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_MIST
+    battleeffect 0x002E
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_ICE
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0020
+    priority 0
+    flags 0x08
+    appeal 0x0D
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_WATER_GUN
+    battleeffect 0x0000
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_WATER
+    accuracy 100
+    pp 25
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_HYDRO_PUMP
+    battleeffect 0x0000
+    pss SPLIT_SPECIAL
+    basepower 120
+    type TYPE_WATER
+    accuracy 80
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SURF
+    battleeffect 0x0101
+    pss SPLIT_SPECIAL
+    basepower 95
+    type TYPE_WATER
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0008
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_ICE_BEAM
+    battleeffect 0x0005
+    pss SPLIT_SPECIAL
+    basepower 95
+    type TYPE_ICE
+    accuracy 100
+    pp 10
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_BLIZZARD
+    battleeffect 0x0104
+    pss SPLIT_SPECIAL
+    basepower 130
+    type TYPE_ICE
+    accuracy 85
+    pp 5
+    effectchance 20
+    target 0x0004
+    priority 0
+    flags 0x92
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_PSYBEAM
+    battleeffect 0x004C
+    pss SPLIT_SPECIAL
+    basepower 65
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 20
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_BUBBLE_BEAM
+    battleeffect 0x0046
+    pss SPLIT_SPECIAL
+    basepower 65
+    type TYPE_WATER
+    accuracy 100
+    pp 20
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x02
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_AURORA_BEAM
+    battleeffect 0x0044
+    pss SPLIT_SPECIAL
+    basepower 65
+    type TYPE_ICE
+    accuracy 100
+    pp 20
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_HYPER_BEAM
+    battleeffect 0x0050
+    pss SPLIT_SPECIAL
+    basepower 200
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x16
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_PECK
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_FLYING
+    accuracy 100
+    pp 35
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DRILL_PECK
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_FLYING
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SUBMISSION
+    battleeffect 0x0030
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_FIGHTING
+    accuracy 80
+    pp 25
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_LOW_KICK
+    battleeffect 0x00C4
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_COUNTER
+    battleeffect 0x0059
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0001
+    priority -5
+    flags 0x01
+    appeal 0x0F
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SEISMIC_TOSS
+    battleeffect 0x0057
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_STRENGTH
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_ABSORB
+    battleeffect 0x0003
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_GRASS
+    accuracy 100
+    pp 25
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x12
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_MEGA_DRAIN
+    battleeffect 0x0003
+    pss SPLIT_SPECIAL
+    basepower 95
+    type TYPE_GRASS
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_LEECH_SEED
+    battleeffect 0x0054
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 3
+    flags 0x16
+    appeal 0x15
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_GROWTH
+    battleeffect 0x000D
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_RAZOR_LEAF
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 55
+    type TYPE_GRASS
+    accuracy 95
+    pp 25
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SOLAR_BEAM
+    battleeffect 0x0097
+    pss SPLIT_SPECIAL
+    basepower 120
+    type TYPE_GRASS
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x06
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_POISON_POWDER
+    battleeffect 0x0042
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_POISON
+    accuracy 75
+    pp 35
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_STUN_SPORE
+    battleeffect 0x0043
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 75
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SLEEP_POWDER
+    battleeffect 0x0001
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 75
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_PETAL_DANCE
+    battleeffect 0x001B
+    pss SPLIT_SPECIAL
+    basepower 90
+    type TYPE_GRASS
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0002
+    priority 0
+    flags 0x33
+    appeal 0x15
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_STRING_SHOT
+    battleeffect 0x0014
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_BUG
+    accuracy 95
+    pp 40
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_DRAGON_RAGE
+    battleeffect 0x0029
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_DRAGON
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FIRE_SPIN
+    battleeffect 0x002A
+    pss SPLIT_SPECIAL
+    basepower 35
+    type TYPE_FIRE
+    accuracy 70
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x15
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_THUNDER_SHOCK
+    battleeffect 0x0006
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_ELECTRIC
+    accuracy 100
+    pp 30
+    effectchance 10
+    target 0x0000
+    priority 1
+    flags 0x12
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_THUNDERBOLT
+    battleeffect 0x0006
+    pss SPLIT_SPECIAL
+    basepower 95
+    type TYPE_ELECTRIC
+    accuracy 100
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_THUNDER_WAVE
+    battleeffect 0x0043
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_ELECTRIC
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_THUNDER
+    battleeffect 0x0098
+    pss SPLIT_SPECIAL
+    basepower 130
+    type TYPE_ELECTRIC
+    accuracy 85
+    pp 10
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x92
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ROCK_THROW
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_ROCK
+    accuracy 90
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_EARTHQUAKE
+    battleeffect 0x0093
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_GROUND
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0008
+    priority 0
+    flags 0x32
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_FISSURE
+    battleeffect 0x0026
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_GROUND
+    accuracy 30
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x92
+    appeal 0x09
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_DIG
+    battleeffect 0x0100
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_GROUND
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x06
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_TOXIC
+    battleeffect 0x0021
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_POISON
+    accuracy 85
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_CONFUSION
+    battleeffect 0x004C
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 25
+    effectchance 10
+    target 0x0000
+    priority 1
+    flags 0x12
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_PSYCHIC
+    battleeffect 0x0048
+    pss SPLIT_SPECIAL
+    basepower 90
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 10
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_HYPNOSIS
+    battleeffect 0x0001
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 60
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_MEDITATE
+    battleeffect 0x000A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x0B
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_AGILITY
+    battleeffect 0x0034
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x88
+    appeal 0x01
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_QUICK_ATTACK
+    battleeffect 0x0067
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_NORMAL
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 2
+    flags 0x73
+    appeal 0x01
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RAGE
+    battleeffect 0x0051
+    pss SPLIT_PHYSICAL
+    basepower 20
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x0B
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TELEPORT
+    battleeffect 0x0099
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x00
+    appeal 0x01
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_NIGHT_SHADE
+    battleeffect 0x0057
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_GHOST
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_MIMIC
+    battleeffect 0x0052
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x02
+    appeal 0x0C
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_SCREECH
+    battleeffect 0x003B
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 85
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x0A
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_DOUBLE_TEAM
+    battleeffect 0x0010
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 15
+    effectchance 0
+    target 0x0010
+    priority -1
+    flags 0x48
+    appeal 0x01
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RECOVER
+    battleeffect 0x0020
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x08
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_HARDEN
+    battleeffect 0x000B
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0D
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_MINIMIZE
+    battleeffect 0x006C
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority -1
+    flags 0x08
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_SMOKESCREEN
+    battleeffect 0x0017
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority -1
+    flags 0x16
+    appeal 0x0A
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_CONFUSE_RAY
+    battleeffect 0x0031
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GHOST
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x0A
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_WITHDRAW
+    battleeffect 0x000B
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_WATER
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_DEFENSE_CURL
+    battleeffect 0x009C
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0010
+    priority 3
+    flags 0x48
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_BARRIER
+    battleeffect 0x0033
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0D
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_LIGHT_SCREEN
+    battleeffect 0x0023
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0020
+    priority 0
+    flags 0x48
+    appeal 0x0D
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_HAZE
+    battleeffect 0x0019
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_ICE
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0040
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_REFLECT
+    battleeffect 0x0041
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0020
+    priority 0
+    flags 0x48
+    appeal 0x0D
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FOCUS_ENERGY
+    battleeffect 0x002F
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BIDE
+    battleeffect 0x001A
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 1
+    flags 0x63
+    appeal 0x0F
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_METRONOME
+    battleeffect 0x0053
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0001
+    priority 0
+    flags 0x40
+    appeal 0x0E
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_MIRROR_MOVE
+    battleeffect 0x0009
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_FLYING
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0001
+    priority 0
+    flags 0x00
+    appeal 0x0F
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SELF_DESTRUCT
+    battleeffect 0x0007
+    pss SPLIT_PHYSICAL
+    basepower 200
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0008
+    priority 0
+    flags 0x32
+    appeal 0x09
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_EGG_BOMB
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_NORMAL
+    accuracy 75
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_LICK
+    battleeffect 0x0006
+    pss SPLIT_PHYSICAL
+    basepower 20
+    type TYPE_GHOST
+    accuracy 100
+    pp 30
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x53
+    appeal 0x10
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SMOG
+    battleeffect 0x0002
+    pss SPLIT_SPECIAL
+    basepower 20
+    type TYPE_POISON
+    accuracy 70
+    pp 20
+    effectchance 40
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SLUDGE
+    battleeffect 0x0002
+    pss SPLIT_SPECIAL
+    basepower 65
+    type TYPE_POISON
+    accuracy 100
+    pp 20
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_BONE_CLUB
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 65
+    type TYPE_GROUND
+    accuracy 85
+    pp 20
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x52
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_FIRE_BLAST
+    battleeffect 0x0004
+    pss SPLIT_SPECIAL
+    basepower 130
+    type TYPE_FIRE
+    accuracy 85
+    pp 5
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x92
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_WATERFALL
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_WATER
+    accuracy 100
+    pp 15
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_CLAMP
+    battleeffect 0x002A
+    pss SPLIT_PHYSICAL
+    basepower 35
+    type TYPE_WATER
+    accuracy 75
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SWIFT
+    battleeffect 0x0011
+    pss SPLIT_SPECIAL
+    basepower 60
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SKULL_BASH
+    battleeffect 0x0091
+    pss SPLIT_PHYSICAL
+    basepower 150
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x06
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SPIKE_CANNON
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 20
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x07
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_CONSTRICT
+    battleeffect 0x0046
+    pss SPLIT_PHYSICAL
+    basepower 10
+    type TYPE_NORMAL
+    accuracy 100
+    pp 35
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x15
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_AMNESIA
+    battleeffect 0x0036
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x0B
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_KINESIS
+    battleeffect 0x0017
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 80
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x0B
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SOFT_BOILED
+    battleeffect 0x0020
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x08
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_HI_JUMP_KICK
+    battleeffect 0x002D
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_FIGHTING
+    accuracy 90
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GLARE
+    battleeffect 0x0043
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 75
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_DREAM_EATER
+    battleeffect 0x0008
+    pss SPLIT_SPECIAL
+    basepower 100
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_POISON_GAS
+    battleeffect 0x0042
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_POISON
+    accuracy 55
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_BARRAGE
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 15
+    type TYPE_NORMAL
+    accuracy 85
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x72
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_LEECH_LIFE
+    battleeffect 0x0003
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_BUG
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_LOVELY_KISS
+    battleeffect 0x0001
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 75
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SKY_ATTACK
+    battleeffect 0x004B
+    pss SPLIT_PHYSICAL
+    basepower 140
+    type TYPE_FLYING
+    accuracy 90
+    pp 5
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x06
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TRANSFORM
+    battleeffect 0x0039
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x40
+    appeal 0x17
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_BUBBLE
+    battleeffect 0x0046
+    pss SPLIT_SPECIAL
+    basepower 20
+    type TYPE_WATER
+    accuracy 100
+    pp 30
+    effectchance 10
+    target 0x0004
+    priority 0
+    flags 0x12
+    appeal 0x02
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_DIZZY_PUNCH
+    battleeffect 0x004C
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 10
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x10
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SPORE
+    battleeffect 0x0001
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x0A
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_FLASH
+    battleeffect 0x0017
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority -1
+    flags 0x96
+    appeal 0x0A
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_PSYWAVE
+    battleeffect 0x0058
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_PSYCHIC
+    accuracy 80
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SPLASH
+    battleeffect 0x0055
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x40
+    appeal 0x10
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_ACID_ARMOR
+    battleeffect 0x0033
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_POISON
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_CRABHAMMER
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_WATER
+    accuracy 85
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_EXPLOSION
+    battleeffect 0x0007
+    pss SPLIT_PHYSICAL
+    basepower 250
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0008
+    priority 0
+    flags 0x32
+    appeal 0x09
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_FURY_SWIPES
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_NORMAL
+    accuracy 80
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_BONEMERANG
+    battleeffect 0x002C
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_GROUND
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x72
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_REST
+    battleeffect 0x0025
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x08
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_ROCK_SLIDE
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 75
+    type TYPE_ROCK
+    accuracy 90
+    pp 10
+    effectchance 30
+    target 0x0004
+    priority 0
+    flags 0x12
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_HYPER_FANG
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_NORMAL
+    accuracy 90
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SHARPEN
+    battleeffect 0x000A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0010
+    priority 3
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_CONVERSION
+    battleeffect 0x001E
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x40
+    appeal 0x17
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_TRI_ATTACK
+    battleeffect 0x0024
+    pss SPLIT_SPECIAL
+    basepower 80
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x05
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SUPER_FANG
+    battleeffect 0x0028
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x53
+    appeal 0x05
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SLASH
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SUBSTITUTE
+    battleeffect 0x004F
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x17
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_STRUGGLE
+    battleeffect 0x00FE
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_NORMAL
+    accuracy 0
+    pp 1
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x63
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SKETCH
+    battleeffect 0x005F
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 1
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x00
+    appeal 0x17
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_TRIPLE_KICK
+    battleeffect 0x0068
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_FIGHTING
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x07
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_THIEF
+    battleeffect 0x0069
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_DARK
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x53
+    appeal 0x0C
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SPIDER_WEB
+    battleeffect 0x006A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_BUG
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x0D
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_MIND_READER
+    battleeffect 0x005E
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_NIGHTMARE
+    battleeffect 0x006B
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GHOST
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FLAME_WHEEL
+    battleeffect 0x007D
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_FIRE
+    accuracy 100
+    pp 25
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x07
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SNORE
+    battleeffect 0x005C
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_CURSE
+    battleeffect 0x006D
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_MYSTERY
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x40
+    appeal 0x15
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_FLAIL
+    battleeffect 0x0063
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x0F
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_CONVERSION_2
+    battleeffect 0x005D
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x00
+    appeal 0x17
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_AEROBLAST
+    battleeffect 0x002B
+    pss SPLIT_SPECIAL
+    basepower 100
+    type TYPE_FLYING
+    accuracy 95
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x16
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_COTTON_SPORE
+    battleeffect 0x003C
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 85
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x01
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_REVERSAL
+    battleeffect 0x0063
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x0F
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SPITE
+    battleeffect 0x0064
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GHOST
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x13
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_POWDER_SNOW
+    battleeffect 0x0005
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_ICE
+    accuracy 100
+    pp 25
+    effectchance 10
+    target 0x0004
+    priority 1
+    flags 0x12
+    appeal 0x05
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_PROTECT
+    battleeffect 0x006F
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 3
+    flags 0x00
+    appeal 0x10
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_MACH_PUNCH
+    battleeffect 0x0067
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x01
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SCARY_FACE
+    battleeffect 0x003C
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x02
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_FAINT_ATTACK
+    battleeffect 0x0011
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_DARK
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SWEET_KISS
+    battleeffect 0x0031
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 75
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_BELLY_DRUM
+    battleeffect 0x008E
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_SLUDGE_BOMB
+    battleeffect 0x0002
+    pss SPLIT_SPECIAL
+    basepower 90
+    type TYPE_POISON
+    accuracy 100
+    pp 10
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_MUD_SLAP
+    battleeffect 0x0049
+    pss SPLIT_SPECIAL
+    basepower 20
+    type TYPE_GROUND
+    accuracy 100
+    pp 10
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x05
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_OCTAZOOKA
+    battleeffect 0x0049
+    pss SPLIT_SPECIAL
+    basepower 65
+    type TYPE_WATER
+    accuracy 85
+    pp 10
+    effectchance 50
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x04
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SPIKES
+    battleeffect 0x0070
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GROUND
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0080
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ZAP_CANNON
+    battleeffect 0x0006
+    pss SPLIT_SPECIAL
+    basepower 120
+    type TYPE_ELECTRIC
+    accuracy 50
+    pp 5
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x92
+    appeal 0x04
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FORESIGHT
+    battleeffect 0x0071
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x52
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_DESTINY_BOND
+    battleeffect 0x0062
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GHOST
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x00
+    appeal 0x09
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_PERISH_SONG
+    battleeffect 0x0072
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0040
+    priority 0
+    flags 0x80
+    appeal 0x0A
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_ICY_WIND
+    battleeffect 0x0046
+    pss SPLIT_SPECIAL
+    basepower 55
+    type TYPE_ICE
+    accuracy 95
+    pp 15
+    effectchance 100
+    target 0x0004
+    priority 0
+    flags 0x12
+    appeal 0x02
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_DETECT
+    battleeffect 0x006F
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_FIGHTING
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0010
+    priority 3
+    flags 0x00
+    appeal 0x10
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BONE_RUSH
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 25
+    type TYPE_GROUND
+    accuracy 80
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x72
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_LOCK_ON
+    battleeffect 0x005E
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_OUTRAGE
+    battleeffect 0x001B
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_DRAGON
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0002
+    priority 0
+    flags 0xB3
+    appeal 0x07
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SANDSTORM
+    battleeffect 0x0073
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_ROCK
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0040
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_GIGA_DRAIN
+    battleeffect 0x0003
+    pss SPLIT_SPECIAL
+    basepower 125
+    type TYPE_GRASS
+    accuracy 85
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ENDURE
+    battleeffect 0x0074
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 3
+    flags 0x40
+    appeal 0x0D
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_CHARM
+    battleeffect 0x003A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_ROLLOUT
+    battleeffect 0x0075
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_ROCK
+    accuracy 90
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_FALSE_SWIPE
+    battleeffect 0x0065
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_NORMAL
+    accuracy 100
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x10
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SWAGGER
+    battleeffect 0x0076
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 90
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_MILK_DRINK
+    battleeffect 0x0020
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x08
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_SPARK
+    battleeffect 0x0006
+    pss SPLIT_PHYSICAL
+    basepower 65
+    type TYPE_ELECTRIC
+    accuracy 100
+    pp 20
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FURY_CUTTER
+    battleeffect 0x0077
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_BUG
+    accuracy 95
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x07
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STEEL_WING
+    battleeffect 0x008A
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_STEEL
+    accuracy 90
+    pp 25
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_MEAN_LOOK
+    battleeffect 0x006A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x0A
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_ATTRACT
+    battleeffect 0x0078
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_SLEEP_TALK
+    battleeffect 0x0061
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0001
+    priority 0
+    flags 0x00
+    appeal 0x05
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_HEAL_BELL
+    battleeffect 0x0066
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0020
+    priority 0
+    flags 0x48
+    appeal 0x08
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_RETURN
+    battleeffect 0x0079
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x11
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_PRESENT
+    battleeffect 0x007A
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 90
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x10
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_FRUSTRATION
+    battleeffect 0x007B
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x12
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_SAFEGUARD
+    battleeffect 0x007C
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 25
+    effectchance 0
+    target 0x0020
+    priority 0
+    flags 0x48
+    appeal 0x0D
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_PAIN_SPLIT
+    battleeffect 0x005B
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x0A
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SACRED_FIRE
+    battleeffect 0x007D
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_FIRE
+    accuracy 95
+    pp 5
+    effectchance 50
+    target 0x0000
+    priority 0
+    flags 0x92
+    appeal 0x16
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_MAGNITUDE
+    battleeffect 0x007E
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_GROUND
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0008
+    priority 0
+    flags 0x32
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_DYNAMIC_PUNCH
+    battleeffect 0x004C
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_FIGHTING
+    accuracy 50
+    pp 5
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x93
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_MEGAHORN
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_BUG
+    accuracy 85
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DRAGON_BREATH
+    battleeffect 0x0024
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_DRAGON
+    accuracy 100
+    pp 20
+    effectchance 10
+    target 0x0000
+    priority 1
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BATON_PASS
+    battleeffect 0x007F
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x00
+    appeal 0x10
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_ENCORE
+    battleeffect 0x005A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x14
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_PURSUIT
+    battleeffect 0x0080
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_DARK
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x93
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_RAPID_SPIN
+    battleeffect 0x0081
+    pss SPLIT_PHYSICAL
+    basepower 20
+    type TYPE_NORMAL
+    accuracy 100
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SWEET_SCENT
+    battleeffect 0x0018
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_IRON_TAIL
+    battleeffect 0x0045
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_STEEL
+    accuracy 75
+    pp 15
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_METAL_CLAW
+    battleeffect 0x008B
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_STEEL
+    accuracy 100
+    pp 35
+    effectchance 100
+    target 0x0000
+    priority 1
+    flags 0x13
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_VITAL_THROW
+    battleeffect 0x004E
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_FIGHTING
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority -1
+    flags 0x33
+    appeal 0x02
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_MORNING_SUN
+    battleeffect 0x0084
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x08
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SYNTHESIS
+    battleeffect 0x0084
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x08
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_MOONLIGHT
+    battleeffect 0x0084
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x88
+    appeal 0x08
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_HIDDEN_POWER
+    battleeffect 0x0087
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x17
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_CROSS_CHOP
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_FIGHTING
+    accuracy 80
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TWISTER
+    battleeffect 0x0024
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_DRAGON
+    accuracy 100
+    pp 20
+    effectchance 10
+    target 0x0004
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RAIN_DANCE
+    battleeffect 0x0088
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_WATER
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0040
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SUNNY_DAY
+    battleeffect 0x0089
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_FIRE
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0040
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_CRUNCH
+    battleeffect 0x0045
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_DARK
+    accuracy 100
+    pp 15
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_MIRROR_COAT
+    battleeffect 0x0090
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0001
+    priority -5
+    flags 0x00
+    appeal 0x0F
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_PSYCH_UP
+    battleeffect 0x008F
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_EXTREME_SPEED
+    battleeffect 0x0067
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0xB3
+    appeal 0x01
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ANCIENT_POWER
+    battleeffect 0x008C
+    pss SPLIT_SPECIAL
+    basepower 60
+    type TYPE_ROCK
+    accuracy 100
+    pp 5
+    effectchance 100
+    target 0x0000
+    priority -1
+    flags 0x12
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SHADOW_BALL
+    battleeffect 0x0048
+    pss SPLIT_SPECIAL
+    basepower 80
+    type TYPE_GHOST
+    accuracy 100
+    pp 15
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FUTURE_SIGHT
+    battleeffect 0x0094
+    pss SPLIT_SPECIAL
+    basepower 120
+    type TYPE_PSYCHIC
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x00
+    appeal 0x11
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ROCK_SMASH
+    battleeffect 0x0045
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 15
+    effectchance 50
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_WHIRLPOOL
+    battleeffect 0x0105
+    pss SPLIT_SPECIAL
+    basepower 15
+    type TYPE_WATER
+    accuracy 70
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x15
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_BEAT_UP
+    battleeffect 0x009A
+    pss SPLIT_PHYSICAL
+    basepower 10
+    type TYPE_DARK
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x72
+    appeal 0x07
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FAKE_OUT
+    battleeffect 0x009E
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 100
+    target 0x0000
+    priority 4
+    flags 0x13
+    appeal 0x11
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_UPROAR
+    battleeffect 0x009F
+    pss SPLIT_SPECIAL
+    basepower 50
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0002
+    priority 0
+    flags 0x32
+    appeal 0x0A
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_STOCKPILE
+    battleeffect 0x00A0
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SPIT_UP
+    battleeffect 0x00A1
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x22
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SWALLOW
+    battleeffect 0x00A2
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x08
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_HEAT_WAVE
+    battleeffect 0x0004
+    pss SPLIT_SPECIAL
+    basepower 100
+    type TYPE_FIRE
+    accuracy 90
+    pp 10
+    effectchance 10
+    target 0x0004
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_HAIL
+    battleeffect 0x00A4
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_ICE
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0040
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_TORMENT
+    battleeffect 0x00A5
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x52
+    appeal 0x10
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_FLATTER
+    battleeffect 0x00A6
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_WILL_O_WISP
+    battleeffect 0x00A7
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_FIRE
+    accuracy 75
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_MEMENTO
+    battleeffect 0x00A8
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x09
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_FACADE
+    battleeffect 0x00A9
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x53
+    appeal 0x0F
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_FOCUS_PUNCH
+    battleeffect 0x00AA
+    pss SPLIT_PHYSICAL
+    basepower 150
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority -3
+    flags 0x83
+    appeal 0x06
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SMELLING_SALT
+    battleeffect 0x00AB
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x10
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FOLLOW_ME
+    battleeffect 0x00AC
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 3
+    flags 0x00
+    appeal 0x0E
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_NATURE_POWER
+    battleeffect 0x00AD
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0001
+    priority 0
+    flags 0x40
+    appeal 0x0E
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_CHARGE
+    battleeffect 0x00AE
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_ELECTRIC
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x0B
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_TAUNT
+    battleeffect 0x00AF
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x52
+    appeal 0x10
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_HELPING_HAND
+    battleeffect 0x00B0
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0100
+    priority 5
+    flags 0x00
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_TRICK
+    battleeffect 0x00B1
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x0C
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ROLE_PLAY
+    battleeffect 0x00B2
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x00
+    appeal 0x17
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_WISH
+    battleeffect 0x00B3
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x80
+    appeal 0x08
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_ASSIST
+    battleeffect 0x00B4
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0001
+    priority 0
+    flags 0x00
+    appeal 0x0E
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_INGRAIN
+    battleeffect 0x00B5
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x15
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SUPERPOWER
+    battleeffect 0x00B6
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x93
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_MAGIC_COAT
+    battleeffect 0x00B7
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 15
+    effectchance 0
+    target 0x0001
+    priority 4
+    flags 0x00
+    appeal 0x0F
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_RECYCLE
+    battleeffect 0x00B8
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x40
+    appeal 0x0C
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_REVENGE
+    battleeffect 0x00B9
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority -4
+    flags 0x33
+    appeal 0x0F
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_BRICK_BREAK
+    battleeffect 0x00BA
+    pss SPLIT_PHYSICAL
+    basepower 75
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_YAWN
+    battleeffect 0x00BB
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_KNOCK_OFF
+    battleeffect 0x00BC
+    pss SPLIT_PHYSICAL
+    basepower 20
+    type TYPE_DARK
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ENDEAVOR
+    battleeffect 0x00BD
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x0F
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_ERUPTION
+    battleeffect 0x00BE
+    pss SPLIT_SPECIAL
+    basepower 150
+    type TYPE_FIRE
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x32
+    appeal 0x12
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SKILL_SWAP
+    battleeffect 0x00BF
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x0C
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_IMPRISON
+    battleeffect 0x00C0
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x00
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_REFRESH
+    battleeffect 0x00C1
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x08
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_GRUDGE
+    battleeffect 0x00C2
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GHOST
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x00
+    appeal 0x0A
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SNATCH
+    battleeffect 0x00C3
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0001
+    priority 4
+    flags 0x00
+    appeal 0x0C
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SECRET_POWER
+    battleeffect 0x00C5
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x0E
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_DIVE
+    battleeffect 0x00FF
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_WATER
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x06
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_ARM_THRUST
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 15
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_CAMOUFLAGE
+    battleeffect 0x00D5
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0D
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_TAIL_GLOW
+    battleeffect 0x0035
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_BUG
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x0B
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_LUSTER_PURGE
+    battleeffect 0x0048
+    pss SPLIT_SPECIAL
+    basepower 70
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 5
+    effectchance 50
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x16
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_MIST_BALL
+    battleeffect 0x0047
+    pss SPLIT_SPECIAL
+    basepower 70
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 5
+    effectchance 50
+    target 0x0000
+    priority 0
+    flags 0x92
+    appeal 0x16
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FEATHER_DANCE
+    battleeffect 0x003A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_FLYING
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_TEETER_DANCE
+    battleeffect 0x00C7
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0008
+    priority 0
+    flags 0x12
+    appeal 0x0E
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_BLAZE_KICK
+    battleeffect 0x00C8
+    pss SPLIT_PHYSICAL
+    basepower 85
+    type TYPE_FIRE
+    accuracy 90
+    pp 10
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_MUD_SPORT
+    battleeffect 0x00C9
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GROUND
+    accuracy 0
+    pp 15
+    effectchance 0
+    target 0x0040
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_ICE_BALL
+    battleeffect 0x0075
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_ICE
+    accuracy 90
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x07
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_NEEDLE_ARM
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_GRASS
+    accuracy 100
+    pp 15
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SLACK_OFF
+    battleeffect 0x0020
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x08
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_HYPER_VOICE
+    battleeffect 0x0000
+    pss SPLIT_SPECIAL
+    basepower 90
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x12
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_POISON_FANG
+    battleeffect 0x00CA
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_POISON
+    accuracy 100
+    pp 15
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x04
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_CRUSH_CLAW
+    battleeffect 0x0045
+    pss SPLIT_PHYSICAL
+    basepower 75
+    type TYPE_NORMAL
+    accuracy 95
+    pp 10
+    effectchance 50
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BLAST_BURN
+    battleeffect 0x0050
+    pss SPLIT_SPECIAL
+    basepower 200
+    type TYPE_FIRE
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x16
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_HYDRO_CANNON
+    battleeffect 0x0050
+    pss SPLIT_SPECIAL
+    basepower 200
+    type TYPE_WATER
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x16
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_METEOR_MASH
+    battleeffect 0x008B
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_STEEL
+    accuracy 85
+    pp 10
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ASTONISH
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_GHOST
+    accuracy 100
+    pp 15
+    effectchance 30
+    target 0x0000
+    priority 1
+    flags 0x53
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_WEATHER_BALL
+    battleeffect 0x00CB
+    pss SPLIT_SPECIAL
+    basepower 50
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x04
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_AROMATHERAPY
+    battleeffect 0x0066
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0020
+    priority 0
+    flags 0x08
+    appeal 0x08
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FAKE_TEARS
+    battleeffect 0x003E
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_AIR_CUTTER
+    battleeffect 0x002B
+    pss SPLIT_SPECIAL
+    basepower 55
+    type TYPE_FLYING
+    accuracy 95
+    pp 25
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_OVERHEAT
+    battleeffect 0x00CC
+    pss SPLIT_SPECIAL
+    basepower 140
+    type TYPE_FIRE
+    accuracy 90
+    pp 5
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x16
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_ODOR_SLEUTH
+    battleeffect 0x0071
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x52
+    appeal 0x14
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ROCK_TOMB
+    battleeffect 0x0046
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_ROCK
+    accuracy 80
+    pp 10
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x02
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SILVER_WIND
+    battleeffect 0x008C
+    pss SPLIT_SPECIAL
+    basepower 60
+    type TYPE_BUG
+    accuracy 100
+    pp 5
+    effectchance 100
+    target 0x0000
+    priority -1
+    flags 0x32
+    appeal 0x04
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_METAL_SOUND
+    battleeffect 0x003E
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_STEEL
+    accuracy 85
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x0A
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_GRASS_WHISTLE
+    battleeffect 0x0001
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 55
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_TICKLE
+    battleeffect 0x00CD
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_COSMIC_POWER
+    battleeffect 0x00CE
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x88
+    appeal 0x0B
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WATER_SPOUT
+    battleeffect 0x00BE
+    pss SPLIT_SPECIAL
+    basepower 150
+    type TYPE_WATER
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x12
+    appeal 0x16
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SIGNAL_BEAM
+    battleeffect 0x004C
+    pss SPLIT_SPECIAL
+    basepower 75
+    type TYPE_BUG
+    accuracy 100
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x04
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SHADOW_PUNCH
+    battleeffect 0x0011
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_GHOST
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x11
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_EXTRASENSORY
+    battleeffect 0x001F
+    pss SPLIT_SPECIAL
+    basepower 80
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 30
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SKY_UPPERCUT
+    battleeffect 0x00CF
+    pss SPLIT_PHYSICAL
+    basepower 85
+    type TYPE_FIGHTING
+    accuracy 90
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SAND_TOMB
+    battleeffect 0x002A
+    pss SPLIT_PHYSICAL
+    basepower 15
+    type TYPE_GROUND
+    accuracy 70
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x15
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SHEER_COLD
+    battleeffect 0x0026
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_ICE
+    accuracy 30
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x09
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_MUDDY_WATER
+    battleeffect 0x0049
+    pss SPLIT_SPECIAL
+    basepower 95
+    type TYPE_WATER
+    accuracy 85
+    pp 10
+    effectchance 30
+    target 0x0004
+    priority 0
+    flags 0x32
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_BULLET_SEED
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_GRASS
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x72
+    appeal 0x07
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_AERIAL_ACE
+    battleeffect 0x0011
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_FLYING
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ICICLE_SPEAR
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_ICE
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x72
+    appeal 0x07
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_IRON_DEFENSE
+    battleeffect 0x0033
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_STEEL
+    accuracy 0
+    pp 15
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0D
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_BLOCK
+    battleeffect 0x006A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_HOWL
+    battleeffect 0x000A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0010
+    priority 3
+    flags 0x08
+    appeal 0x0B
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DRAGON_CLAW
+    battleeffect 0x0024
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_DRAGON
+    accuracy 100
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FRENZY_PLANT
+    battleeffect 0x0050
+    pss SPLIT_SPECIAL
+    basepower 200
+    type TYPE_GRASS
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x16
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BULK_UP
+    battleeffect 0x00D0
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_FIGHTING
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_BOUNCE
+    battleeffect 0x0107
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_FLYING
+    accuracy 85
+    pp 5
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x06
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_MUD_SHOT
+    battleeffect 0x0046
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_GROUND
+    accuracy 95
+    pp 15
+    effectchance 100
+    target 0x0000
+    priority 1
+    flags 0x32
+    appeal 0x02
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_POISON_TAIL
+    battleeffect 0x00D1
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_POISON
+    accuracy 100
+    pp 25
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x04
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_COVET
+    battleeffect 0x0069
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_NORMAL
+    accuracy 100
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x13
+    appeal 0x0C
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_VOLT_TACKLE
+    battleeffect 0x0106
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_ELECTRIC
+    accuracy 100
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x16
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_MAGICAL_LEAF
+    battleeffect 0x0011
+    pss SPLIT_SPECIAL
+    basepower 60
+    type TYPE_GRASS
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_WATER_SPORT
+    battleeffect 0x00D2
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_WATER
+    accuracy 0
+    pp 15
+    effectchance 0
+    target 0x0040
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_CALM_MIND
+    battleeffect 0x00D3
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x0B
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_LEAF_BLADE
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_GRASS
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DRAGON_DANCE
+    battleeffect 0x00D4
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DRAGON
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x0B
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ROCK_BLAST
+    battleeffect 0x001D
+    pss SPLIT_PHYSICAL
+    basepower 25
+    type TYPE_ROCK
+    accuracy 80
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_SHOCK_WAVE
+    battleeffect 0x0011
+    pss SPLIT_SPECIAL
+    basepower 60
+    type TYPE_ELECTRIC
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WATER_PULSE
+    battleeffect 0x004C
+    pss SPLIT_SPECIAL
+    basepower 60
+    type TYPE_WATER
+    accuracy 100
+    pp 20
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_DOOM_DESIRE
+    battleeffect 0x0094
+    pss SPLIT_SPECIAL
+    basepower 140
+    type TYPE_STEEL
+    accuracy 85
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x80
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_PSYCHO_BOOST
+    battleeffect 0x00CC
+    pss SPLIT_SPECIAL
+    basepower 140
+    type TYPE_PSYCHIC
+    accuracy 90
+    pp 5
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x16
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ROOST
+    battleeffect 0x00D6
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_FLYING
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x08
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GRAVITY
+    battleeffect 0x00D7
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0040
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_MIRACLE_EYE
+    battleeffect 0x00D8
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 40
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x14
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_WAKE_UP_SLAP
+    battleeffect 0x00D9
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x10
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_HAMMER_ARM
+    battleeffect 0x00DA
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_FIGHTING
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x02
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GYRO_BALL
+    battleeffect 0x00DB
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_STEEL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x0F
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_HEALING_WISH
+    battleeffect 0x00DC
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x00
+    appeal 0x08
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_BRINE
+    battleeffect 0x00DD
+    pss SPLIT_SPECIAL
+    basepower 65
+    type TYPE_WATER
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x04
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_NATURAL_GIFT
+    battleeffect 0x00DE
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x52
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FEINT
+    battleeffect 0x00DF
+    pss SPLIT_PHYSICAL
+    basepower 30
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 2
+    flags 0x00
+    appeal 0x10
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_PLUCK
+    battleeffect 0x00E0
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_FLYING
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x0C
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_TAILWIND
+    battleeffect 0x00E1
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_FLYING
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0020
+    priority 0
+    flags 0x08
+    appeal 0x01
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ACUPRESSURE
+    battleeffect 0x00E2
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0200
+    priority 3
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_METAL_BURST
+    battleeffect 0x00E3
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_STEEL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0001
+    priority 0
+    flags 0x10
+    appeal 0x0F
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_U_TURN
+    battleeffect 0x00E4
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_BUG
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x10
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_CLOSE_COMBAT
+    battleeffect 0x00E5
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x16
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_PAYBACK
+    battleeffect 0x00E6
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_DARK
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x06
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ASSURANCE
+    battleeffect 0x00E7
+    pss SPLIT_PHYSICAL
+    basepower 50
+    type TYPE_DARK
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x0F
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_EMBARGO
+    battleeffect 0x00E8
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_FLING
+    battleeffect 0x00E9
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_DARK
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x17
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_PSYCHO_SHIFT
+    battleeffect 0x00EA
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x10
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TRUMP_CARD
+    battleeffect 0x00EB
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x15
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEAL_BLOCK
+    battleeffect 0x00EC
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x12
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_WRING_OUT
+    battleeffect 0x00ED
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x16
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_POWER_TRICK
+    battleeffect 0x00EE
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 3
+    flags 0x40
+    appeal 0x10
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GASTRO_ACID
+    battleeffect 0x00EF
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_POISON
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x0D
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_LUCKY_CHANT
+    battleeffect 0x00F0
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 30
+    effectchance 0
+    target 0x0020
+    priority 0
+    flags 0x40
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_ME_FIRST
+    battleeffect 0x00F1
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0400
+    priority 0
+    flags 0x02
+    appeal 0x01
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_COPYCAT
+    battleeffect 0x00F2
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0001
+    priority 0
+    flags 0x00
+    appeal 0x0C
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_POWER_SWAP
+    battleeffect 0x00F3
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x10
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_GUARD_SWAP
+    battleeffect 0x00F4
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x10
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_PUNISHMENT
+    battleeffect 0x00F5
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_DARK
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x17
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_LAST_RESORT
+    battleeffect 0x00F6
+    pss SPLIT_PHYSICAL
+    basepower 130
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x15
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_WORRY_SEED
+    battleeffect 0x00F7
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_GRASS
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x16
+    appeal 0x13
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SUCKER_PUNCH
+    battleeffect 0x00F8
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_DARK
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x01
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_TOXIC_SPIKES
+    battleeffect 0x00F9
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_POISON
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0080
+    priority 0
+    flags 0x40
+    appeal 0x0D
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_HEART_SWAP
+    battleeffect 0x00FA
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x10
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_AQUA_RING
+    battleeffect 0x00FB
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_WATER
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x00
+    appeal 0x08
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_MAGNET_RISE
+    battleeffect 0x00FC
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_ELECTRIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 3
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_FLARE_BLITZ
+    battleeffect 0x00FD
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_FIRE
+    accuracy 100
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x93
+    appeal 0x16
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FORCE_PALM
+    battleeffect 0x0006
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 10
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_AURA_SPHERE
+    battleeffect 0x0011
+    pss SPLIT_SPECIAL
+    basepower 90
+    type TYPE_FIGHTING
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_ROCK_POLISH
+    battleeffect 0x0034
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_ROCK
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x01
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_POISON_JAB
+    battleeffect 0x0002
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_POISON
+    accuracy 100
+    pp 20
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x04
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_DARK_PULSE
+    battleeffect 0x001F
+    pss SPLIT_SPECIAL
+    basepower 80
+    type TYPE_DARK
+    accuracy 100
+    pp 15
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_NIGHT_SLASH
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_DARK
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_AQUA_TAIL
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_WATER
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_SEED_BOMB
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_GRASS
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_AIR_SLASH
+    battleeffect 0x001F
+    pss SPLIT_SPECIAL
+    basepower 75
+    type TYPE_FLYING
+    accuracy 95
+    pp 20
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_X_SCISSOR
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_BUG
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_BUG_BUZZ
+    battleeffect 0x0048
+    pss SPLIT_SPECIAL
+    basepower 90
+    type TYPE_BUG
+    accuracy 100
+    pp 10
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x04
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_DRAGON_PULSE
+    battleeffect 0x0024
+    pss SPLIT_SPECIAL
+    basepower 90
+    type TYPE_DRAGON
+    accuracy 100
+    pp 10
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x04
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_DRAGON_RUSH
+    battleeffect 0x0024
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_DRAGON
+    accuracy 75
+    pp 10
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_POWER_GEM
+    battleeffect 0x0000
+    pss SPLIT_SPECIAL
+    basepower 70
+    type TYPE_ROCK
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_DRAIN_PUNCH
+    battleeffect 0x0003
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x14
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_VACUUM_WAVE
+    battleeffect 0x0067
+    pss SPLIT_SPECIAL
+    basepower 40
+    type TYPE_FIGHTING
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x32
+    appeal 0x01
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_FOCUS_BLAST
+    battleeffect 0x0048
+    pss SPLIT_SPECIAL
+    basepower 120
+    type TYPE_FIGHTING
+    accuracy 70
+    pp 5
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x92
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ENERGY_BALL
+    battleeffect 0x0048
+    pss SPLIT_SPECIAL
+    basepower 80
+    type TYPE_GRASS
+    accuracy 100
+    pp 10
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_BRAVE_BIRD
+    battleeffect 0x00C6
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_FLYING
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x12
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_EARTH_POWER
+    battleeffect 0x0048
+    pss SPLIT_SPECIAL
+    basepower 90
+    type TYPE_GROUND
+    accuracy 100
+    pp 10
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x12
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SWITCHEROO
+    battleeffect 0x00B1
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x0C
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GIGA_IMPACT
+    battleeffect 0x0050
+    pss SPLIT_PHYSICAL
+    basepower 200
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x16
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_NASTY_PLOT
+    battleeffect 0x0035
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x48
+    appeal 0x0B
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_BULLET_PUNCH
+    battleeffect 0x0067
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_STEEL
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x01
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_AVALANCHE
+    battleeffect 0x00B9
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_ICE
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority -4
+    flags 0x33
+    appeal 0x0F
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ICE_SHARD
+    battleeffect 0x0067
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_ICE
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x32
+    appeal 0x01
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SHADOW_CLAW
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_GHOST
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x11
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_THUNDER_FANG
+    battleeffect 0x0113
+    pss SPLIT_PHYSICAL
+    basepower 65
+    type TYPE_ELECTRIC
+    accuracy 95
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ICE_FANG
+    battleeffect 0x0112
+    pss SPLIT_PHYSICAL
+    basepower 65
+    type TYPE_ICE
+    accuracy 95
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FIRE_FANG
+    battleeffect 0x0111
+    pss SPLIT_PHYSICAL
+    basepower 65
+    type TYPE_FIRE
+    accuracy 95
+    pp 15
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SHADOW_SNEAK
+    battleeffect 0x0067
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_GHOST
+    accuracy 100
+    pp 30
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x33
+    appeal 0x01
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_MUD_BOMB
+    battleeffect 0x0049
+    pss SPLIT_SPECIAL
+    basepower 65
+    type TYPE_GROUND
+    accuracy 85
+    pp 10
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x12
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_PSYCHO_CUT
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_PSYCHIC
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ZEN_HEADBUTT
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_PSYCHIC
+    accuracy 90
+    pp 15
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_MIRROR_SHOT
+    battleeffect 0x0049
+    pss SPLIT_SPECIAL
+    basepower 75
+    type TYPE_STEEL
+    accuracy 100
+    pp 10
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_FLASH_CANNON
+    battleeffect 0x0048
+    pss SPLIT_SPECIAL
+    basepower 80
+    type TYPE_STEEL
+    accuracy 100
+    pp 10
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ROCK_CLIMB
+    battleeffect 0x004C
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_NORMAL
+    accuracy 85
+    pp 20
+    effectchance 20
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DEFOG
+    battleeffect 0x0102
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_FLYING
+    accuracy 0
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x0D
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_TRICK_ROOM
+    battleeffect 0x0103
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 5
+    effectchance 0
+    target 0x0040
+    priority 3
+    flags 0x10
+    appeal 0x0E
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_DRACO_METEOR
+    battleeffect 0x00CC
+    pss SPLIT_SPECIAL
+    basepower 140
+    type TYPE_DRAGON
+    accuracy 90
+    pp 5
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x16
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_DISCHARGE
+    battleeffect 0x0006
+    pss SPLIT_SPECIAL
+    basepower 80
+    type TYPE_ELECTRIC
+    accuracy 100
+    pp 15
+    effectchance 30
+    target 0x0008
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_LAVA_PLUME
+    battleeffect 0x0004
+    pss SPLIT_SPECIAL
+    basepower 80
+    type TYPE_FIRE
+    accuracy 100
+    pp 15
+    effectchance 30
+    target 0x0008
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_LEAF_STORM
+    battleeffect 0x00CC
+    pss SPLIT_SPECIAL
+    basepower 140
+    type TYPE_GRASS
+    accuracy 90
+    pp 5
+    effectchance 100
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x16
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_POWER_WHIP
+    battleeffect 0x0000
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_GRASS
+    accuracy 85
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x05
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_ROCK_WRECKER
+    battleeffect 0x0050
+    pss SPLIT_PHYSICAL
+    basepower 200
+    type TYPE_ROCK
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x16
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_CROSS_POISON
+    battleeffect 0x00D1
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_POISON
+    accuracy 100
+    pp 20
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GUNK_SHOT
+    battleeffect 0x0002
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_POISON
+    accuracy 70
+    pp 5
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_IRON_HEAD
+    battleeffect 0x001F
+    pss SPLIT_PHYSICAL
+    basepower 80
+    type TYPE_STEEL
+    accuracy 100
+    pp 15
+    effectchance 30
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_MAGNET_BOMB
+    battleeffect 0x0011
+    pss SPLIT_PHYSICAL
+    basepower 60
+    type TYPE_STEEL
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x05
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STONE_EDGE
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 100
+    type TYPE_ROCK
+    accuracy 80
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x04
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_CAPTIVATE
+    battleeffect 0x0109
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x56
+    appeal 0x13
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_STEALTH_ROCK
+    battleeffect 0x010A
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_ROCK
+    accuracy 0
+    pp 20
+    effectchance 0
+    target 0x0080
+    priority 0
+    flags 0x00
+    appeal 0x0D
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GRASS_KNOT
+    battleeffect 0x00C4
+    pss SPLIT_SPECIAL
+    basepower 1
+    type TYPE_GRASS
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x73
+    appeal 0x04
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_CHATTER
+    battleeffect 0x010B
+    pss SPLIT_SPECIAL
+    basepower 60
+    type TYPE_FLYING
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x42
+    appeal 0x17
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_JUDGMENT
+    battleeffect 0x010C
+    pss SPLIT_SPECIAL
+    basepower 100
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x0E
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_BUG_BITE
+    battleeffect 0x00E0
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_BUG
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x73
+    appeal 0x0C
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_CHARGE_BEAM
+    battleeffect 0x0114
+    pss SPLIT_SPECIAL
+    basepower 50
+    type TYPE_ELECTRIC
+    accuracy 90
+    pp 10
+    effectchance 70
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_WOOD_HAMMER
+    battleeffect 0x00C6
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_GRASS
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x12
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_AQUA_JET
+    battleeffect 0x0067
+    pss SPLIT_PHYSICAL
+    basepower 40
+    type TYPE_WATER
+    accuracy 100
+    pp 20
+    effectchance 0
+    target 0x0000
+    priority 1
+    flags 0x33
+    appeal 0x01
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_ATTACK_ORDER
+    battleeffect 0x002B
+    pss SPLIT_PHYSICAL
+    basepower 90
+    type TYPE_BUG
+    accuracy 100
+    pp 15
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x04
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_DEFEND_ORDER
+    battleeffect 0x00CE
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_BUG
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x0B
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_HEAL_ORDER
+    battleeffect 0x0020
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_BUG
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x08
+    appeal 0x08
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_HEAD_SMASH
+    battleeffect 0x010D
+    pss SPLIT_PHYSICAL
+    basepower 150
+    type TYPE_ROCK
+    accuracy 80
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB3
+    appeal 0x16
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_DOUBLE_HIT
+    battleeffect 0x002C
+    pss SPLIT_PHYSICAL
+    basepower 35
+    type TYPE_NORMAL
+    accuracy 90
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x07
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_ROAR_OF_TIME
+    battleeffect 0x0050
+    pss SPLIT_SPECIAL
+    basepower 200
+    type TYPE_DRAGON
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x16
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SPACIAL_REND
+    battleeffect 0x0024
+    pss SPLIT_SPECIAL
+    basepower 100
+    type TYPE_DRAGON
+    accuracy 95
+    pp 5
+    effectchance 10
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x04
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_LUNAR_DANCE
+    battleeffect 0x010E
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_PSYCHIC
+    accuracy 0
+    pp 10
+    effectchance 0
+    target 0x0010
+    priority 0
+    flags 0x80
+    appeal 0x08
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_CRUSH_GRIP
+    battleeffect 0x00ED
+    pss SPLIT_PHYSICAL
+    basepower 1
+    type TYPE_NORMAL
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x33
+    appeal 0x0F
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_MAGMA_STORM
+    battleeffect 0x002A
+    pss SPLIT_SPECIAL
+    basepower 120
+    type TYPE_FIRE
+    accuracy 70
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x07
+    contesttype CONTEST_TOUGH
+    terminatedata
+
+move MOVE_DARK_VOID
+    battleeffect 0x0001
+    pss SPLIT_STATUS
+    basepower 0
+    type TYPE_DARK
+    accuracy 80
+    pp 10
+    effectchance 0
+    target 0x0004
+    priority 0
+    flags 0x96
+    appeal 0x13
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SEED_FLARE
+    battleeffect 0x010F
+    pss SPLIT_SPECIAL
+    basepower 120
+    type TYPE_GRASS
+    accuracy 85
+    pp 5
+    effectchance 40
+    target 0x0000
+    priority 0
+    flags 0xB2
+    appeal 0x16
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_OMINOUS_WIND
+    battleeffect 0x008C
+    pss SPLIT_SPECIAL
+    basepower 60
+    type TYPE_GHOST
+    accuracy 100
+    pp 5
+    effectchance 100
+    target 0x0000
+    priority -1
+    flags 0x32
+    appeal 0x0B
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SHADOW_FORCE
+    battleeffect 0x0110
+    pss SPLIT_PHYSICAL
+    basepower 120
+    type TYPE_GHOST
+    accuracy 100
+    pp 5
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x31
+    appeal 0x16
+    contesttype CONTEST_SMART
+    terminatedata
+
+move MOVE_SHADOW_FORCE+1
+    battleeffect 0x0000
+    pss SPLIT_SPECIAL
+    basepower 100
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x10
+    contesttype CONTEST_BEAUTY
+    terminatedata
+
+move MOVE_SHADOW_FORCE+2
+    battleeffect 0x0000
+    pss SPLIT_SPECIAL
+    basepower 100
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x11
+    contesttype CONTEST_CUTE
+    terminatedata
+
+move MOVE_SHADOW_FORCE+3
+    battleeffect 0x0000
+    pss SPLIT_SPECIAL
+    basepower 100
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x32
+    appeal 0x12
+    contesttype CONTEST_SMART
+    terminatedata
+
 
 // you can easily insert new moves this way too
