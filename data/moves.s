@@ -7070,5 +7070,20 @@ move MOVE_SHADOW_FORCE+3
     contesttype CONTEST_SMART
     terminatedata
 
+move MOVE_HONE_CLAWS
+    battleeffect 0x0012
+    pss SPLIT_SPECIAL
+    basepower 5
+    type TYPE_MYSTERY
+    accuracy 0
+    pp 4
+    effectchance 0
+    target 0x0000
+    priority 0
+    flags 0x00
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
 
 // you can easily insert new moves this way too
