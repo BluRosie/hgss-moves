@@ -1,9 +1,9 @@
 .nds
 .thumb
 
-.include "macros.s"
-.include "constants.s"
-.include "movenums.s"
+.include "include/macros.s"
+.include "include/constants.s"
+.include "include/movenums.s"
 
 move MOVE_NONE
     battleeffect 0x0000
