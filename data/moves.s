@@ -7071,18 +7071,33 @@ move MOVE_SHADOW_FORCE+3
     terminatedata
 
 move MOVE_HONE_CLAWS
-    battleeffect 0x0012
+    battleeffect 0x0048
     pss SPLIT_SPECIAL
-    basepower 5
+    basepower 50
     type TYPE_MYSTERY
-    accuracy 0
-    pp 4
+    accuracy 90
+    pp 10
+    effectchance 90
+    target 0x0000
+    priority 0
+    flags 0x12
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move NUM_OF_MOVES+1
+    battleeffect 0x0000
+    pss SPLIT_SPECIAL
+    basepower 100
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
     effectchance 0
     target 0x0000
     priority 0
-    flags 0x00
-    appeal 0x00
-    contesttype CONTEST_COOL
+    flags 0x32
+    appeal 0x10
+    contesttype CONTEST_BEAUTY
     terminatedata
 
 

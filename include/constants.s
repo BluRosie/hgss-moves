@@ -32,3 +32,18 @@ CONTEST_BEAUTY    equ 1
 CONTEST_CUTE      equ 2
 CONTEST_SMART     equ 3
 CONTEST_TOUGH     equ 4
+
+// move data access constants (for load_attack_field_from_narc)
+
+MOVEDATA_BATTLE_EFFECT equ 0
+MOVEDATA_PSS           equ 1
+MOVEDATA_BASE_POWER    equ 2
+MOVEDATA_TYPE          equ 3
+MOVEDATA_ACCURACY      equ 4
+MOVEDATA_PP            equ 5
+MOVEDATA_EFFECT_CHANCE equ 6
+MOVEDATA_TARGET        equ 7
+MOVEDATA_PRIORITY      equ 8
+MOVEDATA_FLAGS         equ 9
+MOVEDATA_APPEAL        equ 10
+MOVEDATA_CONTEST_TYPE  equ 11
