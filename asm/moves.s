@@ -54,16 +54,16 @@ new size (022486A4):
     .word 0x3183
 
 .org 0x02240816 // this one takes advantage of an unnecessary reload of the move into r0
-	lsl r0, #4
-	add r4, r6, r0
-	mov r0, #0x3200 >> 8
-	lsl r0, #8
-	sub r0, #0x7C // put 0x3184 in r0
+    lsl r0, #4
+    add r4, r6, r0
+    mov r0, #0x3200 >> 8
+    lsl r0, #8
+    sub r0, #0x7C // put 0x3184 in r0
 
 
 .org 0x02240F10 // this one takes advantage of a close value, 0x30AC, already being in the pool
-	ldr r1, =0x30AC
-	add r1, #0xD8 // 30AC + D8 = 3184
+    ldr r1, =0x30AC
+    add r1, #0xD8 // 30AC + D8 = 3184
 
 .org 0x02240F6C
 
@@ -77,40 +77,40 @@ new size (022486A4):
     .word 0x3181
 
 .org 0x02241F98
-	.word 0x3181
+    .word 0x3181
 
 .org 0x02242960
-	.word 0x3181
+    .word 0x3181
 
 .org 0x02242D8C
     .word 0x3186
 
 .org 0x02243028
-	.word 0x3181
+    .word 0x3181
 
 .org 0x02243360
-	.word 0x3181
+    .word 0x3181
 
 .org 0x022434FC
-	.word 0x317E
+    .word 0x317E
 
 .org 0x022438D0
-	.word 0x3181
+    .word 0x3181
 
 .org 0x02243A04
-	.word 0x3181
+    .word 0x3181
 
 .org 0x02243B38
-	.word 0x3181
+    .word 0x3181
 
 .org 0x02244838
     .word 0x3185
 
 .org 0x0224491C
-	.word 0x317E
+    .word 0x317E
 
 .org 0x022453CC
-	.word 0x3182
+    .word 0x3182
 
 .org 0x022486A4
     .word 0x317E + ((NUM_OF_MOVES+1) * 16) // size of new battle structure now
@@ -129,7 +129,7 @@ new size (022486A4):
     .word 0x317E
 
 .org 0x0224B878
-	.word 0x3181
+    .word 0x3181
 
 .org 0x0224BCF4
     mov r0, #0x3180 >> 7
@@ -218,7 +218,7 @@ _edited: // originally at 0x022501CA
     nop
 
 .org 0x022506C4
-	.word 0x3185
+    .word 0x3185
 
 .org 0x0225099C
     .word 0x3186
@@ -228,17 +228,17 @@ _edited: // originally at 0x022501CA
     .word 0x3186
 
 .org 0x02251A24
-	.word 0x3181
+    .word 0x3181
 
 .org 0x0225203C
     .word 0x3182
     .word 0x3181
 
 .org 0x02252170
-	.word 0x3182
+    .word 0x3182
 
 .org 0x02252608
-	.word 0x317E
+    .word 0x317E
 
 .org 0x0225304C
     .word 0x3182
@@ -247,17 +247,17 @@ _edited: // originally at 0x022501CA
     .word 0x3181
 
 .org 0x02253830
-	.word 0x317E
+    .word 0x317E
 
 .org 0x02253838
-	.word 0x3181
+    .word 0x3181
 
 .org 0x02254130
     .word 0x3189
 
 .org 0x02254138
-	.word 0x3182
-	.word 0x3181
+    .word 0x3182
+    .word 0x3181
 
 .org 0x0225438C
     .word 0x3189
@@ -280,10 +280,10 @@ _edited: // originally at 0x022501CA
     .word 0x3186
 
 .org 0x02257E30
-	.word 0x317E
+    .word 0x317E
 
 .org 0x02257E6C
-	.word 0x317E
+    .word 0x317E
 
 .org 0x02258062
     mov r0, #0x3180 >> 7
@@ -293,13 +293,13 @@ _edited: // originally at 0x022501CA
     .word 0x3189
 
 .org 0x022584A4
-	.word 0x317E
+    .word 0x317E
 
 .org 0x02258680
-	.word 0x317E
+    .word 0x317E
 
 .org 0x02258B98
-	.word 0x3181
+    .word 0x3181
 
 .org 0x022645A4
     .word 0x3181
@@ -312,6 +312,6 @@ _edited: // originally at 0x022501CA
 .open "overlay9_0007.bin", 0x0221BE20
 
 .org 0x0221C380
-	.word NUM_OF_MOVES
+    .word NUM_OF_MOVES
 
 .close
