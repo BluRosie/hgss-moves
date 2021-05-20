@@ -306,3 +306,12 @@ _edited: // originally at 0x022501CA
 
 
 .close
+
+
+// this fixes new move animations
+.open "overlay9_0007.bin", 0x0221BE20
+
+.org 0x0221C380
+	.word NUM_OF_MOVES
+
+.close
