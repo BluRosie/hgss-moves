@@ -3,3 +3,4 @@ filetomatch
 *.narc
 *.bin
 *.nds
+text/tmp_base/*
