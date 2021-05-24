@@ -13,7 +13,7 @@ move MOVE_NONE
     accuracy 0
     pp 0
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x00
     appeal 0x00
@@ -28,7 +28,7 @@ move MOVE_POUND
     accuracy 100
     pp 35
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -43,7 +43,7 @@ move MOVE_KARATE_CHOP
     accuracy 100
     pp 25
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -58,7 +58,7 @@ move MOVE_DOUBLE_SLAP
     accuracy 85
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x07
@@ -73,7 +73,7 @@ move MOVE_COMET_PUNCH
     accuracy 85
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x07
@@ -88,7 +88,7 @@ move MOVE_MEGA_PUNCH
     accuracy 85
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -103,7 +103,7 @@ move MOVE_PAY_DAY
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x17
@@ -118,7 +118,7 @@ move MOVE_FIRE_PUNCH
     accuracy 100
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x11
@@ -133,7 +133,7 @@ move MOVE_ICE_PUNCH
     accuracy 100
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x11
@@ -148,7 +148,7 @@ move MOVE_THUNDER_PUNCH
     accuracy 100
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x11
@@ -163,7 +163,7 @@ move MOVE_SCRATCH
     accuracy 100
     pp 35
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -178,7 +178,7 @@ move MOVE_VICE_GRIP
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -193,7 +193,7 @@ move MOVE_GUILLOTINE
     accuracy 30
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x09
@@ -208,7 +208,7 @@ move MOVE_RAZOR_WIND
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x32
     appeal 0x06
@@ -223,7 +223,7 @@ move MOVE_SWORDS_DANCE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0B
@@ -238,7 +238,7 @@ move MOVE_CUT
     accuracy 95
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -253,7 +253,7 @@ move MOVE_GUST
     accuracy 100
     pp 35
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -268,7 +268,7 @@ move MOVE_WING_ATTACK
     accuracy 100
     pp 35
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -283,7 +283,7 @@ move MOVE_WHIRLWIND
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority -6
     flags 0x52
     appeal 0x09
@@ -298,7 +298,7 @@ move MOVE_FLY
     accuracy 95
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x06
@@ -313,7 +313,7 @@ move MOVE_BIND
     accuracy 85
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x15
@@ -328,7 +328,7 @@ move MOVE_SLAM
     accuracy 75
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -343,7 +343,7 @@ move MOVE_VINE_WHIP
     accuracy 100
     pp 25
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -358,7 +358,7 @@ move MOVE_STOMP
     accuracy 100
     pp 20
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x53
     appeal 0x05
@@ -373,7 +373,7 @@ move MOVE_DOUBLE_KICK
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x07
@@ -388,7 +388,7 @@ move MOVE_MEGA_KICK
     accuracy 75
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x12
@@ -403,7 +403,7 @@ move MOVE_JUMP_KICK
     accuracy 95
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -418,7 +418,7 @@ move MOVE_ROLLING_KICK
     accuracy 85
     pp 15
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -433,7 +433,7 @@ move MOVE_SAND_ATTACK
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -448,7 +448,7 @@ move MOVE_HEADBUTT
     accuracy 100
     pp 15
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x53
     appeal 0x05
@@ -463,7 +463,7 @@ move MOVE_HORN_ATTACK
     accuracy 100
     pp 25
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -478,7 +478,7 @@ move MOVE_FURY_ATTACK
     accuracy 85
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x07
@@ -493,7 +493,7 @@ move MOVE_HORN_DRILL
     accuracy 30
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x09
@@ -508,7 +508,7 @@ move MOVE_TACKLE
     accuracy 100
     pp 35
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -523,7 +523,7 @@ move MOVE_BODY_SLAM
     accuracy 100
     pp 15
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x53
     appeal 0x05
@@ -538,7 +538,7 @@ move MOVE_WRAP
     accuracy 85
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x15
@@ -553,7 +553,7 @@ move MOVE_TAKE_DOWN
     accuracy 85
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -568,7 +568,7 @@ move MOVE_THRASH
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0002
+    target MOVE_TARGET_RANDOM
     priority 0
     flags 0x33
     appeal 0x07
@@ -583,7 +583,7 @@ move MOVE_DOUBLE_EDGE
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x09
@@ -598,7 +598,7 @@ move MOVE_TAIL_WHIP
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x56
     appeal 0x13
@@ -613,7 +613,7 @@ move MOVE_POISON_STING
     accuracy 100
     pp 35
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x13
@@ -628,7 +628,7 @@ move MOVE_TWINEEDLE
     accuracy 100
     pp 20
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x52
     appeal 0x07
@@ -643,7 +643,7 @@ move MOVE_PIN_MISSILE
     accuracy 85
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x72
     appeal 0x07
@@ -658,7 +658,7 @@ move MOVE_LEER
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x16
     appeal 0x13
@@ -673,7 +673,7 @@ move MOVE_BITE
     accuracy 100
     pp 25
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x05
@@ -688,7 +688,7 @@ move MOVE_GROWL
     accuracy 100
     pp 40
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x56
     appeal 0x13
@@ -703,7 +703,7 @@ move MOVE_ROAR
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority -6
     flags 0x52
     appeal 0x13
@@ -718,7 +718,7 @@ move MOVE_SING
     accuracy 55
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -733,7 +733,7 @@ move MOVE_SUPERSONIC
     accuracy 55
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -748,7 +748,7 @@ move MOVE_SONIC_BOOM
     accuracy 90
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x72
     appeal 0x05
@@ -763,7 +763,7 @@ move MOVE_DISABLE
     accuracy 80
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x13
@@ -778,7 +778,7 @@ move MOVE_ACID
     accuracy 100
     pp 30
     effectchance 10
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x12
     appeal 0x05
@@ -793,7 +793,7 @@ move MOVE_EMBER
     accuracy 100
     pp 25
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x52
     appeal 0x05
@@ -808,7 +808,7 @@ move MOVE_FLAMETHROWER
     accuracy 100
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x11
@@ -823,7 +823,7 @@ move MOVE_MIST
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0020
+    target MOVE_TARGET_USER_SIDE
     priority 0
     flags 0x08
     appeal 0x0D
@@ -838,7 +838,7 @@ move MOVE_WATER_GUN
     accuracy 100
     pp 25
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -853,7 +853,7 @@ move MOVE_HYDRO_PUMP
     accuracy 80
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x11
@@ -868,7 +868,7 @@ move MOVE_SURF
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0008
+    target MOVE_TARGET_FOES_AND_ALLY
     priority 0
     flags 0x32
     appeal 0x11
@@ -883,7 +883,7 @@ move MOVE_ICE_BEAM
     accuracy 100
     pp 10
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x11
@@ -898,7 +898,7 @@ move MOVE_BLIZZARD
     accuracy 70
     pp 5
     effectchance 10
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x92
     appeal 0x11
@@ -913,7 +913,7 @@ move MOVE_PSYBEAM
     accuracy 100
     pp 20
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x11
@@ -928,7 +928,7 @@ move MOVE_BUBBLE_BEAM
     accuracy 100
     pp 20
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x02
@@ -943,7 +943,7 @@ move MOVE_AURORA_BEAM
     accuracy 100
     pp 20
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x11
@@ -958,7 +958,7 @@ move MOVE_HYPER_BEAM
     accuracy 90
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x16
@@ -973,7 +973,7 @@ move MOVE_PECK
     accuracy 100
     pp 35
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -988,7 +988,7 @@ move MOVE_DRILL_PECK
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -1003,7 +1003,7 @@ move MOVE_SUBMISSION
     accuracy 80
     pp 25
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -1018,7 +1018,7 @@ move MOVE_LOW_KICK
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -1033,7 +1033,7 @@ move MOVE_COUNTER
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority -5
     flags 0x01
     appeal 0x0F
@@ -1048,7 +1048,7 @@ move MOVE_SEISMIC_TOSS
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x05
@@ -1063,7 +1063,7 @@ move MOVE_STRENGTH
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -1078,7 +1078,7 @@ move MOVE_ABSORB
     accuracy 100
     pp 25
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x14
@@ -1093,7 +1093,7 @@ move MOVE_MEGA_DRAIN
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x14
@@ -1108,7 +1108,7 @@ move MOVE_LEECH_SEED
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x15
@@ -1123,7 +1123,7 @@ move MOVE_GROWTH
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0B
@@ -1138,7 +1138,7 @@ move MOVE_RAZOR_LEAF
     accuracy 95
     pp 25
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x32
     appeal 0x05
@@ -1153,7 +1153,7 @@ move MOVE_SOLAR_BEAM
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x06
@@ -1168,7 +1168,7 @@ move MOVE_POISON_POWDER
     accuracy 75
     pp 35
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x13
@@ -1183,7 +1183,7 @@ move MOVE_STUN_SPORE
     accuracy 75
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x13
@@ -1198,7 +1198,7 @@ move MOVE_SLEEP_POWDER
     accuracy 75
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x13
@@ -1213,7 +1213,7 @@ move MOVE_PETAL_DANCE
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0002
+    target MOVE_TARGET_RANDOM
     priority 0
     flags 0x33
     appeal 0x15
@@ -1228,7 +1228,7 @@ move MOVE_STRING_SHOT
     accuracy 95
     pp 40
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x16
     appeal 0x13
@@ -1243,7 +1243,7 @@ move MOVE_DRAGON_RAGE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -1258,7 +1258,7 @@ move MOVE_FIRE_SPIN
     accuracy 70
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x15
@@ -1273,7 +1273,7 @@ move MOVE_THUNDER_SHOCK
     accuracy 100
     pp 30
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x05
@@ -1288,7 +1288,7 @@ move MOVE_THUNDERBOLT
     accuracy 100
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x11
@@ -1303,7 +1303,7 @@ move MOVE_THUNDER_WAVE
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -1318,7 +1318,7 @@ move MOVE_THUNDER
     accuracy 70
     pp 10
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x92
     appeal 0x11
@@ -1333,7 +1333,7 @@ move MOVE_ROCK_THROW
     accuracy 90
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -1348,7 +1348,7 @@ move MOVE_EARTHQUAKE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0008
+    target MOVE_TARGET_FOES_AND_ALLY
     priority 0
     flags 0x32
     appeal 0x12
@@ -1363,7 +1363,7 @@ move MOVE_FISSURE
     accuracy 30
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x92
     appeal 0x09
@@ -1378,7 +1378,7 @@ move MOVE_DIG
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x06
@@ -1393,7 +1393,7 @@ move MOVE_TOXIC
     accuracy 85
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -1408,7 +1408,7 @@ move MOVE_CONFUSION
     accuracy 100
     pp 25
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x05
@@ -1423,7 +1423,7 @@ move MOVE_PSYCHIC
     accuracy 100
     pp 10
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x11
@@ -1438,7 +1438,7 @@ move MOVE_HYPNOSIS
     accuracy 60
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -1453,7 +1453,7 @@ move MOVE_MEDITATE
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x0B
@@ -1468,7 +1468,7 @@ move MOVE_AGILITY
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x88
     appeal 0x01
@@ -1483,7 +1483,7 @@ move MOVE_QUICK_ATTACK
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0x73
     appeal 0x01
@@ -1498,7 +1498,7 @@ move MOVE_RAGE
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x0B
@@ -1513,7 +1513,7 @@ move MOVE_TELEPORT
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x00
     appeal 0x01
@@ -1528,7 +1528,7 @@ move MOVE_NIGHT_SHADE
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -1543,7 +1543,7 @@ move MOVE_MIMIC
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x02
     appeal 0x0C
@@ -1558,7 +1558,7 @@ move MOVE_SCREECH
     accuracy 85
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x0A
@@ -1573,7 +1573,7 @@ move MOVE_DOUBLE_TEAM
     accuracy 0
     pp 15
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x01
@@ -1588,7 +1588,7 @@ move MOVE_RECOVER
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x08
@@ -1603,7 +1603,7 @@ move MOVE_HARDEN
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0D
@@ -1618,7 +1618,7 @@ move MOVE_MINIMIZE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x0D
@@ -1633,7 +1633,7 @@ move MOVE_SMOKESCREEN
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x0A
@@ -1648,7 +1648,7 @@ move MOVE_CONFUSE_RAY
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x0A
@@ -1663,7 +1663,7 @@ move MOVE_WITHDRAW
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0D
@@ -1678,7 +1678,7 @@ move MOVE_DEFENSE_CURL
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0D
@@ -1693,7 +1693,7 @@ move MOVE_BARRIER
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0D
@@ -1708,7 +1708,7 @@ move MOVE_LIGHT_SCREEN
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0020
+    target MOVE_TARGET_USER_SIDE
     priority 0
     flags 0x48
     appeal 0x0D
@@ -1723,7 +1723,7 @@ move MOVE_HAZE
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -1738,7 +1738,7 @@ move MOVE_REFLECT
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0020
+    target MOVE_TARGET_USER_SIDE
     priority 0
     flags 0x48
     appeal 0x0D
@@ -1753,7 +1753,7 @@ move MOVE_FOCUS_ENERGY
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0B
@@ -1768,7 +1768,7 @@ move MOVE_BIDE
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 1
     flags 0x63
     appeal 0x0F
@@ -1783,7 +1783,7 @@ move MOVE_METRONOME
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority 0
     flags 0x40
     appeal 0x0E
@@ -1798,7 +1798,7 @@ move MOVE_MIRROR_MOVE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority 0
     flags 0x00
     appeal 0x0F
@@ -1813,7 +1813,7 @@ move MOVE_SELF_DESTRUCT
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0008
+    target MOVE_TARGET_FOES_AND_ALLY
     priority 0
     flags 0x32
     appeal 0x09
@@ -1828,7 +1828,7 @@ move MOVE_EGG_BOMB
     accuracy 75
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -1843,7 +1843,7 @@ move MOVE_LICK
     accuracy 100
     pp 30
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x53
     appeal 0x10
@@ -1858,7 +1858,7 @@ move MOVE_SMOG
     accuracy 70
     pp 20
     effectchance 40
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x05
@@ -1873,7 +1873,7 @@ move MOVE_SLUDGE
     accuracy 100
     pp 20
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x12
@@ -1888,7 +1888,7 @@ move MOVE_BONE_CLUB
     accuracy 85
     pp 20
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x52
     appeal 0x05
@@ -1903,7 +1903,7 @@ move MOVE_FIRE_BLAST
     accuracy 85
     pp 5
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x92
     appeal 0x11
@@ -1918,7 +1918,7 @@ move MOVE_WATERFALL
     accuracy 100
     pp 15
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x05
@@ -1933,7 +1933,7 @@ move MOVE_CLAMP
     accuracy 75
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -1948,7 +1948,7 @@ move MOVE_SWIFT
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x32
     appeal 0x11
@@ -1963,7 +1963,7 @@ move MOVE_SKULL_BASH
     accuracy 100
     pp 15
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x06
@@ -1978,7 +1978,7 @@ move MOVE_SPIKE_CANNON
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x07
@@ -1993,7 +1993,7 @@ move MOVE_CONSTRICT
     accuracy 100
     pp 35
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x15
@@ -2008,7 +2008,7 @@ move MOVE_AMNESIA
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x0B
@@ -2023,7 +2023,7 @@ move MOVE_KINESIS
     accuracy 80
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x0B
@@ -2038,7 +2038,7 @@ move MOVE_SOFT_BOILED
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x08
@@ -2053,7 +2053,7 @@ move MOVE_HI_JUMP_KICK
     accuracy 90
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -2068,7 +2068,7 @@ move MOVE_GLARE
     accuracy 75
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -2083,7 +2083,7 @@ move MOVE_DREAM_EATER
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x14
@@ -2098,7 +2098,7 @@ move MOVE_POISON_GAS
     accuracy 55
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x05
@@ -2113,7 +2113,7 @@ move MOVE_BARRAGE
     accuracy 85
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x72
     appeal 0x07
@@ -2128,7 +2128,7 @@ move MOVE_LEECH_LIFE
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x14
@@ -2143,7 +2143,7 @@ move MOVE_LOVELY_KISS
     accuracy 75
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -2158,7 +2158,7 @@ move MOVE_SKY_ATTACK
     accuracy 90
     pp 5
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x06
@@ -2173,7 +2173,7 @@ move MOVE_TRANSFORM
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x40
     appeal 0x17
@@ -2188,7 +2188,7 @@ move MOVE_BUBBLE
     accuracy 100
     pp 30
     effectchance 10
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x12
     appeal 0x02
@@ -2203,7 +2203,7 @@ move MOVE_DIZZY_PUNCH
     accuracy 100
     pp 10
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x10
@@ -2218,7 +2218,7 @@ move MOVE_SPORE
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x0A
@@ -2233,7 +2233,7 @@ move MOVE_FLASH
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x96
     appeal 0x0A
@@ -2248,7 +2248,7 @@ move MOVE_PSYWAVE
     accuracy 80
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -2263,7 +2263,7 @@ move MOVE_SPLASH
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x40
     appeal 0x10
@@ -2278,7 +2278,7 @@ move MOVE_ACID_ARMOR
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0B
@@ -2293,7 +2293,7 @@ move MOVE_CRABHAMMER
     accuracy 85
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x12
@@ -2308,7 +2308,7 @@ move MOVE_EXPLOSION
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0008
+    target MOVE_TARGET_FOES_AND_ALLY
     priority 0
     flags 0x32
     appeal 0x09
@@ -2323,7 +2323,7 @@ move MOVE_FURY_SWIPES
     accuracy 80
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x07
@@ -2338,7 +2338,7 @@ move MOVE_BONEMERANG
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x72
     appeal 0x07
@@ -2353,7 +2353,7 @@ move MOVE_REST
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x08
@@ -2368,7 +2368,7 @@ move MOVE_ROCK_SLIDE
     accuracy 90
     pp 10
     effectchance 30
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x12
     appeal 0x05
@@ -2383,7 +2383,7 @@ move MOVE_HYPER_FANG
     accuracy 90
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x12
@@ -2398,7 +2398,7 @@ move MOVE_SHARPEN
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0B
@@ -2413,7 +2413,7 @@ move MOVE_CONVERSION
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x40
     appeal 0x17
@@ -2428,7 +2428,7 @@ move MOVE_TRI_ATTACK
     accuracy 100
     pp 10
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x05
@@ -2443,7 +2443,7 @@ move MOVE_SUPER_FANG
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x53
     appeal 0x05
@@ -2458,7 +2458,7 @@ move MOVE_SLASH
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x05
@@ -2473,7 +2473,7 @@ move MOVE_SUBSTITUTE
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x17
@@ -2488,7 +2488,7 @@ move MOVE_STRUGGLE
     accuracy 0
     pp 1
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x63
     appeal 0x05
@@ -2503,7 +2503,7 @@ move MOVE_SKETCH
     accuracy 0
     pp 1
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x00
     appeal 0x17
@@ -2518,7 +2518,7 @@ move MOVE_TRIPLE_KICK
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x07
@@ -2533,7 +2533,7 @@ move MOVE_THIEF
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x53
     appeal 0x0C
@@ -2548,7 +2548,7 @@ move MOVE_SPIDER_WEB
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x0D
@@ -2563,7 +2563,7 @@ move MOVE_MIND_READER
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x14
@@ -2578,7 +2578,7 @@ move MOVE_NIGHTMARE
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x13
@@ -2593,7 +2593,7 @@ move MOVE_FLAME_WHEEL
     accuracy 100
     pp 25
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x07
@@ -2608,7 +2608,7 @@ move MOVE_SNORE
     accuracy 100
     pp 15
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -2623,7 +2623,7 @@ move MOVE_CURSE
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x40
     appeal 0x15
@@ -2638,7 +2638,7 @@ move MOVE_FLAIL
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x0F
@@ -2653,7 +2653,7 @@ move MOVE_CONVERSION_2
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x00
     appeal 0x17
@@ -2668,7 +2668,7 @@ move MOVE_AEROBLAST
     accuracy 95
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x16
@@ -2683,7 +2683,7 @@ move MOVE_COTTON_SPORE
     accuracy 85
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x01
@@ -2698,7 +2698,7 @@ move MOVE_REVERSAL
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x0F
@@ -2713,7 +2713,7 @@ move MOVE_SPITE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x13
@@ -2728,7 +2728,7 @@ move MOVE_POWDER_SNOW
     accuracy 100
     pp 25
     effectchance 10
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x12
     appeal 0x05
@@ -2743,7 +2743,7 @@ move MOVE_PROTECT
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 3
     flags 0x00
     appeal 0x10
@@ -2758,7 +2758,7 @@ move MOVE_MACH_PUNCH
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0x73
     appeal 0x01
@@ -2773,7 +2773,7 @@ move MOVE_SCARY_FACE
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x02
@@ -2788,7 +2788,7 @@ move MOVE_FAINT_ATTACK
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -2803,7 +2803,7 @@ move MOVE_SWEET_KISS
     accuracy 75
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -2818,7 +2818,7 @@ move MOVE_BELLY_DRUM
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0B
@@ -2833,7 +2833,7 @@ move MOVE_SLUDGE_BOMB
     accuracy 100
     pp 10
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x12
@@ -2848,7 +2848,7 @@ move MOVE_MUD_SLAP
     accuracy 100
     pp 10
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x05
@@ -2863,7 +2863,7 @@ move MOVE_OCTAZOOKA
     accuracy 85
     pp 10
     effectchance 50
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x04
@@ -2878,7 +2878,7 @@ move MOVE_SPIKES
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0080
+    target MOVE_TARGET_OPPONENTS_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -2893,7 +2893,7 @@ move MOVE_ZAP_CANNON
     accuracy 50
     pp 5
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x92
     appeal 0x04
@@ -2908,7 +2908,7 @@ move MOVE_FORESIGHT
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x52
     appeal 0x14
@@ -2923,7 +2923,7 @@ move MOVE_DESTINY_BOND
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x00
     appeal 0x09
@@ -2938,7 +2938,7 @@ move MOVE_PERISH_SONG
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority 0
     flags 0x80
     appeal 0x0A
@@ -2953,7 +2953,7 @@ move MOVE_ICY_WIND
     accuracy 95
     pp 15
     effectchance 100
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x12
     appeal 0x02
@@ -2968,7 +2968,7 @@ move MOVE_DETECT
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 3
     flags 0x00
     appeal 0x10
@@ -2983,7 +2983,7 @@ move MOVE_BONE_RUSH
     accuracy 80
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x72
     appeal 0x07
@@ -2998,7 +2998,7 @@ move MOVE_LOCK_ON
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x14
@@ -3013,7 +3013,7 @@ move MOVE_OUTRAGE
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0002
+    target MOVE_TARGET_RANDOM
     priority 0
     flags 0xB3
     appeal 0x07
@@ -3028,7 +3028,7 @@ move MOVE_SANDSTORM
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -3043,7 +3043,7 @@ move MOVE_GIGA_DRAIN
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x14
@@ -3058,7 +3058,7 @@ move MOVE_ENDURE
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 3
     flags 0x40
     appeal 0x0D
@@ -3073,7 +3073,7 @@ move MOVE_CHARM
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x13
@@ -3088,7 +3088,7 @@ move MOVE_ROLLOUT
     accuracy 90
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x07
@@ -3103,7 +3103,7 @@ move MOVE_FALSE_SWIPE
     accuracy 100
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x10
@@ -3118,7 +3118,7 @@ move MOVE_SWAGGER
     accuracy 90
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x13
@@ -3133,7 +3133,7 @@ move MOVE_MILK_DRINK
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x08
@@ -3148,7 +3148,7 @@ move MOVE_SPARK
     accuracy 100
     pp 20
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x05
@@ -3163,7 +3163,7 @@ move MOVE_FURY_CUTTER
     accuracy 95
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x07
@@ -3178,7 +3178,7 @@ move MOVE_STEEL_WING
     accuracy 90
     pp 25
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -3193,7 +3193,7 @@ move MOVE_MEAN_LOOK
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x0A
@@ -3208,7 +3208,7 @@ move MOVE_ATTRACT
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -3223,7 +3223,7 @@ move MOVE_SLEEP_TALK
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority 0
     flags 0x00
     appeal 0x05
@@ -3238,7 +3238,7 @@ move MOVE_HEAL_BELL
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0020
+    target MOVE_TARGET_USER_SIDE
     priority 0
     flags 0x48
     appeal 0x08
@@ -3253,7 +3253,7 @@ move MOVE_RETURN
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x11
@@ -3268,7 +3268,7 @@ move MOVE_PRESENT
     accuracy 90
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x10
@@ -3283,7 +3283,7 @@ move MOVE_FRUSTRATION
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x12
@@ -3298,7 +3298,7 @@ move MOVE_SAFEGUARD
     accuracy 0
     pp 25
     effectchance 0
-    target 0x0020
+    target MOVE_TARGET_USER_SIDE
     priority 0
     flags 0x48
     appeal 0x0D
@@ -3313,7 +3313,7 @@ move MOVE_PAIN_SPLIT
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x0A
@@ -3328,7 +3328,7 @@ move MOVE_SACRED_FIRE
     accuracy 95
     pp 5
     effectchance 50
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x92
     appeal 0x16
@@ -3343,7 +3343,7 @@ move MOVE_MAGNITUDE
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0008
+    target MOVE_TARGET_FOES_AND_ALLY
     priority 0
     flags 0x32
     appeal 0x12
@@ -3358,7 +3358,7 @@ move MOVE_DYNAMIC_PUNCH
     accuracy 50
     pp 5
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x93
     appeal 0x12
@@ -3373,7 +3373,7 @@ move MOVE_MEGAHORN
     accuracy 85
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x12
@@ -3388,7 +3388,7 @@ move MOVE_DRAGON_BREATH
     accuracy 100
     pp 20
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -3403,7 +3403,7 @@ move MOVE_BATON_PASS
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x00
     appeal 0x10
@@ -3418,7 +3418,7 @@ move MOVE_ENCORE
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x14
@@ -3433,7 +3433,7 @@ move MOVE_PURSUIT
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x93
     appeal 0x14
@@ -3448,7 +3448,7 @@ move MOVE_RAPID_SPIN
     accuracy 100
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x11
@@ -3463,7 +3463,7 @@ move MOVE_SWEET_SCENT
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x16
     appeal 0x13
@@ -3478,7 +3478,7 @@ move MOVE_IRON_TAIL
     accuracy 75
     pp 15
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x12
@@ -3493,7 +3493,7 @@ move MOVE_METAL_CLAW
     accuracy 95
     pp 35
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x12
@@ -3508,7 +3508,7 @@ move MOVE_VITAL_THROW
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority -1
     flags 0x33
     appeal 0x02
@@ -3523,7 +3523,7 @@ move MOVE_MORNING_SUN
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x08
@@ -3538,7 +3538,7 @@ move MOVE_SYNTHESIS
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x08
@@ -3553,7 +3553,7 @@ move MOVE_MOONLIGHT
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x88
     appeal 0x08
@@ -3568,7 +3568,7 @@ move MOVE_HIDDEN_POWER
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x17
@@ -3583,7 +3583,7 @@ move MOVE_CROSS_CHOP
     accuracy 80
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -3598,7 +3598,7 @@ move MOVE_TWISTER
     accuracy 100
     pp 20
     effectchance 20
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x32
     appeal 0x05
@@ -3613,7 +3613,7 @@ move MOVE_RAIN_DANCE
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -3628,7 +3628,7 @@ move MOVE_SUNNY_DAY
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -3643,7 +3643,7 @@ move MOVE_CRUNCH
     accuracy 100
     pp 15
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x12
@@ -3658,7 +3658,7 @@ move MOVE_MIRROR_COAT
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority -5
     flags 0x00
     appeal 0x0F
@@ -3673,7 +3673,7 @@ move MOVE_PSYCH_UP
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x48
     appeal 0x0B
@@ -3688,7 +3688,7 @@ move MOVE_EXTREME_SPEED
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0xB3
     appeal 0x01
@@ -3703,7 +3703,7 @@ move MOVE_ANCIENT_POWER
     accuracy 100
     pp 5
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x12
@@ -3718,7 +3718,7 @@ move MOVE_SHADOW_BALL
     accuracy 100
     pp 15
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x11
@@ -3733,7 +3733,7 @@ move MOVE_FUTURE_SIGHT
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x00
     appeal 0x11
@@ -3748,7 +3748,7 @@ move MOVE_ROCK_SMASH
     accuracy 100
     pp 15
     effectchance 50
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x12
@@ -3763,7 +3763,7 @@ move MOVE_WHIRLPOOL
     accuracy 70
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x15
@@ -3778,7 +3778,7 @@ move MOVE_BEAT_UP
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x72
     appeal 0x07
@@ -3793,7 +3793,7 @@ move MOVE_FAKE_OUT
     accuracy 100
     pp 10
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0x13
     appeal 0x11
@@ -3808,7 +3808,7 @@ move MOVE_UPROAR
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0002
+    target MOVE_TARGET_RANDOM
     priority 0
     flags 0x32
     appeal 0x0A
@@ -3823,7 +3823,7 @@ move MOVE_STOCKPILE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0B
@@ -3838,7 +3838,7 @@ move MOVE_SPIT_UP
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x22
     appeal 0x12
@@ -3853,7 +3853,7 @@ move MOVE_SWALLOW
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x08
@@ -3868,7 +3868,7 @@ move MOVE_HEAT_WAVE
     accuracy 90
     pp 10
     effectchance 10
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x12
     appeal 0x11
@@ -3883,7 +3883,7 @@ move MOVE_HAIL
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -3898,7 +3898,7 @@ move MOVE_TORMENT
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x52
     appeal 0x10
@@ -3913,7 +3913,7 @@ move MOVE_FLATTER
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -3928,7 +3928,7 @@ move MOVE_WILL_O_WISP
     accuracy 75
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x11
@@ -3943,7 +3943,7 @@ move MOVE_MEMENTO
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x09
@@ -3958,7 +3958,7 @@ move MOVE_FACADE
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x53
     appeal 0x0F
@@ -3973,7 +3973,7 @@ move MOVE_FOCUS_PUNCH
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority -3
     flags 0x83
     appeal 0x06
@@ -3988,7 +3988,7 @@ move MOVE_SMELLING_SALT
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x10
@@ -4003,7 +4003,7 @@ move MOVE_FOLLOW_ME
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 3
     flags 0x00
     appeal 0x0E
@@ -4018,7 +4018,7 @@ move MOVE_NATURE_POWER
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority 0
     flags 0x40
     appeal 0x0E
@@ -4033,7 +4033,7 @@ move MOVE_CHARGE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x0B
@@ -4048,7 +4048,7 @@ move MOVE_TAUNT
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x52
     appeal 0x10
@@ -4063,7 +4063,7 @@ move MOVE_HELPING_HAND
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0100
+    target MOVE_TARGET_ALLY
     priority 5
     flags 0x00
     appeal 0x14
@@ -4078,7 +4078,7 @@ move MOVE_TRICK
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x0C
@@ -4093,7 +4093,7 @@ move MOVE_ROLE_PLAY
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x00
     appeal 0x17
@@ -4108,7 +4108,7 @@ move MOVE_WISH
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x80
     appeal 0x08
@@ -4123,7 +4123,7 @@ move MOVE_ASSIST
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority 0
     flags 0x00
     appeal 0x0E
@@ -4138,7 +4138,7 @@ move MOVE_INGRAIN
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x15
@@ -4153,7 +4153,7 @@ move MOVE_SUPERPOWER
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x93
     appeal 0x12
@@ -4168,7 +4168,7 @@ move MOVE_MAGIC_COAT
     accuracy 0
     pp 15
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority 4
     flags 0x00
     appeal 0x0F
@@ -4183,7 +4183,7 @@ move MOVE_RECYCLE
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x40
     appeal 0x0C
@@ -4198,7 +4198,7 @@ move MOVE_REVENGE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority -4
     flags 0x33
     appeal 0x0F
@@ -4213,7 +4213,7 @@ move MOVE_BRICK_BREAK
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -4228,7 +4228,7 @@ move MOVE_YAWN
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -4243,7 +4243,7 @@ move MOVE_KNOCK_OFF
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x05
@@ -4258,7 +4258,7 @@ move MOVE_ENDEAVOR
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x0F
@@ -4273,7 +4273,7 @@ move MOVE_ERUPTION
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x32
     appeal 0x12
@@ -4288,7 +4288,7 @@ move MOVE_SKILL_SWAP
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x0C
@@ -4303,7 +4303,7 @@ move MOVE_IMPRISON
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x00
     appeal 0x14
@@ -4318,7 +4318,7 @@ move MOVE_REFRESH
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x08
@@ -4333,7 +4333,7 @@ move MOVE_GRUDGE
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x00
     appeal 0x0A
@@ -4348,7 +4348,7 @@ move MOVE_SNATCH
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority 4
     flags 0x00
     appeal 0x0C
@@ -4363,7 +4363,7 @@ move MOVE_SECRET_POWER
     accuracy 100
     pp 20
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x0E
@@ -4378,7 +4378,7 @@ move MOVE_DIVE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x06
@@ -4393,7 +4393,7 @@ move MOVE_ARM_THRUST
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x07
@@ -4408,7 +4408,7 @@ move MOVE_CAMOUFLAGE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0D
@@ -4423,7 +4423,7 @@ move MOVE_TAIL_GLOW
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x0B
@@ -4438,7 +4438,7 @@ move MOVE_LUSTER_PURGE
     accuracy 100
     pp 5
     effectchance 50
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x16
@@ -4453,7 +4453,7 @@ move MOVE_MIST_BALL
     accuracy 100
     pp 5
     effectchance 50
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x92
     appeal 0x16
@@ -4468,7 +4468,7 @@ move MOVE_FEATHER_DANCE
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -4483,7 +4483,7 @@ move MOVE_TEETER_DANCE
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0008
+    target MOVE_TARGET_FOES_AND_ALLY
     priority 0
     flags 0x12
     appeal 0x0E
@@ -4498,7 +4498,7 @@ move MOVE_BLAZE_KICK
     accuracy 90
     pp 10
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x11
@@ -4513,7 +4513,7 @@ move MOVE_MUD_SPORT
     accuracy 0
     pp 15
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -4528,7 +4528,7 @@ move MOVE_ICE_BALL
     accuracy 90
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x07
@@ -4543,7 +4543,7 @@ move MOVE_NEEDLE_ARM
     accuracy 100
     pp 15
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x05
@@ -4558,7 +4558,7 @@ move MOVE_SLACK_OFF
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x08
@@ -4573,7 +4573,7 @@ move MOVE_HYPER_VOICE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x12
     appeal 0x05
@@ -4588,7 +4588,7 @@ move MOVE_POISON_FANG
     accuracy 100
     pp 15
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x04
@@ -4603,7 +4603,7 @@ move MOVE_CRUSH_CLAW
     accuracy 95
     pp 10
     effectchance 50
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x05
@@ -4618,7 +4618,7 @@ move MOVE_BLAST_BURN
     accuracy 90
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x16
@@ -4633,7 +4633,7 @@ move MOVE_HYDRO_CANNON
     accuracy 90
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x16
@@ -4648,7 +4648,7 @@ move MOVE_METEOR_MASH
     accuracy 85
     pp 10
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -4663,7 +4663,7 @@ move MOVE_ASTONISH
     accuracy 100
     pp 15
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x53
     appeal 0x05
@@ -4678,7 +4678,7 @@ move MOVE_WEATHER_BALL
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x04
@@ -4693,7 +4693,7 @@ move MOVE_AROMATHERAPY
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0020
+    target MOVE_TARGET_USER_SIDE
     priority 0
     flags 0x08
     appeal 0x08
@@ -4708,7 +4708,7 @@ move MOVE_FAKE_TEARS
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x13
@@ -4723,7 +4723,7 @@ move MOVE_AIR_CUTTER
     accuracy 95
     pp 25
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x32
     appeal 0x05
@@ -4738,7 +4738,7 @@ move MOVE_OVERHEAT
     accuracy 90
     pp 5
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x16
@@ -4753,7 +4753,7 @@ move MOVE_ODOR_SLEUTH
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x52
     appeal 0x14
@@ -4768,7 +4768,7 @@ move MOVE_ROCK_TOMB
     accuracy 80
     pp 10
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x02
@@ -4783,7 +4783,7 @@ move MOVE_SILVER_WIND
     accuracy 100
     pp 5
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x04
@@ -4798,7 +4798,7 @@ move MOVE_METAL_SOUND
     accuracy 85
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x0A
@@ -4813,7 +4813,7 @@ move MOVE_GRASS_WHISTLE
     accuracy 55
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -4828,7 +4828,7 @@ move MOVE_TICKLE
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x56
     appeal 0x13
@@ -4843,7 +4843,7 @@ move MOVE_COSMIC_POWER
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x88
     appeal 0x0B
@@ -4858,7 +4858,7 @@ move MOVE_WATER_SPOUT
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x12
     appeal 0x16
@@ -4873,7 +4873,7 @@ move MOVE_SIGNAL_BEAM
     accuracy 100
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x04
@@ -4888,7 +4888,7 @@ move MOVE_SHADOW_PUNCH
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x11
@@ -4903,7 +4903,7 @@ move MOVE_EXTRASENSORY
     accuracy 100
     pp 30
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x11
@@ -4918,7 +4918,7 @@ move MOVE_SKY_UPPERCUT
     accuracy 90
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x11
@@ -4933,7 +4933,7 @@ move MOVE_SAND_TOMB
     accuracy 70
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x15
@@ -4948,7 +4948,7 @@ move MOVE_SHEER_COLD
     accuracy 30
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x09
@@ -4963,7 +4963,7 @@ move MOVE_MUDDY_WATER
     accuracy 85
     pp 10
     effectchance 30
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x32
     appeal 0x12
@@ -4978,7 +4978,7 @@ move MOVE_BULLET_SEED
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x72
     appeal 0x07
@@ -4993,7 +4993,7 @@ move MOVE_AERIAL_ACE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x11
@@ -5008,7 +5008,7 @@ move MOVE_ICICLE_SPEAR
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x72
     appeal 0x07
@@ -5023,7 +5023,7 @@ move MOVE_IRON_DEFENSE
     accuracy 0
     pp 15
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0D
@@ -5038,7 +5038,7 @@ move MOVE_BLOCK
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x0D
@@ -5053,7 +5053,7 @@ move MOVE_HOWL
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x0B
@@ -5068,7 +5068,7 @@ move MOVE_DRAGON_CLAW
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x11
@@ -5083,7 +5083,7 @@ move MOVE_FRENZY_PLANT
     accuracy 90
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x16
@@ -5098,7 +5098,7 @@ move MOVE_BULK_UP
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0B
@@ -5113,7 +5113,7 @@ move MOVE_BOUNCE
     accuracy 85
     pp 5
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x06
@@ -5128,7 +5128,7 @@ move MOVE_MUD_SHOT
     accuracy 95
     pp 15
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x02
@@ -5143,7 +5143,7 @@ move MOVE_POISON_TAIL
     accuracy 100
     pp 25
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x04
@@ -5158,7 +5158,7 @@ move MOVE_COVET
     accuracy 100
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x13
     appeal 0x0C
@@ -5173,7 +5173,7 @@ move MOVE_VOLT_TACKLE
     accuracy 100
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x16
@@ -5188,7 +5188,7 @@ move MOVE_MAGICAL_LEAF
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -5203,7 +5203,7 @@ move MOVE_WATER_SPORT
     accuracy 0
     pp 15
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -5218,7 +5218,7 @@ move MOVE_CALM_MIND
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x0B
@@ -5233,7 +5233,7 @@ move MOVE_LEAF_BLADE
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x11
@@ -5248,7 +5248,7 @@ move MOVE_DRAGON_DANCE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x0B
@@ -5263,7 +5263,7 @@ move MOVE_ROCK_BLAST
     accuracy 80
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x07
@@ -5278,7 +5278,7 @@ move MOVE_SHOCK_WAVE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -5293,7 +5293,7 @@ move MOVE_WATER_PULSE
     accuracy 100
     pp 20
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x11
@@ -5308,7 +5308,7 @@ move MOVE_DOOM_DESIRE
     accuracy 85
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x80
     appeal 0x11
@@ -5323,7 +5323,7 @@ move MOVE_PSYCHO_BOOST
     accuracy 90
     pp 5
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x16
@@ -5338,7 +5338,7 @@ move MOVE_ROOST
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x08
@@ -5353,7 +5353,7 @@ move MOVE_GRAVITY
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -5368,7 +5368,7 @@ move MOVE_MIRACLE_EYE
     accuracy 0
     pp 40
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x14
@@ -5383,7 +5383,7 @@ move MOVE_WAKE_UP_SLAP
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x10
@@ -5398,7 +5398,7 @@ move MOVE_HAMMER_ARM
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x02
@@ -5413,7 +5413,7 @@ move MOVE_GYRO_BALL
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x0F
@@ -5428,7 +5428,7 @@ move MOVE_HEALING_WISH
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x00
     appeal 0x08
@@ -5443,7 +5443,7 @@ move MOVE_BRINE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x04
@@ -5458,7 +5458,7 @@ move MOVE_NATURAL_GIFT
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x52
     appeal 0x12
@@ -5473,7 +5473,7 @@ move MOVE_FEINT
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 2
     flags 0x00
     appeal 0x10
@@ -5488,7 +5488,7 @@ move MOVE_PLUCK
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x0C
@@ -5503,7 +5503,7 @@ move MOVE_TAILWIND
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0020
+    target MOVE_TARGET_USER_SIDE
     priority 0
     flags 0x08
     appeal 0x01
@@ -5518,7 +5518,7 @@ move MOVE_ACUPRESSURE
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0200
+    target MOVE_TARGET_ACUPRESSURE
     priority 0
     flags 0x48
     appeal 0x0B
@@ -5533,7 +5533,7 @@ move MOVE_METAL_BURST
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority 0
     flags 0x10
     appeal 0x0F
@@ -5548,7 +5548,7 @@ move MOVE_U_TURN
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x10
@@ -5563,7 +5563,7 @@ move MOVE_CLOSE_COMBAT
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x16
@@ -5578,7 +5578,7 @@ move MOVE_PAYBACK
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x06
@@ -5593,7 +5593,7 @@ move MOVE_ASSURANCE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x0F
@@ -5608,7 +5608,7 @@ move MOVE_EMBARGO
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x0D
@@ -5623,7 +5623,7 @@ move MOVE_FLING
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x17
@@ -5638,7 +5638,7 @@ move MOVE_PSYCHO_SHIFT
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x10
@@ -5653,7 +5653,7 @@ move MOVE_TRUMP_CARD
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x15
@@ -5668,7 +5668,7 @@ move MOVE_HEAL_BLOCK
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x12
     appeal 0x0D
@@ -5683,7 +5683,7 @@ move MOVE_WRING_OUT
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x16
@@ -5698,7 +5698,7 @@ move MOVE_POWER_TRICK
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x40
     appeal 0x10
@@ -5713,7 +5713,7 @@ move MOVE_GASTRO_ACID
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x0D
@@ -5728,7 +5728,7 @@ move MOVE_LUCKY_CHANT
     accuracy 0
     pp 30
     effectchance 0
-    target 0x0020
+    target MOVE_TARGET_USER_SIDE
     priority 0
     flags 0x40
     appeal 0x0D
@@ -5743,7 +5743,7 @@ move MOVE_ME_FIRST
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0400
+    target MOVE_TARGET_ME_FIRST
     priority 0
     flags 0x02
     appeal 0x01
@@ -5758,7 +5758,7 @@ move MOVE_COPYCAT
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0001
+    target MOVE_TARGET_DEPENDS
     priority 0
     flags 0x00
     appeal 0x0C
@@ -5773,7 +5773,7 @@ move MOVE_POWER_SWAP
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x10
@@ -5788,7 +5788,7 @@ move MOVE_GUARD_SWAP
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x10
@@ -5803,7 +5803,7 @@ move MOVE_PUNISHMENT
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x17
@@ -5818,7 +5818,7 @@ move MOVE_LAST_RESORT
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x15
@@ -5833,7 +5833,7 @@ move MOVE_WORRY_SEED
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x16
     appeal 0x13
@@ -5848,7 +5848,7 @@ move MOVE_SUCKER_PUNCH
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0x73
     appeal 0x01
@@ -5863,7 +5863,7 @@ move MOVE_TOXIC_SPIKES
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0080
+    target MOVE_TARGET_OPPONENTS_FIELD
     priority 0
     flags 0x40
     appeal 0x0D
@@ -5878,7 +5878,7 @@ move MOVE_HEART_SWAP
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x10
@@ -5893,7 +5893,7 @@ move MOVE_AQUA_RING
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x00
     appeal 0x08
@@ -5908,7 +5908,7 @@ move MOVE_MAGNET_RISE
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x00
     appeal 0x0D
@@ -5923,7 +5923,7 @@ move MOVE_FLARE_BLITZ
     accuracy 100
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x93
     appeal 0x16
@@ -5938,7 +5938,7 @@ move MOVE_FORCE_PALM
     accuracy 100
     pp 10
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -5953,7 +5953,7 @@ move MOVE_AURA_SPHERE
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x11
@@ -5968,7 +5968,7 @@ move MOVE_ROCK_POLISH
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x01
@@ -5983,7 +5983,7 @@ move MOVE_POISON_JAB
     accuracy 100
     pp 20
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x04
@@ -5998,7 +5998,7 @@ move MOVE_DARK_PULSE
     accuracy 100
     pp 15
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -6013,7 +6013,7 @@ move MOVE_NIGHT_SLASH
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -6028,7 +6028,7 @@ move MOVE_AQUA_TAIL
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -6043,7 +6043,7 @@ move MOVE_SEED_BOMB
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -6058,7 +6058,7 @@ move MOVE_AIR_SLASH
     accuracy 95
     pp 20
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -6073,7 +6073,7 @@ move MOVE_X_SCISSOR
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x11
@@ -6088,7 +6088,7 @@ move MOVE_BUG_BUZZ
     accuracy 100
     pp 10
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x04
@@ -6103,7 +6103,7 @@ move MOVE_DRAGON_PULSE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x04
@@ -6118,7 +6118,7 @@ move MOVE_DRAGON_RUSH
     accuracy 75
     pp 10
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -6133,7 +6133,7 @@ move MOVE_POWER_GEM
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -6148,7 +6148,7 @@ move MOVE_DRAIN_PUNCH
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x14
@@ -6163,7 +6163,7 @@ move MOVE_VACUUM_WAVE
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0x32
     appeal 0x01
@@ -6178,7 +6178,7 @@ move MOVE_FOCUS_BLAST
     accuracy 70
     pp 5
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x92
     appeal 0x11
@@ -6193,7 +6193,7 @@ move MOVE_ENERGY_BALL
     accuracy 100
     pp 10
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x11
@@ -6208,7 +6208,7 @@ move MOVE_BRAVE_BIRD
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x12
@@ -6223,7 +6223,7 @@ move MOVE_EARTH_POWER
     accuracy 100
     pp 10
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x12
@@ -6238,7 +6238,7 @@ move MOVE_SWITCHEROO
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x0C
@@ -6253,7 +6253,7 @@ move MOVE_GIGA_IMPACT
     accuracy 90
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x16
@@ -6268,7 +6268,7 @@ move MOVE_NASTY_PLOT
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x48
     appeal 0x0B
@@ -6283,7 +6283,7 @@ move MOVE_BULLET_PUNCH
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0x73
     appeal 0x01
@@ -6298,7 +6298,7 @@ move MOVE_AVALANCHE
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority -4
     flags 0x33
     appeal 0x0F
@@ -6313,7 +6313,7 @@ move MOVE_ICE_SHARD
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0x32
     appeal 0x01
@@ -6328,7 +6328,7 @@ move MOVE_SHADOW_CLAW
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x11
@@ -6343,7 +6343,7 @@ move MOVE_THUNDER_FANG
     accuracy 95
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -6358,7 +6358,7 @@ move MOVE_ICE_FANG
     accuracy 95
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -6373,7 +6373,7 @@ move MOVE_FIRE_FANG
     accuracy 95
     pp 15
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -6388,7 +6388,7 @@ move MOVE_SHADOW_SNEAK
     accuracy 100
     pp 30
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0x33
     appeal 0x01
@@ -6403,7 +6403,7 @@ move MOVE_MUD_BOMB
     accuracy 85
     pp 10
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x12
@@ -6418,7 +6418,7 @@ move MOVE_PSYCHO_CUT
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -6433,7 +6433,7 @@ move MOVE_ZEN_HEADBUTT
     accuracy 90
     pp 15
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -6448,7 +6448,7 @@ move MOVE_MIRROR_SHOT
     accuracy 85
     pp 10
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -6463,7 +6463,7 @@ move MOVE_FLASH_CANNON
     accuracy 100
     pp 10
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -6478,7 +6478,7 @@ move MOVE_ROCK_CLIMB
     accuracy 85
     pp 20
     effectchance 20
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -6493,7 +6493,7 @@ move MOVE_DEFOG
     accuracy 0
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x12
     appeal 0x0D
@@ -6508,7 +6508,7 @@ move MOVE_TRICK_ROOM
     accuracy 0
     pp 5
     effectchance 0
-    target 0x0040
+    target MOVE_TARGET_ACTIVE_FIELD
     priority -7
     flags 0x10
     appeal 0x0E
@@ -6523,7 +6523,7 @@ move MOVE_DRACO_METEOR
     accuracy 90
     pp 5
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x16
@@ -6538,7 +6538,7 @@ move MOVE_DISCHARGE
     accuracy 100
     pp 15
     effectchance 30
-    target 0x0008
+    target MOVE_TARGET_FOES_AND_ALLY
     priority 0
     flags 0x32
     appeal 0x11
@@ -6553,7 +6553,7 @@ move MOVE_LAVA_PLUME
     accuracy 100
     pp 15
     effectchance 30
-    target 0x0008
+    target MOVE_TARGET_FOES_AND_ALLY
     priority 0
     flags 0x32
     appeal 0x11
@@ -6568,7 +6568,7 @@ move MOVE_LEAF_STORM
     accuracy 90
     pp 5
     effectchance 100
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x16
@@ -6583,7 +6583,7 @@ move MOVE_POWER_WHIP
     accuracy 85
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x05
@@ -6598,7 +6598,7 @@ move MOVE_ROCK_WRECKER
     accuracy 90
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x16
@@ -6613,7 +6613,7 @@ move MOVE_CROSS_POISON
     accuracy 100
     pp 20
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x05
@@ -6628,7 +6628,7 @@ move MOVE_GUNK_SHOT
     accuracy 70
     pp 5
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x05
@@ -6643,7 +6643,7 @@ move MOVE_IRON_HEAD
     accuracy 100
     pp 15
     effectchance 30
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -6658,7 +6658,7 @@ move MOVE_MAGNET_BOMB
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x05
@@ -6673,7 +6673,7 @@ move MOVE_STONE_EDGE
     accuracy 80
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x04
@@ -6688,7 +6688,7 @@ move MOVE_CAPTIVATE
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x56
     appeal 0x13
@@ -6703,7 +6703,7 @@ move MOVE_STEALTH_ROCK
     accuracy 0
     pp 20
     effectchance 0
-    target 0x0080
+    target MOVE_TARGET_OPPONENTS_FIELD
     priority 0
     flags 0x00
     appeal 0x0D
@@ -6718,7 +6718,7 @@ move MOVE_GRASS_KNOT
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x04
@@ -6733,7 +6733,7 @@ move MOVE_CHATTER
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x42
     appeal 0x17
@@ -6748,7 +6748,7 @@ move MOVE_JUDGMENT
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x0E
@@ -6763,7 +6763,7 @@ move MOVE_BUG_BITE
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x73
     appeal 0x0C
@@ -6778,7 +6778,7 @@ move MOVE_CHARGE_BEAM
     accuracy 90
     pp 10
     effectchance 70
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -6793,7 +6793,7 @@ move MOVE_WOOD_HAMMER
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x12
@@ -6808,7 +6808,7 @@ move MOVE_AQUA_JET
     accuracy 100
     pp 20
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 1
     flags 0x33
     appeal 0x01
@@ -6823,7 +6823,7 @@ move MOVE_ATTACK_ORDER
     accuracy 100
     pp 15
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x04
@@ -6838,7 +6838,7 @@ move MOVE_DEFEND_ORDER
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x0B
@@ -6853,7 +6853,7 @@ move MOVE_HEAL_ORDER
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x08
     appeal 0x08
@@ -6868,7 +6868,7 @@ move MOVE_HEAD_SMASH
     accuracy 80
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB3
     appeal 0x16
@@ -6883,7 +6883,7 @@ move MOVE_DOUBLE_HIT
     accuracy 90
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x07
@@ -6898,7 +6898,7 @@ move MOVE_ROAR_OF_TIME
     accuracy 90
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x16
@@ -6913,7 +6913,7 @@ move MOVE_SPACIAL_REND
     accuracy 95
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x04
@@ -6928,7 +6928,7 @@ move MOVE_LUNAR_DANCE
     accuracy 0
     pp 10
     effectchance 0
-    target 0x0010
+    target MOVE_TARGET_USER
     priority 0
     flags 0x80
     appeal 0x08
@@ -6943,7 +6943,7 @@ move MOVE_CRUSH_GRIP
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x33
     appeal 0x0F
@@ -6958,7 +6958,7 @@ move MOVE_MAGMA_STORM
     accuracy 70
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x07
@@ -6973,7 +6973,7 @@ move MOVE_DARK_VOID
     accuracy 80
     pp 10
     effectchance 0
-    target 0x0004
+    target MOVE_TARGET_BOTH
     priority 0
     flags 0x96
     appeal 0x13
@@ -6988,7 +6988,7 @@ move MOVE_SEED_FLARE
     accuracy 85
     pp 5
     effectchance 40
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0xB2
     appeal 0x16
@@ -7003,7 +7003,7 @@ move MOVE_OMINOUS_WIND
     accuracy 100
     pp 5
     effectchance 10
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x0B
@@ -7018,7 +7018,7 @@ move MOVE_SHADOW_FORCE
     accuracy 100
     pp 5
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x31
     appeal 0x16
@@ -7033,7 +7033,7 @@ move MOVE_SHADOW_FORCE+1
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x10
@@ -7048,7 +7048,7 @@ move MOVE_SHADOW_FORCE+2
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x11
@@ -7063,7 +7063,7 @@ move MOVE_SHADOW_FORCE+3
     accuracy 100
     pp 10
     effectchance 0
-    target 0x0000
+    target MOVE_TARGET_SELECTED
     priority 0
     flags 0x32
     appeal 0x12

@@ -32,3 +32,18 @@ CONTEST_BEAUTY    equ 1
 CONTEST_CUTE      equ 2
 CONTEST_SMART     equ 3
 CONTEST_TOUGH     equ 4
+
+// move target constants
+
+MOVE_TARGET_SELECTED            equ 0x0000
+MOVE_TARGET_DEPENDS             equ 0x0001
+MOVE_TARGET_RANDOM              equ 0x0002
+MOVE_TARGET_BOTH                equ 0x0004
+MOVE_TARGET_FOES_AND_ALLY       equ 0x0008
+MOVE_TARGET_USER                equ 0x0010
+MOVE_TARGET_USER_SIDE           equ 0x0020
+MOVE_TARGET_ACTIVE_FIELD        equ 0x0040
+MOVE_TARGET_OPPONENTS_FIELD     equ 0x0080
+MOVE_TARGET_ALLY                equ 0x0100
+MOVE_TARGET_ACUPRESSURE         equ 0x0200
+MOVE_TARGET_ME_FIRST            equ 0x0400
