@@ -9,6 +9,6 @@
  replace narc a011 with a011.narc and a027 with a027.narc
 
 ### TODO
- label things better (the flags field, move effects, check out contest appeal field)
+ label things better (move effects, check out contest appeal field)
  
  look into move animations and scripts
