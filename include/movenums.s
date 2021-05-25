@@ -560,4 +560,4 @@ MOVE_V_CREATE equ 560
 MOVE_FUSION_FLARE equ 561
 MOVE_FUSION_BOLT equ 562
 
-NUM_OF_MOVES equ 471 // needs to be odd
+NUM_OF_MOVES equ 563 // needs to be odd

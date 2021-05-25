@@ -7080,7 +7080,7 @@ move MOVE_HONE_CLAWS
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags 0x56
+    flags FLAG_KEEP_HP_BAR | FLAG_SNATCH
     appeal 0x00
     contesttype CONTEST_CUTE
     terminatedata
