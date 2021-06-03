@@ -4,3 +4,5 @@ filetomatch
 *.bin
 *.nds
 text/tmp_base/*
+a001/*
+a030/*
