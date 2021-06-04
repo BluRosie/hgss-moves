@@ -6,3 +6,4 @@ filetomatch
 text/tmp_base/*
 a001/*
 a030/*
+*.o

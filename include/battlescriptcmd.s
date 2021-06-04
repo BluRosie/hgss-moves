@@ -2,6 +2,32 @@
     .word 0x0
 .endmacro
 
+// battler values
+
+BATTLER_ALL              equ 0x00
+BATTLER_ATTACKER         equ 0x01
+BATTLER_DEFENDER         equ 0x02
+BATTLER_PLAYER           equ 0x03
+BATTLER_OPPONENT         equ 0x04
+BATTLER_FAINTED          equ 0x05
+BATTLER_REPLACE          equ 0x06
+BATTLER_ADDL_EFFECT      equ 0x07
+BATTLER_CHAR_CHECKED     equ 0x08
+BATTLER_PLAYER_LEFT      equ 0x09
+BATTLER_ENEMY_LEFT       equ 0x0a
+BATTLER_PLAYER_RIGHT     equ 0x0b
+BATTLER_PLAYER_LEFT      equ 0x0c
+BATTLER_ATTACKER2        equ 0x0e
+BATTLER_DEFENDER2        equ 0x0f
+BATTLER_ATTACKER_PARTNER equ 0x10
+BATTLER_DEFENDER_PARTNER equ 0x11
+BATTLER_WHIRLWINDED      equ 0x12
+BATTLER_x13              equ 0x13
+BATTLER_x14              equ 0x14
+BATTLER_x15              equ 0x15
+BATTLER_ALL_REPLACED     equ 0x16
+BATTLER_xFF              equ 0xFF
+
 .macro pokemonencounter,battler
     .word 0x1, battler
 .endmacro
@@ -476,7 +502,7 @@ VAR_AND         equ 20
     .word 0x64, ((address - org()) / 4) - 1
 .endmacro
 
-.macro trysubstitutde,address
+.macro trysubstitute,address
     .word 0x65, ((address - org()) / 4) - 1
 .endmacro
 
@@ -488,8 +514,8 @@ VAR_AND         equ 20
     .word 0x67, ((address - org()) / 4) - 1
 .endmacro
 
-.macro tryspikes,battler,address
-    .word 0x68, battler, ((address - org()) / 4) - 1
+.macro tryspikes,address
+    .word 0x68, ((address - org()) / 4) - 1
 .endmacro
 
 .macro checkspikes,battler,address
@@ -576,7 +602,7 @@ VAR_AND         equ 20
     .word 0x7D
 .endmacro
 
-.macro tryfollowme,address
+.macro tryhelpinghand,address
     .word 0x7E, ((address - org()) / 4) - 1
 .endmacro
 
@@ -884,11 +910,11 @@ VAR_AND         equ 20
     .word 0xCA, battler
 .endmacro
 
-.macro tryrecycle, address
+.macro tryrecycle,address
     .word 0xCB, ((address - org()) / 4) - 1
 .endmacro
 
-.macro itemeffectcheckonhit, address
+.macro itemeffectcheckonhit,address
     .word 0xCC, ((address - org()) / 4) - 1
 .endmacro
 
