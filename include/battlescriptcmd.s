@@ -212,11 +212,13 @@ IF_NOTMASK  equ 5 // mask off
 IF_AND      equ 6 // exact and
 
 .macro if,condition,source,comparator,address
-    .word 0x20, condition, source, comparator, ((address - org()) / 4) - 1
+    .word 0x20, condition, source, comparator
+	.word ((address - org()) / 4) - 1
 .endmacro
 
 .macro ifmonstat,condition,battler,source,comparator,address
-    .word 0x21, condition, battler, source, comparator, ((address - org()) / 4) - 1
+    .word 0x21, condition, battler, source, comparator
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro fadeout
@@ -240,7 +242,8 @@ IF_AND      equ 6 // exact and
 .endmacro
 
 .macro shouldgetexp,address
-    .word 0x27, ((address - org()) / 4) - 1
+    .word 0x27
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro initexpget
@@ -252,7 +255,8 @@ IF_AND      equ 6 // exact and
 .endmacro
 
 .macro getexploop,address
-    .word 0x2A, ((address - org()) / 4) - 1
+    .word 0x2A
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro showmonlist
@@ -268,7 +272,8 @@ IF_AND      equ 6 // exact and
 .endmacro
 
 .macro jumpifcantswitch,address // maybe?
-    .word 0x2E, ((address - org()) / 4) - 1
+    .word 0x2E
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro initcapture, num
@@ -305,7 +310,10 @@ VAR_AND         equ 20
 .endmacro
 
 .macro statbuffchange,address1,address2,address3 // all failure addresses
-    .word 0x33, ((address1 - org()) / 4) - 3, ((address2 - org()) / 4) - 2, ((address3 - org()) / 4) - 1
+    .word 0x33
+    .word ((address1 - org()) / 4) - 3
+    .word ((address2 - org()) / 4) - 2
+    .word ((address3 - org()) / 4) - 1
 .endmacro
 
 .macro changevartomonvalue,operator,battler,var,value
@@ -321,7 +329,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro abilitycheck,num,battler,ability,address
-    .word 0x37, num, battler, ability, ((address - org()) / 4) - 1
+    .word 0x37, num, battler, ability
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro random,range,startingnum // random number from startingnum to startingnum+range
@@ -332,12 +341,13 @@ VAR_AND         equ 20
     .word 0x39, operator, var, value
 .endmacro
 
-.macro changevartomonvalue,operator,battler,var,value
+.macro changevartomonvalue2,operator,battler,var,value
     .word 0x3A, operator, battler, value, value
 .endmacro
 
 .macro goto,address
-    .word 0x3B, ((address - org()) / 4) - 1
+    .word 0x3B
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro gotosubscript,num
@@ -408,15 +418,18 @@ VAR_AND         equ 20
 .endmacro
 
 .macro tryconversion,address
-    .word 0x4D, ((address - org()) / 4) - 1
+    .word 0x4D
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro if2,condition,source,comparator,address
-    .word 0x4E, condition, source, comparator, ((address - org()) / 4) - 1
+    .word 0x4E, condition, source, comparator
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro ifmonstat2,condition,battler,source,comparator,address
-    .word 0x4F, condition, battler, source, comparator, ((address - org()) / 4) - 1
+    .word 0x4F, condition, battler, source, comparator
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro cmd_50_somecheck
@@ -424,15 +437,18 @@ VAR_AND         equ 20
 .endmacro
 
 .macro setlightscreen, address
-    .word 0x51, ((address - org()) / 4) - 1
+    .word 0x51
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro setreflect, address
-    .word 0x52, ((address - org()) / 4) - 1
+    .word 0x52
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro setmist, address
-    .word 0x53, ((address - org()) / 4) - 1
+    .word 0x53
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryonehitko
@@ -448,7 +464,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trymimic, address
-    .word 0x57, ((address - org()) / 4) - 1
+    .word 0x57
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro metronome
@@ -456,7 +473,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trydisable,address
-    .word 0x59, ((address - org()) / 4) - 1
+    .word 0x59
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro counter
@@ -468,19 +486,23 @@ VAR_AND         equ 20
 .endmacro
 
 .macro tryencore,address
-    .word 0x5C, ((address - org()) / 4) - 1
+    .word 0x5C
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryconversion2,address
-    .word 0x5D, ((address - org()) / 4) - 1
+    .word 0x5D
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trysketch,address
-    .word 0x5E, ((address - org()) / 4) - 1
+    .word 0x5E
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trysleeptalk,address
-    .word 0x5F, ((address - org()) / 4) - 1
+    .word 0x5F
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro flaildamagecalc
@@ -488,7 +510,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro tryspite,address
-    .word 0x61, ((address - org()) / 4) - 1
+    .word 0x61
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro healbell
@@ -496,35 +519,44 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trythief,address1,address2
-    .word 0x63, ((address1 - org()) / 4) - 2, ((address2 - org()) / 4) - 1
+    .word 0x63
+    .word ((address1 - org()) / 4) - 2
+    .word ((address2 - org()) / 4) - 1
 .endmacro
 
 .macro willprotectwork,address
-    .word 0x64, ((address - org()) / 4) - 1
+    .word 0x64
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trysubstitute,address
-    .word 0x65, ((address - org()) / 4) - 1
+    .word 0x65
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trywhirlwind,address
-    .word 0x66, ((address - org()) / 4) - 1
+    .word 0x66
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro transform
-    .word 0x67, ((address - org()) / 4) - 1
+    .word 0x67
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryspikes,address
-    .word 0x68, ((address - org()) / 4) - 1
+    .word 0x68
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro checkspikes,battler,address
-    .word 0x69, battler, ((address - org()) / 4) - 1
+    .word 0x69, battler
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryperishsong,address
-    .word 0x6A, ((address - org()) / 4) - 1
+    .word 0x6A
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro orderbattlersbyspeed,value
@@ -532,7 +564,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro exitloopatvalue,value,address // something like that
-    .word 0x6C, value, ((address - org()) / 4) - 1
+    .word 0x6C, value
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro weatherdamagecalc, battler
@@ -548,15 +581,18 @@ VAR_AND         equ 20
 .endmacro
 
 .macro tryattract,address
-    .word 0x70, ((address - org()) / 4) - 1
+    .word 0x70
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trysafeguard,address
-    .word 0x71, ((address - org()) / 4) - 1
+    .word 0x71
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trypresent,address
-    .word 0x72, ((address - org()) / 4) - 1
+    .word 0x72
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro magnitudedamagecalc
@@ -564,7 +600,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro tryswitchinmon,battler,num,address
-    .word 0x74, battler, num, ((address - org()) / 4) - 1
+    .word 0x74, battler, num
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro dorapidspineffect
@@ -584,15 +621,18 @@ VAR_AND         equ 20
 .endmacro
 
 .macro dofuturesight,address
-    .word 0x79, ((address - org()) / 4) - 1
+    .word 0x79
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro checkhitrate, attacker, defender, move, address
-    .word 0x7A, attacker, defender, move, ((address - org()) / 4) - 1
+    .word 0x7A, attacker, defender, move
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryteleport, address
-    .word 0x7B, ((address - org()) / 4) - 1
+    .word 0x7B
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro beatupdamagecalc
@@ -604,23 +644,29 @@ VAR_AND         equ 20
 .endmacro
 
 .macro tryhelpinghand,address
-    .word 0x7E, ((address - org()) / 4) - 1
+    .word 0x7E
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trytrick,address1,address2
-    .word 0x7F, ((address1 - org()) / 4) - 2, ((address2 - org()) / 4) - 1
+    .word 0x7F
+    .word ((address1 - org()) / 4) - 2
+    .word ((address2 - org()) / 4) - 1
 .endmacro
 
 .macro trywish,address
-    .word 0x80, ((address - org()) / 4) - 1
+    .word 0x80
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryassist,address
-    .word 0x81, ((address - org()) / 4) - 1
+    .word 0x81
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trymagiccoat,address
-    .word 0x82, ((address - org()) / 4) - 1
+    .word 0x82
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trymagiccoat2
@@ -632,15 +678,18 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trybreakscreens,address
-    .word 0x85, ((address - org()) / 4) - 1
+    .word 0x85
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryyawn,address
-    .word 0x86, ((address - org()) / 4) - 1
+    .word 0x86
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryknockitemoff,address
-    .word 0x87, ((address - org()) / 4) - 1
+    .word 0x87
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro eruptiondamagecalc
@@ -648,15 +697,18 @@ VAR_AND         equ 20
 .endmacro
 
 .macro tryimprison,address
-    .word 0x89, ((address - org()) / 4) - 1
+    .word 0x89
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trygrudge,address
-    .word 0x8A, ((address - org()) / 4) - 1
+    .word 0x8A
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trysnatch,address
-    .word 0x8B, ((address - org()) / 4) - 1
+    .word 0x8B
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro lowkickdamagecalc
@@ -668,7 +720,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trypursuit,address // maybe?
-    .word 0x8E, ((address - org()) / 4) - 1
+    .word 0x8E
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro typecheck
@@ -676,7 +729,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro checkoneturnflag,battler,flag,value,address
-    .word 0x90, battler, flag, value, ((address - org()) / 4) - 1
+    .word 0x90, battler, flag, value
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro setoneturnflag,battler,flag,value
@@ -688,7 +742,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro metalburstdamagecalc,address
-    .word 0x93, ((address - org()) / 4) - 1
+    .word 0x93
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro paybackdamagecalc
@@ -704,11 +759,13 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trymefirst,address
-    .word 0x97, ((address - org()) / 4) - 1
+    .word 0x97
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trycopycat,address
-    .word 0x98, ((address - org()) / 4) - 1
+    .word 0x98
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro punishmentdamagecalc
@@ -716,39 +773,48 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trysuckerpunch,address
-    .word 0x9A, ((address - org()) / 4) - 1
+    .word 0x9A
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro checkbattlercondition,battler,mode,num,address
-    .word 0x9B, battler, mode, num, ((address - org()) / 4) - 1
+    .word 0x9B, battler, mode, num
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryfeint,address
-    .word 0x9C, ((address - org()) / 4) - 1
+    .word 0x9C
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trypsychoshift,address
-    .word 0x9D, ((address - org()) / 4) - 1
+    .word 0x9D
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trylastresort,address
-    .word 0x9E, ((address - org()) / 4) - 1
+    .word 0x9E
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trytoxicspikes,address
-    .word 0x9F, ((address - org()) / 4) - 1
+    .word 0x9F
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro checktoxicspikes,address
-    .word 0xA0, ((address - org()) / 4) - 1
+    .word 0xA0
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro moldbreakerabilitycheck,num,battler,ability,address
-    .word 0xA1, num, battler, ability, ((address - org()) / 4) - 1
+    .word 0xA1, num, battler, ability
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro checkside,compare1,compare2,address
-    .word 0xA2, compare1, compare2, ((address - org()) / 4) - 1
+    .word 0xA2, compare1, compare2
+    .word ((address - org()) / 4) - 1
 .endmacro
  
 .macro trypickup
@@ -760,11 +826,13 @@ VAR_AND         equ 20
 .endmacro
 
 .macro checkmovefinished,battler,address
-    .word 0xA5, battler, ((address - org()) / 4) - 1
+    .word 0xA5, battler
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro checkitemeffect,num,battler,effect,address
-    .word 0xA6, num, battler, effect, ((address - org()) / 4) - 1
+    .word 0xA6, num, battler, effect
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro getitemeffect,battler,num
@@ -776,7 +844,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trycamouflage,address
-    .word 0xA9, ((address - org()) / 4) - 1
+    .word 0xA9
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro donaturepower
@@ -788,15 +857,19 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trynaturalgift,address
-    .word 0xAC, ((address - org()) / 4) - 1
+    .word 0xAC
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro trypluck,address1,address2
-    .word 0xAD, ((address1 - org()) / 4) - 2, ((address2 - org()) / 4) - 1
+    .word 0xAD
+    .word ((address1 - org()) / 4) - 2
+    .word ((address2 - org()) / 4) - 1
 .endmacro
 
 .macro tryfling,address
-    .word 0xAE, ((address - org()) / 4) - 1
+    .word 0xAE
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro yesnobox,num
@@ -804,7 +877,9 @@ VAR_AND         equ 20
 .endmacro
 
 .macro yesnowait,address1,address2
-    .word 0xB0, ((address1 - org()) / 4) - 2, ((address2 - org()) / 4) - 1
+    .word 0xB0
+    .word ((address1 - org()) / 4) - 2
+    .word ((address2 - org()) / 4) - 1
 .endmacro
 
 .macro monlist
@@ -820,15 +895,18 @@ VAR_AND         equ 20
 .endmacro
 
 .macro checkstealthrock,battler,address
-    .word 0xB4, battler, ((address - org()) / 4) - 1
+    .word 0xB4, battler
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro checkeffectactivation,address
-    .word 0xB5, ((address - org()) / 4) - 1
+    .word 0xB5
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro checkchatteractivation,address
-    .word 0xB6, ((address - org()) / 4) - 1
+    .word 0xB6
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro getmoveparameter,field
@@ -852,7 +930,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro tryescape,battler,address
-    .word 0xBC, battler, ((address - org()) / 4) - 1
+    .word 0xBC, battler
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro initstartballguage,battler
@@ -888,7 +967,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro checkifcurrentmovehits,address // i think
-    .word 0xC5, ((address - org()) / 4) - 1
+    .word 0xC5
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro cmd_C6,battler // something to do with sprites
@@ -900,11 +980,13 @@ VAR_AND         equ 20
 .endmacro
 
 .macro checkwipeout,battler,address
-    .word 0xC8, battler, ((address - org()) / 4) - 1
+    .word 0xC8, battler
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryacupressure,address
-    .word 0xC9, ((address - org()) / 4) - 1
+    .word 0xC9
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro removeitem,battler
@@ -912,11 +994,13 @@ VAR_AND         equ 20
 .endmacro
 
 .macro tryrecycle,address
-    .word 0xCB, ((address - org()) / 4) - 1
+    .word 0xCB
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro itemeffectcheckonhit,address
-    .word 0xCC, ((address - org()) / 4) - 1
+    .word 0xCC
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro battleresultmessage // during online battles
@@ -936,14 +1020,17 @@ VAR_AND         equ 20
 .endmacro
 
 .macro trynaturalcure,battler,address
-    .word 0xD1, battler, ((address - org()) / 4) - 1
+    .word 0xD1, battler
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro checknostatus,battler,address
-    .word 0xD2, battler, ((address - org()) / 4) - 1
+    .word 0xD2, battler
+    .word ((address - org()) / 4) - 1
 
 .macro checkcloudnine,address
-    .word 0xD3, ((address - org()) / 4) - 1
+    .word 0xD3
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro cmd_D4,battler
@@ -951,7 +1038,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro checkwhenitemmakesmovehit,address
-    .word 0xD5, ((address - org()) / 4) - 1
+    .word 0xD5
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro cmd_D6,battler
@@ -967,7 +1055,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro checkifsafariencounterdone,address
-    .word 0xD9, ((address - org()) / 4) - 1
+    .word 0xD9
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro waitwithoutbuttonpress,time
@@ -975,7 +1064,8 @@ VAR_AND         equ 20
 .endmacro
 
 .macro checkmovetypematches,type,address
-    .word 0xDB, type, ((address - org()) / 4) - 1
+    .word 0xDB, type
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro getdatafrompersonalnarc,monnum,formnum,num
