@@ -93,7 +93,7 @@
 .close
 
 //need a free space
-.open "a028.bin", 0x023C8000
+.open "a028_0.bin", 0x023C8000
 
 .org 0x023C8000 + 0x4000
 getmovetarget:

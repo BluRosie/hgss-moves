@@ -5,5 +5,7 @@ bank 751 - move names (all caps)
 
 a011 - waza_tbl
 a010 - animations
+a030 - battle scripts
+- a001 - sub scripts
 
 there's a lot more to be researched here.
