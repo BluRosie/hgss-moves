@@ -276,7 +276,7 @@ IF_AND      equ 6 // exact and
     .word ((address - org()) / 4) - 1
 .endmacro
 
-.macro initcapture, num
+.macro initcapture,num
     .word 0x2F, num
 .endmacro
 
@@ -290,20 +290,90 @@ IF_AND      equ 6 // exact and
 
 // changevar operators:
 
-VAR_SET         equ 7
-VAR_ADD         equ 8
-VAR_SUB         equ 9
-VAR_SETMASK     equ 10
-VAR_CLEARMASK   equ 11
-VAR_MUL         equ 12
-VAR_DIV         equ 13
-VAR_LSH         equ 14
-VAR_RSH         equ 15
-VAR_TO_BIT      equ 16
-VAR_GET_RESULT  equ 17
-VAR_SUB_TO_ZERO equ 18
-VAR_XOR         equ 19
-VAR_AND         equ 20
+VAR_OP_SET         equ 7
+VAR_OP_ADD         equ 8
+VAR_OP_SUB         equ 9
+VAR_OP_SETMASK     equ 10
+VAR_OP_CLEARMASK   equ 11
+VAR_OP_MUL         equ 12
+VAR_OP_DIV         equ 13
+VAR_OP_LSH         equ 14
+VAR_OP_RSH         equ 15
+VAR_OP_TO_BIT      equ 16
+VAR_OP_GET_RESULT  equ 17
+VAR_OP_SUB_TO_ZERO equ 18
+VAR_OP_XOR         equ 19
+VAR_OP_AND         equ 20
+
+// var names:
+VAR_BATTLE_TYPE equ 0
+VAR_CRIT_CHANCE equ 1
+VAR_EFFECT1 equ 2
+VAR_EFFECT2 equ 3
+VAR_04 equ 4
+VAR_05 equ 5
+VAR_06 equ 6
+VAR_FIELD_EFFECT equ 7
+VAR_DAMAGE_MULT equ 8
+VAR_09 equ 9
+VAR_10 equ 10
+VAR_SIDE_EFFECT_PLAYER equ 11
+VAR_SIDE_EFFECT_OPPONENT equ 12
+VAR_SIDE_EFFECT_ACTIVE_BATTLER equ 13
+VAR_DAMAGE equ 14
+VAR_ATTACKER equ 15
+VAR_DEFENDER equ 16
+VAR_ACTIVE_BATTLER equ 17
+VAR_FAINTED_BATTLER equ 18
+VAR_SWITCHED_BATTLER equ 19
+VAR_BATTLER_SOMETHING equ 20
+VAR_DAMAGE_BACKUP equ 21
+VAR_22 equ 22
+VAR_MONEY equ 23
+VAR_CURRENT_MOVE equ 24
+VAR_TURNS equ 25
+VAR_ATTACKER_TEMP equ 26
+VAR_DEFENDER_TEMP equ 27
+VAR_MOVE_TEMP equ 28
+VAR_ITEM_TEMP equ 29
+VAR_ABILITY_TEMP equ 30
+VAR_SUCCESSIVE_HIT equ 31
+VAR_HP_TEMP equ 32
+VAR_BATTLE_RESULT equ 33
+VAR_34 equ 34
+VAR_MOVE_TEMP2 equ 35
+VAR_ITEM_TEMP2 equ 36
+VAR_ABILITY_TEMP2 equ 37
+VAR_WEATHER_TURNS equ 38
+VAR_39 equ 39
+VAR_40 equ 40
+VAR_PHYSICAL_DAMAGE equ 41
+VAR_SPECIAL_DAMAGE equ 42
+VAR_43 equ 43
+VAR_WAS_MOVE_CRITICAL equ 44
+VAR_LAST_DAMAGING_ATTACKER equ 45
+VAR_LAST_DAMAGING_DEFENDER equ 46
+VAR_47 equ 47
+VAR_48 equ 48
+VAR_49 equ 49
+VAR_FLING_TEMP equ 50
+VAR_FLING_SUBSCRIPT equ 51
+VAR_BATTLE_STATUS equ 52
+VAR_MOVE_BACKUP equ 53
+VAR_54 equ 54
+VAR_SAFARI_BALL_COUNT equ 55
+VAR_SWITCHED_BATTLER_TEMP equ 56
+VAR_MOVE_TYPE equ 57
+VAR_MOVE_EFFECT equ 58
+VAR_RULESET equ 59
+VAR_60 equ 60
+VAR_61 equ 61
+VAR_62 equ 62
+VAR_ATTACKER_TEMP2 equ 63
+VAR_DEFENDER_TEMP2 equ 64
+VAR_65 equ 65
+VAR_ASSURANCE_DAMAGE equ 66
+VAR_ASSURANCE_DAMAGE_AGAINST_DEFENDER equ 67
 
 .macro changevar,operator,var,value
     .word 0x32, operator, var, value
@@ -341,8 +411,8 @@ VAR_AND         equ 20
     .word 0x39, operator, var, value
 .endmacro
 
-.macro changevartomonvalue2,operator,battler,var,value
-    .word 0x3A, operator, battler, value, value
+.macro changevartomonvalue2,operator,battler,value,var
+    .word 0x3A, operator, battler, value, var
 .endmacro
 
 .macro goto,address
@@ -432,7 +502,7 @@ VAR_AND         equ 20
     .word ((address - org()) / 4) - 1
 .endmacro
 
-.macro cmd_50_somecheck
+.macro dopayday
     .word 0x50
 .endmacro
 
@@ -541,7 +611,6 @@ VAR_AND         equ 20
 
 .macro transform
     .word 0x67
-    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro tryspikes,address
@@ -568,7 +637,7 @@ VAR_AND         equ 20
     .word ((address - org()) / 4) - 1
 .endmacro
 
-.macro weatherdamagecalc, battler
+.macro weatherdamagecalc,battler
     .word 0x6D, battler
 .endmacro
 
@@ -620,17 +689,17 @@ VAR_AND         equ 20
     .word 0x78
 .endmacro
 
-.macro dofuturesight,address
+.macro tryfuturesight,address
     .word 0x79
     .word ((address - org()) / 4) - 1
 .endmacro
 
-.macro checkhitrate, attacker, defender, move, address
+.macro checkhitrate,attacker,defender,move,address
     .word 0x7A, attacker, defender, move
     .word ((address - org()) / 4) - 1
 .endmacro
 
-.macro tryteleport, address
+.macro tryteleport,address
     .word 0x7B
     .word ((address - org()) / 4) - 1
 .endmacro
@@ -812,8 +881,8 @@ VAR_AND         equ 20
     .word ((address - org()) / 4) - 1
 .endmacro
 
-.macro checkside,compare1,compare2,address
-    .word 0xA2, compare1, compare2
+.macro checkbattlersequal,battler1,battler2,address
+    .word 0xA2, battler1, battler2
     .word ((address - org()) / 4) - 1
 .endmacro
  
