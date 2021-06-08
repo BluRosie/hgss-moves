@@ -374,6 +374,10 @@ VAR_DEFENDER_TEMP2 equ 64
 VAR_65 equ 65
 VAR_ASSURANCE_DAMAGE equ 66
 VAR_ASSURANCE_DAMAGE_AGAINST_DEFENDER equ 67
+VAR_68 equ 68
+VAR_69 equ 69
+VAR_70 equ 70
+VAR_71 equ 71
 
 .macro changevar,operator,var,value
     .word 0x32, operator, var, value
@@ -387,7 +391,7 @@ VAR_ASSURANCE_DAMAGE_AGAINST_DEFENDER equ 67
 .endmacro
 
 .macro changevartomonvalue,operator,battler,var,value
-    .word 0x34, operator, battler, value, value
+    .word 0x34, operator, battler, var, value
 .endmacro
 
 .macro clearstatus2,battler,value
@@ -955,8 +959,9 @@ VAR_ASSURANCE_DAMAGE_AGAINST_DEFENDER equ 67
     .word 0xB1
 .endmacro
 
-.macro monlistwait
+.macro monlistwait,address
     .word 0xB2
+    .word ((address - org()) / 4) - 1
 .endmacro
 
 .macro setbattleresult
