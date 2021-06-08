@@ -35,7 +35,7 @@ const char* Battlers[] =
 
 const char* IfConditions[] =
 {
-    "IF_EQUAL",
+    [0] = "IF_EQUAL",
     "IF_NOTEQUAL",
     "IF_GREATER",
     "IF_LESSTHAN",
@@ -1323,7 +1323,7 @@ int deleteaddress(int address) // deletes the address from the log so it won't b
 int main(int argc, char **argv)
 {
     char sourcename[BUFF_SIZE], scriptname[BUFF_SIZE], basename[BUFF_SIZE];
-    int elementnum, movetoa001 = 0;
+    int elementnum, movetoa001 = 0, ignoreEOF = 0;
     FILE *source, *scriptfile;
 
     for (int i = 0; i <= 296; i++)
@@ -1352,15 +1352,16 @@ int main(int argc, char **argv)
 
         gLogging = 1;
 
-        while (elementnum != EOF)
+        while (elementnum != EOF || ignoreEOF == 1)
         {
             if (gLogging == 0) // make sure this is done first
                 if (deleteaddress(ftell(source)))
                     fprintf(scriptfile, "_%04X:\n", ftell(source));
 
             GET_U32(elementnum, source);
-            if (elementnum != EOF)
+            if (elementnum != EOF || ignoreEOF == 1)
             {
+                ignoreEOF = 0;
                 switch (elementnum)
                 {
                 case 0x0:
@@ -1850,6 +1851,7 @@ int main(int argc, char **argv)
                     if (gLogging == 0) fprintf(scriptfile, "%s, ", BattleVars[elementnum]);
                     GET_U32(elementnum, source);
                     if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
+                    ignoreEOF = 1;
                     break;
                 case 0x33:
                     if (gLogging == 0) fprintf(scriptfile, "    statbuffchange ");
@@ -2275,7 +2277,7 @@ int main(int argc, char **argv)
                     if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x7A:
-                    if (gLogging == 0) fprintf(scriptfile, "    checkhitrate\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkhitrate ");
                     GET_U32(elementnum, source);
                     if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // attacker
                     GET_U32(elementnum, source);
