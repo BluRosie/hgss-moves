@@ -10,8 +10,8 @@
 .create "a030\a030_120", 0
 
 a030_120:
-    changevar VAR_OP_SET, VAR_STATUS1, 0x8000005F
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0xF
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x8000005F
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER
     endscript
 
 .close

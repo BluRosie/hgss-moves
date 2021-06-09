@@ -15,7 +15,7 @@ a001_163:
     if IF_MASK, VAR_10, 0x10001, _008C
     ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x1A, 0x79, _008C
     gotosubscript 76
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, VAR_RULESET, 0x200000
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, 0x3B, 0x200000
     printmessage 0x3F4, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

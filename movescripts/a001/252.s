@@ -18,7 +18,6 @@ a001_252:
     wait 0x1E
     changevar VAR_OP_CLEARMASK, VAR_FIELD_EFFECT, 0x80FF
     changevar VAR_OP_SETMASK, VAR_FIELD_EFFECT, 0x80
-_0058:
     endscript
 
 .close

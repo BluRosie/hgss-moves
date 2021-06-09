@@ -21,7 +21,7 @@ a001_143:
     ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x1A, 0x0, _0274
 _00D4:
     gotosubscript 76
-    changevar2 VAR_OP_SET, VAR_43, 0x19
+    changevar2 VAR_OP_SET, VAR_43, VAR_TURNS
     changevar VAR_OP_AND, VAR_43, 0x1
     changevartomonvalue2 VAR_OP_SET, BATTLER_ATTACKER, 0x48, VAR_43
     changevartomonvalue2 VAR_OP_SET, BATTLER_DEFENDER, 0x48, VAR_43
@@ -30,18 +30,18 @@ _00D4:
     changevartomonvalue2 VAR_OP_SET, BATTLER_ATTACKER, 0x1A, VAR_43
     changevartomonvalue2 VAR_OP_SET, BATTLER_DEFENDER, 0x1A, VAR_09
     if IF_NOTEQUAL, VAR_43, 0x70, _01E4
-    changevar2 VAR_OP_SET, VAR_43, 0x19
+    changevar2 VAR_OP_SET, VAR_43, VAR_TURNS
     changevar VAR_OP_ADD, VAR_43, 0x1
     changevartomonvalue2 VAR_OP_SET, BATTLER_ATTACKER, 0x59, VAR_43
-    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, ABILITY_ROUGH_SKIN, 0x0
-    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, ABILITY_WONDER_GUARD, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, 0x60, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, 0x61, 0x0
 _01E4:
     if IF_NOTEQUAL, VAR_09, 0x70, _0254
-    changevar2 VAR_OP_SET, VAR_43, 0x19
+    changevar2 VAR_OP_SET, VAR_43, VAR_TURNS
     changevar VAR_OP_ADD, VAR_43, 0x1
     changevartomonvalue2 VAR_OP_SET, BATTLER_DEFENDER, 0x59, VAR_43
-    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, ABILITY_ROUGH_SKIN, 0x0
-    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, ABILITY_WONDER_GUARD, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, 0x60, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, 0x61, 0x0
 _0254:
     printmessage 0x22F, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage

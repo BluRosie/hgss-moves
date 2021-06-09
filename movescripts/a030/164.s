@@ -15,10 +15,10 @@ a030_164:
     changevar VAR_OP_CLEARMASK, VAR_FIELD_EFFECT, 0x80FF
     changevar VAR_OP_SETMASK, VAR_FIELD_EFFECT, 0x40
     changevar VAR_OP_SET, VAR_WEATHER_TURNS, 0x5
-    changevar VAR_OP_SET, VAR_STATUS2, 0x2000005D
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000005D
     checkitemeffect 0x1, BATTLER_ATTACKER, 0x6E, _0090
     getitempower BATTLER_ATTACKER, 0x9
-    changevar2 VAR_OP_ADD, VAR_WEATHER_TURNS, 0x9
+    changevar2 VAR_OP_ADD, VAR_WEATHER_TURNS, VAR_09
 _0090:
     endscript
 _0094:

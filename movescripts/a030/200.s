@@ -11,7 +11,7 @@
 
 a030_200:
     changevar VAR_OP_ADD, VAR_CRIT_CHANCE, 0x1
-    changevar VAR_OP_SET, VAR_STATUS2, 0x80000003
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x80000003
     critcalc
     damagecalc
     endscript

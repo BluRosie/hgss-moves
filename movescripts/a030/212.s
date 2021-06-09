@@ -10,7 +10,7 @@
 .create "a030\a030_212", 0
 
 a030_212:
-    changevar VAR_OP_SET, VAR_STATUS1, 0x4000003B
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x4000003B
     endscript
 
 .close

@@ -18,7 +18,7 @@ _003C:
     changevar VAR_OP_CLEARMASK, VAR_FIELD_EFFECT, 0x70000
     preparemessage 0x431, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
 _005C:
-    changevar VAR_OP_SET, VAR_STATUS2, 0x2000005A
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000005A
     dotrickroom
     endscript
     changevar VAR_OP_SETMASK, VAR_10, 0x40

@@ -13,8 +13,8 @@ a001_173:
     checknostatus BATTLER_DEFENDER, _0074
     ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x50, 0x0, _0074
     gotosubscript 76
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, VAR_RULESET, 0x2000000
-    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, ABILITY_SAND_VEIL, 0x5
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, 0x3B, 0x2000000
+    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, 0x50, 0x5
     printmessage 0x41B, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

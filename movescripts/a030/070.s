@@ -12,7 +12,7 @@
 a030_070:
     critcalc
     damagecalc
-    changevar VAR_OP_SET, VAR_STATUS2, 0x80000018
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x80000018
     endscript
 
 .close

@@ -27,7 +27,7 @@ _0038:
     ifmonstat IF_EQUAL, BATTLER_xFF, 0x1C, 0x2, _013C
     goto _0158
 _0108:
-    changevartomonvalue VAR_OP_SET, BATTLER_xFF, ABILITY_LIMBER, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_xFF, 0x4F, 0x0
     goto _013C
 _0124:
     clearsomeflag BATTLER_xFF

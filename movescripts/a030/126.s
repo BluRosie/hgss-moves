@@ -15,7 +15,7 @@ a030_126:
     ifmonstat IF_NOTMASK, BATTLER_DEFENDER, 0x3B, 0x80, _0048
     changevar VAR_OP_SET, VAR_DAMAGE_MULT, 0x14
 _0048:
-    changevar VAR_OP_SET, VAR_STATUS1, 0xA0000062
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0xA0000062
     magnitudedamagecalc
     critcalc
     damagecalc

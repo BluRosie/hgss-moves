@@ -15,7 +15,7 @@ a001_293:
     ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x62, 0x0, _0188
     ifmonstat IF_MASK, BATTLER_DEFENDER, 0x35, 0x1000000, _0188
     ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x34, 0x20, _0188
-    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, ABILITY_LEVITATE, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, 0x62, 0x0
     changevar VAR_OP_SET, VAR_43, 0x0
     ifmonstat IF_MASK, BATTLER_DEFENDER, 0x33, 0x1, _00C8
     getdatafrompersonalnarc SPECIES_SHAYMIN, VAR_43, 0x18
@@ -31,7 +31,7 @@ _00FC:
     changevartomonvalue2 VAR_OP_SET, BATTLER_DEFENDER, 0x1B, VAR_09
     getdatafrompersonalnarc SPECIES_SHAYMIN, VAR_43, 0x7
     changevartomonvalue2 VAR_OP_SET, BATTLER_DEFENDER, 0x1C, VAR_09
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0x10
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_DEFENDER
     gotosubscript 262
     refreshmondata BATTLER_DEFENDER
 _0188:

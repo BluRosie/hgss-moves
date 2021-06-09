@@ -14,7 +14,7 @@ a030_092:
     if IF_EQUAL, VAR_MOVE_TEMP, 0xD6, _0034
     gotosubscript 20
 _0034:
-    changevar VAR_OP_SETMASK, VAR_STATUS2, 0x80000008
+    changevar VAR_OP_SETMASK, VAR_ADD_STATUS2, 0x80000008
     critcalc
     damagecalc
     endscript

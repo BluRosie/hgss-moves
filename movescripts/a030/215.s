@@ -11,7 +11,7 @@
 
 a030_215:
     if IF_MASK, VAR_FIELD_EFFECT, 0x7000, _0028
-    changevar VAR_OP_SET, VAR_STATUS2, 0x20000076
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x20000076
     endscript
 _0028:
     changevar VAR_OP_SETMASK, VAR_10, 0x40

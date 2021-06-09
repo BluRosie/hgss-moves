@@ -12,7 +12,7 @@
 a030_172:
     dofollowme
     preparemessage 0x1E4, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
-    changevar VAR_OP_SET, VAR_STATUS2, 0x2000005A
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000005A
     endscript
 
 .close

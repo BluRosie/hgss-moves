@@ -12,8 +12,8 @@
 a001_186:
     wait 0xF
     changevar VAR_OP_SET, VAR_39, 0x0
-    changevar2 VAR_OP_SET, VAR_ITEM_TEMP, 0xF
-    changevar2 VAR_OP_SET, VAR_ATTACKER, 0x14
+    changevar2 VAR_OP_SET, VAR_ITEM_TEMP, VAR_ATTACKER
+    changevar2 VAR_OP_SET, VAR_ATTACKER, VAR_BATTLER_SOMETHING
 _0038:
     orderbattlersbyspeed 0x11
     checkbattlersequal BATTLER_ATTACKER, BATTLER_ADDL_EFFECT, _009C
@@ -25,7 +25,7 @@ _0038:
 _009C:
     changevar VAR_OP_ADD, VAR_39, 0x1
     exitloopatvalue 0x27, _0038
-    changevar2 VAR_OP_SET, VAR_ATTACKER, 0x1D
+    changevar2 VAR_OP_SET, VAR_ATTACKER, VAR_ITEM_TEMP
     endscript
 
 .close

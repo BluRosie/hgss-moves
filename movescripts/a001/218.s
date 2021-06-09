@@ -18,8 +18,8 @@ a001_218:
     ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x56, 0x0, _00E8
     ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x55, 0x0, _00E8
     gotosubscript 76
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, VAR_RULESET, 0x4000000
-    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, ABILITY_STATIC, 0x5
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, 0x3B, 0x4000000
+    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, 0x51, 0x5
     printmessage 0x46F, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

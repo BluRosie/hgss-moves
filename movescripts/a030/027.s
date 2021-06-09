@@ -11,7 +11,7 @@
 
 a030_027:
     ifmonstat IF_MASK, BATTLER_ATTACKER, 0x35, 0xC00, _0028
-    changevar VAR_OP_SET, VAR_STATUS2, 0x20000035
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x20000035
 _0028:
     critcalc
     damagecalc

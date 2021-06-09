@@ -12,13 +12,13 @@
 a030_109:
     ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x1B, 0x7, _0044
     ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x1C, 0x7, _0044
-    changevar VAR_OP_SET, VAR_STATUS1, 0x40000058
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x40000058
     endscript
 _0044:
     if2 IF_NOTEQUAL, VAR_ATTACKER, 0x10, _0060
     cmd_D4 BATTLER_ATTACKER
 _0060:
-    changevar VAR_OP_SET, VAR_STATUS1, 0x20000059
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x20000059
     changevar VAR_OP_SET, VAR_MOVE_EFFECT, 0x1
     endscript
 

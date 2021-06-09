@@ -19,7 +19,7 @@ a001_099:
     ifmonstat IF_MASK, BATTLER_REPLACE, 0x3B, 0x8000000, _0158
 _0098:
     checktoxicspikes _00B8
-    monflicker (null)
+    monflicker 0x20
     startencounter
     trainerslidein BATTLER_DEFENDER, 0x12
 _00B8:
@@ -34,7 +34,7 @@ _00F0:
     gotosubscript 47
 _0108:
     checkspikes BATTLER_REPLACE, _0158
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0x13
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_SWITCHED_BATTLER
     changevar VAR_OP_SETMASK, VAR_06, 0x40
     gotosubscript 2
     printmessage 0x1AD, 0x2, 0x6, "NaN", "NaN", "NaN", "NaN", "NaN"
@@ -42,7 +42,7 @@ _0108:
     wait 0x1E
 _0158:
     checkstealthrock BATTLER_REPLACE, _01A8
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0x13
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_SWITCHED_BATTLER
     changevar VAR_OP_SETMASK, VAR_06, 0x40
     gotosubscript 2
     printmessage 0x437, 0x2, 0x6, "NaN", "NaN", "NaN", "NaN", "NaN"

@@ -12,7 +12,7 @@
 a001_090:
     if IF_MASK, VAR_06, 0x40, _0028
     playmovesoundeffect BATTLER_xFF
-    monflicker BATTLER_xFF
+    monflicker 0xFF
     waitmessage
 _0028:
     printmessage 0x162, 0x2, 0xFF, "NaN", "NaN", "NaN", "NaN", "NaN"

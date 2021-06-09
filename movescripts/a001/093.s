@@ -14,7 +14,7 @@ a001_093:
     ifmonstat IF_MASK, BATTLER_DEFENDER, 0x35, 0x8000000, _0078
     ifmonstat IF_NOTMASK, BATTLER_DEFENDER, 0x34, 0x7, _0078
     gotosubscript 76
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, VAR_MOVE_BACKUP, 0x8000000
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, 0x35, 0x8000000
     printmessage 0x19B, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

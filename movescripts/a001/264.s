@@ -17,7 +17,7 @@ a001_264:
     goto _0088
 _0054:
     if IF_EQUAL, VAR_MOVE_TYPE, 0x0, _0080
-    changevar2 VAR_OP_GET_RESULT, VAR_MOVE_TYPE, 0x9
+    changevar2 VAR_OP_GET_RESULT, VAR_MOVE_TYPE, VAR_09
     goto _0088
 _0080:
     getmoveparameter 0x3

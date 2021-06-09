@@ -33,7 +33,6 @@ _0044:
     waitmessage
     cmd_D6 BATTLER_xFF
     waitmessage
-_00DC:
     setstatus2effect BATTLER_xFF, 0x10
     waitmessage
 _00EC:

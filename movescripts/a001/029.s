@@ -10,7 +10,7 @@
 .create "a001\a001_029", 0
 
 a001_029:
-    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_xFF, VAR_BATTLE_STATUS, 0x20
+    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_xFF, 0x34, 0x20
     printmessage 0x72, 0x2, 0xFF, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     setstatusicon BATTLER_xFF, 0x0

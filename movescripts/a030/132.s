@@ -11,8 +11,8 @@
 
 a030_132:
     changehprecoverybasedonweather
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0xF
-    changevar VAR_OP_SET, VAR_STATUS1, 0x20000061
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x20000061
     changevar VAR_OP_SETMASK, VAR_60, 0x100
     endscript
 

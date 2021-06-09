@@ -20,8 +20,8 @@ _0050:
     waitmessage
     setstatusicon BATTLER_xFF, 0x0
     wait 0x1E
-    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_xFF, VAR_BATTLE_STATUS, 0x7
-    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_xFF, VAR_MOVE_BACKUP, 0x8000000
+    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_xFF, 0x34, 0x7
+    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_xFF, 0x35, 0x8000000
     endscript
 
 .close

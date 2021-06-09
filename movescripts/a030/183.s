@@ -12,7 +12,7 @@
 a030_183:
     trymagiccoat _002C
     preparemessage 0x23B, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
-    changevar VAR_OP_SET, VAR_STATUS2, 0x2000005A
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000005A
     endscript
 _002C:
     changevar VAR_OP_SET, VAR_10, 0x40

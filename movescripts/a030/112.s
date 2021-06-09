@@ -12,7 +12,7 @@
 a030_112:
     tryspikes _002C
     preparemessage 0x1AB, 0x1, 0x13, "NaN", "NaN", "NaN", "NaN", "NaN"
-    changevar VAR_OP_SET, VAR_STATUS2, 0x2000005A
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000005A
     endscript
 _002C:
     changevar VAR_OP_SETMASK, VAR_10, 0x40

@@ -10,8 +10,8 @@
 .create "a001\a001_279", 0
 
 a001_279:
-    changevar2 VAR_OP_GET_RESULT, VAR_ATTACKER, 0x3F
-    changevar2 VAR_OP_GET_RESULT, VAR_DEFENDER, 0x40
+    changevar2 VAR_OP_GET_RESULT, VAR_ATTACKER, VAR_ATTACKER_TEMP2
+    changevar2 VAR_OP_GET_RESULT, VAR_DEFENDER, VAR_DEFENDER_TEMP2
     endscript
 
 .close

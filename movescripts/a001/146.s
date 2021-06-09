@@ -13,9 +13,9 @@ a001_146:
     printattackmessage
     waitmessage
     wait 0xF
-    changevar2 VAR_OP_SET, VAR_ATTACKER_TEMP, 0xF
-    changevar2 VAR_OP_SET, VAR_DEFENDER, 0xF
-    changevar2 VAR_OP_SET, VAR_ATTACKER, 0x14
+    changevar2 VAR_OP_SET, VAR_ATTACKER_TEMP, VAR_ATTACKER
+    changevar2 VAR_OP_SET, VAR_DEFENDER, VAR_ATTACKER
+    changevar2 VAR_OP_SET, VAR_ATTACKER, VAR_BATTLER_SOMETHING
     changevar VAR_OP_SET, VAR_MOVE_EFFECT, 0x1
     changevar VAR_OP_SET, VAR_MOVE_TEMP2, 0x121
     seteffectprimary BATTLER_xFF
@@ -26,10 +26,10 @@ a001_146:
     changevar VAR_OP_SET, VAR_MOVE_EFFECT, 0x0
     changevar VAR_OP_CLEARMASK, VAR_06, 0x4000
     if IF_EQUAL, VAR_CURRENT_MOVE, 0x16F, _00D4
-    changevar2 VAR_OP_SET, VAR_DEFENDER, 0x1A
+    changevar2 VAR_OP_SET, VAR_DEFENDER, VAR_ATTACKER_TEMP
     endscript
 _00D4:
-    changevar2 VAR_OP_SET, VAR_DEFENDER, 0xF
+    changevar2 VAR_OP_SET, VAR_DEFENDER, VAR_ATTACKER
     endscript
 
 .close

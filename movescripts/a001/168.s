@@ -43,16 +43,16 @@ a001_168:
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, 0x35, VAR_09
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_DEFENDER, 0x35, VAR_43
     if IF_MASK, VAR_09, 0x100000, _02A4
-    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_DEFENDER, VAR_MOVE_BACKUP, 0x100000
+    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_DEFENDER, 0x35, 0x100000
     goto _02B8
 _02A4:
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, VAR_MOVE_BACKUP, 0x100000
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, 0x35, 0x100000
 _02B8:
     if IF_MASK, VAR_43, 0x100000, _02E8
-    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_ATTACKER, VAR_MOVE_BACKUP, 0x100000
+    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_ATTACKER, 0x35, 0x100000
     goto _02FC
 _02E8:
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_ATTACKER, VAR_MOVE_BACKUP, 0x100000
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_ATTACKER, 0x35, 0x100000
 _02FC:
     printmessage 0x400, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage

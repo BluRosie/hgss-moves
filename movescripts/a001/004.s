@@ -11,10 +11,10 @@
 
 a001_004:
     trynaturalcure BATTLER_PLAYER_LEFT, _0020
-    changevartomonvalue VAR_OP_SET, BATTLER_PLAYER_LEFT, VAR_BATTLE_STATUS, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_PLAYER_LEFT, 0x34, 0x0
 _0020:
     trynaturalcure BATTLER_PLAYER_RIGHT, _0040
-    changevartomonvalue VAR_OP_SET, BATTLER_PLAYER_RIGHT, VAR_BATTLE_STATUS, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_PLAYER_RIGHT, 0x34, 0x0
 _0040:
     if IF_NOTMASK, VAR_BATTLE_TYPE, 0x1, _0250
     if IF_EQUAL, VAR_BATTLE_TYPE, 0x8F, _0154

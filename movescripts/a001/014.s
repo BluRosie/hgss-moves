@@ -16,7 +16,7 @@ a001_014:
     if IF_NOTEQUAL, VAR_05, 0x2, _0054
     moldbreakerabilitycheck 0x0, BATTLER_ADDL_EFFECT, ABILITY_SHIELD_DUST, _0068
 _0054:
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_ADDL_EFFECT, VAR_MOVE_BACKUP, 0x8
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_ADDL_EFFECT, 0x35, 0x8
 _0068:
     endscript
 _006C:

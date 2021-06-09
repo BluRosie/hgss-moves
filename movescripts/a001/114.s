@@ -13,13 +13,13 @@ a001_114:
     tryswitchinmon BATTLER_ATTACKER, 0x1, _0078
     gotosubscript 76
     trynaturalcure BATTLER_ATTACKER, _0038
-    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, VAR_BATTLE_STATUS, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, 0x34, 0x0
 _0038:
     deletepokemon BATTLER_ATTACKER
     waitmessage
     preparehpgaugeslide BATTLER_ATTACKER
     waitmessage
-    changevar2 VAR_OP_SET, VAR_SWITCHED_BATTLER, 0xF
+    changevar2 VAR_OP_SET, VAR_SWITCHED_BATTLER, VAR_ATTACKER
     changevar VAR_OP_SETMASK, VAR_06, 0x100
     jumptosubseq 10
 _0078:

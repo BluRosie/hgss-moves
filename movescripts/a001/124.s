@@ -16,7 +16,7 @@ a001_124:
     seteffectprimary BATTLER_ATTACKER
     waitmessage
     changevar VAR_OP_SETMASK, VAR_06, 0x4000
-    changevartomonvalue VAR_OP_ADD, BATTLER_ATTACKER, VAR_69, 0x1
+    changevartomonvalue VAR_OP_ADD, BATTLER_ATTACKER, 0x45, 0x1
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, 0x45, VAR_22
     printmessage 0x13D, 0x11, 0x1, 0xFF, "NaN", "NaN", "NaN", "NaN"
     waitmessage
@@ -25,12 +25,12 @@ a001_124:
     changevar VAR_OP_SET, VAR_34, 0x10
     gotosubscript 12
     if IF_MASK, VAR_06, 0x20000, _00D4
-    changevartomonvalue VAR_OP_ADD, BATTLER_ATTACKER, VAR_70, 0x1
+    changevartomonvalue VAR_OP_ADD, BATTLER_ATTACKER, 0x46, 0x1
 _00D4:
     changevar VAR_OP_SET, VAR_34, 0x13
     gotosubscript 12
     if IF_MASK, VAR_06, 0x20000, _0114
-    changevartomonvalue VAR_OP_ADD, BATTLER_ATTACKER, VAR_71, 0x1
+    changevartomonvalue VAR_OP_ADD, BATTLER_ATTACKER, 0x47, 0x1
 _0114:
     changevar VAR_OP_CLEARMASK, VAR_60, 0x2
     changevar VAR_OP_CLEARMASK, VAR_60, 0x80

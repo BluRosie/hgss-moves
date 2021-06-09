@@ -18,7 +18,7 @@ _0030:
     printpreparedmessage
     waitmessage
     wait 0x1E
-    changevar2 VAR_OP_SET, VAR_ACTIVE_BATTLER, 0xF
+    changevar2 VAR_OP_SET, VAR_ACTIVE_BATTLER, VAR_ATTACKER
     changevar VAR_OP_SET, VAR_34, 0x10
     changevar VAR_OP_SET, VAR_05, 0x2
     gotosubscript 12

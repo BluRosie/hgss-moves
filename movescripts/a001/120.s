@@ -15,9 +15,9 @@ a001_120:
     damagediv 32, 2
     ifmonstat2 IF_LESSTHAN, BATTLER_ATTACKER, VAR_47, 0x20, _00D4
     gotosubscript 76
-    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, VAR_SWITCHED_BATTLER, 0xC
+    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, 0x13, 0xC
     changevar VAR_OP_MUL, VAR_HP_TEMP, 0xFFFFFFFF
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0xF
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER
     changevar VAR_OP_SETMASK, VAR_06, 0x40
     gotosubscript 2
     setstatus2effect BATTLER_ATTACKER, 0xC

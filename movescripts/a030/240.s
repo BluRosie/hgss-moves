@@ -11,7 +11,7 @@
 
 a030_240:
     if IF_MASK, VAR_SIDE_EFFECT_PLAYER, 0x7000, _0028
-    changevar VAR_OP_SET, VAR_STATUS2, 0x2000007D
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000007D
     endscript
 _0028:
     changevar VAR_OP_SETMASK, VAR_10, 0x40

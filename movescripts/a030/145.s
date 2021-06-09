@@ -12,8 +12,8 @@
 a030_145:
     ifmonstat IF_MASK, BATTLER_ATTACKER, 0x35, 0x1000, _007C
     checkitemeffect 0x0, BATTLER_ATTACKER, 0x63, _0060
-    changevar VAR_OP_SET, VAR_STATUS1, 0x4000000C
-    changevar VAR_OP_SET, VAR_STATUS2, 0x40000010
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x4000000C
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x40000010
     changevar VAR_OP_SETMASK, VAR_06, 0x23
     endscript
 _0060:

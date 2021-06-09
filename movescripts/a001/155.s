@@ -11,7 +11,7 @@
 
 a001_155:
     ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x2F, 0x0, _0054
-    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_DEFENDER, VAR_BATTLE_STATUS, 0x7
+    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_DEFENDER, 0x34, 0x7
     printmessage 0x12E, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     setstatusicon BATTLER_DEFENDER, 0x0

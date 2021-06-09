@@ -11,7 +11,7 @@
 
 a030_223:
     tryfeint _0024
-    changevar VAR_OP_SET, VAR_STATUS2, 0x2000004F
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000004F
     critcalc
     damagecalc
     endscript

@@ -30,7 +30,7 @@ _00A0:
 _00A8:
     ifmonstat IF_NOTMASK, BATTLER_DEFENDER, 0x34, 0xFF, _00E0
     setstatusicon BATTLER_ATTACKER, 0x0
-    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, VAR_BATTLE_STATUS, 0x0
+    changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, 0x34, 0x0
 _00E0:
     endscript
 

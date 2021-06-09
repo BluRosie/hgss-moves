@@ -38,12 +38,13 @@ _00A4:
     waitmessage
     yesnobox 0x4
     yesnowait _00E0, _0114
-    changevar2 VAR_OP_SET, VAR_SWITCHED_BATTLER_TEMP, 0x13
+_00E0:
+    changevar2 VAR_OP_SET, VAR_SWITCHED_BATTLER_TEMP, VAR_SWITCHED_BATTLER
     monlist
     monlistwait _0104
     gotosubscript 9
 _0104:
-    changevar2 VAR_OP_SET, VAR_SWITCHED_BATTLER, 0x38
+    changevar2 VAR_OP_SET, VAR_SWITCHED_BATTLER, VAR_SWITCHED_BATTLER_TEMP
 _0114:
     loadballgfx
     initballguage BATTLER_REPLACE

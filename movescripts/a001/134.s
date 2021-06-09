@@ -45,7 +45,6 @@ _01A4:
     printmessage 0x2CA, 0x25, 0x2, 0x2, 0x1, "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
-_01D8:
     endscript
 _01DC:
     changevar VAR_OP_SETMASK, VAR_10, 0x40

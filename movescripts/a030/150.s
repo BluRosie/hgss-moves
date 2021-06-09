@@ -10,7 +10,7 @@
 .create "a030\a030_150", 0
 
 a030_150:
-    changevar VAR_OP_SET, VAR_STATUS2, 0x80000008
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x80000008
     changevar VAR_OP_SET, VAR_DAMAGE_MULT, 0xA
     ifmonstat IF_NOTMASK, BATTLER_DEFENDER, 0x3B, 0x100, _0048
     changevar VAR_OP_SET, VAR_DAMAGE_MULT, 0x14

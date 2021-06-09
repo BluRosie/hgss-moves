@@ -20,12 +20,12 @@ a001_121:
     changevar VAR_OP_CLEARMASK, VAR_06, 0x4000
     ifmonstat IF_NOTMASK, BATTLER_xFF, 0x35, 0x1000000, _00EC
     changevar VAR_OP_MUL, VAR_HP_TEMP, 0xFFFFFFFF
-    ifmonstat2 IF_LESSTHAN, BATTLER_xFF, ABILITY_FLASH_FIRE, 0x20, _00B4
+    ifmonstat2 IF_LESSTHAN, BATTLER_xFF, VAR_90, 0x20, _00B4
     changevartomonvalue2 VAR_OP_SUB, BATTLER_xFF, 0x5A, VAR_HP_TEMP
     goto _00DC
 _00B4:
-    changevartomonvalue VAR_OP_SET, BATTLER_xFF, ABILITY_FLASH_FIRE, 0x0
-    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_xFF, VAR_MOVE_BACKUP, 0x1000000
+    changevartomonvalue VAR_OP_SET, BATTLER_xFF, 0x5A, 0x0
+    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_xFF, 0x35, 0x1000000
 _00DC:
     gotosubscript 90
     goto _0174
@@ -35,7 +35,7 @@ _00EC:
     ifmonstat IF_NOTMASK, BATTLER_xFF, 0x35, 0x800000, _0174
     ifmonstat IF_EQUAL, BATTLER_xFF, 0x2F, 0x0, _0174
     ifmonstat IF_EQUAL, BATTLER_xFF, 0x13, 0xC, _0174
-    changevartomonvalue VAR_OP_ADD, BATTLER_xFF, VAR_SWITCHED_BATTLER, 0x1
+    changevartomonvalue VAR_OP_ADD, BATTLER_xFF, 0x13, 0x1
     printmessage 0x16B, 0x2, 0xFF, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

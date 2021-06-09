@@ -16,7 +16,7 @@ a001_167:
     ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x1A, 0x79, _00A8
     ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x37, 0x70, _00A8
     gotosubscript 76
-    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, VAR_ATTACKER_TEMP, 0xF
+    changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, 0x1A, 0xF
     printmessage 0x3FD, 0xB, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

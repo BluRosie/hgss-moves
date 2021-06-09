@@ -12,7 +12,7 @@
 a030_008:
     checknostatus BATTLER_DEFENDER, _0040
     ifmonstat IF_NOTMASK, BATTLER_DEFENDER, 0x34, 0x7, _0040
-    changevar VAR_OP_SET, VAR_STATUS2, 0x2000003D
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000003D
     critcalc
     damagecalc
     endscript

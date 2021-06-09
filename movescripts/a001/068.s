@@ -20,7 +20,7 @@ a001_068:
     seteffectprimary BATTLER_ATTACKER
     waitmessage
     changevartomonvalue2 VAR_OP_SETMASK, BATTLER_DEFENDER, 0x3B, VAR_ATTACKER
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, VAR_RULESET, 0x4
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, 0x3B, 0x4
     printmessage 0x122, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN", "NaN"
     goto _00E4
 _00BC:

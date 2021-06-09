@@ -48,7 +48,7 @@ _0108:
 _020C:
     setstatus2effect BATTLER_ADDL_EFFECT, 0x2
     waitmessage
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_ADDL_EFFECT, VAR_BATTLE_STATUS, 0x8
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_ADDL_EFFECT, 0x34, 0x8
     if IF_EQUAL, VAR_05, 0x3, _025C
     printmessage 0x3F, 0x2, 0x7, "NaN", "NaN", "NaN", "NaN", "NaN"
     goto _0274

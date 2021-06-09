@@ -27,14 +27,14 @@ _0070:
     goto _0108
 _00D8:
     setstatusicon BATTLER_ATTACKER, 0x0
-    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_ATTACKER, VAR_BATTLE_STATUS, 0xFFFFFFF8
+    changevartomonvalue VAR_OP_CLEARMASK, BATTLER_ATTACKER, 0x34, 0xFFFFFFF8
     printmessage 0xD0, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
 _0108:
     waitmessage
     wait 0x1E
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_ATTACKER, VAR_BATTLE_STATUS, 0x3
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_ATTACKER, 0x34, 0x3
     setstatusicon BATTLER_ATTACKER, 0x1
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0xF
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER
     changevar VAR_OP_SETMASK, VAR_06, 0x40
     gotosubscript 2
     ifmonstat IF_MASK, BATTLER_ATTACKER, 0x34, 0xFFFFFFF8, _00D8

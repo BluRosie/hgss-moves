@@ -14,10 +14,10 @@ a001_083:
     checkbattlersequal BATTLER_ATTACKER, BATTLER_FAINTED, _010C
     ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x2F, 0x0, _010C
     printmessage 0x187, 0x9, 0x5, 0x1, "NaN", "NaN", "NaN", "NaN"
-    changevar2 VAR_OP_GET_RESULT, VAR_FAINTED_BATTLER, 0x1D
+    changevar2 VAR_OP_GET_RESULT, VAR_FAINTED_BATTLER, VAR_ITEM_TEMP
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, 0x2F, VAR_HP_TEMP
     changevar VAR_OP_MUL, VAR_HP_TEMP, 0xFFFFFFFF
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0xF
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER
     changevar VAR_OP_SETMASK, VAR_06, 0x40
     gotosubscript 2
     dofaintanimation
@@ -28,7 +28,7 @@ a001_083:
     wait 0x1E
     incrementgamestat BATTLER_FAINTED, 0x1, 0x2A
     incrementgamestat BATTLER_FAINTED, 0x0, 0x61
-    changevar2 VAR_OP_GET_RESULT, VAR_ITEM_TEMP, 0x12
+    changevar2 VAR_OP_GET_RESULT, VAR_ITEM_TEMP, VAR_FAINTED_BATTLER
 _010C:
     trygrudge _0134
     printmessage 0x238, 0xA, 0x1, 0xFF, "NaN", "NaN", "NaN", "NaN"

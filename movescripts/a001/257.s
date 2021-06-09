@@ -14,7 +14,7 @@ a001_257:
     printmessage 0x33B, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
-    changevar2 VAR_OP_SET, VAR_ACTIVE_BATTLER, 0xF
+    changevar2 VAR_OP_SET, VAR_ACTIVE_BATTLER, VAR_ATTACKER
     changevar VAR_OP_SET, VAR_05, 0x7
     gotosubscript 18
     endscript

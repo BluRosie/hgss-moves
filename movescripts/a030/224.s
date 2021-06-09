@@ -10,7 +10,7 @@
 .create "a030\a030_224", 0
 
 a030_224:
-    changevar VAR_OP_SET, VAR_STATUS2, 0x20000087
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x20000087
     critcalc
     damagecalc
     endscript

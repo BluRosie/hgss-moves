@@ -10,7 +10,7 @@
 .create "a001\a001_162", 0
 
 a001_162:
-    changevartomonvalue VAR_OP_XOR, BATTLER_ATTACKER, VAR_RULESET, 0x800000
+    changevartomonvalue VAR_OP_XOR, BATTLER_ATTACKER, 0x3B, 0x800000
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, 0x1, VAR_09
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, 0x2, VAR_43
     changevartomonvalue2 VAR_OP_SET, BATTLER_ATTACKER, 0x1, VAR_43

@@ -15,8 +15,8 @@ a030_122:
     damagecalc
     endscript
 _0014:
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0x10
-    changevar VAR_OP_SET, VAR_STATUS1, 0x20000061
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_DEFENDER
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x20000061
     changevar VAR_OP_SETMASK, VAR_06, 0x8000
     changevar VAR_OP_SET, VAR_MOVE_EFFECT, 0x1
     endscript

@@ -28,7 +28,6 @@ _0090:
     if IF_NOTMASK, VAR_09, 0x2, _00C8
     printmessage 0x2B1, 0x25, 0x10, 0x10, 0xFF, "NaN", "NaN", "NaN"
     waitmessage
-_00C0:
     wait 0x1E
 _00C8:
     if IF_MASK, VAR_09, 0x4, _00E8

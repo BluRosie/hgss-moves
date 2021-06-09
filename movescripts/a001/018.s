@@ -72,7 +72,7 @@ _02C4:
     goto _0328
 _0308:
     clearsomeflag BATTLER_ADDL_EFFECT
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0x11
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ACTIVE_BATTLER
     gotosubscript 287
 _0328:
     endscript

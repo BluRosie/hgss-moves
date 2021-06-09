@@ -10,7 +10,7 @@
 .create "a001\a001_095", 0
 
 a001_095:
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_ADDL_EFFECT, VAR_RULESET, 0x100
+    changevartomonvalue VAR_OP_SETMASK, BATTLER_ADDL_EFFECT, 0x3B, 0x100
     changevar VAR_OP_SET, VAR_34, 0x15
     jumptosubseq 12
 

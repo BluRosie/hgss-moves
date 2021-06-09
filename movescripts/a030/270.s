@@ -11,7 +11,7 @@
 
 a030_270:
     tryswitchinmon BATTLER_ATTACKER, 0x1, _0024
-    changevar VAR_OP_SET, VAR_STATUS1, 0x2000008F
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x2000008F
     endscript
 _0024:
     changevar VAR_OP_SETMASK, VAR_10, 0x40

@@ -13,7 +13,7 @@ a030_233:
     ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x1A, 0x79, _008C
     ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x37, 0x70, _008C
     tryfling _008C
-    changevar VAR_OP_SET, VAR_STATUS2, 0xA0000088
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0xA0000088
     critcalc
     damagecalc
     printattackmessage

@@ -17,7 +17,7 @@ a001_015:
     abilitycheck 0x1, BATTLER_ATTACKER, ABILITY_STEADFAST, _0070
     changevar VAR_OP_SET, VAR_05, 0x3
     changevar VAR_OP_SET, VAR_34, 0x11
-    changevar2 VAR_OP_SET, VAR_ACTIVE_BATTLER, 0xF
+    changevar2 VAR_OP_SET, VAR_ACTIVE_BATTLER, VAR_ATTACKER
     gotosubscript 12
 _0070:
     endscript

@@ -14,18 +14,18 @@ a001_077:
     gotosubscript 76
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, 0x2F, VAR_09
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_DEFENDER, 0x2F, VAR_HP_TEMP
-    changevar2 VAR_OP_ADD, VAR_09, 0x20
+    changevar2 VAR_OP_ADD, VAR_09, VAR_HP_TEMP
     changevar VAR_OP_DIV, VAR_09, 0x2
     changevar VAR_OP_SETMASK, VAR_06, 0x40
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0xF
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, 0x2F, VAR_HP_TEMP
-    changevar2 VAR_OP_SUB, VAR_HP_TEMP, 0x9
+    changevar2 VAR_OP_SUB, VAR_HP_TEMP, VAR_09
     changevar VAR_OP_MUL, VAR_HP_TEMP, 0xFFFFFFFF
     gotosubscript 2
     changevar VAR_OP_SETMASK, VAR_06, 0x40
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0x10
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_DEFENDER
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_DEFENDER, 0x2F, VAR_HP_TEMP
-    changevar2 VAR_OP_SUB, VAR_HP_TEMP, 0x9
+    changevar2 VAR_OP_SUB, VAR_HP_TEMP, VAR_09
     changevar VAR_OP_MUL, VAR_HP_TEMP, 0xFFFFFFFF
     gotosubscript 2
     printmessage 0x334, 0x0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"

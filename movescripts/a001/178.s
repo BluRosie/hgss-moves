@@ -15,7 +15,7 @@ a001_178:
     wait 0xF
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_DEFENDER, 0x30, VAR_09
     ifmonstat2 IF_EQUAL, BATTLER_DEFENDER, VAR_47, 0x9, _0088
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, 0x10
+    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_DEFENDER
     changevar VAR_OP_SETMASK, VAR_06, 0x40
     gotosubscript 2
     printmessage 0x27B, 0xB, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN"

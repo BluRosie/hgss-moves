@@ -19,7 +19,7 @@ _0038:
     waitmessage
     checknostatus BATTLER_DEFENDER, _00FC
     changevar VAR_OP_SETMASK, VAR_06, 0x4001
-    changevar2 VAR_OP_SET, VAR_ACTIVE_BATTLER, 0x10
+    changevar2 VAR_OP_SET, VAR_ACTIVE_BATTLER, VAR_DEFENDER
     changevar VAR_OP_SETMASK, VAR_60, 0x80
     ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x13, 0x0, _00B0
     changevar VAR_OP_SET, VAR_34, 0x2E

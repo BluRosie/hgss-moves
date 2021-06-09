@@ -186,7 +186,7 @@ BATTLER_xFF              equ 0xFF
 .endmacro
 
 .macro tryfaintmon,battler
-    .word 0x1C
+    .word 0x1C, battler
 .endmacro
 
 .macro dofaintanimation
@@ -308,8 +308,8 @@ VAR_OP_AND         equ 20
 // var names:
 VAR_BATTLE_TYPE equ 0
 VAR_CRIT_CHANCE equ 1
-VAR_EFFECT1 equ 2
-VAR_EFFECT2 equ 3
+VAR_ADD_STATUS1 equ 2
+VAR_ADD_STATUS2 equ 3
 VAR_04 equ 4
 VAR_05 equ 5
 VAR_06 equ 6
@@ -378,6 +378,25 @@ VAR_68 equ 68
 VAR_69 equ 69
 VAR_70 equ 70
 VAR_71 equ 71
+VAR_72 equ 72 
+VAR_73 equ 73
+VAR_74 equ 74
+VAR_75 equ 75
+VAR_76 equ 76
+VAR_77 equ 77
+VAR_78 equ 78
+VAR_79 equ 79
+VAR_80 equ 80
+VAR_81 equ 81
+VAR_82 equ 82
+VAR_83 equ 83
+VAR_84 equ 84
+VAR_85 equ 85
+VAR_86 equ 86
+VAR_87 equ 87
+VAR_88 equ 88
+VAR_89 equ 89
+VAR_90 equ 90
 
 .macro changevar,operator,var,value
     .word 0x32, operator, var, value
@@ -430,6 +449,7 @@ VAR_71 equ 71
 
 .macro gotosubscript2,num
     .word 0x3D, num
+.endmacro
 
 .macro checkifchatot // i think it is this
     .word 0x3E
@@ -460,7 +480,7 @@ VAR_71 equ 71
 .endmacro
 
 .macro setstatus2effect,battler,status
-    .word 0x45, battler, type
+    .word 0x45, battler, status
 .endmacro
 
 .macro setstatus2effect2,battler1,battler2,status
@@ -1101,6 +1121,7 @@ VAR_71 equ 71
 .macro checknostatus,battler,address
     .word 0xD2, battler
     .word ((address - org()) / 4) - 1
+.endmacro
 
 .macro checkcloudnine,address
     .word 0xD3
