@@ -10,75 +10,71 @@
 .create "a030\a030_268", 0
 
 a030_268:
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x83, _015C
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x86, _0174
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x84, _018C
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x85, _01A4
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x89, _01BC
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x88, _01D4
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x8A, _01EC
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x8D, _0204
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x93, _021C
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x7E, _0234
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x7F, _024C
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x81, _0264
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x80, _027C
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x87, _0294
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x82, _02AC
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x8B, _02C4
-    checkitemeffect 0x0, BATTLER_ATTACKER, 0x8C, _02DC
-    goto _02EC
-_015C:
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x83, _0148
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x86, _0160
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x84, _0178
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x85, _0190
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x89, _01A8
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x88, _01C0
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x8A, _01D8
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x8D, _01F0
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x7E, _0208
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x7F, _0220
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x81, _0238
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x80, _0250
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x87, _0268
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x82, _0280
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x8B, _0298
+    checkitemeffect 0x0, BATTLER_ATTACKER, 0x8C, _02B0
+    goto _02C0
+_0148:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x1
-    goto _02EC
-_0174:
+    goto _02C0
+_0160:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x2
-    goto _02EC
-_018C:
+    goto _02C0
+_0178:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x3
-    goto _02EC
-_01A4:
+    goto _02C0
+_0190:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x4
-    goto _02EC
-_01BC:
+    goto _02C0
+_01A8:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x5
-    goto _02EC
-_01D4:
+    goto _02C0
+_01C0:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x6
-    goto _02EC
-_01EC:
+    goto _02C0
+_01D8:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x7
-    goto _02EC
-_0204:
+    goto _02C0
+_01F0:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x8
-    goto _02EC
-_021C:
-    changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x9
-    goto _02EC
-_0234:
+    goto _02C0
+_0208:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0xA
-    goto _02EC
-_024C:
+    goto _02C0
+_0220:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0xB
-    goto _02EC
-_0264:
+    goto _02C0
+_0238:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0xC
-    goto _02EC
-_027C:
+    goto _02C0
+_0250:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0xD
-    goto _02EC
-_0294:
+    goto _02C0
+_0268:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0xE
-    goto _02EC
-_02AC:
+    goto _02C0
+_0280:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0xF
-    goto _02EC
-_02C4:
+    goto _02C0
+_0298:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x10
-    goto _02EC
-_02DC:
+    goto _02C0
+_02B0:
     changevar VAR_OP_SET, VAR_MOVE_TYPE, 0x11
-_02EC:
+_02C0:
     critcalc
     damagecalc
     endscript
