@@ -30,12 +30,12 @@ const char* Battlers[] =
     "BATTLER_x14",
     "BATTLER_x15",
     "BATTLER_ALL_REPLACED",
-    [0xFF] = "BATTLER_xFF"
+    [0xFF] = "BATTLER_xFF",
 };
 
 const char* IfConditions[] =
 {
-    "IF_EQUAL",
+    [0] = "IF_EQUAL",
     "IF_NOTEQUAL",
     "IF_GREATER",
     "IF_LESSTHAN",
@@ -66,8 +66,8 @@ const char* BattleVars[] =
 {
     "VAR_BATTLE_TYPE",
     "VAR_CRIT_CHANCE",
-    "VAR_STATUS1",
-    "VAR_STATUS2",
+    "VAR_ADD_STATUS1",
+    "VAR_ADD_STATUS2",
     "VAR_04",
     "VAR_05",
     "VAR_06",
@@ -132,6 +132,29 @@ const char* BattleVars[] =
     "VAR_65",
     "VAR_ASSURANCE_DAMAGE",
     "VAR_ASSURANCE_DAMAGE_AGAINST_DEFENDER",
+    "VAR_68",
+    "VAR_69",
+    "VAR_70",
+    "VAR_71",
+    "VAR_72",
+    "VAR_73",
+    "VAR_74",
+    "VAR_75",
+    "VAR_76",
+    "VAR_77",
+    "VAR_78",
+    "VAR_79",
+    "VAR_80",
+    "VAR_81",
+    "VAR_82",
+    "VAR_83",
+    "VAR_84",
+    "VAR_85",
+    "VAR_86",
+    "VAR_87",
+    "VAR_88",
+    "VAR_89",
+    "VAR_90",
 };
 
 const char* Abilities[] =
@@ -1318,1539 +1341,1556 @@ int deleteaddress(int address) // deletes the address from the log so it won't b
 
 int main(int argc, char **argv)
 {
-    char sourcename[BUFF_SIZE];
-    int elementnum, movetoa001 = 0;
-    FILE *source;
+    char sourcename[BUFF_SIZE], scriptname[BUFF_SIZE], basename[BUFF_SIZE];
+    int elementnum, movetoa001 = 0, ignoreEOF = 0;
+    FILE *source, *scriptfile;
 
     for (int i = 0; i <= 296; i++)
     {
         if (movetoa001 == 0)
+        {
+            sprintf(scriptname, "movescripts\\a030\\%03d.s", i);
             sprintf(sourcename, "a030\\a030_%03d", i);
+            sprintf(basename, "a030_%03d", i);
+        }
         else
+        {
+            sprintf(scriptname, "movescripts\\a001\\%03d.s", i);
             sprintf(sourcename, "a001\\a001_%03d", i);
-
-        printf("\n\n//%s\n\n", sourcename, i);
+            sprintf(basename, "a001_%03d", i);
+        }
 
         source = fopen(sourcename, "rb+");
         fseek(source, 0, SEEK_SET);
+
+        scriptfile = fopen(scriptname, "w");
+
+        fprintf(scriptfile, ".nds\n.thumb\n\n.include \"include/battlescriptcmd.s\"\n.include \"include/abilities.s\"\n.include \"include/itemnums.s\"\n.include \"include/monnums.s\"\n.include \"include/movenums.s\"\n\n.create \"%s\", 0\n\n%s:\n", sourcename, basename);
 
         elementnum = 0;
 
         gLogging = 1;
 
-        while (elementnum != EOF)
+        while (elementnum != EOF || ignoreEOF == 1)
         {
             if (gLogging == 0) // make sure this is done first
                 if (deleteaddress(ftell(source)))
-                    printf("_%04X:\n", ftell(source));
+                    fprintf(scriptfile, "_%04X:\n", ftell(source));
 
             GET_U32(elementnum, source);
-            if (elementnum != EOF)
+            if (elementnum != EOF || ignoreEOF == 1)
             {
+                ignoreEOF = 0;
                 switch (elementnum)
                 {
                 case 0x0:
-                    if (gLogging == 0) printf("    startencounter\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    startencounter\n");
                     break;
                 case 0x1:
-                    if (gLogging == 0) printf("    pokemonencounter ");
+                    if (gLogging == 0) fprintf(scriptfile, "    pokemonencounter ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x2:
-                    if (gLogging == 0) printf("    pokemonslidein ");
+                    if (gLogging == 0) fprintf(scriptfile, "    pokemonslidein ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x3:
-                    if (gLogging == 0) printf("    pokemonappear ");
+                    if (gLogging == 0) fprintf(scriptfile, "    pokemonappear ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x4:
-                    if (gLogging == 0) printf("    returnpokemon ");
+                    if (gLogging == 0) fprintf(scriptfile, "    returnpokemon ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x5:
-                    if (gLogging == 0) printf("    deletepokemon ");
+                    if (gLogging == 0) fprintf(scriptfile, "    deletepokemon ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x6:
-                    if (gLogging == 0) printf("    starttrainerencounter ");
+                    if (gLogging == 0) fprintf(scriptfile, "    starttrainerencounter ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x7:
-                    if (gLogging == 0) printf("    throwpokeball ");
+                    if (gLogging == 0) fprintf(scriptfile, "    throwpokeball ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x8:
-                    if (gLogging == 0) printf("    preparetrainerslide ");
+                    if (gLogging == 0) fprintf(scriptfile, "    preparetrainerslide ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x9:
-                    if (gLogging == 0) printf("    trainerslidein ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trainerslidein ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xA:
-                    if (gLogging == 0) printf("    backgroundslidein\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    backgroundslidein\n");
                     break;
                 case 0xB:
-                    if (gLogging == 0) printf("    hpgaugeslidein ");
+                    if (gLogging == 0) fprintf(scriptfile, "    hpgaugeslidein ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xC:
-                    if (gLogging == 0) printf("    hpgaugeslidewait ");
+                    if (gLogging == 0) fprintf(scriptfile, "    hpgaugeslidewait ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xD:
-                    if (gLogging == 0) printf("    preparehpgaugeslide ");
+                    if (gLogging == 0) fprintf(scriptfile, "    preparehpgaugeslide ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xE:
-                    if (gLogging == 0) printf("    waitmessage\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    waitmessage\n");
                     break;
                 case 0xF:
-                    if (gLogging == 0) printf("    damagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    damagecalc\n");
                     break;
                 case 0x10:
-                    if (gLogging == 0) printf("    damagecalc2\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    damagecalc2\n");
                     break;
                 case 0x11:
-                    if (gLogging == 0) printf("    printattackmessage\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    printattackmessage\n");
                     break;
                 case 0x12:
-                    if (gLogging == 0) printf("    printmessage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    printmessage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // msgid
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // msgid
                     GET_U32(elementnum, source);
                     if (elementnum == 0)
                     {
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // just print the tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // just print the tag
                     }
                     else if (elementnum < 9)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num1
                     }
                     else if (elementnum < 31)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num2
                     }
                     else if (elementnum < 52)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num3
                     }
                     else if (elementnum < 60)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num3
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\"\n", elementnum); // num4
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\"\n", elementnum); // num4
                     }
                     else
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num3
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num4
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num4
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num5
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num5
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X\n", elementnum); // num6
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum); // num6
                     }
                     break;
                 case 0x13:
-                    if (gLogging == 0) printf("    printmessage2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    printmessage2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // msgid
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // msgid
                     GET_U32(elementnum, source);
                     if (elementnum == 0)
                     {
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // just print the tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // just print the tag
                     }
                     else if (elementnum < 9)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num1
                     }
                     else if (elementnum < 31)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num2
                     }
                     else if (elementnum < 52)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num3
                     }
                     else if (elementnum < 60)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num3
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\"\n", elementnum); // num4
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\"\n", elementnum); // num4
                     }
                     else
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num3
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num4
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num4
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num5
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num5
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X\n", elementnum); // num6
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum); // num6
                     }
                     break;
                 case 0x14:
-                    if (gLogging == 0) printf("    printpreparedmessage\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    printpreparedmessage\n");
                     break;
                 case 0x15:
-                    if (gLogging == 0) printf("    preparemessage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    preparemessage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // msgid
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // msgid
                     GET_U32(elementnum, source);
                     if (elementnum == 0)
                     {
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // just print the tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // just print the tag
                     }
                     else if (elementnum < 9)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num1
                     }
                     else if (elementnum < 31)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num2
                     }
                     else if (elementnum < 52)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num3
                     }
                     else if (elementnum < 60)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num3
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\"\n", elementnum); // num4
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\"\n", elementnum); // num4
                     }
                     else
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num3
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num4
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num4
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num5
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num5
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X\n", elementnum); // num6
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum); // num6
                     }
                     break;
                 case 0x16:
-                    if (gLogging == 0) printf("    printmessagepassbattler ");
+                    if (gLogging == 0) fprintf(scriptfile, "    printmessagepassbattler ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // msgid
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // msgid
                     GET_U32(elementnum, source);
                     if (elementnum == 0)
                     {
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // just print the tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // just print the tag
                     }
                     else if (elementnum < 9)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num1
                     }
                     else if (elementnum < 31)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num2
                     }
                     else if (elementnum < 52)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\", \"NaN\"\n", elementnum); // num3
                     }
                     else if (elementnum < 60)
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num3
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, \"NaN\", \"NaN\"\n", elementnum); // num4
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, \"NaN\", \"NaN\"\n", elementnum); // num4
                     }
                     else
                     {
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // tag
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // tag
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num1
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num1
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num2
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num2
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num3
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num3
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num4
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num4
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X, ", elementnum); // num5
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num5
                         GET_U32(elementnum, source);
-                        if (gLogging == 0) printf("0x%X\n", elementnum); // num6
+                        if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum); // num6
                     }
                     break;
                 case 0x17:
-                    if (gLogging == 0) printf("    seteffectprimary ");
+                    if (gLogging == 0) fprintf(scriptfile, "    seteffectprimary ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x18:
-                    if (gLogging == 0) printf("    seteffectsecondary ");
+                    if (gLogging == 0) fprintf(scriptfile, "    seteffectsecondary ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // attacker
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // attacker
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]); // defender
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]); // defender
                     break;
                 case 0x19:
-                    if (gLogging == 0) printf("    monflicker ");
+                    if (gLogging == 0) fprintf(scriptfile, "    monflicker ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x1A:
-                    if (gLogging == 0) printf("    datahpupdate ");
+                    if (gLogging == 0) fprintf(scriptfile, "    datahpupdate ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x1B:
-                    if (gLogging == 0) printf("    healthbarupdate ");
+                    if (gLogging == 0) fprintf(scriptfile, "    healthbarupdate ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x1C:
-                    if (gLogging == 0) printf("    tryfaintmon ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryfaintmon ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x1D:
-                    if (gLogging == 0) printf("    dofaintanimation\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    dofaintanimation\n");
                     break;
                 case 0x1E:
-                    if (gLogging == 0) printf("    wait ");
+                    if (gLogging == 0) fprintf(scriptfile, "    wait ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x1F:
-                    if (gLogging == 0) printf("    playse ");
+                    if (gLogging == 0) fprintf(scriptfile, "    playse ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x20:
-                    if (gLogging == 0) printf("    if ");
+                    if (gLogging == 0) fprintf(scriptfile, "    if ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", IfConditions[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", IfConditions[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", BattleVars[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", BattleVars[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x21:
-                    if (gLogging == 0) printf("    ifmonstat ");
+                    if (gLogging == 0) fprintf(scriptfile, "    ifmonstat ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", IfConditions[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", IfConditions[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x22:
-                    if (gLogging == 0) printf("    fadeout\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    fadeout\n");
                     break;
                 case 0x23:
-                    if (gLogging == 0) printf("    jumptosubseq ");
+                    if (gLogging == 0) fprintf(scriptfile, "    jumptosubseq ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d\n", elementnum); // num
+                    if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum); // num
                     break;
                 case 0x24:
-                    if (gLogging == 0) printf("    jumptocurmovescript\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    jumptocurmovescript\n");
                     break;
                 case 0x25:
-                    if (gLogging == 0) printf("    jumptocurmovescript2\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    jumptocurmovescript2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d\n", elementnum); // num
+                    if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum); // num
                     break;
                 case 0x26:
-                    if (gLogging == 0) printf("    critcalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    critcalc\n");
                     break;
                 case 0x27:
-                    if (gLogging == 0) printf("    shouldgetexp ");
+                    if (gLogging == 0) fprintf(scriptfile, "    shouldgetexp ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address
                     break;
                 case 0x28:
-                    if (gLogging == 0) printf("    initexpget\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    initexpget\n");
                     break;
                 case 0x29:
-                    if (gLogging == 0) printf("    getexp\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    getexp\n");
                     break;
                 case 0x2A:
-                    if (gLogging == 0) printf("    getexploop ");
+                    if (gLogging == 0) fprintf(scriptfile, "    getexploop ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address
                     break;
                 case 0x2B:
-                    if (gLogging == 0) printf("    showmonlist\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    showmonlist\n");
                     break;
                 case 0x2C:
-                    if (gLogging == 0) printf("    waitformonselection\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    waitformonselection\n");
                     break;
                 case 0x2D:
-                    if (gLogging == 0) printf("    switchindataupdate ");
+                    if (gLogging == 0) fprintf(scriptfile, "    switchindataupdate ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x2E:
-                    if (gLogging == 0) printf("    jumpifcantswitch ");
+                    if (gLogging == 0) fprintf(scriptfile, "    jumpifcantswitch ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address
                     break;
                 case 0x2F:
-                    if (gLogging == 0) printf("    initcapture ");
+                    if (gLogging == 0) fprintf(scriptfile, "    initcapture ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x30:
-                    if (gLogging == 0) printf("    capturemon\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    capturemon\n");
                     break;
                 case 0x31:
-                    if (gLogging == 0) printf("    setmultihit ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setmultihit ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%d, ", elementnum); // hits
+                    if (gLogging == 0) fprintf(scriptfile, "0x%d, ", elementnum); // hits
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum); // num
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum); // num
                     break;
                 case 0x32:
-                    if (gLogging == 0) printf("    changevar ");
+                    if (gLogging == 0) fprintf(scriptfile, "    changevar ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", VarOperators[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", VarOperators[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", BattleVars[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", BattleVars[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
+                    ignoreEOF = 1;
                     break;
                 case 0x33:
-                    if (gLogging == 0) printf("    statbuffchange ");
+                    if (gLogging == 0) fprintf(scriptfile, "    statbuffchange ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS3(elementnum, source));
-                    if (gLogging == 0) printf("_%04X, ", GET_ADDRESS3(elementnum, source)); // address1
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X, ", GET_ADDRESS3(elementnum, source)); // address1
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS2(elementnum, source));
-                    if (gLogging == 0) printf("_%04X, ", GET_ADDRESS2(elementnum, source)); // address2
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X, ", GET_ADDRESS2(elementnum, source)); // address2
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address3
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address3
                     break;
                 case 0x34:
-                    if (gLogging == 0) printf("    changevartomonvalue ");
+                    if (gLogging == 0) fprintf(scriptfile, "    changevartomonvalue ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", VarOperators[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", VarOperators[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", BattleVars[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x35:
-                    if (gLogging == 0) printf("    clearstatus2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    clearstatus2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x36:
-                    if (gLogging == 0) printf("    togglevanish ");
+                    if (gLogging == 0) fprintf(scriptfile, "    togglevanish ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x37:
-                    if (gLogging == 0) printf("    abilitycheck ");
+                    if (gLogging == 0) fprintf(scriptfile, "    abilitycheck ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // num
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Abilities[elementnum]); // ability
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Abilities[elementnum]); // ability
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address
                     break;
                 case 0x38:
-                    if (gLogging == 0) printf("    random ");
+                    if (gLogging == 0) fprintf(scriptfile, "    random ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d, ", elementnum); // range
+                    if (gLogging == 0) fprintf(scriptfile, "%d, ", elementnum); // range
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d\n", elementnum); // startingnum
+                    if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum); // startingnum
                     break;
                 case 0x39:
-                    if (gLogging == 0) printf("    changevar2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    changevar2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", VarOperators[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", VarOperators[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", BattleVars[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", BattleVars[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", BattleVars[elementnum]);
                     break;
                 case 0x3A:
-                    if (gLogging == 0) printf("    changevartomonvalue2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    changevartomonvalue2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", VarOperators[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", VarOperators[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", BattleVars[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", BattleVars[elementnum]);
                     break;
                 case 0x3B:
-                    if (gLogging == 0) printf("    goto ");
+                    if (gLogging == 0) fprintf(scriptfile, "    goto ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x3C:
-                    if (gLogging == 0) printf("    gotosubscript ");
+                    if (gLogging == 0) fprintf(scriptfile, "    gotosubscript ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum);
                     break;
                 case 0x3D:
-                    if (gLogging == 0) printf("    gotosubscript2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    gotosubscript2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum);
                     break;
                 case 0x3E:
-                    if (gLogging == 0) printf("    checkifchatot\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkifchatot\n");
                     break;
                 case 0x3F:
-                    if (gLogging == 0) printf("    sethaze\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    sethaze\n");
                     break;
                 case 0x40:
-                    if (gLogging == 0) printf("    setsomeflag ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setsomeflag ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x41:
-                    if (gLogging == 0) printf("    clearsomeflag ");
+                    if (gLogging == 0) fprintf(scriptfile, "    clearsomeflag ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x42:
-                    if (gLogging == 0) printf("    setstatusicon ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setstatusicon ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x43:
-                    if (gLogging == 0) printf("    trainermessage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trainermessage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x44:
-                    if (gLogging == 0) printf("    calcmoney\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    calcmoney\n");
                     break;
                 case 0x45:
-                    if (gLogging == 0) printf("    setstatus2effect ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setstatus2effect ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x46:
-                    if (gLogging == 0) printf("    setstatus2effect2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setstatus2effect2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x47:
-                    if (gLogging == 0) printf("    setstatus2effect3 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setstatus2effect3 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x48:
-                    if (gLogging == 0) printf("    returnmessage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    returnmessage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x49:
-                    if (gLogging == 0) printf("    sentoutmessage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    sentoutmessage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x4A:
-                    if (gLogging == 0) printf("    encountermessage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    encountermessage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x4B:
-                    if (gLogging == 0) printf("    encountermessage2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    encountermessage2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x4C:
-                    if (gLogging == 0) printf("    trainermessage2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trainermessage2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x4D:
-                    if (gLogging == 0) printf("    tryconversion ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryconversion ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x4E:
-                    if (gLogging == 0) printf("    if2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    if2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", IfConditions[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", IfConditions[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", BattleVars[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", BattleVars[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x4F:
-                    if (gLogging == 0) printf("    ifmonstat2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    ifmonstat2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", IfConditions[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", IfConditions[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", BattleVars[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", BattleVars[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x50:
-                    if (gLogging == 0) printf("    dopayday\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    dopayday\n");
                     break;
                 case 0x51:
-                    if (gLogging == 0) printf("    setlightscreen ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setlightscreen ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x52:
-                    if (gLogging == 0) printf("    setreflect ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setreflect ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x53:
-                    if (gLogging == 0) printf("    setmist ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setmist ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x54:
-                    if (gLogging == 0) printf("    tryonehitko\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryonehitko\n");
                     break;
                 case 0x55:
-                    if (gLogging == 0) printf("    damagediv ");
+                    if (gLogging == 0) fprintf(scriptfile, "    damagediv ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "%d, ", elementnum);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum);
                     break;
                 case 0x56:
-                    if (gLogging == 0) printf("    damagediv2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    damagediv2 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "%d, ", elementnum);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum);
                     break;
                 case 0x57:
-                    if (gLogging == 0) printf("    trymimic ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trymimic ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x58:
-                    if (gLogging == 0) printf("    metronome\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    metronome\n");
                     break;
                 case 0x59:
-                    if (gLogging == 0) printf("    trydisable ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trydisable ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x5A:
-                    if (gLogging == 0) printf("    counter\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    counter\n");
                     break;
                 case 0x5B:
-                    if (gLogging == 0) printf("    mirrorcoat\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    mirrorcoat\n");
                     break;
                 case 0x5C:
-                    if (gLogging == 0) printf("    tryencore ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryencore ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x5D:
-                    if (gLogging == 0) printf("    tryconversion2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryconversion2 ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x5E:
-                    if (gLogging == 0) printf("    trysketch ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trysketch ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x5F:
-                    if (gLogging == 0) printf("    trysleeptalk ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trysleeptalk ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x60:
-                    if (gLogging == 0) printf("    flaildamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    flaildamagecalc\n");
                     break;
                 case 0x61:
-                    if (gLogging == 0) printf("    tryspite ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryspite ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x62:
-                    if (gLogging == 0) printf("    healbell\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    healbell\n");
                     break;
                 case 0x63:
-                    if (gLogging == 0) printf("    trythief ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trythief ");
+                    GET_U32(elementnum, source);
+                    if (gLogging == 1) log_address(GET_ADDRESS2(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X, ", GET_ADDRESS2(elementnum, source)); // address1
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X, ", GET_ADDRESS2(elementnum, source)); // address1
-                    GET_U32(elementnum, source);
-                    if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address2
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address2
                     break;
                 case 0x64:
-                    if (gLogging == 0) printf("    willprotectwork ");
+                    if (gLogging == 0) fprintf(scriptfile, "    willprotectwork ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x65:
-                    if (gLogging == 0) printf("    trysubstitute ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trysubstitute ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x66:
-                    if (gLogging == 0) printf("    trywhirlwind ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trywhirlwind ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x67:
-                    if (gLogging == 0) printf("    transform\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    transform\n");
                     break;
                 case 0x68:
-                    if (gLogging == 0) printf("    tryspikes ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryspikes ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x69:
-                    if (gLogging == 0) printf("    checkspikes ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkspikes ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x6A:
-                    if (gLogging == 0) printf("    tryperishsong ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryperishsong ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x6B:
-                    if (gLogging == 0) printf("    orderbattlersbyspeed ");
+                    if (gLogging == 0) fprintf(scriptfile, "    orderbattlersbyspeed ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0x6C:
-                    if (gLogging == 0) printf("    exitloopatvalue ");
+                    if (gLogging == 0) fprintf(scriptfile, "    exitloopatvalue ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x6D:
-                    if (gLogging == 0) printf("    weatherdamagecalc ");
+                    if (gLogging == 0) fprintf(scriptfile, "    weatherdamagecalc ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0x6E:
-                    if (gLogging == 0) printf("    rolloutdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    rolloutdamagecalc\n");
                     break;
                 case 0x6F:
-                    if (gLogging == 0) printf("    furycutterdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    furycutterdamagecalc\n");
                     break;
                 case 0x70:
-                    if (gLogging == 0) printf("    tryattract ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryattract ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x71:
-                    if (gLogging == 0) printf("    trysafeguard ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trysafeguard ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x72:
-                    if (gLogging == 0) printf("    trypresent ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trypresent ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x73:
-                    if (gLogging == 0) printf("    magnitudedamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    magnitudedamagecalc\n");
                     break;
                 case 0x74:
-                    if (gLogging == 0) printf("    tryswitchinmon ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryswitchinmon ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x75:
-                    if (gLogging == 0) printf("    dorapidspineffect\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    dorapidspineffect\n");
                     break;
                 case 0x76:
-                    if (gLogging == 0) printf("    changehprecoverybasedonweather\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    changehprecoverybasedonweather\n");
                     break;
                 case 0x77:
-                    if (gLogging == 0) printf("    hiddenpowerdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    hiddenpowerdamagecalc\n");
                     break;
                 case 0x78:
-                    if (gLogging == 0) printf("    dopsychup\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    dopsychup\n");
                     break;
                 case 0x79:
-                    if (gLogging == 0) printf("    tryfuturesight ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryfuturesight ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x7A:
-                    if (gLogging == 0) printf("    checkhitrate\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkhitrate ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // attacker
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // attacker
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // defender
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // defender
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Moves[elementnum]); // move
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Moves[elementnum]); // move
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address
                     break;
                 case 0x7B:
-                    if (gLogging == 0) printf("    tryteleport ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryteleport ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x7C:
-                    if (gLogging == 0) printf("    beatupdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    beatupdamagecalc\n");
                     break;
                 case 0x7D:
-                    if (gLogging == 0) printf("    dofollowme\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    dofollowme\n");
                     break;
                 case 0x7E:
-                    if (gLogging == 0) printf("    tryhelpinghand ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryhelpinghand ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x7F:
-                    if (gLogging == 0) printf("    trytrick ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trytrick ");
+                    GET_U32(elementnum, source);
+                    if (gLogging == 1) log_address(GET_ADDRESS2(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X, ", GET_ADDRESS2(elementnum, source)); // address1
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X, ", GET_ADDRESS2(elementnum, source)); // address1
-                    GET_U32(elementnum, source);
-                    if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address2
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address2
                     break;
                 case 0x80:
-                    if (gLogging == 0) printf("    trywish ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trywish ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x81:
-                    if (gLogging == 0) printf("    tryassist ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryassist ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x82:
-                    if (gLogging == 0) printf("    trymagiccoat ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trymagiccoat ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x83:
-                    if (gLogging == 0) printf("    trymagiccoat2\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    trymagiccoat2\n");
                     break;
                 case 0x84:
-                    if (gLogging == 0) printf("    dorevenge\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    dorevenge\n");
                     break;
                 case 0x85:
-                    if (gLogging == 0) printf("    trybreakscreens ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trybreakscreens ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x86:
-                    if (gLogging == 0) printf("    tryyawn ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryyawn ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x87:
-                    if (gLogging == 0) printf("    tryknockitemoff ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryknockitemoff ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x88:
-                    if (gLogging == 0) printf("    eruptiondamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    eruptiondamagecalc\n");
                     break;
                 case 0x89:
-                    if (gLogging == 0) printf("    tryimprison ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryimprison ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x8A:
-                    if (gLogging == 0) printf("    trygrudge ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trygrudge ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x8B:
-                    if (gLogging == 0) printf("    trysnatch ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trysnatch ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x8C:
-                    if (gLogging == 0) printf("    lowkickdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    lowkickdamagecalc\n");
                     break;
                 case 0x8D:
-                    if (gLogging == 0) printf("    weatherballdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    weatherballdamagecalc\n");
                     break;
                 case 0x8E:
-                    if (gLogging == 0) printf("    trypursuit ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trypursuit ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x8F:
-                    if (gLogging == 0) printf("    typecheck\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    typecheck\n");
                     break;
                 case 0x90:
-                    if (gLogging == 0) printf("    checkoneturnflag ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkoneturnflag ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // flag
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // flag
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // value
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // value
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x91:
-                    if (gLogging == 0) printf("    setoneturnflag ");
+                    if (gLogging == 0) fprintf(scriptfile, "    setoneturnflag ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // flag
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // flag
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum); // value
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum); // value
                     break;
                 case 0x92:
-                    if (gLogging == 0) printf("    gyroballdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    gyroballdamagecalc\n");
                     break;
                 case 0x93:
-                    if (gLogging == 0) printf("    metalburstdamagecalc ");
+                    if (gLogging == 0) fprintf(scriptfile, "    metalburstdamagecalc ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x94:
-                    if (gLogging == 0) printf("    paybackdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    paybackdamagecalc\n");
                     break;
                 case 0x95:
-                    if (gLogging == 0) printf("    trumpcarddamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    trumpcarddamagecalc\n");
                     break;
                 case 0x96:
-                    if (gLogging == 0) printf("    wringoutdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    wringoutdamagecalc\n");
                     break;
                 case 0x97:
-                    if (gLogging == 0) printf("    trymefirst ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trymefirst ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x98:
-                    if (gLogging == 0) printf("    trycopycat ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trycopycat ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x99:
-                    if (gLogging == 0) printf("    punishmentdamagecalc\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    punishmentdamagecalc\n");
                     break;
                 case 0x9A:
-                    if (gLogging == 0) printf("    trysuckerpunch ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trysuckerpunch ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x9B:
-                    if (gLogging == 0) printf("    checkbattlercondition ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkbattlercondition ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // mode
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // mode
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // num
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address
                     break;
                 case 0x9C:
-                    if (gLogging == 0) printf("    tryfeint ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryfeint ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x9D:
-                    if (gLogging == 0) printf("    trypsychoshift ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trypsychoshift ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x9E:
-                    if (gLogging == 0) printf("    trylastresort ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trylastresort ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0x9F:
-                    if (gLogging == 0) printf("    trytoxicspikes ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trytoxicspikes ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xA0:
-                    if (gLogging == 0) printf("    checktoxicspikes ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checktoxicspikes ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xA1:
-                    if (gLogging == 0) printf("    moldbreakerabilitycheck ");
+                    if (gLogging == 0) fprintf(scriptfile, "    moldbreakerabilitycheck ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // num
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Abilities[elementnum]); // ability
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Abilities[elementnum]); // ability
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xA2:
-                    if (gLogging == 0) printf("    checkbattlersequal ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkbattlersequal ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler1
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler1
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler2
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler2
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address
                     break;
                 case 0xA3:
-                    if (gLogging == 0) printf("    trypickup\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    trypickup\n");
                     break;
                 case 0xA4:
-                    if (gLogging == 0) printf("    dotrickroom\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    dotrickroom\n");
                     break;
                 case 0xA5:
-                    if (gLogging == 0) printf("    checkmovefinished ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkmovefinished ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xA6:
-                    if (gLogging == 0) printf("    checkitemeffect ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkitemeffect ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xA7:
-                    if (gLogging == 0) printf("    getitemeffect ");
+                    if (gLogging == 0) fprintf(scriptfile, "    getitemeffect ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xA8:
-                    if (gLogging == 0) printf("    getitempower ");
+                    if (gLogging == 0) fprintf(scriptfile, "    getitempower ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xA9:
-                    if (gLogging == 0) printf("    trycamouflage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trycamouflage ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xAA:
-                    if (gLogging == 0) printf("    donaturepower\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    donaturepower\n");
                     break;
                 case 0xAB:
-                    if (gLogging == 0) printf("    dosecretpower\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    dosecretpower\n");
                     break;
                 case 0xAC:
-                    if (gLogging == 0) printf("    trynaturalgift ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trynaturalgift ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xAD:
-                    if (gLogging == 0) printf("    trypluck ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trypluck ");
+                    GET_U32(elementnum, source);
+                    if (gLogging == 1) log_address(GET_ADDRESS2(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X, ", GET_ADDRESS2(elementnum, source)); // address1
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X, ", GET_ADDRESS2(elementnum, source)); // address1
-                    GET_U32(elementnum, source);
-                    if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address2
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address2
                     break;
                 case 0xAE:
-                    if (gLogging == 0) printf("    tryfling ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryfling ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xAF:
-                    if (gLogging == 0) printf("    yesnobox\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    yesnobox ");
+                    GET_U32(elementnum, source);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xB0:
-                    if (gLogging == 0) printf("    yesnowait ");
+                    if (gLogging == 0) fprintf(scriptfile, "    yesnowait ");
+                    GET_U32(elementnum, source);
+                    if (gLogging == 1) log_address(GET_ADDRESS2(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X, ", GET_ADDRESS2(elementnum, source)); // address1
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X, ", GET_ADDRESS2(elementnum, source)); // address1
-                    GET_U32(elementnum, source);
-                    if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source)); // address2
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address2
                     break;
                 case 0xB1:
-                    if (gLogging == 0) printf("    monlist\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    monlist\n");
                     break;
                 case 0xB2:
-                    if (gLogging == 0) printf("    monlistwait\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    monlistwait ");
+                    GET_U32(elementnum, source);
+                    if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source)); // address2
                     break;
                 case 0xB3:
-                    if (gLogging == 0) printf("    setbattleresult\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    setbattleresult\n");
                     break;
                 case 0xB4:
-                    if (gLogging == 0) printf("    checkstealthrock ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkstealthrock ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xB5:
-                    if (gLogging == 0) printf("    checkeffectactivation ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkeffectactivation ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xB6:
-                    if (gLogging == 0) printf("    checkchatteractivation ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkchatteractivation ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xB7:
-                    if (gLogging == 0) printf("    getmoveparameter ");
+                    if (gLogging == 0) fprintf(scriptfile, "    getmoveparameter ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xB8:
-                    if (gLogging == 0) printf("    mosaic ");
+                    if (gLogging == 0) fprintf(scriptfile, "    mosaic ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]); // battler
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]); // battler
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum); // num
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum); // num
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum); // wait
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum); // wait
                     break;
                 case 0xB9:
-                    if (gLogging == 0) printf("    changeform ");
+                    if (gLogging == 0) fprintf(scriptfile, "    changeform ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xBA:
-                    if (gLogging == 0) printf("    changebackground\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    changebackground\n");
                     break;
                 case 0xBB:
-                    if (gLogging == 0) printf("    recoverstatus ");
+                    if (gLogging == 0) fprintf(scriptfile, "    recoverstatus ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xBC:
-                    if (gLogging == 0) printf("    tryescape ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryescape ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xBD:
-                    if (gLogging == 0) printf("    initstartballguage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    initstartballguage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xBE:
-                    if (gLogging == 0) printf("    deletestartballguage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    deletestartballguage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xBF:
-                    if (gLogging == 0) printf("    initballguage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    initballguage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xC0:
-                    if (gLogging == 0) printf("    deleteballguage ");
+                    if (gLogging == 0) fprintf(scriptfile, "    deleteballguage ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xC1:
-                    if (gLogging == 0) printf("    loadballgfx\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    loadballgfx\n");
                     break;
                 case 0xC2:
-                    if (gLogging == 0) printf("    deleteballgfx\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    deleteballgfx\n");
                     break;
                 case 0xC3:
-                    if (gLogging == 0) printf("    incrementgamestat ");
+                    if (gLogging == 0) fprintf(scriptfile, "    incrementgamestat ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xC4:
-                    if (gLogging == 0) printf("    cmd_C4 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    cmd_C4 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xC5:
-                    if (gLogging == 0) printf("    checkifcurrentmovehits ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkifcurrentmovehits ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xC6:
-                    if (gLogging == 0) printf("    cmd_C6 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    cmd_C6 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xC7:
-                    if (gLogging == 0) printf("    cmd_C7 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    cmd_C7 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xC8:
-                    if (gLogging == 0) printf("    checkwipeout ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkwipeout ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xC9:
-                    if (gLogging == 0) printf("    tryacupressure ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryacupressure ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xCA:
-                    if (gLogging == 0) printf("    removeitem ");
+                    if (gLogging == 0) fprintf(scriptfile, "    removeitem ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xCB:
-                    if (gLogging == 0) printf("    tryrecycle ");
+                    if (gLogging == 0) fprintf(scriptfile, "    tryrecycle ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xCC:
-                    if (gLogging == 0) printf("    itemeffectcheckonhit ");
+                    if (gLogging == 0) fprintf(scriptfile, "    itemeffectcheckonhit ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xCD:
-                    if (gLogging == 0) printf("    battleresultmessage\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    battleresultmessage\n");
                     break;
                 case 0xCE:
-                    if (gLogging == 0) printf("    runawaymessage\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    runawaymessage\n");
                     break;
                 case 0xCF:
-                    if (gLogging == 0) printf("    giveupmessage\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    giveupmessage\n");
                     break;
                 case 0xD0:
-                    if (gLogging == 0) printf("    cmd_D0_checkhpsomething ");
+                    if (gLogging == 0) fprintf(scriptfile, "    cmd_D0_checkhpsomething ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xD1:
-                    if (gLogging == 0) printf("    trynaturalcure ");
+                    if (gLogging == 0) fprintf(scriptfile, "    trynaturalcure ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xD2:
-                    if (gLogging == 0) printf("    checknostatus ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checknostatus ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xD3:
-                    if (gLogging == 0) printf("    checkcloudnine ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkcloudnine ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xD4:
-                    if (gLogging == 0) printf("    cmd_D4 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    cmd_D4 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xD5:
-                    if (gLogging == 0) printf("    checkwhenitemmakesmovehit ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkwhenitemmakesmovehit ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xD6:
-                    if (gLogging == 0) printf("    cmd_D6 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    cmd_D6 ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xD7:
-                    if (gLogging == 0) printf("    playmovesoundeffect ");
+                    if (gLogging == 0) fprintf(scriptfile, "    playmovesoundeffect ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xD8:
-                    if (gLogging == 0) printf("    playsong ");
+                    if (gLogging == 0) fprintf(scriptfile, "    playsong ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Battlers[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%d\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum);
                     break;
                 case 0xD9:
-                    if (gLogging == 0) printf("    checkifsafariencounterdone ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkifsafariencounterdone ");
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xDA:
-                    if (gLogging == 0) printf("    waitwithoutbuttonpress ");
+                    if (gLogging == 0) fprintf(scriptfile, "    waitwithoutbuttonpress ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xDB:
-                    if (gLogging == 0) printf("    checkmovetypematches ");
+                    if (gLogging == 0) fprintf(scriptfile, "    checkmovetypematches ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Types[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Types[elementnum]);
                     GET_U32(elementnum, source);
                     if (gLogging == 1) log_address(GET_ADDRESS(elementnum, source));
-                    if (gLogging == 0) printf("_%04X\n", GET_ADDRESS(elementnum, source));
+                    if (gLogging == 0) fprintf(scriptfile, "_%04X\n", GET_ADDRESS(elementnum, source));
                     break;
                 case 0xDC:
-                    if (gLogging == 0) printf("    getdatafrompersonalnarc ");
+                    if (gLogging == 0) fprintf(scriptfile, "    getdatafrompersonalnarc ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", Pokemon[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", Pokemon[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s, ", BattleVars[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s, ", BattleVars[elementnum]);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xDD:
-                    if (gLogging == 0) printf("    refreshmondata ");
+                    if (gLogging == 0) fprintf(scriptfile, "    refreshmondata ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("%s\n", Battlers[elementnum]);
+                    if (gLogging == 0) fprintf(scriptfile, "%s\n", Battlers[elementnum]);
                     break;
                 case 0xDE:
-                    if (gLogging == 0) printf("    cmd_DE ");
+                    if (gLogging == 0) fprintf(scriptfile, "    cmd_DE ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X, ", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X, ", elementnum);
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xDF:
-                    if (gLogging == 0) printf("    cmd_DF ");
+                    if (gLogging == 0) fprintf(scriptfile, "    cmd_DF ");
                     GET_U32(elementnum, source);
-                    if (gLogging == 0) printf("0x%X\n", elementnum);
+                    if (gLogging == 0) fprintf(scriptfile, "0x%X\n", elementnum);
                     break;
                 case 0xE0:
-                    if (gLogging == 0) printf("    endscript\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    endscript\n");
                     break;
                 default:
-                    if (gLogging == 0) printf("    //invalid command!\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    //invalid command!\n");
                     break;
                 }
             }
@@ -2865,7 +2905,11 @@ int main(int argc, char **argv)
         }
         //printf("%x\n", elementnum);
 
+        fprintf(scriptfile, "\n.close\n");
+
         fclose(source);
+        fclose(scriptfile);
+
         if (i == 276 && movetoa001 == 0)
         {
             i = -1;
