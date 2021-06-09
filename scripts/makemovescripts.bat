@@ -1,5 +1,5 @@
 mkdir a030 a001
-for /l %%F in (1, 1, 9) do (
+for /l %%F in (0, 1, 9) do (
  if exist "movescripts\a030\00%%F.s" (
   tools\armips movescripts\a030\00%%F.s ))
 for /l %%F in (10, 1, 99) do (
@@ -8,7 +8,7 @@ for /l %%F in (10, 1, 99) do (
 for /l %%F in (100, 1, 700) do (
  if exist "movescripts\a030\%%F.s" (
   tools\armips movescripts\a030\%%F.s ))
-for /l %%F in (1, 1, 9) do (
+for /l %%F in (0, 1, 9) do (
  if exist "movescripts\a001\00%%F.s" (
   tools\armips movescripts\a001\00%%F.s ))
 for /l %%F in (10, 1, 99) do (
