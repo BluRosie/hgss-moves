@@ -10,7 +10,7 @@
 .create "a030\a030_279", 0
 
 a030_279:
-    changevar VAR_OP_SET, VAR_ADD_STATUS1,  ADD_STATUS_POWER_SPLIT | ADD_STATUS_ATTACK
+    changevar VAR_OP_SET, VAR_ADD_STATUS2,  ADD_STATUS_POWER_SPLIT | 0x20000000
     endscript
 
 .close
