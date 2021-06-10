@@ -7071,7 +7071,7 @@ move MOVE_SHADOW_FORCE+3
     terminatedata
 
 move MOVE_HONE_CLAWS
-    battleeffect 0x0
+    battleeffect 277
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -7085,8 +7085,1373 @@ move MOVE_HONE_CLAWS
     contesttype CONTEST_CUTE
     terminatedata
 
+move MOVE_WIDE_GUARD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GUARD_SPLIT
+    battleeffect 278
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_POWER_SPLIT
+    battleeffect 279
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WONDER_ROOM
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_PSYSHOCK
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_VENOSHOCK
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_AUTOTOMIZE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RAGE_POWDER
+    battleeffect 172
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TELEKINESIS
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_MAGIC_ROOM
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SMACK_DOWN
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STORM_THROW
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FLAME_BURST
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SLUDGE_WAVE
+    battleeffect 2
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_QUIVER_DANCE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEAVY_SLAM
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SYNCHRONOISE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ELECTRO_BALL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SOAK
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FLAME_CHARGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_COIL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_LOW_SWEEP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ACID_SPRAY
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FOUL_PLAY
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SIMPLE_BEAM
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ENTRAINMENT
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_AFTER_YOU
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ROUND
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ECHOED_VOICE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_CHIP_AWAY
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_CLEAR_SMOG
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STORED_POWER
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_QUICK_GUARD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ALLY_SWITCH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SCALD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SHELL_SMASH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEAL_PULSE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEX
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SKY_DROP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SHIFT_GEAR
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_CIRCLE_THROW
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_INCINERATE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_QUASH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ACROBATICS
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_REFLECT_TYPE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RETALIATE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FINAL_GAMBIT
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BESTOW
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_INFERNO
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WATER_PLEDGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FIRE_PLEDGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GRASS_PLEDGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_VOLT_SWITCH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STRUGGLE_BUG
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BULLDOZE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FROST_BREATH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DRAGON_TAIL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WORK_UP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ELECTROWEB
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WILD_CHARGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DRILL_RUN
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DUAL_CHOP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEART_STAMP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HORN_LEECH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SACRED_SWORD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RAZOR_SHELL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEAT_CRASH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_LEAF_TORNADO
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STEAMROLLER
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_COTTON_GUARD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_NIGHT_DAZE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_PSYSTRIKE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TAIL_SLAP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HURRICANE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEAD_CHARGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GEAR_GRIND
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SEARING_SHOT
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TECHNO_BLAST
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RELIC_SONG
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SECRET_SWORD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GLACIATE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BOLT_STRIKE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BLUE_FLARE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FIERY_DANCE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FREEZE_SHOCK
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ICE_BURN
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SNARL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ICICLE_CRASH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_V_CREATE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FUSION_FLARE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FUSION_BOLT
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
 move NUM_OF_MOVES+1
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_NORMAL
@@ -7099,6 +8464,3 @@ move NUM_OF_MOVES+1
     appeal 0x10
     contesttype CONTEST_BEAUTY
     terminatedata
-
-
-// you can easily insert new moves this way too
