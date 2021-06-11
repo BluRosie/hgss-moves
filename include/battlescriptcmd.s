@@ -2,6 +2,44 @@
     .word 0x0
 .endmacro
 
+// new effect
+
+ADD_STATUS_HONE_CLAWS equ 0x91
+ADD_STATUS_GUARD_SPLIT equ 0x92
+ADD_STATUS_POWER_SPLIT equ 0x93
+
+// status change
+
+ATK_UP equ 15
+DEF_UP equ 16
+SPE_UP equ 17
+SPATK_UP equ 18
+SPDEF_UP equ 19
+HIT_UP equ 20
+ACC_UP equ 21
+ATK_DOWN equ 22
+DEF_DOWN equ 23
+SPE_DOWN equ 24
+SPATK_DOWN equ 25
+SPDEF_DOWN equ 26
+HIT_DOWN equ 27
+ACC_DOWN equ 28
+
+
+// mon data id
+
+MON_DATA_SPECIES equ 0
+MON_DATA_ATK equ 1
+MON_DATA_DEF equ 2
+MON_DATA_SPE equ 3
+MON_DATA_SPATK equ 4
+MON_DATA_SPDEF equ 5
+MON_DATA_MOVE_1 equ 6
+MON_DATA_MOVE_2 equ 7
+MON_DATA_MOVE_3 equ 8
+MON_DATA_MOVE_4 equ 9
+
+
 // battler values
 
 BATTLER_ALL              equ 0x00
