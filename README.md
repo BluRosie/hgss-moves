@@ -4,9 +4,11 @@
 ### directions:
  place your rom into text/ as base.nds
  
- extract overlay 12 from your heart gold rom and place it in the root directory as overlay9_0012.bin
+ extract overlay 7 from your heart gold rom and place it in the root directory as overlay9_0007.bin
  
  extract overlay 10 from your heart gold rom and place it in the root directory as overlay9_0010.bin
+ 
+ extract overlay 12 from your heart gold rom and place it in the root directory as overlay9_0012.bin
 
  run scripts\make.bat in the root directory
  

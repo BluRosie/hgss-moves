@@ -13,7 +13,7 @@ a001_297:
     //attack
     ifmonstat IF_NOTEQUAL, BATTLER_ADDL_EFFECT, 19, 0xC, StatusEffect
     //accuracy
-    ifmonstat IF_EQUAL, BATTLER_ADDL_EFFECT, 25, 0xC, NoStatusEffect
+    ifmonstat IF_EQUAL, BATTLER_ADDL_EFFECT, 24, 0xC, NoStatusEffect
 
 StatusEffect:
     gotosubscript 76
@@ -21,10 +21,10 @@ StatusEffect:
     changevar VAR_OP_SETMASK, VAR_06, 0x4001
     changevar VAR_OP_SETMASK, VAR_60, 0x80
     //attack up
-    changevar VAR_OP_SET, VAR_34, ATK_UP
+    changevar VAR_OP_SET, VAR_34, ATTACK_UP
     gotosubscript 12
     //accuracy up
-    changevar VAR_OP_SET, VAR_34, ACC_UP
+    changevar VAR_OP_SET, VAR_34, ACCURACY_UP
     gotosubscript 12
     changevar VAR_OP_CLEARMASK, VAR_60, 0x2
     changevar VAR_OP_CLEARMASK, VAR_60, 0x80

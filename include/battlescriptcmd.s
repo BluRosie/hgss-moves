@@ -1,29 +1,34 @@
-.macro startencounter
-    .word 0x0
-.endmacro
+// helpful constants for battle scripts that do not relate to certain commands
 
 // new effect
 
-ADD_STATUS_HONE_CLAWS equ 0x91
-ADD_STATUS_GUARD_SPLIT equ 0x92
-ADD_STATUS_POWER_SPLIT equ 0x93
+ADD_STATUS_HONE_CLAWS equ 145
+ADD_STATUS_GUARD_SPLIT equ 146
+ADD_STATUS_POWER_SPLIT equ 147
 
 // status change
 
-ATK_UP equ 15
-DEF_UP equ 16
-SPE_UP equ 17
+ADD_STATUS_ATTACKER equ 0x40000000
+
+ATTACK_UP equ 15
+DEFENSE_UP equ 16
+SPEED_UP equ 17
 SPATK_UP equ 18
 SPDEF_UP equ 19
-HIT_UP equ 20
-ACC_UP equ 21
-ATK_DOWN equ 22
-DEF_DOWN equ 23
-SPE_DOWN equ 24
+ACCURACY_UP equ 20
+EVASION_UP equ 21
+ATTACK_DOWN equ 22
+DEFENSE_DOWN equ 23
+SPEED_DOWN equ 24
 SPATK_DOWN equ 25
 SPDEF_DOWN equ 26
-HIT_DOWN equ 27
-ACC_DOWN equ 28
+ACCURACY_DOWN equ 27
+EVASION_DOWN equ 28
+
+
+.macro startencounter
+    .word 0x0
+.endmacro
 
 
 // mon data id
