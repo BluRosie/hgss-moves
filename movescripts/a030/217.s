@@ -11,7 +11,7 @@
 
 a030_217:
     checknostatus BATTLER_DEFENDER, _005C
-    ifmonstat IF_MASK, BATTLER_DEFENDER, 0x34, 0x7, _003C
+    ifmonstat IF_MASK, BATTLER_DEFENDER, MON_DATA_STATUS_1, 0x7, _003C
     changevar VAR_OP_SET, VAR_DAMAGE_MULT, 0xA
     goto _005C
 _003C:

@@ -12,7 +12,7 @@
 a001_089:
     printattackmessage
     waitmessage
-    ifmonstat IF_MASK, BATTLER_ATTACKER, 0x35, 0x1000000, _00B0
+    ifmonstat IF_MASK, BATTLER_ATTACKER, MON_DATA_STATUS_2, 0x1000000, _00B0
     trysubstitute _0094
     setstatus2effect BATTLER_ATTACKER, 0x19
     waitmessage

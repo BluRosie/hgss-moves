@@ -11,11 +11,11 @@
 
 a001_068:
     checknostatus BATTLER_DEFENDER, _00F4
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x1B, 0xC, _0108
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x1C, 0xC, _0108
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_TYPE_1, 0xC, _0108
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_TYPE_2, 0xC, _0108
     printattackmessage
     waitmessage
-    ifmonstat IF_MASK, BATTLER_DEFENDER, 0x3B, 0x4, _00BC
+    ifmonstat IF_MASK, BATTLER_DEFENDER, MON_DATA_MOVE_STATE, 0x4, _00BC
     if IF_MASK, VAR_10, 0x10001, _00BC
     seteffectprimary BATTLER_ATTACKER
     waitmessage

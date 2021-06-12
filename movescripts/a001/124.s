@@ -12,7 +12,7 @@
 a001_124:
     printattackmessage
     waitmessage
-    ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x45, 0x3, _0138
+    ifmonstat IF_EQUAL, BATTLER_ATTACKER, MON_DATA_STOCKPILE_COUNT, 0x3, _0138
     seteffectprimary BATTLER_ATTACKER
     waitmessage
     changevar VAR_OP_SETMASK, VAR_06, 0x4000

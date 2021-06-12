@@ -13,7 +13,7 @@ a001_182:
     printattackmessage
     waitmessage
     wait 0xF
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x15, 0xC, _0084
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_STAT_STAGE_SPEED, 0xC, _0084
     setstatus2effect BATTLER_DEFENDER, 0xC
     waitmessage
     changevartomonvalue VAR_OP_ADD, BATTLER_DEFENDER, 0x15, 0x1

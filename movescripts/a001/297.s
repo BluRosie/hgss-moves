@@ -11,9 +11,9 @@
 
 a001_297:
     //attack
-    ifmonstat IF_NOTEQUAL, BATTLER_ADDL_EFFECT, 19, 0xC, StatusEffect
+    ifmonstat IF_NOTEQUAL, BATTLER_ADDL_EFFECT, MON_DATA_ATTACK, 0xC, StatusEffect
     //accuracy
-    ifmonstat IF_EQUAL, BATTLER_ADDL_EFFECT, 24, 0xC, NoStatusEffect
+    ifmonstat IF_EQUAL, BATTLER_ADDL_EFFECT, MON_DATA_ACCURACY, 0xC, NoStatusEffect
 
 StatusEffect:
     gotosubscript 76

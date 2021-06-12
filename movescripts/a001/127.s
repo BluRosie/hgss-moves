@@ -10,7 +10,7 @@
 .create "a001\a001_127", 0
 
 a001_127:
-    ifmonstat IF_MASK, BATTLER_DEFENDER, 0x35, 0x80000000, _0068
+    ifmonstat IF_MASK, BATTLER_DEFENDER, MON_DATA_STATUS_2, 0x80000000, _0068
     if IF_MASK, VAR_10, 0x10001, _0068
     gotosubscript 76
     changevartomonvalue VAR_OP_SETMASK, BATTLER_DEFENDER, 0x35, 0x80000000

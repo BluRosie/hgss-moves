@@ -17,14 +17,14 @@ a001_156:
     changevar VAR_OP_SET, VAR_39, 0x0
 _0038:
     orderbattlersbyspeed 0x14
-    ifmonstat IF_EQUAL, BATTLER_xFF, 0x2F, 0x0, _0158
-    ifmonstat IF_NOTEQUAL, BATTLER_xFF, 0x4F, 0x0, _0108
-    ifmonstat IF_MASK, BATTLER_xFF, 0x3B, 0x40, _0124
-    ifmonstat IF_MASK, BATTLER_xFF, 0x3B, 0x200000, _0158
-    ifmonstat IF_MASK, BATTLER_xFF, 0x3B, 0x400, _0158
-    ifmonstat IF_EQUAL, BATTLER_xFF, 0x1A, 0x1A, _013C
-    ifmonstat IF_EQUAL, BATTLER_xFF, 0x1B, 0x2, _013C
-    ifmonstat IF_EQUAL, BATTLER_xFF, 0x1C, 0x2, _013C
+    ifmonstat IF_EQUAL, BATTLER_xFF, MON_DATA_HP, 0x0, _0158
+    ifmonstat IF_NOTEQUAL, BATTLER_xFF, MON_DATA_79, 0x0, _0108
+    ifmonstat IF_MASK, BATTLER_xFF, MON_DATA_MOVE_STATE, 0x40, _0124
+    ifmonstat IF_MASK, BATTLER_xFF, MON_DATA_MOVE_STATE, 0x200000, _0158
+    ifmonstat IF_MASK, BATTLER_xFF, MON_DATA_MOVE_STATE, 0x400, _0158
+    ifmonstat IF_EQUAL, BATTLER_xFF, MON_DATA_ABILITY, 0x1A, _013C
+    ifmonstat IF_EQUAL, BATTLER_xFF, MON_DATA_TYPE_1, 0x2, _013C
+    ifmonstat IF_EQUAL, BATTLER_xFF, MON_DATA_TYPE_2, 0x2, _013C
     goto _0158
 _0108:
     changevartomonvalue VAR_OP_SET, BATTLER_xFF, 0x4F, 0x0

@@ -18,7 +18,7 @@ _0010:
     wait 0x1E
     changevar VAR_OP_SETMASK, VAR_06, 0x40
     gotosubscript 2
-    ifmonstat IF_EQUAL, BATTLER_xFF, 0x2F, 0x0, _00AC
+    ifmonstat IF_EQUAL, BATTLER_xFF, MON_DATA_HP, 0x0, _00AC
 _0078:
     changevar VAR_OP_ADD, VAR_ATTACKER_TEMP, 0x1
     changevar VAR_OP_RSH, VAR_43, 0x1

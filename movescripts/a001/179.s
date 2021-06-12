@@ -13,7 +13,7 @@ a001_179:
     printattackmessage
     waitmessage
     wait 0xF
-    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x49, 0x0, _0060
+    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, MON_DATA_73, 0x0, _0060
     printmessage 0x290, 0xB, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

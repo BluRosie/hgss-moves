@@ -10,7 +10,7 @@
 .create "a001\a001_033", 0
 
 a001_033:
-    ifmonstat IF_NOTEQUAL, BATTLER_ATTACKER, 0x50, 0x0, _00F0
+    ifmonstat IF_NOTEQUAL, BATTLER_ATTACKER, MON_DATA_HEAL_BLOCK_COUNTER, 0x0, _00F0
     changevar2 VAR_OP_SET, VAR_HP_TEMP, VAR_54
     if IF_EQUAL, VAR_HP_TEMP, 0x0, _0098
     damagediv 32, 2

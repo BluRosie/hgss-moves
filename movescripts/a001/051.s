@@ -12,7 +12,7 @@
 a001_051:
     changevar VAR_OP_SET, VAR_05, 0x4
     gotosubscript 37
-    ifmonstat IF_NOTMASK, BATTLER_ADDL_EFFECT, 0x35, 0x7, _004C
+    ifmonstat IF_NOTMASK, BATTLER_ADDL_EFFECT, MON_DATA_STATUS_2, 0x7, _004C
     printmessage 0x152, 0x2, 0x7, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

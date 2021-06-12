@@ -10,7 +10,7 @@
 .create "a030\a030_097", 0
 
 a030_097:
-    ifmonstat IF_NOTMASK, BATTLER_ATTACKER, 0x34, 0x7, _0038
+    ifmonstat IF_NOTMASK, BATTLER_ATTACKER, MON_DATA_STATUS_1, 0x7, _0038
     gotosubscript 20
     trysleeptalk _0038
     gotosubscript 76

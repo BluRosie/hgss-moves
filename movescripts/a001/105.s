@@ -11,13 +11,13 @@
 
 a001_105:
     checknostatus BATTLER_DEFENDER, _0080
-    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x13, 0xC, _0044
-    ifmonstat IF_NOTMASK, BATTLER_DEFENDER, 0x35, 0x7, _0074
+    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, MON_DATA_STAT_STAGE_ATTACK, 0xC, _0044
+    ifmonstat IF_NOTMASK, BATTLER_DEFENDER, MON_DATA_STATUS_2, 0x7, _0074
     goto _0080
 _0044:
     changevar VAR_OP_SET, VAR_34, 0x27
     gotosubscript 12
-    ifmonstat IF_MASK, BATTLER_DEFENDER, 0x35, 0x7, _007C
+    ifmonstat IF_MASK, BATTLER_DEFENDER, MON_DATA_STATUS_2, 0x7, _007C
 _0074:
     gotosubscript 37
 _007C:

@@ -16,7 +16,7 @@ a001_013:
     waitmessage
     wait 0x1E
     setsomeflag BATTLER_ADDL_EFFECT
-    ifmonstat IF_NOTMASK, BATTLER_ADDL_EFFECT, 0x3B, 0x200400C0, _0048
+    ifmonstat IF_NOTMASK, BATTLER_ADDL_EFFECT, MON_DATA_MOVE_STATE, 0x200400C0, _0048
     togglevanish BATTLER_ADDL_EFFECT, 0x1
 _0048:
     endscript

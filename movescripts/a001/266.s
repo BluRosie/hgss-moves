@@ -10,7 +10,7 @@
 .create "a001\a001_266", 0
 
 a001_266:
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x2F, 0x0, _0028
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_HP, 0x0, _0028
     setstatus2effect BATTLER_DEFENDER, 0xA
     waitmessage
 _0028:

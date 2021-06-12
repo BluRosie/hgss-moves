@@ -16,7 +16,7 @@ _0020:
     returnmessage BATTLER_REPLACE
     waitmessage
     gotosubscript 153
-    ifmonstat IF_NOTEQUAL, BATTLER_REPLACE, 0x2F, 0x0, _0054
+    ifmonstat IF_NOTEQUAL, BATTLER_REPLACE, MON_DATA_HP, 0x0, _0054
     goto _006C
 _0054:
     returnpokemon BATTLER_REPLACE

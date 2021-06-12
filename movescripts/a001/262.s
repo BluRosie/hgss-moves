@@ -10,7 +10,7 @@
 .create "a001\a001_262", 0
 
 a001_262:
-    ifmonstat IF_NOTMASK, BATTLER_xFF, 0x35, 0x1000000, _0044
+    ifmonstat IF_NOTMASK, BATTLER_xFF, MON_DATA_STATUS_2, 0x1000000, _0044
     setstatus2effect BATTLER_xFF, 0xF
     waitmessage
     cmd_C4 BATTLER_xFF
@@ -28,7 +28,7 @@ _0044:
     printmessage 0x2D1, 0x2, 0xFF, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
-    ifmonstat IF_NOTMASK, BATTLER_xFF, 0x35, 0x1000000, _00EC
+    ifmonstat IF_NOTMASK, BATTLER_xFF, MON_DATA_STATUS_2, 0x1000000, _00EC
     setstatus2effect BATTLER_xFF, 0xF
     waitmessage
     cmd_D6 BATTLER_xFF

@@ -27,7 +27,7 @@ _0084:
     goto _0110
 _0098:
     if IF_NOTMASK, VAR_10, 0x80, _00E8
-    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x2F, 0x1, _00E8
+    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, MON_DATA_HP, 0x1, _00E8
     printmessage 0x1BD, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

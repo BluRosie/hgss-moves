@@ -10,7 +10,7 @@
 .create "a001\a001_132", 0
 
 a001_132:
-    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x40, 0x0, _0074
+    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, MON_DATA_TAUNT_COUNTER, 0x0, _0074
     if IF_MASK, VAR_10, 0x10001, _0074
     gotosubscript 76
     random 2, 3

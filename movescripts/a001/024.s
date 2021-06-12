@@ -23,7 +23,7 @@ _0080:
     changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER
     changevar VAR_OP_SETMASK, VAR_06, 0x40
     abilitycheck 0x0, BATTLER_DEFENDER, ABILITY_LIQUID_OOZE, _0138
-    ifmonstat IF_NOTEQUAL, BATTLER_ATTACKER, 0x50, 0x0, _0104
+    ifmonstat IF_NOTEQUAL, BATTLER_ATTACKER, MON_DATA_HEAL_BLOCK_COUNTER, 0x0, _0104
     changevar VAR_OP_MUL, VAR_HP_TEMP, 0xFFFFFFFF
     gotosubscript 2
     printmessage 0x52, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN", "NaN"
