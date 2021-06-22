@@ -12,7 +12,7 @@
 
  run scripts\make.bat in the root directory
  
- replace narc a001 with a001.narc, a011 with a011.narc, a027 with a027.narc, and a030 with a030.narc
+ replace narc a001 with a001.narc, a010 with a010.narc, a011 with a011.narc, a027 with a027.narc, a030 with a030.narc, and a061 with a061.narc
 
 ### TODO
  label things better (check out contest appeal field)
