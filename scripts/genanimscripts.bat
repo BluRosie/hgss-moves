@@ -1,0 +1,2 @@
+mkdir movescripts movescripts\a010 movescripts\a061
+tools\disassembleanimscripts
