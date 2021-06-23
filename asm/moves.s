@@ -294,29 +294,38 @@ _edited: // originally at 0x022501CA
 
 
 // here we need to map move effects 145+ to subscripts 297+ (add 152)
-.org 0x02258348
-    push {r4-r5, lr}
-
 .org 0x02258388
     lsr r1, r3, #1
-    lsl r5, r3, #2
-    orr r1, r5
+    tst r1, r2
+    bne @@_storezero
+    lsr r1, r3, #2
     tst r1, r2
     beq @@_getsubscriptnum
+
 @@_storezero:
     mov r1, #0
     add r0, #0x94
     str r1, [r0]
+
 @@_getsubscriptnum:
     cmp r4, #145
-    blt 0x022583A2 // @@_subscripttable
-    add r4, #152
+    blt @@_subscripttable
+    //bl 0x202551C // i have 3 instructions w the nop down there
+    add r4, #(297 - 145)
     mov r0, r4
-    pop {r4-r5, pc}
+    pop {r4, pc}
 
-.org 0x022583A8
-    pop {r4-r5, pc}
-    
+@@_subscripttable:
+    ldr r0, =0x0226CDCC
+    lsl r1, r4, #2
+    ldr r0, [r0, r1]
+    pop {r4, pc}
+    //nop
+
+.word 0x7FFFFF
+
+.pool
+
 
 .org 0x022584A4
     .word 0x317E
