@@ -10,12 +10,23 @@
 .create "a010\a010_471", 0
 
 a010_471:
-    callfunction 0, 0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"
-    callfunction 1, 0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"
-    callfunction 2, 0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"
-    callfunction 3, 0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"
-    playsepan 1827, 117
-    wait 60
+    loadparticle_drop 0, 486
+    wait 10
+
+    addparticle 0, 2, emitter_attack_pos
+    addparticle 0, 0, emitter_attack_pos
+    waitparticle
+
+    addparticle 0, 1, emitter_attack_pos
+    addparticle 0, 0, emitter_attack_pos
+    waitparticle
+
+    addparticle 0, 2, emitter_attack_pos
+    addparticle 0, 1, emitter_attack_pos
+    waitparticle
+
+    unloadparticle 0
+    waitstate
     end
 
 .close

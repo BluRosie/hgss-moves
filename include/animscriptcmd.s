@@ -1,3 +1,7 @@
+emitter_attack_pos equ 3
+emitter_defence_pos equ 4
+
+
 .macro wait,time
     .word 0x0, time
 .endmacro
@@ -469,4 +473,24 @@ PAN_CENTER equ 0
 
 .macro cmd57,num
 	.word 0x57, num
+.endmacro
+
+.macro loadparticle_drop, ptc_no, data_no
+	initspriteresource
+	loadspriteresource 0
+	loadspriteresource 1
+	loadspriteresource 2
+	loadspriteresource 3
+	loadspritemaybe 4,0,0,0
+	loadspritemaybe 5,0,1,1
+	loadspritemaybe 6,0,2,2
+	loadspritemaybe 7,0,3,3
+	callfunction 0x4e, 1, 0,0,0,0,0,0,0,0,0,0
+	loadparticle ptc_no, data_no
+	waitstate
+	unloadspriteresource
+	resetsprite 0
+	resetsprite 1
+	resetsprite 2
+	resetsprite 3
 .endmacro
