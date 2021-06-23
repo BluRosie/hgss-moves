@@ -309,7 +309,7 @@ _edited: // originally at 0x022501CA
     str r1, [r0]
 @@_getsubscriptnum:
     cmp r4, #145
-    bcc 0x022583A2 // @@_subscripttable
+    blt 0x022583A2 // @@_subscripttable
     add r4, #152
     mov r0, r4
     pop {r4-r5, pc}

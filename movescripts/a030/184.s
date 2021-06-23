@@ -10,7 +10,7 @@
 .create "a030\a030_184", 0
 
 a030_184:
-    ifmonstat IF_NOTEQUAL, BATTLER_ATTACKER, 0x37, 0x0, _005C
+    ifmonstat IF_NOTEQUAL, BATTLER_ATTACKER, MON_DATA_ITEM, 0x0, _005C
     tryrecycle _005C
     changevartomonvalue2 VAR_OP_SET, BATTLER_ATTACKER, 0x37, VAR_ITEM_TEMP2
     preparemessage 0x24D, 0xF, 0x1, 0xFF, "NaN", "NaN", "NaN", "NaN"

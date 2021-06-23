@@ -16,7 +16,7 @@ a001_267:
     waitmessage
     wait 0x1E
     recoverstatus BATTLER_ATTACKER
-    ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x5F, 0x0, _00A8
+    ifmonstat IF_EQUAL, BATTLER_ATTACKER, MON_DATA_HP_RECOVERED_BY_ITEM, 0x0, _00A8
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, 0x5F, VAR_HP_TEMP
     changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, 0x5F, 0x0
     changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER

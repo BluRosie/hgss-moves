@@ -1,7 +1,7 @@
 .nds
 .thumb
 
-.open "base/overlay/overlay_0010.bin", 0x0221BE20
+.open "overlay9_0010.bin", 0x0221BE20
 
 .org 0x3E8 + 0x0221BE20
     bl getmovetarget

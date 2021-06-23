@@ -12,8 +12,8 @@
 a001_129:
     printattackmessage
     waitmessage
-    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x13, 0x0, _0038
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x16, 0x0, _0138
+    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, MON_DATA_STAT_STAGE_ATTACK, 0x0, _0038
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_STAT_STAGE_SPATK, 0x0, _0138
 _0038:
     seteffectprimary BATTLER_ATTACKER
     waitmessage
@@ -21,7 +21,7 @@ _0038:
     changevar VAR_OP_SETMASK, VAR_06, 0x4001
     changevar2 VAR_OP_SET, VAR_ACTIVE_BATTLER, VAR_DEFENDER
     changevar VAR_OP_SETMASK, VAR_60, 0x80
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x13, 0x0, _00B0
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_STAT_STAGE_ATTACK, 0x0, _00B0
     changevar VAR_OP_SET, VAR_34, 0x2E
     gotosubscript 12
 _00B0:

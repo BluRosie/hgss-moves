@@ -12,7 +12,7 @@
 a030_149:
     changevar VAR_OP_SETMASK, VAR_06, 0x4
     changevar VAR_OP_SET, VAR_DAMAGE_MULT, 0xA
-    ifmonstat IF_NOTMASK, BATTLER_DEFENDER, 0x3B, 0x40, _0048
+    ifmonstat IF_NOTMASK, BATTLER_DEFENDER, MON_DATA_MOVE_STATE, 0x40, _0048
     changevar VAR_OP_SET, VAR_DAMAGE_MULT, 0x14
 _0048:
     critcalc

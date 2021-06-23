@@ -41,7 +41,7 @@ _00F4:
     gotosubscript 2
     gotosubscript 16
     gotosubscript 21
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x2F, 0x0, _029C
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_HP, 0x0, _029C
     checkifcurrentmovehits _016C
     gotosubscript2 43
 _016C:

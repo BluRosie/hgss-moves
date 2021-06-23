@@ -18,7 +18,7 @@ _0038:
     orderbattlersbyspeed 0x11
     checkbattlersequal BATTLER_ATTACKER, BATTLER_ADDL_EFFECT, _009C
     checknostatus BATTLER_ADDL_EFFECT, _009C
-    ifmonstat IF_EQUAL, BATTLER_ADDL_EFFECT, 0x2F, 0x0, _009C
+    ifmonstat IF_EQUAL, BATTLER_ADDL_EFFECT, MON_DATA_HP, 0x0, _009C
     changevar VAR_OP_SET, VAR_34, 0x16
     changevar VAR_OP_SET, VAR_05, 0x3
     gotosubscript 12

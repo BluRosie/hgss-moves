@@ -12,7 +12,7 @@
 a001_091:
     if IF_MASK, VAR_10, 0x10000, _012C
     moldbreakerabilitycheck 0x0, BATTLER_DEFENDER, ABILITY_SUCTION_CUPS, _0140
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x3B, 0x400, _015C
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_MOVE_STATE, 0x400, _015C
     if IF_EQUAL, VAR_BATTLE_TYPE, 0x4A, _012C
     trywhirlwind _012C
     gotosubscript 76

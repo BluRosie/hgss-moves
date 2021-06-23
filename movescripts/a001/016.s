@@ -15,8 +15,8 @@ a001_016:
     waitmessage
     wait 0x1E
     abilitycheck 0x1, BATTLER_DEFENDER, ABILITY_ANGER_POINT, _00C8
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x2F, 0x0, _00C8
-    ifmonstat IF_EQUAL, BATTLER_DEFENDER, 0x13, 0xC, _00C8
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_HP, 0x0, _00C8
+    ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_STAT_STAGE_ATTACK, 0xC, _00C8
     setstatus2effect BATTLER_DEFENDER, 0xC
     waitmessage
     changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, 0x13, 0xC

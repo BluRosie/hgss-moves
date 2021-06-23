@@ -18,7 +18,7 @@ _0028:
     printmessage 0x162, 0x2, 0xFF, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
-    ifmonstat IF_MASK, BATTLER_xFF, 0x35, 0x1000000, _00A4
+    ifmonstat IF_MASK, BATTLER_xFF, MON_DATA_STATUS_2, 0x1000000, _00A4
     setstatus2effect BATTLER_xFF, 0x1A
     waitmessage
     cmd_C4 BATTLER_xFF

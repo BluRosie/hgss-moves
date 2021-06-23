@@ -11,7 +11,7 @@
 
 a001_058:
     checknostatus BATTLER_ADDL_EFFECT, _00B0
-    ifmonstat IF_MASK, BATTLER_DEFENDER, 0x35, 0xE000, _00B0
+    ifmonstat IF_MASK, BATTLER_DEFENDER, MON_DATA_STATUS_2, 0xE000, _00B0
     printpreparedmessage
     waitmessage
     wait 0x1E

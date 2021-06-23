@@ -6,7 +6,7 @@
 .include "include/movenums.s"
 
 move MOVE_NONE
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 0
     type TYPE_NORMAL
@@ -21,7 +21,7 @@ move MOVE_NONE
     terminatedata
 
 move MOVE_POUND
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_NORMAL
@@ -36,7 +36,7 @@ move MOVE_POUND
     terminatedata
 
 move MOVE_KARATE_CHOP
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_FIGHTING
@@ -51,7 +51,7 @@ move MOVE_KARATE_CHOP
     terminatedata
 
 move MOVE_DOUBLE_SLAP
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 15
     type TYPE_NORMAL
@@ -66,7 +66,7 @@ move MOVE_DOUBLE_SLAP
     terminatedata
 
 move MOVE_COMET_PUNCH
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 18
     type TYPE_NORMAL
@@ -81,7 +81,7 @@ move MOVE_COMET_PUNCH
     terminatedata
 
 move MOVE_MEGA_PUNCH
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_NORMAL
@@ -96,7 +96,7 @@ move MOVE_MEGA_PUNCH
     terminatedata
 
 move MOVE_PAY_DAY
-    battleeffect 0x0022
+    battleeffect 34
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_NORMAL
@@ -111,7 +111,7 @@ move MOVE_PAY_DAY
     terminatedata
 
 move MOVE_FIRE_PUNCH
-    battleeffect 0x0004
+    battleeffect 4
     pss SPLIT_PHYSICAL
     basepower 75
     type TYPE_FIRE
@@ -126,7 +126,7 @@ move MOVE_FIRE_PUNCH
     terminatedata
 
 move MOVE_ICE_PUNCH
-    battleeffect 0x0005
+    battleeffect 5
     pss SPLIT_PHYSICAL
     basepower 75
     type TYPE_ICE
@@ -141,7 +141,7 @@ move MOVE_ICE_PUNCH
     terminatedata
 
 move MOVE_THUNDER_PUNCH
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_PHYSICAL
     basepower 75
     type TYPE_ELECTRIC
@@ -156,7 +156,7 @@ move MOVE_THUNDER_PUNCH
     terminatedata
 
 move MOVE_SCRATCH
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_NORMAL
@@ -171,7 +171,7 @@ move MOVE_SCRATCH
     terminatedata
 
 move MOVE_VICE_GRIP
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 55
     type TYPE_NORMAL
@@ -186,7 +186,7 @@ move MOVE_VICE_GRIP
     terminatedata
 
 move MOVE_GUILLOTINE
-    battleeffect 0x0026
+    battleeffect 38
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -201,7 +201,7 @@ move MOVE_GUILLOTINE
     terminatedata
 
 move MOVE_RAZOR_WIND
-    battleeffect 0x0027
+    battleeffect 39
     pss SPLIT_SPECIAL
     basepower 80
     type TYPE_NORMAL
@@ -216,7 +216,7 @@ move MOVE_RAZOR_WIND
     terminatedata
 
 move MOVE_SWORDS_DANCE
-    battleeffect 0x0032
+    battleeffect 50
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -231,7 +231,7 @@ move MOVE_SWORDS_DANCE
     terminatedata
 
 move MOVE_CUT
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_NORMAL
@@ -246,7 +246,7 @@ move MOVE_CUT
     terminatedata
 
 move MOVE_GUST
-    battleeffect 0x0095
+    battleeffect 149
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_FLYING
@@ -261,7 +261,7 @@ move MOVE_GUST
     terminatedata
 
 move MOVE_WING_ATTACK
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_FLYING
@@ -276,7 +276,7 @@ move MOVE_WING_ATTACK
     terminatedata
 
 move MOVE_WHIRLWIND
-    battleeffect 0x001C
+    battleeffect 28
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -291,7 +291,7 @@ move MOVE_WHIRLWIND
     terminatedata
 
 move MOVE_FLY
-    battleeffect 0x009B
+    battleeffect 155
     pss SPLIT_PHYSICAL
     basepower 90
     type TYPE_FLYING
@@ -306,7 +306,7 @@ move MOVE_FLY
     terminatedata
 
 move MOVE_BIND
-    battleeffect 0x002A
+    battleeffect 42
     pss SPLIT_PHYSICAL
     basepower 15
     type TYPE_NORMAL
@@ -321,7 +321,7 @@ move MOVE_BIND
     terminatedata
 
 move MOVE_SLAM
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_NORMAL
@@ -336,7 +336,7 @@ move MOVE_SLAM
     terminatedata
 
 move MOVE_VINE_WHIP
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 45
     type TYPE_GRASS
@@ -351,7 +351,7 @@ move MOVE_VINE_WHIP
     terminatedata
 
 move MOVE_STOMP
-    battleeffect 0x0096
+    battleeffect 150
     pss SPLIT_PHYSICAL
     basepower 65
     type TYPE_NORMAL
@@ -366,7 +366,7 @@ move MOVE_STOMP
     terminatedata
 
 move MOVE_DOUBLE_KICK
-    battleeffect 0x002C
+    battleeffect 44
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_FIGHTING
@@ -381,7 +381,7 @@ move MOVE_DOUBLE_KICK
     terminatedata
 
 move MOVE_MEGA_KICK
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_NORMAL
@@ -396,7 +396,7 @@ move MOVE_MEGA_KICK
     terminatedata
 
 move MOVE_JUMP_KICK
-    battleeffect 0x002D
+    battleeffect 45
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_FIGHTING
@@ -411,7 +411,7 @@ move MOVE_JUMP_KICK
     terminatedata
 
 move MOVE_ROLLING_KICK
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_FIGHTING
@@ -426,7 +426,7 @@ move MOVE_ROLLING_KICK
     terminatedata
 
 move MOVE_SAND_ATTACK
-    battleeffect 0x0017
+    battleeffect 23
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GROUND
@@ -441,7 +441,7 @@ move MOVE_SAND_ATTACK
     terminatedata
 
 move MOVE_HEADBUTT
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_NORMAL
@@ -456,7 +456,7 @@ move MOVE_HEADBUTT
     terminatedata
 
 move MOVE_HORN_ATTACK
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 65
     type TYPE_NORMAL
@@ -471,7 +471,7 @@ move MOVE_HORN_ATTACK
     terminatedata
 
 move MOVE_FURY_ATTACK
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 15
     type TYPE_NORMAL
@@ -486,7 +486,7 @@ move MOVE_FURY_ATTACK
     terminatedata
 
 move MOVE_HORN_DRILL
-    battleeffect 0x0026
+    battleeffect 38
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -501,7 +501,7 @@ move MOVE_HORN_DRILL
     terminatedata
 
 move MOVE_TACKLE
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_NORMAL
@@ -516,7 +516,7 @@ move MOVE_TACKLE
     terminatedata
 
 move MOVE_BODY_SLAM
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_PHYSICAL
     basepower 85
     type TYPE_NORMAL
@@ -531,7 +531,7 @@ move MOVE_BODY_SLAM
     terminatedata
 
 move MOVE_WRAP
-    battleeffect 0x002A
+    battleeffect 42
     pss SPLIT_PHYSICAL
     basepower 15
     type TYPE_NORMAL
@@ -546,7 +546,7 @@ move MOVE_WRAP
     terminatedata
 
 move MOVE_TAKE_DOWN
-    battleeffect 0x0030
+    battleeffect 48
     pss SPLIT_PHYSICAL
     basepower 90
     type TYPE_NORMAL
@@ -561,7 +561,7 @@ move MOVE_TAKE_DOWN
     terminatedata
 
 move MOVE_THRASH
-    battleeffect 0x001B
+    battleeffect 27
     pss SPLIT_PHYSICAL
     basepower 90
     type TYPE_NORMAL
@@ -576,7 +576,7 @@ move MOVE_THRASH
     terminatedata
 
 move MOVE_DOUBLE_EDGE
-    battleeffect 0x00C6
+    battleeffect 198
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_NORMAL
@@ -591,7 +591,7 @@ move MOVE_DOUBLE_EDGE
     terminatedata
 
 move MOVE_TAIL_WHIP
-    battleeffect 0x0013
+    battleeffect 19
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -606,7 +606,7 @@ move MOVE_TAIL_WHIP
     terminatedata
 
 move MOVE_POISON_STING
-    battleeffect 0x0002
+    battleeffect 2
     pss SPLIT_PHYSICAL
     basepower 15
     type TYPE_POISON
@@ -621,7 +621,7 @@ move MOVE_POISON_STING
     terminatedata
 
 move MOVE_TWINEEDLE
-    battleeffect 0x004D
+    battleeffect 77
     pss SPLIT_PHYSICAL
     basepower 25
     type TYPE_BUG
@@ -636,7 +636,7 @@ move MOVE_TWINEEDLE
     terminatedata
 
 move MOVE_PIN_MISSILE
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 14
     type TYPE_BUG
@@ -651,7 +651,7 @@ move MOVE_PIN_MISSILE
     terminatedata
 
 move MOVE_LEER
-    battleeffect 0x0013
+    battleeffect 19
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -666,7 +666,7 @@ move MOVE_LEER
     terminatedata
 
 move MOVE_BITE
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_DARK
@@ -681,7 +681,7 @@ move MOVE_BITE
     terminatedata
 
 move MOVE_GROWL
-    battleeffect 0x0012
+    battleeffect 18
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -696,7 +696,7 @@ move MOVE_GROWL
     terminatedata
 
 move MOVE_ROAR
-    battleeffect 0x001C
+    battleeffect 28
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -711,7 +711,7 @@ move MOVE_ROAR
     terminatedata
 
 move MOVE_SING
-    battleeffect 0x0001
+    battleeffect 1
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -726,7 +726,7 @@ move MOVE_SING
     terminatedata
 
 move MOVE_SUPERSONIC
-    battleeffect 0x0031
+    battleeffect 49
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -741,7 +741,7 @@ move MOVE_SUPERSONIC
     terminatedata
 
 move MOVE_SONIC_BOOM
-    battleeffect 0x0082
+    battleeffect 130
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_NORMAL
@@ -756,7 +756,7 @@ move MOVE_SONIC_BOOM
     terminatedata
 
 move MOVE_DISABLE
-    battleeffect 0x0056
+    battleeffect 86
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -771,7 +771,7 @@ move MOVE_DISABLE
     terminatedata
 
 move MOVE_ACID
-    battleeffect 0x0048
+    battleeffect 72
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_POISON
@@ -786,7 +786,7 @@ move MOVE_ACID
     terminatedata
 
 move MOVE_EMBER
-    battleeffect 0x0004
+    battleeffect 4
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_FIRE
@@ -801,7 +801,7 @@ move MOVE_EMBER
     terminatedata
 
 move MOVE_FLAMETHROWER
-    battleeffect 0x0004
+    battleeffect 4
     pss SPLIT_SPECIAL
     basepower 95
     type TYPE_FIRE
@@ -816,7 +816,7 @@ move MOVE_FLAMETHROWER
     terminatedata
 
 move MOVE_MIST
-    battleeffect 0x002E
+    battleeffect 46
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ICE
@@ -831,7 +831,7 @@ move MOVE_MIST
     terminatedata
 
 move MOVE_WATER_GUN
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_WATER
@@ -846,7 +846,7 @@ move MOVE_WATER_GUN
     terminatedata
 
 move MOVE_HYDRO_PUMP
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_WATER
@@ -861,7 +861,7 @@ move MOVE_HYDRO_PUMP
     terminatedata
 
 move MOVE_SURF
-    battleeffect 0x0101
+    battleeffect 257
     pss SPLIT_SPECIAL
     basepower 95
     type TYPE_WATER
@@ -876,7 +876,7 @@ move MOVE_SURF
     terminatedata
 
 move MOVE_ICE_BEAM
-    battleeffect 0x0005
+    battleeffect 5
     pss SPLIT_SPECIAL
     basepower 95
     type TYPE_ICE
@@ -891,7 +891,7 @@ move MOVE_ICE_BEAM
     terminatedata
 
 move MOVE_BLIZZARD
-    battleeffect 0x0104
+    battleeffect 260
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_ICE
@@ -906,7 +906,7 @@ move MOVE_BLIZZARD
     terminatedata
 
 move MOVE_PSYBEAM
-    battleeffect 0x004C
+    battleeffect 76
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_PSYCHIC
@@ -921,7 +921,7 @@ move MOVE_PSYBEAM
     terminatedata
 
 move MOVE_BUBBLE_BEAM
-    battleeffect 0x0046
+    battleeffect 70
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_WATER
@@ -936,7 +936,7 @@ move MOVE_BUBBLE_BEAM
     terminatedata
 
 move MOVE_AURORA_BEAM
-    battleeffect 0x0044
+    battleeffect 68
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_ICE
@@ -951,7 +951,7 @@ move MOVE_AURORA_BEAM
     terminatedata
 
 move MOVE_HYPER_BEAM
-    battleeffect 0x0050
+    battleeffect 80
     pss SPLIT_SPECIAL
     basepower 150
     type TYPE_NORMAL
@@ -966,7 +966,7 @@ move MOVE_HYPER_BEAM
     terminatedata
 
 move MOVE_PECK
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 35
     type TYPE_FLYING
@@ -981,7 +981,7 @@ move MOVE_PECK
     terminatedata
 
 move MOVE_DRILL_PECK
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_FLYING
@@ -996,7 +996,7 @@ move MOVE_DRILL_PECK
     terminatedata
 
 move MOVE_SUBMISSION
-    battleeffect 0x0030
+    battleeffect 48
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_FIGHTING
@@ -1011,7 +1011,7 @@ move MOVE_SUBMISSION
     terminatedata
 
 move MOVE_LOW_KICK
-    battleeffect 0x00C4
+    battleeffect 196
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_FIGHTING
@@ -1026,7 +1026,7 @@ move MOVE_LOW_KICK
     terminatedata
 
 move MOVE_COUNTER
-    battleeffect 0x0059
+    battleeffect 89
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_FIGHTING
@@ -1041,7 +1041,7 @@ move MOVE_COUNTER
     terminatedata
 
 move MOVE_SEISMIC_TOSS
-    battleeffect 0x0057
+    battleeffect 87
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_FIGHTING
@@ -1056,7 +1056,7 @@ move MOVE_SEISMIC_TOSS
     terminatedata
 
 move MOVE_STRENGTH
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_NORMAL
@@ -1071,7 +1071,7 @@ move MOVE_STRENGTH
     terminatedata
 
 move MOVE_ABSORB
-    battleeffect 0x0003
+    battleeffect 3
     pss SPLIT_SPECIAL
     basepower 20
     type TYPE_GRASS
@@ -1086,7 +1086,7 @@ move MOVE_ABSORB
     terminatedata
 
 move MOVE_MEGA_DRAIN
-    battleeffect 0x0003
+    battleeffect 3
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_GRASS
@@ -1101,7 +1101,7 @@ move MOVE_MEGA_DRAIN
     terminatedata
 
 move MOVE_LEECH_SEED
-    battleeffect 0x0054
+    battleeffect 84
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -1116,7 +1116,7 @@ move MOVE_LEECH_SEED
     terminatedata
 
 move MOVE_GROWTH
-    battleeffect 0x000D
+    battleeffect 13
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1131,7 +1131,7 @@ move MOVE_GROWTH
     terminatedata
 
 move MOVE_RAZOR_LEAF
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 55
     type TYPE_GRASS
@@ -1146,7 +1146,7 @@ move MOVE_RAZOR_LEAF
     terminatedata
 
 move MOVE_SOLAR_BEAM
-    battleeffect 0x0097
+    battleeffect 151
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_GRASS
@@ -1161,7 +1161,7 @@ move MOVE_SOLAR_BEAM
     terminatedata
 
 move MOVE_POISON_POWDER
-    battleeffect 0x0042
+    battleeffect 66
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
@@ -1176,7 +1176,7 @@ move MOVE_POISON_POWDER
     terminatedata
 
 move MOVE_STUN_SPORE
-    battleeffect 0x0043
+    battleeffect 67
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -1191,7 +1191,7 @@ move MOVE_STUN_SPORE
     terminatedata
 
 move MOVE_SLEEP_POWDER
-    battleeffect 0x0001
+    battleeffect 1
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -1206,7 +1206,7 @@ move MOVE_SLEEP_POWDER
     terminatedata
 
 move MOVE_PETAL_DANCE
-    battleeffect 0x001B
+    battleeffect 27
     pss SPLIT_SPECIAL
     basepower 90
     type TYPE_GRASS
@@ -1221,7 +1221,7 @@ move MOVE_PETAL_DANCE
     terminatedata
 
 move MOVE_STRING_SHOT
-    battleeffect 0x0014
+    battleeffect 20
     pss SPLIT_STATUS
     basepower 0
     type TYPE_BUG
@@ -1236,7 +1236,7 @@ move MOVE_STRING_SHOT
     terminatedata
 
 move MOVE_DRAGON_RAGE
-    battleeffect 0x0029
+    battleeffect 41
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_DRAGON
@@ -1251,7 +1251,7 @@ move MOVE_DRAGON_RAGE
     terminatedata
 
 move MOVE_FIRE_SPIN
-    battleeffect 0x002A
+    battleeffect 42
     pss SPLIT_SPECIAL
     basepower 35
     type TYPE_FIRE
@@ -1266,7 +1266,7 @@ move MOVE_FIRE_SPIN
     terminatedata
 
 move MOVE_THUNDER_SHOCK
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_ELECTRIC
@@ -1281,7 +1281,7 @@ move MOVE_THUNDER_SHOCK
     terminatedata
 
 move MOVE_THUNDERBOLT
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_SPECIAL
     basepower 95
     type TYPE_ELECTRIC
@@ -1296,7 +1296,7 @@ move MOVE_THUNDERBOLT
     terminatedata
 
 move MOVE_THUNDER_WAVE
-    battleeffect 0x0043
+    battleeffect 67
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ELECTRIC
@@ -1311,7 +1311,7 @@ move MOVE_THUNDER_WAVE
     terminatedata
 
 move MOVE_THUNDER
-    battleeffect 0x0098
+    battleeffect 152
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_ELECTRIC
@@ -1326,7 +1326,7 @@ move MOVE_THUNDER
     terminatedata
 
 move MOVE_ROCK_THROW
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_ROCK
@@ -1341,7 +1341,7 @@ move MOVE_ROCK_THROW
     terminatedata
 
 move MOVE_EARTHQUAKE
-    battleeffect 0x0093
+    battleeffect 147
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_GROUND
@@ -1356,7 +1356,7 @@ move MOVE_EARTHQUAKE
     terminatedata
 
 move MOVE_FISSURE
-    battleeffect 0x0026
+    battleeffect 38
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_GROUND
@@ -1371,7 +1371,7 @@ move MOVE_FISSURE
     terminatedata
 
 move MOVE_DIG
-    battleeffect 0x0100
+    battleeffect 256
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_GROUND
@@ -1386,7 +1386,7 @@ move MOVE_DIG
     terminatedata
 
 move MOVE_TOXIC
-    battleeffect 0x0021
+    battleeffect 33
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
@@ -1401,7 +1401,7 @@ move MOVE_TOXIC
     terminatedata
 
 move MOVE_CONFUSION
-    battleeffect 0x004C
+    battleeffect 76
     pss SPLIT_SPECIAL
     basepower 50
     type TYPE_PSYCHIC
@@ -1416,7 +1416,7 @@ move MOVE_CONFUSION
     terminatedata
 
 move MOVE_PSYCHIC
-    battleeffect 0x0048
+    battleeffect 72
     pss SPLIT_SPECIAL
     basepower 90
     type TYPE_PSYCHIC
@@ -1431,7 +1431,7 @@ move MOVE_PSYCHIC
     terminatedata
 
 move MOVE_HYPNOSIS
-    battleeffect 0x0001
+    battleeffect 1
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -1446,7 +1446,7 @@ move MOVE_HYPNOSIS
     terminatedata
 
 move MOVE_MEDITATE
-    battleeffect 0x000A
+    battleeffect 10
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -1461,7 +1461,7 @@ move MOVE_MEDITATE
     terminatedata
 
 move MOVE_AGILITY
-    battleeffect 0x0034
+    battleeffect 52
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -1476,7 +1476,7 @@ move MOVE_AGILITY
     terminatedata
 
 move MOVE_QUICK_ATTACK
-    battleeffect 0x0067
+    battleeffect 103
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_NORMAL
@@ -1491,7 +1491,7 @@ move MOVE_QUICK_ATTACK
     terminatedata
 
 move MOVE_RAGE
-    battleeffect 0x0051
+    battleeffect 81
     pss SPLIT_PHYSICAL
     basepower 20
     type TYPE_NORMAL
@@ -1506,7 +1506,7 @@ move MOVE_RAGE
     terminatedata
 
 move MOVE_TELEPORT
-    battleeffect 0x0099
+    battleeffect 153
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -1521,7 +1521,7 @@ move MOVE_TELEPORT
     terminatedata
 
 move MOVE_NIGHT_SHADE
-    battleeffect 0x0057
+    battleeffect 87
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_GHOST
@@ -1536,7 +1536,7 @@ move MOVE_NIGHT_SHADE
     terminatedata
 
 move MOVE_MIMIC
-    battleeffect 0x0052
+    battleeffect 82
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1551,7 +1551,7 @@ move MOVE_MIMIC
     terminatedata
 
 move MOVE_SCREECH
-    battleeffect 0x003B
+    battleeffect 59
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1566,7 +1566,7 @@ move MOVE_SCREECH
     terminatedata
 
 move MOVE_DOUBLE_TEAM
-    battleeffect 0x0010
+    battleeffect 16
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1581,7 +1581,7 @@ move MOVE_DOUBLE_TEAM
     terminatedata
 
 move MOVE_RECOVER
-    battleeffect 0x0020
+    battleeffect 32
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1596,7 +1596,7 @@ move MOVE_RECOVER
     terminatedata
 
 move MOVE_HARDEN
-    battleeffect 0x000B
+    battleeffect 11
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1611,7 +1611,7 @@ move MOVE_HARDEN
     terminatedata
 
 move MOVE_MINIMIZE
-    battleeffect 0x006C
+    battleeffect 108
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1626,7 +1626,7 @@ move MOVE_MINIMIZE
     terminatedata
 
 move MOVE_SMOKESCREEN
-    battleeffect 0x0017
+    battleeffect 23
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1641,7 +1641,7 @@ move MOVE_SMOKESCREEN
     terminatedata
 
 move MOVE_CONFUSE_RAY
-    battleeffect 0x0031
+    battleeffect 49
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GHOST
@@ -1656,7 +1656,7 @@ move MOVE_CONFUSE_RAY
     terminatedata
 
 move MOVE_WITHDRAW
-    battleeffect 0x000B
+    battleeffect 11
     pss SPLIT_STATUS
     basepower 0
     type TYPE_WATER
@@ -1671,7 +1671,7 @@ move MOVE_WITHDRAW
     terminatedata
 
 move MOVE_DEFENSE_CURL
-    battleeffect 0x009C
+    battleeffect 156
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1686,7 +1686,7 @@ move MOVE_DEFENSE_CURL
     terminatedata
 
 move MOVE_BARRIER
-    battleeffect 0x0033
+    battleeffect 51
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -1701,7 +1701,7 @@ move MOVE_BARRIER
     terminatedata
 
 move MOVE_LIGHT_SCREEN
-    battleeffect 0x0023
+    battleeffect 35
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -1716,7 +1716,7 @@ move MOVE_LIGHT_SCREEN
     terminatedata
 
 move MOVE_HAZE
-    battleeffect 0x0019
+    battleeffect 25
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ICE
@@ -1731,7 +1731,7 @@ move MOVE_HAZE
     terminatedata
 
 move MOVE_REFLECT
-    battleeffect 0x0041
+    battleeffect 65
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -1746,7 +1746,7 @@ move MOVE_REFLECT
     terminatedata
 
 move MOVE_FOCUS_ENERGY
-    battleeffect 0x002F
+    battleeffect 47
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1761,7 +1761,7 @@ move MOVE_FOCUS_ENERGY
     terminatedata
 
 move MOVE_BIDE
-    battleeffect 0x001A
+    battleeffect 26
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -1776,7 +1776,7 @@ move MOVE_BIDE
     terminatedata
 
 move MOVE_METRONOME
-    battleeffect 0x0053
+    battleeffect 83
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -1791,7 +1791,7 @@ move MOVE_METRONOME
     terminatedata
 
 move MOVE_MIRROR_MOVE
-    battleeffect 0x0009
+    battleeffect 9
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FLYING
@@ -1806,7 +1806,7 @@ move MOVE_MIRROR_MOVE
     terminatedata
 
 move MOVE_SELF_DESTRUCT
-    battleeffect 0x0007
+    battleeffect 7
     pss SPLIT_PHYSICAL
     basepower 200
     type TYPE_NORMAL
@@ -1821,7 +1821,7 @@ move MOVE_SELF_DESTRUCT
     terminatedata
 
 move MOVE_EGG_BOMB
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_NORMAL
@@ -1836,7 +1836,7 @@ move MOVE_EGG_BOMB
     terminatedata
 
 move MOVE_LICK
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_PHYSICAL
     basepower 20
     type TYPE_GHOST
@@ -1851,7 +1851,7 @@ move MOVE_LICK
     terminatedata
 
 move MOVE_SMOG
-    battleeffect 0x0002
+    battleeffect 2
     pss SPLIT_SPECIAL
     basepower 20
     type TYPE_POISON
@@ -1866,7 +1866,7 @@ move MOVE_SMOG
     terminatedata
 
 move MOVE_SLUDGE
-    battleeffect 0x0002
+    battleeffect 2
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_POISON
@@ -1881,7 +1881,7 @@ move MOVE_SLUDGE
     terminatedata
 
 move MOVE_BONE_CLUB
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 65
     type TYPE_GROUND
@@ -1896,7 +1896,7 @@ move MOVE_BONE_CLUB
     terminatedata
 
 move MOVE_FIRE_BLAST
-    battleeffect 0x0004
+    battleeffect 4
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_FIRE
@@ -1911,7 +1911,7 @@ move MOVE_FIRE_BLAST
     terminatedata
 
 move MOVE_WATERFALL
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_WATER
@@ -1926,7 +1926,7 @@ move MOVE_WATERFALL
     terminatedata
 
 move MOVE_CLAMP
-    battleeffect 0x002A
+    battleeffect 42
     pss SPLIT_PHYSICAL
     basepower 35
     type TYPE_WATER
@@ -1941,7 +1941,7 @@ move MOVE_CLAMP
     terminatedata
 
 move MOVE_SWIFT
-    battleeffect 0x0011
+    battleeffect 17
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_NORMAL
@@ -1956,7 +1956,7 @@ move MOVE_SWIFT
     terminatedata
 
 move MOVE_SKULL_BASH
-    battleeffect 0x0091
+    battleeffect 145
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_NORMAL
@@ -1971,7 +1971,7 @@ move MOVE_SKULL_BASH
     terminatedata
 
 move MOVE_SPIKE_CANNON
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 20
     type TYPE_NORMAL
@@ -1986,7 +1986,7 @@ move MOVE_SPIKE_CANNON
     terminatedata
 
 move MOVE_CONSTRICT
-    battleeffect 0x0046
+    battleeffect 70
     pss SPLIT_PHYSICAL
     basepower 10
     type TYPE_NORMAL
@@ -2001,7 +2001,7 @@ move MOVE_CONSTRICT
     terminatedata
 
 move MOVE_AMNESIA
-    battleeffect 0x0036
+    battleeffect 54
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -2016,7 +2016,7 @@ move MOVE_AMNESIA
     terminatedata
 
 move MOVE_KINESIS
-    battleeffect 0x0017
+    battleeffect 23
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -2031,7 +2031,7 @@ move MOVE_KINESIS
     terminatedata
 
 move MOVE_SOFT_BOILED
-    battleeffect 0x0020
+    battleeffect 32
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2046,7 +2046,7 @@ move MOVE_SOFT_BOILED
     terminatedata
 
 move MOVE_HI_JUMP_KICK
-    battleeffect 0x002D
+    battleeffect 45
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_FIGHTING
@@ -2061,7 +2061,7 @@ move MOVE_HI_JUMP_KICK
     terminatedata
 
 move MOVE_GLARE
-    battleeffect 0x0043
+    battleeffect 67
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2076,7 +2076,7 @@ move MOVE_GLARE
     terminatedata
 
 move MOVE_DREAM_EATER
-    battleeffect 0x0008
+    battleeffect 8
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_PSYCHIC
@@ -2091,7 +2091,7 @@ move MOVE_DREAM_EATER
     terminatedata
 
 move MOVE_POISON_GAS
-    battleeffect 0x0042
+    battleeffect 66
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
@@ -2106,7 +2106,7 @@ move MOVE_POISON_GAS
     terminatedata
 
 move MOVE_BARRAGE
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 15
     type TYPE_NORMAL
@@ -2121,7 +2121,7 @@ move MOVE_BARRAGE
     terminatedata
 
 move MOVE_LEECH_LIFE
-    battleeffect 0x0003
+    battleeffect 3
     pss SPLIT_PHYSICAL
     basepower 20
     type TYPE_BUG
@@ -2136,7 +2136,7 @@ move MOVE_LEECH_LIFE
     terminatedata
 
 move MOVE_LOVELY_KISS
-    battleeffect 0x0001
+    battleeffect 1
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2151,7 +2151,7 @@ move MOVE_LOVELY_KISS
     terminatedata
 
 move MOVE_SKY_ATTACK
-    battleeffect 0x004B
+    battleeffect 75
     pss SPLIT_PHYSICAL
     basepower 140
     type TYPE_FLYING
@@ -2166,7 +2166,7 @@ move MOVE_SKY_ATTACK
     terminatedata
 
 move MOVE_TRANSFORM
-    battleeffect 0x0039
+    battleeffect 57
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2181,7 +2181,7 @@ move MOVE_TRANSFORM
     terminatedata
 
 move MOVE_BUBBLE
-    battleeffect 0x0046
+    battleeffect 70
     pss SPLIT_SPECIAL
     basepower 20
     type TYPE_WATER
@@ -2196,7 +2196,7 @@ move MOVE_BUBBLE
     terminatedata
 
 move MOVE_DIZZY_PUNCH
-    battleeffect 0x004C
+    battleeffect 76
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_NORMAL
@@ -2211,7 +2211,7 @@ move MOVE_DIZZY_PUNCH
     terminatedata
 
 move MOVE_SPORE
-    battleeffect 0x0001
+    battleeffect 1
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -2226,7 +2226,7 @@ move MOVE_SPORE
     terminatedata
 
 move MOVE_FLASH
-    battleeffect 0x0017
+    battleeffect 23
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2241,7 +2241,7 @@ move MOVE_FLASH
     terminatedata
 
 move MOVE_PSYWAVE
-    battleeffect 0x0058
+    battleeffect 88
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_PSYCHIC
@@ -2256,7 +2256,7 @@ move MOVE_PSYWAVE
     terminatedata
 
 move MOVE_SPLASH
-    battleeffect 0x0055
+    battleeffect 85
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2271,7 +2271,7 @@ move MOVE_SPLASH
     terminatedata
 
 move MOVE_ACID_ARMOR
-    battleeffect 0x0033
+    battleeffect 51
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
@@ -2286,7 +2286,7 @@ move MOVE_ACID_ARMOR
     terminatedata
 
 move MOVE_CRABHAMMER
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 90
     type TYPE_WATER
@@ -2301,7 +2301,7 @@ move MOVE_CRABHAMMER
     terminatedata
 
 move MOVE_EXPLOSION
-    battleeffect 0x0007
+    battleeffect 7
     pss SPLIT_PHYSICAL
     basepower 250
     type TYPE_NORMAL
@@ -2316,7 +2316,7 @@ move MOVE_EXPLOSION
     terminatedata
 
 move MOVE_FURY_SWIPES
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 18
     type TYPE_NORMAL
@@ -2331,7 +2331,7 @@ move MOVE_FURY_SWIPES
     terminatedata
 
 move MOVE_BONEMERANG
-    battleeffect 0x002C
+    battleeffect 44
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_GROUND
@@ -2346,7 +2346,7 @@ move MOVE_BONEMERANG
     terminatedata
 
 move MOVE_REST
-    battleeffect 0x0025
+    battleeffect 37
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -2361,7 +2361,7 @@ move MOVE_REST
     terminatedata
 
 move MOVE_ROCK_SLIDE
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 75
     type TYPE_ROCK
@@ -2376,7 +2376,7 @@ move MOVE_ROCK_SLIDE
     terminatedata
 
 move MOVE_HYPER_FANG
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_NORMAL
@@ -2391,7 +2391,7 @@ move MOVE_HYPER_FANG
     terminatedata
 
 move MOVE_SHARPEN
-    battleeffect 0x000A
+    battleeffect 10
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2406,7 +2406,7 @@ move MOVE_SHARPEN
     terminatedata
 
 move MOVE_CONVERSION
-    battleeffect 0x001E
+    battleeffect 30
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2421,7 +2421,7 @@ move MOVE_CONVERSION
     terminatedata
 
 move MOVE_TRI_ATTACK
-    battleeffect 0x0024
+    battleeffect 36
     pss SPLIT_SPECIAL
     basepower 80
     type TYPE_NORMAL
@@ -2436,7 +2436,7 @@ move MOVE_TRI_ATTACK
     terminatedata
 
 move MOVE_SUPER_FANG
-    battleeffect 0x0028
+    battleeffect 40
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -2451,7 +2451,7 @@ move MOVE_SUPER_FANG
     terminatedata
 
 move MOVE_SLASH
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_NORMAL
@@ -2466,7 +2466,7 @@ move MOVE_SLASH
     terminatedata
 
 move MOVE_SUBSTITUTE
-    battleeffect 0x004F
+    battleeffect 79
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2481,7 +2481,7 @@ move MOVE_SUBSTITUTE
     terminatedata
 
 move MOVE_STRUGGLE
-    battleeffect 0x00FE
+    battleeffect 254
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_NORMAL
@@ -2496,7 +2496,7 @@ move MOVE_STRUGGLE
     terminatedata
 
 move MOVE_SKETCH
-    battleeffect 0x005F
+    battleeffect 95
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2511,7 +2511,7 @@ move MOVE_SKETCH
     terminatedata
 
 move MOVE_TRIPLE_KICK
-    battleeffect 0x0068
+    battleeffect 104
     pss SPLIT_PHYSICAL
     basepower 10
     type TYPE_FIGHTING
@@ -2526,7 +2526,7 @@ move MOVE_TRIPLE_KICK
     terminatedata
 
 move MOVE_THIEF
-    battleeffect 0x0069
+    battleeffect 105
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_DARK
@@ -2541,7 +2541,7 @@ move MOVE_THIEF
     terminatedata
 
 move MOVE_SPIDER_WEB
-    battleeffect 0x006A
+    battleeffect 106
     pss SPLIT_STATUS
     basepower 0
     type TYPE_BUG
@@ -2556,7 +2556,7 @@ move MOVE_SPIDER_WEB
     terminatedata
 
 move MOVE_MIND_READER
-    battleeffect 0x005E
+    battleeffect 94
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2571,7 +2571,7 @@ move MOVE_MIND_READER
     terminatedata
 
 move MOVE_NIGHTMARE
-    battleeffect 0x006B
+    battleeffect 107
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GHOST
@@ -2586,7 +2586,7 @@ move MOVE_NIGHTMARE
     terminatedata
 
 move MOVE_FLAME_WHEEL
-    battleeffect 0x007D
+    battleeffect 125
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_FIRE
@@ -2601,7 +2601,7 @@ move MOVE_FLAME_WHEEL
     terminatedata
 
 move MOVE_SNORE
-    battleeffect 0x005C
+    battleeffect 92
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_NORMAL
@@ -2616,7 +2616,7 @@ move MOVE_SNORE
     terminatedata
 
 move MOVE_CURSE
-    battleeffect 0x006D
+    battleeffect 109
     pss SPLIT_STATUS
     basepower 0
     type TYPE_MYSTERY
@@ -2631,7 +2631,7 @@ move MOVE_CURSE
     terminatedata
 
 move MOVE_FLAIL
-    battleeffect 0x0063
+    battleeffect 99
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -2646,7 +2646,7 @@ move MOVE_FLAIL
     terminatedata
 
 move MOVE_CONVERSION_2
-    battleeffect 0x005D
+    battleeffect 93
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2661,7 +2661,7 @@ move MOVE_CONVERSION_2
     terminatedata
 
 move MOVE_AEROBLAST
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_FLYING
@@ -2676,7 +2676,7 @@ move MOVE_AEROBLAST
     terminatedata
 
 move MOVE_COTTON_SPORE
-    battleeffect 0x003C
+    battleeffect 60
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -2691,7 +2691,7 @@ move MOVE_COTTON_SPORE
     terminatedata
 
 move MOVE_REVERSAL
-    battleeffect 0x0063
+    battleeffect 99
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_FIGHTING
@@ -2706,7 +2706,7 @@ move MOVE_REVERSAL
     terminatedata
 
 move MOVE_SPITE
-    battleeffect 0x0064
+    battleeffect 100
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GHOST
@@ -2721,7 +2721,7 @@ move MOVE_SPITE
     terminatedata
 
 move MOVE_POWDER_SNOW
-    battleeffect 0x0005
+    battleeffect 5
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_ICE
@@ -2736,7 +2736,7 @@ move MOVE_POWDER_SNOW
     terminatedata
 
 move MOVE_PROTECT
-    battleeffect 0x006F
+    battleeffect 111
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2751,7 +2751,7 @@ move MOVE_PROTECT
     terminatedata
 
 move MOVE_MACH_PUNCH
-    battleeffect 0x0067
+    battleeffect 103
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_FIGHTING
@@ -2766,7 +2766,7 @@ move MOVE_MACH_PUNCH
     terminatedata
 
 move MOVE_SCARY_FACE
-    battleeffect 0x003C
+    battleeffect 60
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2781,7 +2781,7 @@ move MOVE_SCARY_FACE
     terminatedata
 
 move MOVE_FAINT_ATTACK
-    battleeffect 0x0011
+    battleeffect 17
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_DARK
@@ -2796,7 +2796,7 @@ move MOVE_FAINT_ATTACK
     terminatedata
 
 move MOVE_SWEET_KISS
-    battleeffect 0x0031
+    battleeffect 49
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2811,7 +2811,7 @@ move MOVE_SWEET_KISS
     terminatedata
 
 move MOVE_BELLY_DRUM
-    battleeffect 0x008E
+    battleeffect 142
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2826,7 +2826,7 @@ move MOVE_BELLY_DRUM
     terminatedata
 
 move MOVE_SLUDGE_BOMB
-    battleeffect 0x0002
+    battleeffect 2
     pss SPLIT_SPECIAL
     basepower 90
     type TYPE_POISON
@@ -2841,7 +2841,7 @@ move MOVE_SLUDGE_BOMB
     terminatedata
 
 move MOVE_MUD_SLAP
-    battleeffect 0x0049
+    battleeffect 73
     pss SPLIT_SPECIAL
     basepower 20
     type TYPE_GROUND
@@ -2856,7 +2856,7 @@ move MOVE_MUD_SLAP
     terminatedata
 
 move MOVE_OCTAZOOKA
-    battleeffect 0x0049
+    battleeffect 73
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_WATER
@@ -2871,7 +2871,7 @@ move MOVE_OCTAZOOKA
     terminatedata
 
 move MOVE_SPIKES
-    battleeffect 0x0070
+    battleeffect 112
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GROUND
@@ -2886,7 +2886,7 @@ move MOVE_SPIKES
     terminatedata
 
 move MOVE_ZAP_CANNON
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_ELECTRIC
@@ -2901,7 +2901,7 @@ move MOVE_ZAP_CANNON
     terminatedata
 
 move MOVE_FORESIGHT
-    battleeffect 0x0071
+    battleeffect 113
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2916,7 +2916,7 @@ move MOVE_FORESIGHT
     terminatedata
 
 move MOVE_DESTINY_BOND
-    battleeffect 0x0062
+    battleeffect 98
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GHOST
@@ -2931,7 +2931,7 @@ move MOVE_DESTINY_BOND
     terminatedata
 
 move MOVE_PERISH_SONG
-    battleeffect 0x0072
+    battleeffect 114
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -2946,7 +2946,7 @@ move MOVE_PERISH_SONG
     terminatedata
 
 move MOVE_ICY_WIND
-    battleeffect 0x0046
+    battleeffect 70
     pss SPLIT_SPECIAL
     basepower 55
     type TYPE_ICE
@@ -2961,7 +2961,7 @@ move MOVE_ICY_WIND
     terminatedata
 
 move MOVE_DETECT
-    battleeffect 0x006F
+    battleeffect 111
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FIGHTING
@@ -2976,7 +2976,7 @@ move MOVE_DETECT
     terminatedata
 
 move MOVE_BONE_RUSH
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 25
     type TYPE_GROUND
@@ -2991,7 +2991,7 @@ move MOVE_BONE_RUSH
     terminatedata
 
 move MOVE_LOCK_ON
-    battleeffect 0x005E
+    battleeffect 94
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3006,7 +3006,7 @@ move MOVE_LOCK_ON
     terminatedata
 
 move MOVE_OUTRAGE
-    battleeffect 0x001B
+    battleeffect 27
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_DRAGON
@@ -3021,7 +3021,7 @@ move MOVE_OUTRAGE
     terminatedata
 
 move MOVE_SANDSTORM
-    battleeffect 0x0073
+    battleeffect 115
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ROCK
@@ -3036,7 +3036,7 @@ move MOVE_SANDSTORM
     terminatedata
 
 move MOVE_GIGA_DRAIN
-    battleeffect 0x0003
+    battleeffect 3
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_GRASS
@@ -3051,7 +3051,7 @@ move MOVE_GIGA_DRAIN
     terminatedata
 
 move MOVE_ENDURE
-    battleeffect 0x0074
+    battleeffect 116
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3066,7 +3066,7 @@ move MOVE_ENDURE
     terminatedata
 
 move MOVE_CHARM
-    battleeffect 0x003A
+    battleeffect 58
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3081,7 +3081,7 @@ move MOVE_CHARM
     terminatedata
 
 move MOVE_ROLLOUT
-    battleeffect 0x0075
+    battleeffect 117
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_ROCK
@@ -3096,7 +3096,7 @@ move MOVE_ROLLOUT
     terminatedata
 
 move MOVE_FALSE_SWIPE
-    battleeffect 0x0065
+    battleeffect 101
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_NORMAL
@@ -3111,7 +3111,7 @@ move MOVE_FALSE_SWIPE
     terminatedata
 
 move MOVE_SWAGGER
-    battleeffect 0x0076
+    battleeffect 118
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3126,7 +3126,7 @@ move MOVE_SWAGGER
     terminatedata
 
 move MOVE_MILK_DRINK
-    battleeffect 0x0020
+    battleeffect 32
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3141,7 +3141,7 @@ move MOVE_MILK_DRINK
     terminatedata
 
 move MOVE_SPARK
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_PHYSICAL
     basepower 65
     type TYPE_ELECTRIC
@@ -3156,7 +3156,7 @@ move MOVE_SPARK
     terminatedata
 
 move MOVE_FURY_CUTTER
-    battleeffect 0x0077
+    battleeffect 119
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_BUG
@@ -3171,7 +3171,7 @@ move MOVE_FURY_CUTTER
     terminatedata
 
 move MOVE_STEEL_WING
-    battleeffect 0x008A
+    battleeffect 138
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_STEEL
@@ -3186,7 +3186,7 @@ move MOVE_STEEL_WING
     terminatedata
 
 move MOVE_MEAN_LOOK
-    battleeffect 0x006A
+    battleeffect 106
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3201,7 +3201,7 @@ move MOVE_MEAN_LOOK
     terminatedata
 
 move MOVE_ATTRACT
-    battleeffect 0x0078
+    battleeffect 120
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3216,7 +3216,7 @@ move MOVE_ATTRACT
     terminatedata
 
 move MOVE_SLEEP_TALK
-    battleeffect 0x0061
+    battleeffect 97
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3231,7 +3231,7 @@ move MOVE_SLEEP_TALK
     terminatedata
 
 move MOVE_HEAL_BELL
-    battleeffect 0x0066
+    battleeffect 102
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3246,7 +3246,7 @@ move MOVE_HEAL_BELL
     terminatedata
 
 move MOVE_RETURN
-    battleeffect 0x0079
+    battleeffect 121
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -3261,7 +3261,7 @@ move MOVE_RETURN
     terminatedata
 
 move MOVE_PRESENT
-    battleeffect 0x007A
+    battleeffect 122
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -3276,7 +3276,7 @@ move MOVE_PRESENT
     terminatedata
 
 move MOVE_FRUSTRATION
-    battleeffect 0x007B
+    battleeffect 123
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -3291,7 +3291,7 @@ move MOVE_FRUSTRATION
     terminatedata
 
 move MOVE_SAFEGUARD
-    battleeffect 0x007C
+    battleeffect 124
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3306,7 +3306,7 @@ move MOVE_SAFEGUARD
     terminatedata
 
 move MOVE_PAIN_SPLIT
-    battleeffect 0x005B
+    battleeffect 91
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3321,7 +3321,7 @@ move MOVE_PAIN_SPLIT
     terminatedata
 
 move MOVE_SACRED_FIRE
-    battleeffect 0x007D
+    battleeffect 125
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_FIRE
@@ -3336,7 +3336,7 @@ move MOVE_SACRED_FIRE
     terminatedata
 
 move MOVE_MAGNITUDE
-    battleeffect 0x007E
+    battleeffect 126
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_GROUND
@@ -3351,7 +3351,7 @@ move MOVE_MAGNITUDE
     terminatedata
 
 move MOVE_DYNAMIC_PUNCH
-    battleeffect 0x004C
+    battleeffect 76
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_FIGHTING
@@ -3366,7 +3366,7 @@ move MOVE_DYNAMIC_PUNCH
     terminatedata
 
 move MOVE_MEGAHORN
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_BUG
@@ -3381,7 +3381,7 @@ move MOVE_MEGAHORN
     terminatedata
 
 move MOVE_DRAGON_BREATH
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_DRAGON
@@ -3396,7 +3396,7 @@ move MOVE_DRAGON_BREATH
     terminatedata
 
 move MOVE_BATON_PASS
-    battleeffect 0x007F
+    battleeffect 127
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3411,7 +3411,7 @@ move MOVE_BATON_PASS
     terminatedata
 
 move MOVE_ENCORE
-    battleeffect 0x005A
+    battleeffect 90
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3426,7 +3426,7 @@ move MOVE_ENCORE
     terminatedata
 
 move MOVE_PURSUIT
-    battleeffect 0x0080
+    battleeffect 128
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_DARK
@@ -3441,7 +3441,7 @@ move MOVE_PURSUIT
     terminatedata
 
 move MOVE_RAPID_SPIN
-    battleeffect 0x0081
+    battleeffect 129
     pss SPLIT_PHYSICAL
     basepower 20
     type TYPE_NORMAL
@@ -3456,7 +3456,7 @@ move MOVE_RAPID_SPIN
     terminatedata
 
 move MOVE_SWEET_SCENT
-    battleeffect 0x0018
+    battleeffect 24
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3471,7 +3471,7 @@ move MOVE_SWEET_SCENT
     terminatedata
 
 move MOVE_IRON_TAIL
-    battleeffect 0x0045
+    battleeffect 69
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_STEEL
@@ -3486,7 +3486,7 @@ move MOVE_IRON_TAIL
     terminatedata
 
 move MOVE_METAL_CLAW
-    battleeffect 0x008B
+    battleeffect 139
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_STEEL
@@ -3501,7 +3501,7 @@ move MOVE_METAL_CLAW
     terminatedata
 
 move MOVE_VITAL_THROW
-    battleeffect 0x004E
+    battleeffect 78
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_FIGHTING
@@ -3516,7 +3516,7 @@ move MOVE_VITAL_THROW
     terminatedata
 
 move MOVE_MORNING_SUN
-    battleeffect 0x0084
+    battleeffect 132
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3531,7 +3531,7 @@ move MOVE_MORNING_SUN
     terminatedata
 
 move MOVE_SYNTHESIS
-    battleeffect 0x0084
+    battleeffect 132
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -3546,7 +3546,7 @@ move MOVE_SYNTHESIS
     terminatedata
 
 move MOVE_MOONLIGHT
-    battleeffect 0x0084
+    battleeffect 132
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3561,7 +3561,7 @@ move MOVE_MOONLIGHT
     terminatedata
 
 move MOVE_HIDDEN_POWER
-    battleeffect 0x0087
+    battleeffect 135
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_NORMAL
@@ -3576,7 +3576,7 @@ move MOVE_HIDDEN_POWER
     terminatedata
 
 move MOVE_CROSS_CHOP
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_FIGHTING
@@ -3591,7 +3591,7 @@ move MOVE_CROSS_CHOP
     terminatedata
 
 move MOVE_TWISTER
-    battleeffect 0x0092
+    battleeffect 146
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_DRAGON
@@ -3606,7 +3606,7 @@ move MOVE_TWISTER
     terminatedata
 
 move MOVE_RAIN_DANCE
-    battleeffect 0x0088
+    battleeffect 136
     pss SPLIT_STATUS
     basepower 0
     type TYPE_WATER
@@ -3621,7 +3621,7 @@ move MOVE_RAIN_DANCE
     terminatedata
 
 move MOVE_SUNNY_DAY
-    battleeffect 0x0089
+    battleeffect 137
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FIRE
@@ -3636,7 +3636,7 @@ move MOVE_SUNNY_DAY
     terminatedata
 
 move MOVE_CRUNCH
-    battleeffect 0x0045
+    battleeffect 69
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_DARK
@@ -3651,7 +3651,7 @@ move MOVE_CRUNCH
     terminatedata
 
 move MOVE_MIRROR_COAT
-    battleeffect 0x0090
+    battleeffect 144
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_PSYCHIC
@@ -3666,7 +3666,7 @@ move MOVE_MIRROR_COAT
     terminatedata
 
 move MOVE_PSYCH_UP
-    battleeffect 0x008F
+    battleeffect 143
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3681,7 +3681,7 @@ move MOVE_PSYCH_UP
     terminatedata
 
 move MOVE_EXTREME_SPEED
-    battleeffect 0x0067
+    battleeffect 103
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_NORMAL
@@ -3696,7 +3696,7 @@ move MOVE_EXTREME_SPEED
     terminatedata
 
 move MOVE_ANCIENT_POWER
-    battleeffect 0x008C
+    battleeffect 140
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_ROCK
@@ -3711,7 +3711,7 @@ move MOVE_ANCIENT_POWER
     terminatedata
 
 move MOVE_SHADOW_BALL
-    battleeffect 0x0048
+    battleeffect 72
     pss SPLIT_SPECIAL
     basepower 80
     type TYPE_GHOST
@@ -3726,7 +3726,7 @@ move MOVE_SHADOW_BALL
     terminatedata
 
 move MOVE_FUTURE_SIGHT
-    battleeffect 0x0094
+    battleeffect 148
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_PSYCHIC
@@ -3741,7 +3741,7 @@ move MOVE_FUTURE_SIGHT
     terminatedata
 
 move MOVE_ROCK_SMASH
-    battleeffect 0x0045
+    battleeffect 69
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_FIGHTING
@@ -3756,7 +3756,7 @@ move MOVE_ROCK_SMASH
     terminatedata
 
 move MOVE_WHIRLPOOL
-    battleeffect 0x0105
+    battleeffect 261
     pss SPLIT_SPECIAL
     basepower 15
     type TYPE_WATER
@@ -3771,7 +3771,7 @@ move MOVE_WHIRLPOOL
     terminatedata
 
 move MOVE_BEAT_UP
-    battleeffect 0x009A
+    battleeffect 154
     pss SPLIT_PHYSICAL
     basepower 10
     type TYPE_DARK
@@ -3786,7 +3786,7 @@ move MOVE_BEAT_UP
     terminatedata
 
 move MOVE_FAKE_OUT
-    battleeffect 0x009E
+    battleeffect 158
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_NORMAL
@@ -3801,7 +3801,7 @@ move MOVE_FAKE_OUT
     terminatedata
 
 move MOVE_UPROAR
-    battleeffect 0x009F
+    battleeffect 159
     pss SPLIT_SPECIAL
     basepower 50
     type TYPE_NORMAL
@@ -3816,7 +3816,7 @@ move MOVE_UPROAR
     terminatedata
 
 move MOVE_STOCKPILE
-    battleeffect 0x00A0
+    battleeffect 160
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3831,7 +3831,7 @@ move MOVE_STOCKPILE
     terminatedata
 
 move MOVE_SPIT_UP
-    battleeffect 0x00A1
+    battleeffect 161
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_NORMAL
@@ -3846,7 +3846,7 @@ move MOVE_SPIT_UP
     terminatedata
 
 move MOVE_SWALLOW
-    battleeffect 0x00A2
+    battleeffect 162
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -3861,7 +3861,7 @@ move MOVE_SWALLOW
     terminatedata
 
 move MOVE_HEAT_WAVE
-    battleeffect 0x0004
+    battleeffect 4
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_FIRE
@@ -3876,7 +3876,7 @@ move MOVE_HEAT_WAVE
     terminatedata
 
 move MOVE_HAIL
-    battleeffect 0x00A4
+    battleeffect 164
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ICE
@@ -3891,7 +3891,7 @@ move MOVE_HAIL
     terminatedata
 
 move MOVE_TORMENT
-    battleeffect 0x00A5
+    battleeffect 165
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -3906,7 +3906,7 @@ move MOVE_TORMENT
     terminatedata
 
 move MOVE_FLATTER
-    battleeffect 0x00A6
+    battleeffect 166
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -3921,7 +3921,7 @@ move MOVE_FLATTER
     terminatedata
 
 move MOVE_WILL_O_WISP
-    battleeffect 0x00A7
+    battleeffect 167
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FIRE
@@ -3936,7 +3936,7 @@ move MOVE_WILL_O_WISP
     terminatedata
 
 move MOVE_MEMENTO
-    battleeffect 0x00A8
+    battleeffect 168
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -3951,7 +3951,7 @@ move MOVE_MEMENTO
     terminatedata
 
 move MOVE_FACADE
-    battleeffect 0x00A9
+    battleeffect 169
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_NORMAL
@@ -3966,7 +3966,7 @@ move MOVE_FACADE
     terminatedata
 
 move MOVE_FOCUS_PUNCH
-    battleeffect 0x00AA
+    battleeffect 170
     pss SPLIT_PHYSICAL
     basepower 150
     type TYPE_FIGHTING
@@ -3981,7 +3981,7 @@ move MOVE_FOCUS_PUNCH
     terminatedata
 
 move MOVE_SMELLING_SALT
-    battleeffect 0x00AB
+    battleeffect 171
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_NORMAL
@@ -3996,7 +3996,7 @@ move MOVE_SMELLING_SALT
     terminatedata
 
 move MOVE_FOLLOW_ME
-    battleeffect 0x00AC
+    battleeffect 172
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4011,7 +4011,7 @@ move MOVE_FOLLOW_ME
     terminatedata
 
 move MOVE_NATURE_POWER
-    battleeffect 0x00AD
+    battleeffect 173
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4026,7 +4026,7 @@ move MOVE_NATURE_POWER
     terminatedata
 
 move MOVE_CHARGE
-    battleeffect 0x00AE
+    battleeffect 174
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ELECTRIC
@@ -4041,7 +4041,7 @@ move MOVE_CHARGE
     terminatedata
 
 move MOVE_TAUNT
-    battleeffect 0x00AF
+    battleeffect 175
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -4056,7 +4056,7 @@ move MOVE_TAUNT
     terminatedata
 
 move MOVE_HELPING_HAND
-    battleeffect 0x00B0
+    battleeffect 176
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4071,7 +4071,7 @@ move MOVE_HELPING_HAND
     terminatedata
 
 move MOVE_TRICK
-    battleeffect 0x00B1
+    battleeffect 177
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -4086,7 +4086,7 @@ move MOVE_TRICK
     terminatedata
 
 move MOVE_ROLE_PLAY
-    battleeffect 0x00B2
+    battleeffect 178
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -4101,7 +4101,7 @@ move MOVE_ROLE_PLAY
     terminatedata
 
 move MOVE_WISH
-    battleeffect 0x00B3
+    battleeffect 179
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4116,7 +4116,7 @@ move MOVE_WISH
     terminatedata
 
 move MOVE_ASSIST
-    battleeffect 0x00B4
+    battleeffect 180
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4131,7 +4131,7 @@ move MOVE_ASSIST
     terminatedata
 
 move MOVE_INGRAIN
-    battleeffect 0x00B5
+    battleeffect 181
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -4146,7 +4146,7 @@ move MOVE_INGRAIN
     terminatedata
 
 move MOVE_SUPERPOWER
-    battleeffect 0x00B6
+    battleeffect 182
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_FIGHTING
@@ -4161,7 +4161,7 @@ move MOVE_SUPERPOWER
     terminatedata
 
 move MOVE_MAGIC_COAT
-    battleeffect 0x00B7
+    battleeffect 183
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -4176,7 +4176,7 @@ move MOVE_MAGIC_COAT
     terminatedata
 
 move MOVE_RECYCLE
-    battleeffect 0x00B8
+    battleeffect 184
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4191,7 +4191,7 @@ move MOVE_RECYCLE
     terminatedata
 
 move MOVE_REVENGE
-    battleeffect 0x00B9
+    battleeffect 185
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_FIGHTING
@@ -4206,7 +4206,7 @@ move MOVE_REVENGE
     terminatedata
 
 move MOVE_BRICK_BREAK
-    battleeffect 0x00BA
+    battleeffect 186
     pss SPLIT_PHYSICAL
     basepower 75
     type TYPE_FIGHTING
@@ -4221,7 +4221,7 @@ move MOVE_BRICK_BREAK
     terminatedata
 
 move MOVE_YAWN
-    battleeffect 0x00BB
+    battleeffect 187
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4236,7 +4236,7 @@ move MOVE_YAWN
     terminatedata
 
 move MOVE_KNOCK_OFF
-    battleeffect 0x00BC
+    battleeffect 188
     pss SPLIT_PHYSICAL
     basepower 20
     type TYPE_DARK
@@ -4251,7 +4251,7 @@ move MOVE_KNOCK_OFF
     terminatedata
 
 move MOVE_ENDEAVOR
-    battleeffect 0x00BD
+    battleeffect 189
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -4266,7 +4266,7 @@ move MOVE_ENDEAVOR
     terminatedata
 
 move MOVE_ERUPTION
-    battleeffect 0x00BE
+    battleeffect 190
     pss SPLIT_SPECIAL
     basepower 150
     type TYPE_FIRE
@@ -4281,7 +4281,7 @@ move MOVE_ERUPTION
     terminatedata
 
 move MOVE_SKILL_SWAP
-    battleeffect 0x00BF
+    battleeffect 191
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -4296,7 +4296,7 @@ move MOVE_SKILL_SWAP
     terminatedata
 
 move MOVE_IMPRISON
-    battleeffect 0x00C0
+    battleeffect 192
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -4311,7 +4311,7 @@ move MOVE_IMPRISON
     terminatedata
 
 move MOVE_REFRESH
-    battleeffect 0x00C1
+    battleeffect 193
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4326,7 +4326,7 @@ move MOVE_REFRESH
     terminatedata
 
 move MOVE_GRUDGE
-    battleeffect 0x00C2
+    battleeffect 194
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GHOST
@@ -4341,7 +4341,7 @@ move MOVE_GRUDGE
     terminatedata
 
 move MOVE_SNATCH
-    battleeffect 0x00C3
+    battleeffect 195
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -4356,7 +4356,7 @@ move MOVE_SNATCH
     terminatedata
 
 move MOVE_SECRET_POWER
-    battleeffect 0x00C5
+    battleeffect 197
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_NORMAL
@@ -4371,7 +4371,7 @@ move MOVE_SECRET_POWER
     terminatedata
 
 move MOVE_DIVE
-    battleeffect 0x00FF
+    battleeffect 255
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_WATER
@@ -4386,7 +4386,7 @@ move MOVE_DIVE
     terminatedata
 
 move MOVE_ARM_THRUST
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 15
     type TYPE_FIGHTING
@@ -4401,7 +4401,7 @@ move MOVE_ARM_THRUST
     terminatedata
 
 move MOVE_CAMOUFLAGE
-    battleeffect 0x00D5
+    battleeffect 213
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4416,7 +4416,7 @@ move MOVE_CAMOUFLAGE
     terminatedata
 
 move MOVE_TAIL_GLOW
-    battleeffect 0x0035
+    battleeffect 53
     pss SPLIT_STATUS
     basepower 0
     type TYPE_BUG
@@ -4431,7 +4431,7 @@ move MOVE_TAIL_GLOW
     terminatedata
 
 move MOVE_LUSTER_PURGE
-    battleeffect 0x0048
+    battleeffect 72
     pss SPLIT_SPECIAL
     basepower 70
     type TYPE_PSYCHIC
@@ -4446,7 +4446,7 @@ move MOVE_LUSTER_PURGE
     terminatedata
 
 move MOVE_MIST_BALL
-    battleeffect 0x0047
+    battleeffect 71
     pss SPLIT_SPECIAL
     basepower 70
     type TYPE_PSYCHIC
@@ -4461,7 +4461,7 @@ move MOVE_MIST_BALL
     terminatedata
 
 move MOVE_FEATHER_DANCE
-    battleeffect 0x003A
+    battleeffect 58
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FLYING
@@ -4476,7 +4476,7 @@ move MOVE_FEATHER_DANCE
     terminatedata
 
 move MOVE_TEETER_DANCE
-    battleeffect 0x00C7
+    battleeffect 199
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4491,7 +4491,7 @@ move MOVE_TEETER_DANCE
     terminatedata
 
 move MOVE_BLAZE_KICK
-    battleeffect 0x00C8
+    battleeffect 200
     pss SPLIT_PHYSICAL
     basepower 85
     type TYPE_FIRE
@@ -4506,7 +4506,7 @@ move MOVE_BLAZE_KICK
     terminatedata
 
 move MOVE_MUD_SPORT
-    battleeffect 0x00C9
+    battleeffect 201
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GROUND
@@ -4521,7 +4521,7 @@ move MOVE_MUD_SPORT
     terminatedata
 
 move MOVE_ICE_BALL
-    battleeffect 0x0075
+    battleeffect 117
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_ICE
@@ -4536,7 +4536,7 @@ move MOVE_ICE_BALL
     terminatedata
 
 move MOVE_NEEDLE_ARM
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_GRASS
@@ -4551,7 +4551,7 @@ move MOVE_NEEDLE_ARM
     terminatedata
 
 move MOVE_SLACK_OFF
-    battleeffect 0x0020
+    battleeffect 32
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4566,7 +4566,7 @@ move MOVE_SLACK_OFF
     terminatedata
 
 move MOVE_HYPER_VOICE
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 90
     type TYPE_NORMAL
@@ -4581,7 +4581,7 @@ move MOVE_HYPER_VOICE
     terminatedata
 
 move MOVE_POISON_FANG
-    battleeffect 0x00CA
+    battleeffect 202
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_POISON
@@ -4596,7 +4596,7 @@ move MOVE_POISON_FANG
     terminatedata
 
 move MOVE_CRUSH_CLAW
-    battleeffect 0x0045
+    battleeffect 69
     pss SPLIT_PHYSICAL
     basepower 75
     type TYPE_NORMAL
@@ -4611,7 +4611,7 @@ move MOVE_CRUSH_CLAW
     terminatedata
 
 move MOVE_BLAST_BURN
-    battleeffect 0x0050
+    battleeffect 80
     pss SPLIT_SPECIAL
     basepower 150
     type TYPE_FIRE
@@ -4626,7 +4626,7 @@ move MOVE_BLAST_BURN
     terminatedata
 
 move MOVE_HYDRO_CANNON
-    battleeffect 0x0050
+    battleeffect 80
     pss SPLIT_SPECIAL
     basepower 150
     type TYPE_WATER
@@ -4641,7 +4641,7 @@ move MOVE_HYDRO_CANNON
     terminatedata
 
 move MOVE_METEOR_MASH
-    battleeffect 0x008B
+    battleeffect 139
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_STEEL
@@ -4656,7 +4656,7 @@ move MOVE_METEOR_MASH
     terminatedata
 
 move MOVE_ASTONISH
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_GHOST
@@ -4671,7 +4671,7 @@ move MOVE_ASTONISH
     terminatedata
 
 move MOVE_WEATHER_BALL
-    battleeffect 0x00CB
+    battleeffect 203
     pss SPLIT_SPECIAL
     basepower 50
     type TYPE_NORMAL
@@ -4686,7 +4686,7 @@ move MOVE_WEATHER_BALL
     terminatedata
 
 move MOVE_AROMATHERAPY
-    battleeffect 0x0066
+    battleeffect 102
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -4701,7 +4701,7 @@ move MOVE_AROMATHERAPY
     terminatedata
 
 move MOVE_FAKE_TEARS
-    battleeffect 0x003E
+    battleeffect 62
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -4716,7 +4716,7 @@ move MOVE_FAKE_TEARS
     terminatedata
 
 move MOVE_AIR_CUTTER
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_SPECIAL
     basepower 55
     type TYPE_FLYING
@@ -4731,7 +4731,7 @@ move MOVE_AIR_CUTTER
     terminatedata
 
 move MOVE_OVERHEAT
-    battleeffect 0x00CC
+    battleeffect 204
     pss SPLIT_SPECIAL
     basepower 140
     type TYPE_FIRE
@@ -4746,7 +4746,7 @@ move MOVE_OVERHEAT
     terminatedata
 
 move MOVE_ODOR_SLEUTH
-    battleeffect 0x0071
+    battleeffect 113
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4761,7 +4761,7 @@ move MOVE_ODOR_SLEUTH
     terminatedata
 
 move MOVE_ROCK_TOMB
-    battleeffect 0x0046
+    battleeffect 70
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_ROCK
@@ -4776,7 +4776,7 @@ move MOVE_ROCK_TOMB
     terminatedata
 
 move MOVE_SILVER_WIND
-    battleeffect 0x008C
+    battleeffect 140
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_BUG
@@ -4791,7 +4791,7 @@ move MOVE_SILVER_WIND
     terminatedata
 
 move MOVE_METAL_SOUND
-    battleeffect 0x003E
+    battleeffect 62
     pss SPLIT_STATUS
     basepower 0
     type TYPE_STEEL
@@ -4806,7 +4806,7 @@ move MOVE_METAL_SOUND
     terminatedata
 
 move MOVE_GRASS_WHISTLE
-    battleeffect 0x0001
+    battleeffect 1
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -4821,7 +4821,7 @@ move MOVE_GRASS_WHISTLE
     terminatedata
 
 move MOVE_TICKLE
-    battleeffect 0x00CD
+    battleeffect 205
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -4836,7 +4836,7 @@ move MOVE_TICKLE
     terminatedata
 
 move MOVE_COSMIC_POWER
-    battleeffect 0x00CE
+    battleeffect 206
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -4851,7 +4851,7 @@ move MOVE_COSMIC_POWER
     terminatedata
 
 move MOVE_WATER_SPOUT
-    battleeffect 0x00BE
+    battleeffect 190
     pss SPLIT_SPECIAL
     basepower 150
     type TYPE_WATER
@@ -4866,7 +4866,7 @@ move MOVE_WATER_SPOUT
     terminatedata
 
 move MOVE_SIGNAL_BEAM
-    battleeffect 0x004C
+    battleeffect 76
     pss SPLIT_SPECIAL
     basepower 75
     type TYPE_BUG
@@ -4881,7 +4881,7 @@ move MOVE_SIGNAL_BEAM
     terminatedata
 
 move MOVE_SHADOW_PUNCH
-    battleeffect 0x0011
+    battleeffect 17
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_GHOST
@@ -4896,7 +4896,7 @@ move MOVE_SHADOW_PUNCH
     terminatedata
 
 move MOVE_EXTRASENSORY
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_SPECIAL
     basepower 80
     type TYPE_PSYCHIC
@@ -4911,7 +4911,7 @@ move MOVE_EXTRASENSORY
     terminatedata
 
 move MOVE_SKY_UPPERCUT
-    battleeffect 0x00CF
+    battleeffect 207
     pss SPLIT_PHYSICAL
     basepower 85
     type TYPE_FIGHTING
@@ -4926,7 +4926,7 @@ move MOVE_SKY_UPPERCUT
     terminatedata
 
 move MOVE_SAND_TOMB
-    battleeffect 0x002A
+    battleeffect 42
     pss SPLIT_PHYSICAL
     basepower 15
     type TYPE_GROUND
@@ -4941,7 +4941,7 @@ move MOVE_SAND_TOMB
     terminatedata
 
 move MOVE_SHEER_COLD
-    battleeffect 0x0026
+    battleeffect 38
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_ICE
@@ -4956,7 +4956,7 @@ move MOVE_SHEER_COLD
     terminatedata
 
 move MOVE_MUDDY_WATER
-    battleeffect 0x0049
+    battleeffect 73
     pss SPLIT_SPECIAL
     basepower 95
     type TYPE_WATER
@@ -4971,7 +4971,7 @@ move MOVE_MUDDY_WATER
     terminatedata
 
 move MOVE_BULLET_SEED
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 25
     type TYPE_GRASS
@@ -4986,7 +4986,7 @@ move MOVE_BULLET_SEED
     terminatedata
 
 move MOVE_AERIAL_ACE
-    battleeffect 0x0011
+    battleeffect 17
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_FLYING
@@ -5001,7 +5001,7 @@ move MOVE_AERIAL_ACE
     terminatedata
 
 move MOVE_ICICLE_SPEAR
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 10
     type TYPE_ICE
@@ -5016,7 +5016,7 @@ move MOVE_ICICLE_SPEAR
     terminatedata
 
 move MOVE_IRON_DEFENSE
-    battleeffect 0x0033
+    battleeffect 51
     pss SPLIT_STATUS
     basepower 0
     type TYPE_STEEL
@@ -5031,7 +5031,7 @@ move MOVE_IRON_DEFENSE
     terminatedata
 
 move MOVE_BLOCK
-    battleeffect 0x006A
+    battleeffect 106
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -5046,7 +5046,7 @@ move MOVE_BLOCK
     terminatedata
 
 move MOVE_HOWL
-    battleeffect 0x000A
+    battleeffect 10
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -5061,7 +5061,7 @@ move MOVE_HOWL
     terminatedata
 
 move MOVE_DRAGON_CLAW
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_DRAGON
@@ -5076,7 +5076,7 @@ move MOVE_DRAGON_CLAW
     terminatedata
 
 move MOVE_FRENZY_PLANT
-    battleeffect 0x0050
+    battleeffect 80
     pss SPLIT_SPECIAL
     basepower 150
     type TYPE_GRASS
@@ -5091,7 +5091,7 @@ move MOVE_FRENZY_PLANT
     terminatedata
 
 move MOVE_BULK_UP
-    battleeffect 0x00D0
+    battleeffect 208
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FIGHTING
@@ -5106,7 +5106,7 @@ move MOVE_BULK_UP
     terminatedata
 
 move MOVE_BOUNCE
-    battleeffect 0x0107
+    battleeffect 263
     pss SPLIT_PHYSICAL
     basepower 85
     type TYPE_FLYING
@@ -5121,7 +5121,7 @@ move MOVE_BOUNCE
     terminatedata
 
 move MOVE_MUD_SHOT
-    battleeffect 0x0046
+    battleeffect 70
     pss SPLIT_SPECIAL
     basepower 55
     type TYPE_GROUND
@@ -5136,7 +5136,7 @@ move MOVE_MUD_SHOT
     terminatedata
 
 move MOVE_POISON_TAIL
-    battleeffect 0x00D1
+    battleeffect 209
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_POISON
@@ -5151,7 +5151,7 @@ move MOVE_POISON_TAIL
     terminatedata
 
 move MOVE_COVET
-    battleeffect 0x0069
+    battleeffect 105
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_NORMAL
@@ -5166,7 +5166,7 @@ move MOVE_COVET
     terminatedata
 
 move MOVE_VOLT_TACKLE
-    battleeffect 0x0106
+    battleeffect 262
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_ELECTRIC
@@ -5181,7 +5181,7 @@ move MOVE_VOLT_TACKLE
     terminatedata
 
 move MOVE_MAGICAL_LEAF
-    battleeffect 0x0011
+    battleeffect 17
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_GRASS
@@ -5196,7 +5196,7 @@ move MOVE_MAGICAL_LEAF
     terminatedata
 
 move MOVE_WATER_SPORT
-    battleeffect 0x00D2
+    battleeffect 210
     pss SPLIT_STATUS
     basepower 0
     type TYPE_WATER
@@ -5211,7 +5211,7 @@ move MOVE_WATER_SPORT
     terminatedata
 
 move MOVE_CALM_MIND
-    battleeffect 0x00D3
+    battleeffect 211
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5226,7 +5226,7 @@ move MOVE_CALM_MIND
     terminatedata
 
 move MOVE_LEAF_BLADE
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 90
     type TYPE_GRASS
@@ -5241,7 +5241,7 @@ move MOVE_LEAF_BLADE
     terminatedata
 
 move MOVE_DRAGON_DANCE
-    battleeffect 0x00D4
+    battleeffect 212
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DRAGON
@@ -5256,7 +5256,7 @@ move MOVE_DRAGON_DANCE
     terminatedata
 
 move MOVE_ROCK_BLAST
-    battleeffect 0x001D
+    battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 25
     type TYPE_ROCK
@@ -5271,7 +5271,7 @@ move MOVE_ROCK_BLAST
     terminatedata
 
 move MOVE_SHOCK_WAVE
-    battleeffect 0x0011
+    battleeffect 17
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_ELECTRIC
@@ -5286,7 +5286,7 @@ move MOVE_SHOCK_WAVE
     terminatedata
 
 move MOVE_WATER_PULSE
-    battleeffect 0x004C
+    battleeffect 76
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_WATER
@@ -5301,7 +5301,7 @@ move MOVE_WATER_PULSE
     terminatedata
 
 move MOVE_DOOM_DESIRE
-    battleeffect 0x0094
+    battleeffect 148
     pss SPLIT_SPECIAL
     basepower 140
     type TYPE_STEEL
@@ -5316,7 +5316,7 @@ move MOVE_DOOM_DESIRE
     terminatedata
 
 move MOVE_PSYCHO_BOOST
-    battleeffect 0x00CC
+    battleeffect 204
     pss SPLIT_SPECIAL
     basepower 140
     type TYPE_PSYCHIC
@@ -5331,7 +5331,7 @@ move MOVE_PSYCHO_BOOST
     terminatedata
 
 move MOVE_ROOST
-    battleeffect 0x00D6
+    battleeffect 214
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FLYING
@@ -5346,7 +5346,7 @@ move MOVE_ROOST
     terminatedata
 
 move MOVE_GRAVITY
-    battleeffect 0x00D7
+    battleeffect 215
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5361,7 +5361,7 @@ move MOVE_GRAVITY
     terminatedata
 
 move MOVE_MIRACLE_EYE
-    battleeffect 0x00D8
+    battleeffect 216
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5376,7 +5376,7 @@ move MOVE_MIRACLE_EYE
     terminatedata
 
 move MOVE_WAKE_UP_SLAP
-    battleeffect 0x00D9
+    battleeffect 217
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_FIGHTING
@@ -5391,7 +5391,7 @@ move MOVE_WAKE_UP_SLAP
     terminatedata
 
 move MOVE_HAMMER_ARM
-    battleeffect 0x00DA
+    battleeffect 218
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_FIGHTING
@@ -5406,7 +5406,7 @@ move MOVE_HAMMER_ARM
     terminatedata
 
 move MOVE_GYRO_BALL
-    battleeffect 0x00DB
+    battleeffect 219
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_STEEL
@@ -5421,7 +5421,7 @@ move MOVE_GYRO_BALL
     terminatedata
 
 move MOVE_HEALING_WISH
-    battleeffect 0x00DC
+    battleeffect 220
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5436,7 +5436,7 @@ move MOVE_HEALING_WISH
     terminatedata
 
 move MOVE_BRINE
-    battleeffect 0x00DD
+    battleeffect 221
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_WATER
@@ -5451,7 +5451,7 @@ move MOVE_BRINE
     terminatedata
 
 move MOVE_NATURAL_GIFT
-    battleeffect 0x00DE
+    battleeffect 222
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -5466,7 +5466,7 @@ move MOVE_NATURAL_GIFT
     terminatedata
 
 move MOVE_FEINT
-    battleeffect 0x00DF
+    battleeffect 223
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_NORMAL
@@ -5481,7 +5481,7 @@ move MOVE_FEINT
     terminatedata
 
 move MOVE_PLUCK
-    battleeffect 0x00E0
+    battleeffect 224
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_FLYING
@@ -5496,7 +5496,7 @@ move MOVE_PLUCK
     terminatedata
 
 move MOVE_TAILWIND
-    battleeffect 0x00E1
+    battleeffect 225
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FLYING
@@ -5511,7 +5511,7 @@ move MOVE_TAILWIND
     terminatedata
 
 move MOVE_ACUPRESSURE
-    battleeffect 0x00E2
+    battleeffect 226
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -5526,7 +5526,7 @@ move MOVE_ACUPRESSURE
     terminatedata
 
 move MOVE_METAL_BURST
-    battleeffect 0x00E3
+    battleeffect 227
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_STEEL
@@ -5541,7 +5541,7 @@ move MOVE_METAL_BURST
     terminatedata
 
 move MOVE_U_TURN
-    battleeffect 0x00E4
+    battleeffect 228
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_BUG
@@ -5556,7 +5556,7 @@ move MOVE_U_TURN
     terminatedata
 
 move MOVE_CLOSE_COMBAT
-    battleeffect 0x00E5
+    battleeffect 229
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_FIGHTING
@@ -5571,7 +5571,7 @@ move MOVE_CLOSE_COMBAT
     terminatedata
 
 move MOVE_PAYBACK
-    battleeffect 0x00E6
+    battleeffect 230
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_DARK
@@ -5586,7 +5586,7 @@ move MOVE_PAYBACK
     terminatedata
 
 move MOVE_ASSURANCE
-    battleeffect 0x00E7
+    battleeffect 231
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_DARK
@@ -5601,7 +5601,7 @@ move MOVE_ASSURANCE
     terminatedata
 
 move MOVE_EMBARGO
-    battleeffect 0x00E8
+    battleeffect 232
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -5616,7 +5616,7 @@ move MOVE_EMBARGO
     terminatedata
 
 move MOVE_FLING
-    battleeffect 0x00E9
+    battleeffect 233
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_DARK
@@ -5631,7 +5631,7 @@ move MOVE_FLING
     terminatedata
 
 move MOVE_PSYCHO_SHIFT
-    battleeffect 0x00EA
+    battleeffect 234
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5646,7 +5646,7 @@ move MOVE_PSYCHO_SHIFT
     terminatedata
 
 move MOVE_TRUMP_CARD
-    battleeffect 0x00EB
+    battleeffect 235
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_NORMAL
@@ -5661,7 +5661,7 @@ move MOVE_TRUMP_CARD
     terminatedata
 
 move MOVE_HEAL_BLOCK
-    battleeffect 0x00EC
+    battleeffect 236
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5676,7 +5676,7 @@ move MOVE_HEAL_BLOCK
     terminatedata
 
 move MOVE_WRING_OUT
-    battleeffect 0x00ED
+    battleeffect 237
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_NORMAL
@@ -5691,7 +5691,7 @@ move MOVE_WRING_OUT
     terminatedata
 
 move MOVE_POWER_TRICK
-    battleeffect 0x00EE
+    battleeffect 238
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5706,7 +5706,7 @@ move MOVE_POWER_TRICK
     terminatedata
 
 move MOVE_GASTRO_ACID
-    battleeffect 0x00EF
+    battleeffect 239
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
@@ -5721,7 +5721,7 @@ move MOVE_GASTRO_ACID
     terminatedata
 
 move MOVE_LUCKY_CHANT
-    battleeffect 0x00F0
+    battleeffect 240
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -5736,7 +5736,7 @@ move MOVE_LUCKY_CHANT
     terminatedata
 
 move MOVE_ME_FIRST
-    battleeffect 0x00F1
+    battleeffect 241
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -5751,7 +5751,7 @@ move MOVE_ME_FIRST
     terminatedata
 
 move MOVE_COPYCAT
-    battleeffect 0x00F2
+    battleeffect 242
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -5766,7 +5766,7 @@ move MOVE_COPYCAT
     terminatedata
 
 move MOVE_POWER_SWAP
-    battleeffect 0x00F3
+    battleeffect 243
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5781,7 +5781,7 @@ move MOVE_POWER_SWAP
     terminatedata
 
 move MOVE_GUARD_SWAP
-    battleeffect 0x00F4
+    battleeffect 244
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5796,7 +5796,7 @@ move MOVE_GUARD_SWAP
     terminatedata
 
 move MOVE_PUNISHMENT
-    battleeffect 0x00F5
+    battleeffect 245
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_DARK
@@ -5811,7 +5811,7 @@ move MOVE_PUNISHMENT
     terminatedata
 
 move MOVE_LAST_RESORT
-    battleeffect 0x00F6
+    battleeffect 246
     pss SPLIT_PHYSICAL
     basepower 130
     type TYPE_NORMAL
@@ -5826,7 +5826,7 @@ move MOVE_LAST_RESORT
     terminatedata
 
 move MOVE_WORRY_SEED
-    battleeffect 0x00F7
+    battleeffect 247
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
@@ -5841,7 +5841,7 @@ move MOVE_WORRY_SEED
     terminatedata
 
 move MOVE_SUCKER_PUNCH
-    battleeffect 0x00F8
+    battleeffect 248
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_DARK
@@ -5856,7 +5856,7 @@ move MOVE_SUCKER_PUNCH
     terminatedata
 
 move MOVE_TOXIC_SPIKES
-    battleeffect 0x00F9
+    battleeffect 249
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
@@ -5871,7 +5871,7 @@ move MOVE_TOXIC_SPIKES
     terminatedata
 
 move MOVE_HEART_SWAP
-    battleeffect 0x00FA
+    battleeffect 250
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -5886,7 +5886,7 @@ move MOVE_HEART_SWAP
     terminatedata
 
 move MOVE_AQUA_RING
-    battleeffect 0x00FB
+    battleeffect 251
     pss SPLIT_STATUS
     basepower 0
     type TYPE_WATER
@@ -5901,7 +5901,7 @@ move MOVE_AQUA_RING
     terminatedata
 
 move MOVE_MAGNET_RISE
-    battleeffect 0x00FC
+    battleeffect 252
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ELECTRIC
@@ -5916,7 +5916,7 @@ move MOVE_MAGNET_RISE
     terminatedata
 
 move MOVE_FLARE_BLITZ
-    battleeffect 0x00FD
+    battleeffect 253
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_FIRE
@@ -5931,7 +5931,7 @@ move MOVE_FLARE_BLITZ
     terminatedata
 
 move MOVE_FORCE_PALM
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_FIGHTING
@@ -5946,7 +5946,7 @@ move MOVE_FORCE_PALM
     terminatedata
 
 move MOVE_AURA_SPHERE
-    battleeffect 0x0011
+    battleeffect 17
     pss SPLIT_SPECIAL
     basepower 90
     type TYPE_FIGHTING
@@ -5961,7 +5961,7 @@ move MOVE_AURA_SPHERE
     terminatedata
 
 move MOVE_ROCK_POLISH
-    battleeffect 0x0034
+    battleeffect 52
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ROCK
@@ -5976,7 +5976,7 @@ move MOVE_ROCK_POLISH
     terminatedata
 
 move MOVE_POISON_JAB
-    battleeffect 0x0002
+    battleeffect 2
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_POISON
@@ -5991,7 +5991,7 @@ move MOVE_POISON_JAB
     terminatedata
 
 move MOVE_DARK_PULSE
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_SPECIAL
     basepower 80
     type TYPE_DARK
@@ -6006,7 +6006,7 @@ move MOVE_DARK_PULSE
     terminatedata
 
 move MOVE_NIGHT_SLASH
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_DARK
@@ -6021,7 +6021,7 @@ move MOVE_NIGHT_SLASH
     terminatedata
 
 move MOVE_AQUA_TAIL
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 90
     type TYPE_WATER
@@ -6036,7 +6036,7 @@ move MOVE_AQUA_TAIL
     terminatedata
 
 move MOVE_SEED_BOMB
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_GRASS
@@ -6051,7 +6051,7 @@ move MOVE_SEED_BOMB
     terminatedata
 
 move MOVE_AIR_SLASH
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_SPECIAL
     basepower 75
     type TYPE_FLYING
@@ -6066,7 +6066,7 @@ move MOVE_AIR_SLASH
     terminatedata
 
 move MOVE_X_SCISSOR
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_BUG
@@ -6081,7 +6081,7 @@ move MOVE_X_SCISSOR
     terminatedata
 
 move MOVE_BUG_BUZZ
-    battleeffect 0x0048
+    battleeffect 72
     pss SPLIT_SPECIAL
     basepower 90
     type TYPE_BUG
@@ -6096,7 +6096,7 @@ move MOVE_BUG_BUZZ
     terminatedata
 
 move MOVE_DRAGON_PULSE
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 90
     type TYPE_DRAGON
@@ -6111,7 +6111,7 @@ move MOVE_DRAGON_PULSE
     terminatedata
 
 move MOVE_DRAGON_RUSH
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_DRAGON
@@ -6126,7 +6126,7 @@ move MOVE_DRAGON_RUSH
     terminatedata
 
 move MOVE_POWER_GEM
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 70
     type TYPE_ROCK
@@ -6141,7 +6141,7 @@ move MOVE_POWER_GEM
     terminatedata
 
 move MOVE_DRAIN_PUNCH
-    battleeffect 0x0003
+    battleeffect 3
     pss SPLIT_PHYSICAL
     basepower 75
     type TYPE_FIGHTING
@@ -6156,7 +6156,7 @@ move MOVE_DRAIN_PUNCH
     terminatedata
 
 move MOVE_VACUUM_WAVE
-    battleeffect 0x0067
+    battleeffect 103
     pss SPLIT_SPECIAL
     basepower 40
     type TYPE_FIGHTING
@@ -6171,7 +6171,7 @@ move MOVE_VACUUM_WAVE
     terminatedata
 
 move MOVE_FOCUS_BLAST
-    battleeffect 0x0048
+    battleeffect 72
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_FIGHTING
@@ -6186,7 +6186,7 @@ move MOVE_FOCUS_BLAST
     terminatedata
 
 move MOVE_ENERGY_BALL
-    battleeffect 0x0048
+    battleeffect 72
     pss SPLIT_SPECIAL
     basepower 80
     type TYPE_GRASS
@@ -6201,7 +6201,7 @@ move MOVE_ENERGY_BALL
     terminatedata
 
 move MOVE_BRAVE_BIRD
-    battleeffect 0x00C6
+    battleeffect 198
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_FLYING
@@ -6216,7 +6216,7 @@ move MOVE_BRAVE_BIRD
     terminatedata
 
 move MOVE_EARTH_POWER
-    battleeffect 0x0048
+    battleeffect 0198
     pss SPLIT_SPECIAL
     basepower 90
     type TYPE_GROUND
@@ -6231,7 +6231,7 @@ move MOVE_EARTH_POWER
     terminatedata
 
 move MOVE_SWITCHEROO
-    battleeffect 0x00B1
+    battleeffect 7
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -6246,7 +6246,7 @@ move MOVE_SWITCHEROO
     terminatedata
 
 move MOVE_GIGA_IMPACT
-    battleeffect 0x0050
+    battleeffect 80
     pss SPLIT_PHYSICAL
     basepower 150
     type TYPE_NORMAL
@@ -6261,7 +6261,7 @@ move MOVE_GIGA_IMPACT
     terminatedata
 
 move MOVE_NASTY_PLOT
-    battleeffect 0x0035
+    battleeffect 53
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -6276,7 +6276,7 @@ move MOVE_NASTY_PLOT
     terminatedata
 
 move MOVE_BULLET_PUNCH
-    battleeffect 0x0067
+    battleeffect 103
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_STEEL
@@ -6291,7 +6291,7 @@ move MOVE_BULLET_PUNCH
     terminatedata
 
 move MOVE_AVALANCHE
-    battleeffect 0x00B9
+    battleeffect 185
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_ICE
@@ -6306,7 +6306,7 @@ move MOVE_AVALANCHE
     terminatedata
 
 move MOVE_ICE_SHARD
-    battleeffect 0x0067
+    battleeffect 103
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_ICE
@@ -6321,7 +6321,7 @@ move MOVE_ICE_SHARD
     terminatedata
 
 move MOVE_SHADOW_CLAW
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_GHOST
@@ -6336,7 +6336,7 @@ move MOVE_SHADOW_CLAW
     terminatedata
 
 move MOVE_THUNDER_FANG
-    battleeffect 0x0113
+    battleeffect 275
     pss SPLIT_PHYSICAL
     basepower 65
     type TYPE_ELECTRIC
@@ -6351,7 +6351,7 @@ move MOVE_THUNDER_FANG
     terminatedata
 
 move MOVE_ICE_FANG
-    battleeffect 0x0112
+    battleeffect 274
     pss SPLIT_PHYSICAL
     basepower 65
     type TYPE_ICE
@@ -6366,7 +6366,7 @@ move MOVE_ICE_FANG
     terminatedata
 
 move MOVE_FIRE_FANG
-    battleeffect 0x0111
+    battleeffect 273
     pss SPLIT_PHYSICAL
     basepower 65
     type TYPE_FIRE
@@ -6381,7 +6381,7 @@ move MOVE_FIRE_FANG
     terminatedata
 
 move MOVE_SHADOW_SNEAK
-    battleeffect 0x0067
+    battleeffect 103
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_GHOST
@@ -6396,7 +6396,7 @@ move MOVE_SHADOW_SNEAK
     terminatedata
 
 move MOVE_MUD_BOMB
-    battleeffect 0x0049
+    battleeffect 73
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_GROUND
@@ -6411,7 +6411,7 @@ move MOVE_MUD_BOMB
     terminatedata
 
 move MOVE_PSYCHO_CUT
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_PSYCHIC
@@ -6426,7 +6426,7 @@ move MOVE_PSYCHO_CUT
     terminatedata
 
 move MOVE_ZEN_HEADBUTT
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_PSYCHIC
@@ -6441,7 +6441,7 @@ move MOVE_ZEN_HEADBUTT
     terminatedata
 
 move MOVE_MIRROR_SHOT
-    battleeffect 0x0049
+    battleeffect 73
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_STEEL
@@ -6456,7 +6456,7 @@ move MOVE_MIRROR_SHOT
     terminatedata
 
 move MOVE_FLASH_CANNON
-    battleeffect 0x0048
+    battleeffect 72
     pss SPLIT_SPECIAL
     basepower 80
     type TYPE_STEEL
@@ -6471,7 +6471,7 @@ move MOVE_FLASH_CANNON
     terminatedata
 
 move MOVE_ROCK_CLIMB
-    battleeffect 0x004C
+    battleeffect 76
     pss SPLIT_PHYSICAL
     basepower 90
     type TYPE_NORMAL
@@ -6486,7 +6486,7 @@ move MOVE_ROCK_CLIMB
     terminatedata
 
 move MOVE_DEFOG
-    battleeffect 0x0102
+    battleeffect 258
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FLYING
@@ -6501,7 +6501,7 @@ move MOVE_DEFOG
     terminatedata
 
 move MOVE_TRICK_ROOM
-    battleeffect 0x0103
+    battleeffect 259
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -6516,7 +6516,7 @@ move MOVE_TRICK_ROOM
     terminatedata
 
 move MOVE_DRACO_METEOR
-    battleeffect 0x00CC
+    battleeffect 204
     pss SPLIT_SPECIAL
     basepower 140
     type TYPE_DRAGON
@@ -6531,7 +6531,7 @@ move MOVE_DRACO_METEOR
     terminatedata
 
 move MOVE_DISCHARGE
-    battleeffect 0x0006
+    battleeffect 6
     pss SPLIT_SPECIAL
     basepower 80
     type TYPE_ELECTRIC
@@ -6546,7 +6546,7 @@ move MOVE_DISCHARGE
     terminatedata
 
 move MOVE_LAVA_PLUME
-    battleeffect 0x0004
+    battleeffect 4
     pss SPLIT_SPECIAL
     basepower 80
     type TYPE_FIRE
@@ -6561,7 +6561,7 @@ move MOVE_LAVA_PLUME
     terminatedata
 
 move MOVE_LEAF_STORM
-    battleeffect 0x00CC
+    battleeffect 204
     pss SPLIT_SPECIAL
     basepower 140
     type TYPE_GRASS
@@ -6576,7 +6576,7 @@ move MOVE_LEAF_STORM
     terminatedata
 
 move MOVE_POWER_WHIP
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_GRASS
@@ -6591,7 +6591,7 @@ move MOVE_POWER_WHIP
     terminatedata
 
 move MOVE_ROCK_WRECKER
-    battleeffect 0x0050
+    battleeffect 80
     pss SPLIT_PHYSICAL
     basepower 150
     type TYPE_ROCK
@@ -6606,7 +6606,7 @@ move MOVE_ROCK_WRECKER
     terminatedata
 
 move MOVE_CROSS_POISON
-    battleeffect 0x00D1
+    battleeffect 209
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_POISON
@@ -6621,7 +6621,7 @@ move MOVE_CROSS_POISON
     terminatedata
 
 move MOVE_GUNK_SHOT
-    battleeffect 0x0002
+    battleeffect 2
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_POISON
@@ -6636,7 +6636,7 @@ move MOVE_GUNK_SHOT
     terminatedata
 
 move MOVE_IRON_HEAD
-    battleeffect 0x001F
+    battleeffect 31
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_STEEL
@@ -6651,7 +6651,7 @@ move MOVE_IRON_HEAD
     terminatedata
 
 move MOVE_MAGNET_BOMB
-    battleeffect 0x0011
+    battleeffect 17
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_STEEL
@@ -6666,7 +6666,7 @@ move MOVE_MAGNET_BOMB
     terminatedata
 
 move MOVE_STONE_EDGE
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_ROCK
@@ -6681,7 +6681,7 @@ move MOVE_STONE_EDGE
     terminatedata
 
 move MOVE_CAPTIVATE
-    battleeffect 0x0109
+    battleeffect 265
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -6696,7 +6696,7 @@ move MOVE_CAPTIVATE
     terminatedata
 
 move MOVE_STEALTH_ROCK
-    battleeffect 0x010A
+    battleeffect 266
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ROCK
@@ -6711,7 +6711,7 @@ move MOVE_STEALTH_ROCK
     terminatedata
 
 move MOVE_GRASS_KNOT
-    battleeffect 0x00C4
+    battleeffect 196
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_GRASS
@@ -6726,7 +6726,7 @@ move MOVE_GRASS_KNOT
     terminatedata
 
 move MOVE_CHATTER
-    battleeffect 0x010B
+    battleeffect 267
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_FLYING
@@ -6741,7 +6741,7 @@ move MOVE_CHATTER
     terminatedata
 
 move MOVE_JUDGMENT
-    battleeffect 0x010C
+    battleeffect 268
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_NORMAL
@@ -6756,7 +6756,7 @@ move MOVE_JUDGMENT
     terminatedata
 
 move MOVE_BUG_BITE
-    battleeffect 0x00E0
+    battleeffect 224
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_BUG
@@ -6771,7 +6771,7 @@ move MOVE_BUG_BITE
     terminatedata
 
 move MOVE_CHARGE_BEAM
-    battleeffect 0x0114
+    battleeffect 276
     pss SPLIT_SPECIAL
     basepower 50
     type TYPE_ELECTRIC
@@ -6786,7 +6786,7 @@ move MOVE_CHARGE_BEAM
     terminatedata
 
 move MOVE_WOOD_HAMMER
-    battleeffect 0x00C6
+    battleeffect 198
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_GRASS
@@ -6801,7 +6801,7 @@ move MOVE_WOOD_HAMMER
     terminatedata
 
 move MOVE_AQUA_JET
-    battleeffect 0x0067
+    battleeffect 103
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_WATER
@@ -6816,7 +6816,7 @@ move MOVE_AQUA_JET
     terminatedata
 
 move MOVE_ATTACK_ORDER
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_PHYSICAL
     basepower 90
     type TYPE_BUG
@@ -6831,7 +6831,7 @@ move MOVE_ATTACK_ORDER
     terminatedata
 
 move MOVE_DEFEND_ORDER
-    battleeffect 0x00CE
+    battleeffect 206
     pss SPLIT_STATUS
     basepower 0
     type TYPE_BUG
@@ -6846,7 +6846,7 @@ move MOVE_DEFEND_ORDER
     terminatedata
 
 move MOVE_HEAL_ORDER
-    battleeffect 0x0020
+    battleeffect 32
     pss SPLIT_STATUS
     basepower 0
     type TYPE_BUG
@@ -6861,7 +6861,7 @@ move MOVE_HEAL_ORDER
     terminatedata
 
 move MOVE_HEAD_SMASH
-    battleeffect 0x010D
+    battleeffect 269
     pss SPLIT_PHYSICAL
     basepower 150
     type TYPE_ROCK
@@ -6876,7 +6876,7 @@ move MOVE_HEAD_SMASH
     terminatedata
 
 move MOVE_DOUBLE_HIT
-    battleeffect 0x002C
+    battleeffect 44
     pss SPLIT_PHYSICAL
     basepower 35
     type TYPE_NORMAL
@@ -6891,7 +6891,7 @@ move MOVE_DOUBLE_HIT
     terminatedata
 
 move MOVE_ROAR_OF_TIME
-    battleeffect 0x0050
+    battleeffect 80
     pss SPLIT_SPECIAL
     basepower 150
     type TYPE_DRAGON
@@ -6906,7 +6906,7 @@ move MOVE_ROAR_OF_TIME
     terminatedata
 
 move MOVE_SPACIAL_REND
-    battleeffect 0x002B
+    battleeffect 43
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_DRAGON
@@ -6921,7 +6921,7 @@ move MOVE_SPACIAL_REND
     terminatedata
 
 move MOVE_LUNAR_DANCE
-    battleeffect 0x010E
+    battleeffect 270
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
@@ -6936,7 +6936,7 @@ move MOVE_LUNAR_DANCE
     terminatedata
 
 move MOVE_CRUSH_GRIP
-    battleeffect 0x00ED
+    battleeffect 237
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
@@ -6951,7 +6951,7 @@ move MOVE_CRUSH_GRIP
     terminatedata
 
 move MOVE_MAGMA_STORM
-    battleeffect 0x002A
+    battleeffect 42
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_FIRE
@@ -6966,7 +6966,7 @@ move MOVE_MAGMA_STORM
     terminatedata
 
 move MOVE_DARK_VOID
-    battleeffect 0x0001
+    battleeffect 1
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
@@ -6981,7 +6981,7 @@ move MOVE_DARK_VOID
     terminatedata
 
 move MOVE_SEED_FLARE
-    battleeffect 0x010F
+    battleeffect 271
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_GRASS
@@ -6996,7 +6996,7 @@ move MOVE_SEED_FLARE
     terminatedata
 
 move MOVE_OMINOUS_WIND
-    battleeffect 0x008C
+    battleeffect 140
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_GHOST
@@ -7011,7 +7011,7 @@ move MOVE_OMINOUS_WIND
     terminatedata
 
 move MOVE_SHADOW_FORCE
-    battleeffect 0x0110
+    battleeffect 272
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_GHOST
@@ -7026,7 +7026,7 @@ move MOVE_SHADOW_FORCE
     terminatedata
 
 move MOVE_SHADOW_FORCE+1
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_NORMAL
@@ -7041,7 +7041,7 @@ move MOVE_SHADOW_FORCE+1
     terminatedata
 
 move MOVE_SHADOW_FORCE+2
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_NORMAL
@@ -7056,7 +7056,7 @@ move MOVE_SHADOW_FORCE+2
     terminatedata
 
 move MOVE_SHADOW_FORCE+3
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_NORMAL
@@ -7071,7 +7071,7 @@ move MOVE_SHADOW_FORCE+3
     terminatedata
 
 move MOVE_HONE_CLAWS
-    battleeffect 0x0
+    battleeffect 277
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -7085,8 +7085,1373 @@ move MOVE_HONE_CLAWS
     contesttype CONTEST_CUTE
     terminatedata
 
+move MOVE_WIDE_GUARD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GUARD_SPLIT
+    battleeffect 278
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_POWER_SPLIT
+    battleeffect 279
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WONDER_ROOM
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_PSYSHOCK
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_VENOSHOCK
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_AUTOTOMIZE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RAGE_POWDER
+    battleeffect 172
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TELEKINESIS
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_MAGIC_ROOM
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SMACK_DOWN
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STORM_THROW
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FLAME_BURST
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SLUDGE_WAVE
+    battleeffect 2
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_QUIVER_DANCE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEAVY_SLAM
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SYNCHRONOISE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ELECTRO_BALL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SOAK
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FLAME_CHARGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_COIL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_LOW_SWEEP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ACID_SPRAY
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FOUL_PLAY
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SIMPLE_BEAM
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ENTRAINMENT
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_AFTER_YOU
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ROUND
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ECHOED_VOICE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_CHIP_AWAY
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_CLEAR_SMOG
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STORED_POWER
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_QUICK_GUARD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ALLY_SWITCH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SCALD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SHELL_SMASH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEAL_PULSE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEX
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SKY_DROP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SHIFT_GEAR
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_CIRCLE_THROW
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_INCINERATE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_QUASH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ACROBATICS
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_REFLECT_TYPE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RETALIATE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FINAL_GAMBIT
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BESTOW
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_INFERNO
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WATER_PLEDGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FIRE_PLEDGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GRASS_PLEDGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_VOLT_SWITCH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STRUGGLE_BUG
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BULLDOZE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FROST_BREATH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DRAGON_TAIL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WORK_UP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ELECTROWEB
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_WILD_CHARGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DRILL_RUN
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_DUAL_CHOP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEART_STAMP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HORN_LEECH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SACRED_SWORD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RAZOR_SHELL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEAT_CRASH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_LEAF_TORNADO
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_STEAMROLLER
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_COTTON_GUARD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_NIGHT_DAZE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_PSYSTRIKE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TAIL_SLAP
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HURRICANE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_HEAD_CHARGE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GEAR_GRIND
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SEARING_SHOT
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_TECHNO_BLAST
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_RELIC_SONG
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SECRET_SWORD
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_GLACIATE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BOLT_STRIKE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_BLUE_FLARE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FIERY_DANCE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FREEZE_SHOCK
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ICE_BURN
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_SNARL
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_ICICLE_CRASH
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_V_CREATE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FUSION_FLARE
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
+move MOVE_FUSION_BOLT
+    battleeffect 0
+    pss SPLIT_PHYSICAL
+    basepower 0
+    type TYPE_NORMAL
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags 0
+    appeal 0x00
+    contesttype CONTEST_COOL
+    terminatedata
+
 move NUM_OF_MOVES+1
-    battleeffect 0x0000
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 100
     type TYPE_NORMAL
@@ -7099,6 +8464,3 @@ move NUM_OF_MOVES+1
     appeal 0x10
     contesttype CONTEST_BEAUTY
     terminatedata
-
-
-// you can easily insert new moves this way too

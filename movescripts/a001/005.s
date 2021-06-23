@@ -54,11 +54,11 @@ _019C:
     waitmessage
     endscript
 _01A8:
-    ifmonstat IF_EQUAL, BATTLER_ENEMY_LEFT, 0x2F, 0x0, _01C8
+    ifmonstat IF_EQUAL, BATTLER_ENEMY_LEFT, MON_DATA_HP, 0x0, _01C8
     returnpokemon BATTLER_ENEMY_LEFT
 _01C8:
     if IF_NOTMASK, VAR_BATTLE_TYPE, 0x2, _01FC
-    ifmonstat IF_EQUAL, BATTLER_ENEMY_RIGHT, 0x2F, 0x0, _01FC
+    ifmonstat IF_EQUAL, BATTLER_ENEMY_RIGHT, MON_DATA_HP, 0x0, _01FC
     returnpokemon BATTLER_ENEMY_RIGHT
 _01FC:
     waitmessage
@@ -94,11 +94,11 @@ _02F4:
     gotosubscript 283
     endscript
 _0300:
-    ifmonstat IF_EQUAL, BATTLER_ENEMY_LEFT, 0x2F, 0x0, _0320
+    ifmonstat IF_EQUAL, BATTLER_ENEMY_LEFT, MON_DATA_HP, 0x0, _0320
     returnpokemon BATTLER_ENEMY_LEFT
 _0320:
     if IF_NOTMASK, VAR_BATTLE_TYPE, 0x2, _0354
-    ifmonstat IF_EQUAL, BATTLER_ENEMY_RIGHT, 0x2F, 0x0, _0354
+    ifmonstat IF_EQUAL, BATTLER_ENEMY_RIGHT, MON_DATA_HP, 0x0, _0354
     returnpokemon BATTLER_ENEMY_RIGHT
 _0354:
     waitmessage

@@ -10,7 +10,7 @@
 .create "a001\a001_036", 0
 
 a001_036:
-    ifmonstat IF_MASK, BATTLER_ATTACKER, 0x35, 0x300, _009C
+    ifmonstat IF_MASK, BATTLER_ATTACKER, MON_DATA_STATUS_2, 0x300, _009C
     printmessage 0x14F, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E

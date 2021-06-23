@@ -18,10 +18,10 @@ _002C:
     checkwhenitemmakesmovehit _003C
     gotosubscript2 43
 _003C:
-    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x2F, 0x0, _0140
-    ifmonstat IF_NOTMASK, BATTLER_DEFENDER, 0x35, 0x2000000, _0140
+    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, MON_DATA_HP, 0x0, _0140
+    ifmonstat IF_NOTMASK, BATTLER_DEFENDER, MON_DATA_STATUS_2, 0x2000000, _0140
     checkbattlersequal BATTLER_ATTACKER, BATTLER_DEFENDER, _0140
-    ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x2F, 0x0, _0140
+    ifmonstat IF_EQUAL, BATTLER_ATTACKER, MON_DATA_HP, 0x0, _0140
     printmessage 0x187, 0x9, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN"
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, 0x2F, VAR_HP_TEMP
     changevar VAR_OP_MUL, VAR_HP_TEMP, 0xFFFFFFFF
@@ -39,20 +39,20 @@ _003C:
 _0140:
     changevar2 VAR_OP_GET_RESULT, VAR_FAINTED_BATTLER, VAR_ITEM_TEMP
     changevar2 VAR_OP_SET, VAR_FAINTED_BATTLER, VAR_DEFENDER
-    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x2F, 0x0, _01A0
+    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, MON_DATA_HP, 0x0, _01A0
     trygrudge _01A0
     printmessage 0x238, 0xA, 0x1, 0xFF, "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
 _01A0:
     changevar2 VAR_OP_SET, VAR_FAINTED_BATTLER, VAR_ITEM_TEMP
-    ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x2F, 0x0, _02B4
+    ifmonstat IF_EQUAL, BATTLER_ATTACKER, MON_DATA_HP, 0x0, _02B4
     changevar2 VAR_OP_SET, VAR_SWITCHED_BATTLER, VAR_ATTACKER
     printmessage 0x42B, 0x12, 0x6, 0x6, "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
     gotosubscript 153
-    ifmonstat IF_EQUAL, BATTLER_ATTACKER, 0x2F, 0x0, _02B4
+    ifmonstat IF_EQUAL, BATTLER_ATTACKER, MON_DATA_HP, 0x0, _02B4
     trynaturalcure BATTLER_ATTACKER, _0238
     changevartomonvalue VAR_OP_SET, BATTLER_ATTACKER, 0x34, 0x0
 _0238:

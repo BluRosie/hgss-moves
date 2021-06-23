@@ -10,7 +10,7 @@
 .create "a030\a030_272", 0
 
 a030_272:
-    ifmonstat IF_MASK, BATTLER_ATTACKER, 0x35, 0x1000, _00C8
+    ifmonstat IF_MASK, BATTLER_ATTACKER, MON_DATA_STATUS_2, 0x1000, _00C8
     if IF_MASK, VAR_06, 0x200, _00C8
     checkitemeffect 0x0, BATTLER_ATTACKER, 0x63, _0078
     changevartomonvalue VAR_OP_SETMASK, BATTLER_ATTACKER, 0x3B, 0x20000000

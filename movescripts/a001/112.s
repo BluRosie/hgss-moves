@@ -13,7 +13,7 @@ a001_112:
     if IF_MASK, VAR_10, 0x1FD849, _003C
     printattackmessage
     waitmessage
-    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, 0x50, 0x0, _0040
+    ifmonstat IF_NOTEQUAL, BATTLER_DEFENDER, MON_DATA_HEAL_BLOCK_COUNTER, 0x0, _0040
     gotosubscript 111
 _003C:
     endscript

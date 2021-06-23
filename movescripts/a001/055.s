@@ -14,7 +14,7 @@ a001_055:
     waitmessage
     abilitycheck 0x0, BATTLER_ATTACKER, ABILITY_INSOMNIA, _018C
     abilitycheck 0x0, BATTLER_ATTACKER, ABILITY_VITAL_SPIRIT, _018C
-    ifmonstat IF_MASK, BATTLER_ATTACKER, 0x34, 0x7, _01B0
+    ifmonstat IF_MASK, BATTLER_ATTACKER, MON_DATA_STATUS_1, 0x7, _01B0
     abilitycheck 0x0, BATTLER_ATTACKER, ABILITY_SOUNDPROOF, _0070
     if IF_MASK, VAR_FIELD_EFFECT, 0xF00, _01D0
 _0070:
@@ -22,7 +22,7 @@ _0070:
     ifmonstat2 IF_EQUAL, BATTLER_ATTACKER, VAR_47, 0x20, _0228
     seteffectprimary BATTLER_ATTACKER
     waitmessage
-    ifmonstat IF_MASK, BATTLER_ATTACKER, 0x34, 0xFFFFFFF8, _00D8
+    ifmonstat IF_MASK, BATTLER_ATTACKER, MON_DATA_STATUS_1, 0xFFFFFFF8, _00D8
     printmessage 0xCD, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     goto _0108
 _00D8:
@@ -37,7 +37,7 @@ _0108:
     changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER
     changevar VAR_OP_SETMASK, VAR_06, 0x40
     gotosubscript 2
-    ifmonstat IF_MASK, BATTLER_ATTACKER, 0x34, 0xFFFFFFF8, _00D8
+    ifmonstat IF_MASK, BATTLER_ATTACKER, MON_DATA_STATUS_1, 0xFFFFFFF8, _00D8
     printmessage 0xB8, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     goto _0250
 _018C:
@@ -49,7 +49,7 @@ _01B0:
     printmessage 0x39, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     goto _0240
 _01D0:
-    ifmonstat IF_MASK, BATTLER_ATTACKER, 0x35, 0x70, _0208
+    ifmonstat IF_MASK, BATTLER_ATTACKER, MON_DATA_STATUS_2, 0x70, _0208
     wait 0x1E
     printmessage 0x146, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     goto _0240

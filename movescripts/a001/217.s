@@ -12,7 +12,7 @@
 a001_217:
     seteffectprimary BATTLER_ATTACKER
     waitmessage
-    ifmonstat IF_NOTMASK, BATTLER_ATTACKER, 0x3B, 0x200400C0, _0030
+    ifmonstat IF_NOTMASK, BATTLER_ATTACKER, MON_DATA_MOVE_STATE, 0x200400C0, _0030
     togglevanish BATTLER_ATTACKER, 0x1
 _0030:
     printpreparedmessage
