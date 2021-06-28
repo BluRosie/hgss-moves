@@ -10,12 +10,26 @@
 .create "a010\a010_493", 0
 
 a010_493:
-    callfunction 0, 0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"
-    callfunction 1, 0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"
-    callfunction 2, 0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"
-    callfunction 3, 0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"
-    playse 2116
-    wait 60
+    loadparticlefromspa 0, 486
+    waitparticle
+
+    addparticle 0, 2, 3
+    addparticle 0, 1, 3
+    addparticle 0, 1, 3
+    addparticle 0, 0, 3
+    wait 10
+
+    addparticle 0, 1, 3
+    addparticle 0, 1, 3
+    wait 10
+
+    addparticle 0, 2, 3
+    addparticle 0, 0, 3
+    waitparticle
+
+    unloadparticle 0
+    waitstate
     end
+    
 
 .close

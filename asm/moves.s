@@ -336,6 +336,9 @@ _edited: // originally at 0x022501CA
 .org 0x02258B98
     .word 0x3181
 
+.org 0x0225E564
+	.word NUM_OF_MOVES
+
 .org 0x022645A4
     .word 0x3181
 
