@@ -7,10 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_038", 0
+.create "a000\a000_038", 0
 
-a030_038:
-    tryonehitko
-    endscript
+a000_038:
+    jumptocurmoveeffectscript
 
 .close

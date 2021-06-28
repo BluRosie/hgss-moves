@@ -7,13 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_029", 0
+.create "a000\a000_029", 0
 
-a030_029:
-    setmultihit 0x0, 0xFD
-    changevar VAR_OP_SET, VAR_SUCCESSIVE_HIT, 0x1
-    critcalc
-    damagecalc
-    endscript
+a000_029:
+    jumptocurmoveeffectscript
 
 .close

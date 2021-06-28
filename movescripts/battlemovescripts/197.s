@@ -7,12 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_197", 0
+.create "a000\a000_197", 0
 
-a030_197:
-    critcalc
-    damagecalc
-    dosecretpower
-    endscript
+a000_197:
+    jumptocurmoveeffectscript
 
 .close

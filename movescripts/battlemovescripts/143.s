@@ -7,12 +7,10 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_143", 0
+.create "a000\a000_143", 0
 
-a030_143:
-    dopsychup
-    preparemessage 0x1C4, 0x9, 0x1, 0x2, "NaN", "NaN", "NaN", "NaN"
-    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000005A
-    endscript
+a000_143:
+    preparemessage 0xDC, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
+    jumptocurmoveeffectscript
 
 .close

@@ -7,11 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_156", 0
+.create "a000\a000_156", 0
 
-a030_156:
-    changevartomonvalue VAR_OP_SETMASK, BATTLER_ATTACKER, 0x35, 0x40000000
-    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x40000010
-    endscript
+a000_156:
+    jumptocurmoveeffectscript
 
 .close

@@ -7,15 +7,10 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_083", 0
+.create "a000\a000_083", 0
 
-a030_083:
-    printattackmessage
-    waitmessage
-    wait 0x1E
-    seteffectprimary BATTLER_ATTACKER
-    waitmessage
-    metronome
-    jumptocurmovescript2 0
+a000_083:
+    preparemessage 0xF2, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN", "NaN"
+    jumptocurmoveeffectscript
 
 .close

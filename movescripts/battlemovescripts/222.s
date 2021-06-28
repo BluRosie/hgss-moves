@@ -7,16 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_222", 0
+.create "a000\a000_222", 0
 
-a030_222:
-    trynaturalgift _001C
-    critcalc
-    damagecalc
-    removeitem BATTLER_ATTACKER
-    endscript
-_001C:
-    changevar VAR_OP_SETMASK, VAR_10, 0x40
-    endscript
+a000_222:
+    jumptocurmoveeffectscript
 
 .close

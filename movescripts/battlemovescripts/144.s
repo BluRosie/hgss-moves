@@ -7,11 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_144", 0
+.create "a000\a000_144", 0
 
-a030_144:
-    changevar VAR_OP_SETMASK, VAR_06, 0x800
-    mirrorcoat
-    endscript
+a000_144:
+    jumptocurmoveeffectscript
 
 .close

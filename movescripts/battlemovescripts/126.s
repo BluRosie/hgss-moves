@@ -7,18 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_126", 0
+.create "a000\a000_126", 0
 
-a030_126:
-    changevar VAR_OP_SETMASK, VAR_06, 0x8
-    changevar VAR_OP_SET, VAR_DAMAGE_MULT, 0xA
-    ifmonstat IF_NOTMASK, BATTLER_DEFENDER, MON_DATA_MOVE_STATE, 0x80, _0048
-    changevar VAR_OP_SET, VAR_DAMAGE_MULT, 0x14
-_0048:
-    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0xA0000062
-    magnitudedamagecalc
-    critcalc
-    damagecalc
-    endscript
+a000_126:
+    jumptocurmoveeffectscript
 
 .close

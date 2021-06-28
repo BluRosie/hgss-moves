@@ -7,15 +7,10 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_248", 0
+.create "a000\a000_248", 0
 
-a030_248:
-    trysuckerpunch _0014
-    critcalc
-    damagecalc
-    endscript
-_0014:
-    changevar VAR_OP_SETMASK, VAR_10, 0x40
-    endscript
+a000_248:
+    preparemessage 0x1D8, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
+    jumptocurmoveeffectscript
 
 .close

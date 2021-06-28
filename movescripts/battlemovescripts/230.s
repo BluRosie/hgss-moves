@@ -7,12 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_230", 0
+.create "a000\a000_230", 0
 
-a030_230:
-    paybackdamagecalc
-    critcalc
-    damagecalc
-    endscript
+a000_230:
+    jumptocurmoveeffectscript
 
 .close

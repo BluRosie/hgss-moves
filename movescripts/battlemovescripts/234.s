@@ -7,14 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_234", 0
+.create "a000\a000_234", 0
 
-a030_234:
-    trypsychoshift _001C
-    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x80000090
-    endscript
-_001C:
-    changevar VAR_OP_SETMASK, VAR_10, 0x40
-    endscript
+a000_234:
+    jumptocurmoveeffectscript
 
 .close

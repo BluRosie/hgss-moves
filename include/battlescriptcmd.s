@@ -362,11 +362,11 @@ IF_AND      equ 6 // exact and
     .word 0x23, num
 .endmacro
 
-.macro jumptocurmovescript
+.macro jumptocurmoveeffectscript
     .word 0x24
 .endmacro
 
-.macro jumptocurmovescript2,num
+.macro jumptoeffectscript,num
     .word 0x25, num
 .endmacro
 

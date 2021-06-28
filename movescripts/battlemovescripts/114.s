@@ -7,10 +7,9 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
-.create "a030\a030_114", 0
+.create "a000\a000_114", 0
 
-a030_114:
-    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x2000005C
-    endscript
+a000_114:
+    jumptocurmoveeffectscript
 
 .close
