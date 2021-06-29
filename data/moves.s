@@ -7161,7 +7161,7 @@ move MOVE_PSYSHOCK
     terminatedata
 
 move MOVE_VENOSHOCK
-    battleeffect 0
+    battleeffect 280
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_POISON
@@ -7176,7 +7176,7 @@ move MOVE_VENOSHOCK
     terminatedata
 
 move MOVE_AUTOTOMIZE
-    battleeffect 0
+    battleeffect 281
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -7251,7 +7251,7 @@ move MOVE_SMACK_DOWN
     terminatedata
 
 move MOVE_STORM_THROW
-    battleeffect 0
+    battleeffect 282
     pss SPLIT_PHYSICAL
     basepower 40
     type TYPE_FIGHTING
@@ -7296,7 +7296,7 @@ move MOVE_SLUDGE_WAVE
     terminatedata
 
 move MOVE_QUIVER_DANCE
-    battleeffect 0
+    battleeffect 283
     pss SPLIT_STATUS
     basepower 0
     type TYPE_BUG
@@ -7356,7 +7356,7 @@ move MOVE_ELECTRO_BALL
     terminatedata
 
 move MOVE_SOAK
-    battleeffect 0
+    battleeffect 284
     pss SPLIT_STATUS
     basepower 0
     type TYPE_WATER
@@ -7371,7 +7371,7 @@ move MOVE_SOAK
     terminatedata
 
 move MOVE_FLAME_CHARGE
-    battleeffect 0
+    battleeffect 285
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_FIRE
@@ -7386,7 +7386,7 @@ move MOVE_FLAME_CHARGE
     terminatedata
 
 move MOVE_COIL
-    battleeffect 0
+    battleeffect 286
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
@@ -7611,7 +7611,7 @@ move MOVE_SCALD
     terminatedata
 
 move MOVE_SHELL_SMASH
-    battleeffect 0
+    battleeffect 290
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
@@ -7641,7 +7641,7 @@ move MOVE_HEAL_PULSE
     terminatedata
 
 move MOVE_HEX
-    battleeffect 0
+    battleeffect 287
     pss SPLIT_SPECIAL
     basepower 65
     type TYPE_GHOST
@@ -7671,7 +7671,7 @@ move MOVE_SKY_DROP
     terminatedata
 
 move MOVE_SHIFT_GEAR
-    battleeffect 0
+    battleeffect 288
     pss SPLIT_STATUS
     basepower 0
     type TYPE_STEEL
@@ -7731,7 +7731,7 @@ move MOVE_QUASH
     terminatedata
 
 move MOVE_ACROBATICS
-    battleeffect 0
+    battleeffect 289
     pss SPLIT_PHYSICAL
     basepower 55
     type TYPE_FLYING
@@ -7911,7 +7911,7 @@ move MOVE_BULLDOZE
     terminatedata
 
 move MOVE_FROST_BREATH
-    battleeffect 0
+    battleeffect 282
     pss SPLIT_SPECIAL
     basepower 60
     type TYPE_ICE
@@ -8406,7 +8406,7 @@ move MOVE_ICICLE_CRASH
     terminatedata
 
 move MOVE_V_CREATE
-    battleeffect 0
+    battleeffect 291
     pss SPLIT_PHYSICAL
     basepower 180
     type TYPE_FIRE
