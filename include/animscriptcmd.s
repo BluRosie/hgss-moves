@@ -1,7 +1,3 @@
-emitter_attack_pos equ 3
-emitter_defence_pos equ 4
-
-
 .macro wait,time
     .word 0x0, time
 .endmacro
@@ -193,36 +189,36 @@ PAN_CENTER equ 0
 
 .macro callfunction,func,count,num0,num1,num2,num3,num4,num5,num6,num7,num8,num9
     .word 0x2D, func, count
-	.if count > 0
-		.word num0
-	.endif
-	.if count > 1
-		.word num1
-	.endif
-	.if count > 2
-		.word num2
-	.endif
-	.if count > 3
-		.word num3
-	.endif
-	.if count > 4
-		.word num4
-	.endif
-	.if count > 5
-		.word num5
-	.endif
-	.if count > 6
-		.word num6
-	.endif
-	.if count > 7
-		.word num7
-	.endif
-	.if count > 8
-		.word num8
-	.endif
-	.if count > 9
-		.word num9
-	.endif
+    .if count > 0
+        .word num0
+    .endif
+    .if count > 1
+        .word num1
+    .endif
+    .if count > 2
+        .word num2
+    .endif
+    .if count > 3
+        .word num3
+    .endif
+    .if count > 4
+        .word num4
+    .endif
+    .if count > 5
+        .word num5
+    .endif
+    .if count > 6
+        .word num6
+    .endif
+    .if count > 7
+        .word num7
+    .endif
+    .if count > 8
+        .word num8
+    .endif
+    .if count > 9
+        .word num9
+    .endif
 .endmacro
 
 .macro addparticle,num0,num1,address
@@ -259,58 +255,58 @@ PAN_CENTER equ 0
 
 .macro cmd36,function,num0,num1,count,param0,param1,param2,param3,param4,param5,param6,param7
     .word 0x36, function, num0, num1, count
-	.if count > 0
-		.word param0
-	.endif
-	.if count > 1
-		.word param1
-	.endif
-	.if count > 2
-		.word param2
-	.endif
-	.if count > 3
-		.word param3
-	.endif
-	.if count > 4
-		.word param4
-	.endif
-	.if count > 5
-		.word param5
-	.endif
-	.if count > 6
-		.word param6
-	.endif
-	.if count > 7
-		.word param7
-	.endif
+    .if count > 0
+        .word param0
+    .endif
+    .if count > 1
+        .word param1
+    .endif
+    .if count > 2
+        .word param2
+    .endif
+    .if count > 3
+        .word param3
+    .endif
+    .if count > 4
+        .word param4
+    .endif
+    .if count > 5
+        .word param5
+    .endif
+    .if count > 6
+        .word param6
+    .endif
+    .if count > 7
+        .word param7
+    .endif
 .endmacro
 
 .macro cmd37,count,param0,param1,param2,param3,param4,param5,param6,param7
     .word 0x37, count
-	.if count > 0
-		.word param0
-	.endif
-	.if count > 1
-		.word param1
-	.endif
-	.if count > 2
-		.word param2
-	.endif
-	.if count > 3
-		.word param3
-	.endif
-	.if count > 4
-		.word param4
-	.endif
-	.if count > 5
-		.word param5
-	.endif
-	.if count > 6
-		.word param6
-	.endif
-	.if count > 7
-		.word param7
-	.endif
+    .if count > 0
+        .word param0
+    .endif
+    .if count > 1
+        .word param1
+    .endif
+    .if count > 2
+        .word param2
+    .endif
+    .if count > 3
+        .word param3
+    .endif
+    .if count > 4
+        .word param4
+    .endif
+    .if count > 5
+        .word param5
+    .endif
+    .if count > 6
+        .word param6
+    .endif
+    .if count > 7
+        .word param7
+    .endif
 .endmacro
 
 .macro initspriteresource
@@ -347,9 +343,9 @@ PAN_CENTER equ 0
 
 .macro jumpifside,num,address1,address2
     .word 0x40
-	.word num
-	.word (address1 - .) / 4
-	.word (address2 - .) / 4
+    .word num
+    .word (address1 - .) / 4
+    .word (address2 - .) / 4
 .endmacro
 
 .macro playcry,num,pan,volume
@@ -374,21 +370,21 @@ PAN_CENTER equ 0
 
 .macro jumpbasedonweather,address0,address1,address2,address3,address4
     .word 0x46
-	.word (address0 - .) / 4
-	.word (address1 - .) / 4
-	.word (address2 - .) / 4
-	.word (address3 - .) / 4
-	.word (address4 - .) / 4
+    .word (address0 - .) / 4
+    .word (address1 - .) / 4
+    .word (address2 - .) / 4
+    .word (address3 - .) / 4
+    .word (address4 - .) / 4
 .endmacro
 
 .macro jumpifcontest,address
     .word 0x47
-	.word (address - .) / 4
+    .word (address - .) / 4
 .endmacro
 
 .macro jumpifplayerattack,address
     .word 0x48
-	.word (address - .) / 4
+    .word (address - .) / 4
 .endmacro
 
 .macro initresources,num0,num1,num2,num3,num4,num5,num6,num7
@@ -413,30 +409,30 @@ PAN_CENTER equ 0
 
 .macro addsomething,num0,num1,num2,num3,num4,num5,num6,num7,count,param0,param1,param2,param3,param4,param5,param6,param7
     .word 0x4E, num0, num1, num2, num3, num4, num5, num6, num7, count
-	.if count > 0
-		.word param0
-	.endif
-	.if count > 1
-		.word param1
-	.endif
-	.if count > 2
-		.word param2
-	.endif
-	.if count > 3
-		.word param3
-	.endif
-	.if count > 4
-		.word param4
-	.endif
-	.if count > 5
-		.word param5
-	.endif
-	.if count > 6
-		.word param6
-	.endif
-	.if count > 7
-		.word param7
-	.endif
+    .if count > 0
+        .word param0
+    .endif
+    .if count > 1
+        .word param1
+    .endif
+    .if count > 2
+        .word param2
+    .endif
+    .if count > 3
+        .word param3
+    .endif
+    .if count > 4
+        .word param4
+    .endif
+    .if count > 5
+        .word param5
+    .endif
+    .if count > 6
+        .word param6
+    .endif
+    .if count > 7
+        .word param7
+    .endif
 .endmacro
 
 .macro addsomething2,num0,num1,num2,num3,num4,num5,num6,num7
@@ -464,33 +460,35 @@ PAN_CENTER equ 0
 .endmacro
 
 .macro cmd55,num
-	.word 0x55, num
+    .word 0x55, num
 .endmacro
 
 .macro cmd56,num0,num1,num2
-	.word 0x56, num0, num1, num2
+    .word 0x56, num0, num1, num2
 .endmacro
 
 .macro cmd57,num
-	.word 0x57, num
+    .word 0x57, num
 .endmacro
 
-.macro loadparticle_drop, ptc_no, data_no
-	initspriteresource
-	loadspriteresource 0
-	loadspriteresource 1
-	loadspriteresource 2
-	loadspriteresource 3
-	loadspritemaybe 4,0,0,0
-	loadspritemaybe 5,0,1,1
-	loadspritemaybe 6,0,2,2
-	loadspritemaybe 7,0,3,3
-	callfunction 0x4e, 1, 0,0,0,0,0,0,0,0,0,0
-	loadparticle ptc_no, data_no
-	waitstate
-	unloadspriteresource
-	resetsprite 0
-	resetsprite 1
-	resetsprite 2
-	resetsprite 3
+// helpful macros
+
+.macro loadparticlefromspa,num0,file
+    initspriteresource
+    loadspriteresource 0
+    loadspriteresource 1
+    loadspriteresource 2
+    loadspriteresource 3
+    loadspritemaybe 4, 0, 0, 0
+    loadspritemaybe 5, 0, 1, 1
+    loadspritemaybe 6, 0, 2, 2
+    loadspritemaybe 7, 0, 3, 3
+    callfunction 78, 1, 0, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"
+    loadparticle num0, file
+    waitstate
+    unloadspriteresource
+    resetsprite 0
+    resetsprite 1
+    resetsprite 2
+    resetsprite 3
 .endmacro

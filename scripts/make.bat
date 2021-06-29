@@ -12,3 +12,5 @@ cd ..\
 xcopy "text\tmp_base\a027.narc" "a027.narc"
 call scripts\makemovescripts
 call scripts\makeanimscripts
+call scripts\makesyntheticoverlay
+call scripts\makemoveparticles

@@ -1446,10 +1446,10 @@ int deleteaddress(int address) // deletes the address from the log so it won't b
 int main(int argc, char **argv)
 {
     char sourcename[BUFF_SIZE], scriptname[BUFF_SIZE], basename[BUFF_SIZE];
-    int elementnum, movetoa001 = 0, ignoreEOF = 0;
+    int elementnum, movetoa001 = 0, movetoa000 = 0, ignoreEOF = 0;
     FILE *source, *scriptfile;
 
-    for (int i = 0; i <= 296; i++)
+    for (int i = 0; i <= 500; i++)
     {
         if (movetoa001 == 0)
         {
@@ -1457,11 +1457,17 @@ int main(int argc, char **argv)
             sprintf(sourcename, "a030\\a030_%03d", i);
             sprintf(basename, "a030_%03d", i);
         }
-        else
+        else if (movetoa000 == 0)
         {
             sprintf(scriptname, "movescripts\\a001\\%03d.s", i);
             sprintf(sourcename, "a001\\a001_%03d", i);
             sprintf(basename, "a001_%03d", i);
+        }
+        else
+        {
+            sprintf(scriptname, "movescripts\\a000\\%03d.s", i);
+            sprintf(sourcename, "a000\\a000_%03d", i);
+            sprintf(basename, "a000_%03d", i);
         }
 
         source = fopen(sourcename, "rb+");
@@ -1906,10 +1912,10 @@ int main(int argc, char **argv)
                     if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum); // num
                     break;
                 case 0x24:
-                    if (gLogging == 0) fprintf(scriptfile, "    jumptocurmovescript\n");
+                    if (gLogging == 0) fprintf(scriptfile, "    jumptocurmoveeffectscript\n");
                     break;
                 case 0x25:
-                    if (gLogging == 0) fprintf(scriptfile, "    jumptocurmovescript2 ");
+                    if (gLogging == 0) fprintf(scriptfile, "    jumptoeffectscript ");
                     GET_U32(elementnum, source);
                     if (gLogging == 0) fprintf(scriptfile, "%d\n", elementnum); // num
                     break;
@@ -3018,6 +3024,11 @@ int main(int argc, char **argv)
         {
             i = -1;
             movetoa001 = 1;
+        }
+        else if (i == 296 && movetoa000 == 0)
+        {
+            i = -1;
+            movetoa000 = 1;
         }
     }
 
