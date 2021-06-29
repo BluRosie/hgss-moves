@@ -5,6 +5,7 @@ filetomatch
 *.nds
 text/tmp_base/*
 a001/*
+a010/*
 a030/*
 a029/*
 *.o
