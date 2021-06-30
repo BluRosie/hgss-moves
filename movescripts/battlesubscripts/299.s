@@ -11,6 +11,8 @@ PowerSplitMsg equ 1279 // new word
 
 .create "a001\a001_299", 0
 
+// power split move effect
+
 a001_299:
     //attack
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, MON_DATA_ATTACK, 9

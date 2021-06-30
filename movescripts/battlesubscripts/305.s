@@ -9,6 +9,8 @@
 
 .create "a001\a001_305", 0
 
+// v-create move effect
+
 a001_305:
     changevar VAR_OP_SETMASK, VAR_60, 0x80
     //spe down

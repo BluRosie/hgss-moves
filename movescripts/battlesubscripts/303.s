@@ -9,6 +9,8 @@
 
 .create "a001\a001_303", 0
 
+// autotomize move effect
+
 a001_303:
     //attack
     ifmonstat IF_NOTEQUAL, BATTLER_ADDL_EFFECT, MON_DATA_STAT_STAGE_ATTACK, 12, StatusEffect

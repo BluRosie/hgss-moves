@@ -9,6 +9,8 @@
 
 .create "a001\a001_297", 0
 
+// hone claws move effect
+
 a001_297:
     //attack
     ifmonstat IF_NOTEQUAL, BATTLER_ADDL_EFFECT, MON_DATA_STAT_STAGE_ATTACK, 0xC, StatusEffect

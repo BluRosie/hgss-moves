@@ -11,6 +11,8 @@ GuardSplitMsg equ 1276 // new word
 
 .create "a001\a001_298", 0
 
+// guard split move effect
+
 a001_298:
     //def
     changevartomonvalue2 VAR_OP_GET_RESULT, BATTLER_ATTACKER, MON_DATA_DEFENSE, 9

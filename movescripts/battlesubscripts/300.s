@@ -9,6 +9,8 @@
 
 .create "a001\a001_300", 0
 
+// quiver dance move effect
+
 a001_300:
     //sp attack
     ifmonstat IF_NOTEQUAL, BATTLER_ADDL_EFFECT, MON_DATA_STAT_STAGE_SPATK, 12, StatusEffect

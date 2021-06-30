@@ -9,6 +9,8 @@
 
 .create "a001\a001_306", 0
 
+// flame charge move effect
+
 a001_306:
     ifmonstat IF_EQUAL, BATTLER_ADDL_EFFECT, MON_DATA_STAT_STAGE_SPEED, 12, NoStatusEffect
 

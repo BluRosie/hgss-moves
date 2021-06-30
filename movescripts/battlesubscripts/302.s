@@ -9,6 +9,8 @@
 
 .create "a001\a001_302", 0
 
+// coil move effect
+
 a001_302:
     //attack
     ifmonstat IF_NOTEQUAL, BATTLER_ADDL_EFFECT, MON_DATA_STAT_STAGE_ATTACK, 12, StatusEffect

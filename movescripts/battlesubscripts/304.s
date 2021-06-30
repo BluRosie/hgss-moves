@@ -9,6 +9,8 @@
 
 .create "a001\a001_304", 0
 
+// shell smash move effect
+
 a001_304:
     //attack
     ifmonstat IF_NOTEQUAL, BATTLER_ADDL_EFFECT, MON_DATA_STAT_STAGE_ATTACK, 12, StatusEffect

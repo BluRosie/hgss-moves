@@ -7,7 +7,11 @@
 .include "include/monnums.s"
 .include "include/movenums.s"
 
+SoakMsg equ 1282
+
 .create "a001\a001_301", 0
+
+// soak move effect
 
 a001_301:
     abilitycheck 0, BATTLER_DEFENDER, ABILITY_MULTITYPE, _end
@@ -18,7 +22,7 @@ changetype:
     changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, MON_DATA_TYPE_1, TYPE_WATER
     changevartomonvalue VAR_OP_SET, BATTLER_DEFENDER, MON_DATA_TYPE_2, TYPE_WATER
     gotosubscript 76
-    printmessage 1313, 0xB, 0xFF, 0x15,0,0,0,0 //new message
+    printmessage SoakMsg, 0xB, 0xFF, 0x15,0,0,0,0
     waitmessage
     wait 0x1E
     endscript
