@@ -2,6 +2,7 @@
 .thumb
 
 .include "include/battlescriptcmd.s"
+.include "include/constants.s"
 .include "include/abilities.s"
 .include "include/itemnums.s"
 .include "include/monnums.s"

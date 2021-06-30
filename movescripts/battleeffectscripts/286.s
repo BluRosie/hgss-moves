@@ -10,7 +10,7 @@
 .create "a030\a030_286", 0
 
 a030_286:
-    changevar VAR_OP_SET, VAR_ADD_STATUS1,  ADD_STATUS_COIL | ADD_STATUS_ATTACK
+    changevar VAR_OP_SET, VAR_ADD_STATUS1,  ADD_STATUS_COIL | ADD_STATUS_ATTACKER
     endscript
 
 .close

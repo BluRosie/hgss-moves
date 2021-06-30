@@ -16,6 +16,7 @@ ADD_STATUS_AUTOTOMIZE equ 154 //did not change weight
 // status change
 
 ADD_STATUS_ATTACKER equ 0x40000000
+ADD_STATUS_DEFENDER equ 0x80000000
 
 ATTACK_UP equ 15
 DEFENSE_UP equ 16
