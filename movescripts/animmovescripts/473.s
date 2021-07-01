@@ -10,23 +10,15 @@
 .create "a010\a010_473", 0
 
 a010_473:
-    loadparticlefromspa 0, 486
+    loadparticlefromspa 0, 488
     waitparticle
 
-    addparticle 0, 2, 3
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
     addparticle 0, 0, 3
-    wait 10
+    addparticle 0, 0, 4
+	wait 33
+    callfunction 33, 5, 0, 1, 12, 0, 0, "NaN", "NaN", "NaN", "NaN", "NaN" // flash screen black
 
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    wait 10
-
-    addparticle 0, 2, 3
-    addparticle 0, 0, 3
     waitparticle
-
     unloadparticle 0
     waitstate
     end
