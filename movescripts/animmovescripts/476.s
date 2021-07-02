@@ -10,22 +10,13 @@
 .create "a010\a010_476", 0
 
 a010_476:
-    loadparticlefromspa 0, 486
+    loadparticlefromspa 0, 490
     waitparticle
 
-    addparticle 0, 2, 3
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    addparticle 0, 0, 3
-    wait 10
-
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    wait 10
-
-    addparticle 0, 2, 3
-    addparticle 0, 0, 3
-    waitparticle
+    addparticle 0, 0, 4
+    addparticle 0, 3, 4
+    addparticle 0, 1, 4
+    wait 96
 
     unloadparticle 0
     waitstate
