@@ -10,22 +10,18 @@
 .create "a010\a010_477", 0
 
 a010_477:
-    loadparticlefromspa 0, 486
+    loadparticlefromspa 0, 491
     waitparticle
 
-    addparticle 0, 2, 3
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    addparticle 0, 0, 3
-    wait 10
-
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    wait 10
-
-    addparticle 0, 2, 3
-    addparticle 0, 0, 3
-    waitparticle
+    addparticle 0, 0, 4
+    addparticle 0, 1, 4
+    addparticle 0, 3, 4
+    addparticle 0, 4, 4
+    playsepan 1859, 117
+    wait 48
+    callfunction 36, 5, 3, 0, 1, 10, 264, "NaN", "NaN", "NaN", "NaN", "NaN"
+    repeatse 1979, 117, 2, 10
+    wait 72
 
     unloadparticle 0
     waitstate
