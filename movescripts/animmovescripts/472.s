@@ -19,7 +19,8 @@ a010_472:
     waitparticle
 
     addparticle 0, 0, 3
-    wait 10
+    playsepan 1990, -117
+    wait 20
 
     unloadparticle 0
     waitstate

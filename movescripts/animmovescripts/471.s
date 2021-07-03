@@ -17,14 +17,19 @@ a010_471:
     addparticle 0, 1, 3
     addparticle 0, 1, 3
     addparticle 0, 0, 3
+    playsepan 1908, -117
     wait 10
 
     addparticle 0, 1, 3
     addparticle 0, 1, 3
+    playsepan 1908, -117
     wait 10
 
     addparticle 0, 2, 3
     addparticle 0, 0, 3
+    playsepan 1908, -117
+    wait 2
+    playsepan 1908, -117
     waitparticle
 
     unloadparticle 0
