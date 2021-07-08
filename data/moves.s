@@ -7200,7 +7200,7 @@ move MOVE_RAGE_POWDER
     effectchance 0
     target MOVE_TARGET_USER
     priority 3
-    flags FLAG_KEEP_HP_BAR
+    flags 0
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
@@ -7215,7 +7215,7 @@ move MOVE_TELEKINESIS
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_KEEP_HP_BAR | FLAG_PROTECT | FLAG_MAGIC_COAT | FLAG_MIRROR_MOVE
+    flags FLAG_PROTECT | FLAG_MAGIC_COAT | FLAG_MIRROR_MOVE
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata

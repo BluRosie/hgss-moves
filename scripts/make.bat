@@ -1,7 +1,4 @@
-mkdir a011
-tools\armips data\moves.s
-tools\narchive create a011.narc a011/ -nf
-rmdir /q /s a011
+call scripts\makemovedata
 tools\armips asm\moves.s
 tools\armips asm\tr_ai.s
 tools\armips asm\backgrounds.s
