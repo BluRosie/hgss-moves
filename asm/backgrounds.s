@@ -89,6 +89,7 @@ sBackgroundGfxIds:
 .halfword      98,       309,        96,        97,        96
 // new backgrounds:
 .halfword     135,       351,       136,       136,       136 // wonder room bg 59
+.halfword     135,       352,       136,       136,       136 // magic room bg 60
 
 .endarea
 
