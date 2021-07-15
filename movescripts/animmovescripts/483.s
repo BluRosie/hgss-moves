@@ -10,21 +10,24 @@
 .create "a010\a010_483", 0
 
 a010_483:
-    loadparticlefromspa 0, 486
+    loadparticlefromspa 0, 496
     waitparticle
 
-    addparticle 0, 2, 3
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    addparticle 0, 0, 3
-    wait 10
+// binding part
+    addparticle 0, 3, 4
+    addparticle 0, 2, 4
+	wait 12
+    callfunction 42, 8, 264, 100, 70, 100, 100, 100, 1, 327685, "NaN", "NaN"
+	waitstate
+    callfunction 42, 8, 264, 100, 70, 100, 100, 100, 1, 327685, "NaN", "NaN"
+	waitstate
+    callfunction 42, 8, 264, 100, 70, 100, 100, 100, 1, 327685, "NaN", "NaN"
+	waitparticle
 
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    wait 10
-
-    addparticle 0, 2, 3
-    addparticle 0, 0, 3
+// hit part
+    addparticle 0, 1, 4
+    addparticle 0, 0, 4
+    callfunction 36, 5, 3, 0, 1, 5, 264, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitparticle
 
     unloadparticle 0
