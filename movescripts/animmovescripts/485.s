@@ -14,18 +14,28 @@ green equ 0
 blue equ 31
 
 a010_485:
-    loadparticlefromspa 0, 498
+    loadparticlefromspa 1, 498
+    waitparticle
+    loadparticlefromspa 0, 163
     waitparticle
 
+
 // cloud
-    addparticle 0, 2, 4
-    wait 64
+    //addparticle 0, 2, 4
+    //wait 64
+
+    addparticle 0, 0, 17
+    cmd37 6, 0, 2, 6, 1, 4112, 1, "NaN", "NaN"
+    cmd37 5, 3, 0, 0, 0, 0, "NaN", "NaN", "NaN"
+    cmd37 5, 3, 0, 0, 0, 0, "NaN", "NaN", "NaN"
+    //addparticle 0, 1, 4
+    wait 20
 
 // poison hit
     callfunction 36, 5, 3, 0, 1, 10, 264, "NaN", "NaN", "NaN", "NaN", "NaN"
     callfunction 34, 5, 8, 1, 1, red | green << 5 | blue << 10, 12, "NaN", "NaN", "NaN", "NaN", "NaN"
-    addparticle 0, 1, 4
-    addparticle 0, 0, 4
+    addparticle 1, 1, 4
+    addparticle 1, 0, 4
     waitparticle
 
     unloadparticle 0
