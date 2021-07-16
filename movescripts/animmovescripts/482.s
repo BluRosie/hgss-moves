@@ -17,7 +17,10 @@ a010_482:
     
     addparticle 1, 1, 4
     addparticle 1, 2, 4
-    wait 12
+    wait 8
+    playsepan 1972, 117
+    wait 4
+    playsepan 1954, 117
     addparticle 0, 1, 4
     addparticle 0, 0, 4
     callfunction 36, 5, 3, 0, 1, 7, 264, "NaN", "NaN", "NaN", "NaN", "NaN"

@@ -22,6 +22,7 @@ a010_480:
     addparticle 0, 0, 3
     wait 12
 
+    playsepan 1930, 117
     callfunction 36, 5, 3, 0, 1, 2, 264, "NaN", "NaN", "NaN", "NaN", "NaN" // shake target mon
     waitparticle
 

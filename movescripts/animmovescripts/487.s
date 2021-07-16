@@ -15,6 +15,7 @@ a010_487:
     loadparticlefromspa 0, 500
     waitparticle
 
+// slide mon
     playsepan 1925, -117
     callfunction 57, 4, 4, -16, 8, 258, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN" // slide mon down a little bit
     waitstate
@@ -22,7 +23,9 @@ a010_487:
     playsepan 1847, 117
     callfunction 57, 4, 4, 32, -16, 258, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN" // slide mon up forward
     waitstate
-    
+
+// hit + clouds
+    playsepanmod 1993, -117, 117, 4, 2
     addparticle 0, 1, 4
     addparticle 0, 0, 4
     callfunction 36, 5, 4, 0, 1, 7, 264, "NaN", "NaN", "NaN", "NaN", "NaN" // shake mon

@@ -27,6 +27,7 @@ a010_484:
     wait 4
 
 // fire burst
+    playsepan 2011, 117
     addparticle 1, 1, 4
     addparticle 1, 0, 4
     callfunction 36, 5, 3, 0, 1, 7, 264, "NaN", "NaN", "NaN", "NaN", "NaN"

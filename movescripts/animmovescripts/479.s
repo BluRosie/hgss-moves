@@ -20,6 +20,7 @@ a010_479:
     addparticle 0, 2, 3
     addparticle 0, 1, 3
     addparticle 0, 0, 3
+    repeatse 1960, -117, 4, 10
     wait 64
     callfunction 34, 6, 2, 0, 1, red | green << 5 | blue << 10, 10, 10, "NaN", "NaN", "NaN", "NaN"
     wait 48
