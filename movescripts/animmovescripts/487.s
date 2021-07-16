@@ -9,23 +9,26 @@
 
 .create "a010\a010_487", 0
 
+// due to this animation, pokemon that can learn heavy slam should be 8 px *below* the textbox to prevent the empty space from showing below the mon when the animation of the move is shown.
+
 a010_487:
-    loadparticlefromspa 0, 486
+    loadparticlefromspa 0, 500
     waitparticle
 
-    addparticle 0, 2, 3
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    addparticle 0, 0, 3
-    wait 10
-
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    wait 10
-
-    addparticle 0, 2, 3
-    addparticle 0, 0, 3
-    waitparticle
+    playsepan 1925, -117
+    callfunction 57, 4, 4, -16, 8, 258, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN" // slide mon down a little bit
+    waitstate
+    wait 15
+    playsepan 1847, 117
+    callfunction 57, 4, 4, 32, -16, 258, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN" // slide mon up forward
+    waitstate
+    
+    addparticle 0, 1, 4
+    addparticle 0, 0, 4
+    callfunction 36, 5, 4, 0, 1, 7, 264, "NaN", "NaN", "NaN", "NaN", "NaN" // shake mon
+    callfunction 57, 4, 4, -16, 8, 258, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN" // return mon to original pos
+    waitstate
+    end
 
     unloadparticle 0
     waitstate
