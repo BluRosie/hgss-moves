@@ -35,7 +35,6 @@ a010_484:
     waitparticle
 
     unloadparticle 0
-    waitstate
     unloadparticle 1
     waitstate
     end

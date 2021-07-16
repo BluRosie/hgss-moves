@@ -10,24 +10,27 @@
 .create "a010\a010_488", 0
 
 a010_488:
-    loadparticlefromspa 0, 486
+    loadparticlefromspa 0, 501
+    waitparticle
+    loadparticlefromspa 1, 271
     waitparticle
 
-    addparticle 0, 2, 3
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    addparticle 0, 0, 3
-    wait 10
+// rings
+//    addparticle 0, 1, 3
+//    addparticle 0, 0, 3
+//    addparticle 0, 2, 3
+    addparticle 1, 1, 3
+    wait 12
 
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    wait 10
+// air hits
+    addparticle 0, 3, 4
 
-    addparticle 0, 2, 3
-    addparticle 0, 0, 3
+    wait 4
+    unloadparticle 1
     waitparticle
 
     unloadparticle 0
+    //unloadparticle 1
     waitstate
     end
     

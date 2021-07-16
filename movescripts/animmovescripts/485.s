@@ -21,6 +21,8 @@ a010_485:
 
 
 // cloud
+//    addparticle 0, 2, 4
+//    wait 64
     addparticle 0, 0, 17
     cmd37 6, 0, 2, 6, 1, 4112, 1, "NaN", "NaN"
     cmd37 5, 3, 0, 0, 0, 0, "NaN", "NaN", "NaN"
@@ -37,6 +39,7 @@ a010_485:
     waitparticle
 
     unloadparticle 0
+    unloadparticle 1
     waitstate
     end
     
