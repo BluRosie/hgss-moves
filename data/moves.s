@@ -3443,11 +3443,11 @@ move MOVE_PURSUIT
 move MOVE_RAPID_SPIN
     battleeffect 129
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 50
     type TYPE_NORMAL
     accuracy 100
     pp 40
-    effectchance 0
+    effectchance 100
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT

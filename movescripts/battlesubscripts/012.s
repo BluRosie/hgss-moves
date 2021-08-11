@@ -19,6 +19,8 @@ _002C:
     seteffectprimary BATTLER_ATTACKER
     waitmessage
 _004C:
+    if IF_EQUAL, VAR_CURRENT_MOVE, MOVE_RAPID_SPIN, _doRapidSpin
+_return:
     if IF_MASK, VAR_60, 0x2, _0094
     setstatus2effect3 BATTLER_ADDL_EFFECT, 0x2B
     waitmessage
@@ -44,5 +46,9 @@ _00F0:
 _00F4:
     changevar VAR_OP_SETMASK, VAR_10, 0x40
     endscript
+
+_doRapidSpin:
+    dorapidspineffect
+    goto _return
 
 .close
