@@ -4,6 +4,7 @@
 .include "include/macros.s"
 .include "include/constants.s"
 .include "include/movenums.s"
+.include "include/config.s"
 
 move MOVE_NONE
     battleeffect 0
@@ -280,12 +281,12 @@ move MOVE_WHIRLWIND
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 100
+    accuracy DEBUG_NEEDS_TESTING ? 0 : 100
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority -6
-    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x09
     contesttype CONTEST_SMART
     terminatedata
@@ -535,7 +536,7 @@ move MOVE_WRAP
     pss SPLIT_PHYSICAL
     basepower 15
     type TYPE_NORMAL
-    accuracy 85
+    accuracy 90
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -563,10 +564,10 @@ move MOVE_TAKE_DOWN
 move MOVE_THRASH
     battleeffect 27
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 120
     type TYPE_NORMAL
     accuracy 100
-    pp 20
+    pp 10
     effectchance 0
     target MOVE_TARGET_RANDOM
     priority 0
@@ -638,9 +639,9 @@ move MOVE_TWINEEDLE
 move MOVE_PIN_MISSILE
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 14
+    basepower 25
     type TYPE_BUG
-    accuracy 85
+    accuracy 95
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -700,12 +701,12 @@ move MOVE_ROAR
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 100
+    accuracy DEBUG_NEEDS_TESTING ? 0 : 100 // come back to check accuracyless later
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority -6
-    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x13
     contesttype CONTEST_COOL
     terminatedata
@@ -760,12 +761,12 @@ move MOVE_DISABLE
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 80
+    accuracy 100
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x13
     contesttype CONTEST_SMART
     terminatedata
@@ -803,7 +804,7 @@ move MOVE_EMBER
 move MOVE_FLAMETHROWER
     battleeffect 4
     pss SPLIT_SPECIAL
-    basepower 95
+    basepower 90
     type TYPE_FIRE
     accuracy 100
     pp 15
@@ -848,7 +849,7 @@ move MOVE_WATER_GUN
 move MOVE_HYDRO_PUMP
     battleeffect 0
     pss SPLIT_SPECIAL
-    basepower 120
+    basepower 110
     type TYPE_WATER
     accuracy 80
     pp 5
@@ -863,7 +864,7 @@ move MOVE_HYDRO_PUMP
 move MOVE_SURF
     battleeffect 257
     pss SPLIT_SPECIAL
-    basepower 95
+    basepower 90
     type TYPE_WATER
     accuracy 100
     pp 15
@@ -878,7 +879,7 @@ move MOVE_SURF
 move MOVE_ICE_BEAM
     battleeffect 5
     pss SPLIT_SPECIAL
-    basepower 95
+    basepower 90
     type TYPE_ICE
     accuracy 100
     pp 10
@@ -893,7 +894,7 @@ move MOVE_ICE_BEAM
 move MOVE_BLIZZARD
     battleeffect 260
     pss SPLIT_SPECIAL
-    basepower 120
+    basepower 110
     type TYPE_ICE
     accuracy 70
     pp 5
@@ -1001,7 +1002,7 @@ move MOVE_SUBMISSION
     basepower 80
     type TYPE_FIGHTING
     accuracy 80
-    pp 25
+    pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -1035,7 +1036,7 @@ move MOVE_COUNTER
     effectchance 0
     target MOVE_TARGET_DEPENDS
     priority -5
-    flags FLAG_CONTACT
+    flags FLAG_PROTECT | FLAG_CONTACT
     appeal 0x0F
     contesttype CONTEST_TOUGH
     terminatedata
@@ -1121,7 +1122,7 @@ move MOVE_GROWTH
     basepower 0
     type TYPE_NORMAL
     accuracy 0
-    pp 40
+    pp 20
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -1208,10 +1209,10 @@ move MOVE_SLEEP_POWDER
 move MOVE_PETAL_DANCE
     battleeffect 27
     pss SPLIT_SPECIAL
-    basepower 90
+    basepower 120
     type TYPE_GRASS
     accuracy 100
-    pp 20
+    pp 10
     effectchance 0
     target MOVE_TARGET_RANDOM
     priority 0
@@ -1255,7 +1256,7 @@ move MOVE_FIRE_SPIN
     pss SPLIT_SPECIAL
     basepower 35
     type TYPE_FIRE
-    accuracy 70
+    accuracy 85
     pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -1283,7 +1284,7 @@ move MOVE_THUNDER_SHOCK
 move MOVE_THUNDERBOLT
     battleeffect 6
     pss SPLIT_SPECIAL
-    basepower 95
+    basepower 90
     type TYPE_ELECTRIC
     accuracy 100
     pp 15
@@ -1300,7 +1301,7 @@ move MOVE_THUNDER_WAVE
     pss SPLIT_STATUS
     basepower 0
     type TYPE_ELECTRIC
-    accuracy 100
+    accuracy 90
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -1313,7 +1314,7 @@ move MOVE_THUNDER_WAVE
 move MOVE_THUNDER
     battleeffect 152
     pss SPLIT_SPECIAL
-    basepower 120
+    basepower 110
     type TYPE_ELECTRIC
     accuracy 70
     pp 10
@@ -1390,7 +1391,7 @@ move MOVE_TOXIC
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
-    accuracy 85
+    accuracy 90
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -1616,7 +1617,7 @@ move MOVE_MINIMIZE
     basepower 0
     type TYPE_NORMAL
     accuracy 0
-    pp 20
+    pp 10
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -1691,7 +1692,7 @@ move MOVE_BARRIER
     basepower 0
     type TYPE_PSYCHIC
     accuracy 0
-    pp 30
+    pp 20
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -1838,7 +1839,7 @@ move MOVE_EGG_BOMB
 move MOVE_LICK
     battleeffect 6
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 30
     type TYPE_GHOST
     accuracy 100
     pp 30
@@ -1853,7 +1854,7 @@ move MOVE_LICK
 move MOVE_SMOG
     battleeffect 2
     pss SPLIT_SPECIAL
-    basepower 20
+    basepower 30
     type TYPE_POISON
     accuracy 70
     pp 20
@@ -1898,7 +1899,7 @@ move MOVE_BONE_CLUB
 move MOVE_FIRE_BLAST
     battleeffect 4
     pss SPLIT_SPECIAL
-    basepower 120
+    basepower 110
     type TYPE_FIRE
     accuracy 85
     pp 5
@@ -1930,8 +1931,8 @@ move MOVE_CLAMP
     pss SPLIT_PHYSICAL
     basepower 35
     type TYPE_WATER
-    accuracy 75
-    pp 10
+    accuracy 85
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -1958,10 +1959,10 @@ move MOVE_SWIFT
 move MOVE_SKULL_BASH
     battleeffect 145
     pss SPLIT_PHYSICAL
-    basepower 100
+    basepower 130
     type TYPE_NORMAL
     accuracy 100
-    pp 15
+    pp 10
     effectchance 100
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2048,10 +2049,10 @@ move MOVE_SOFT_BOILED
 move MOVE_HI_JUMP_KICK
     battleeffect 45
     pss SPLIT_PHYSICAL
-    basepower 100
+    basepower 130
     type TYPE_FIGHTING
     accuracy 90
-    pp 20
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2065,7 +2066,7 @@ move MOVE_GLARE
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 75
+    accuracy 100
     pp 30
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -2095,10 +2096,10 @@ move MOVE_POISON_GAS
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
-    accuracy 55
+    accuracy 90
     pp 40
     effectchance 0
-    target MOVE_TARGET_SELECTED
+    target DEBUG_NEEDS_TESTING ? MOVE_TARGET_BOTH : MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
     appeal 0x05
@@ -2123,10 +2124,10 @@ move MOVE_BARRAGE
 move MOVE_LEECH_LIFE
     battleeffect 3
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 80
     type TYPE_BUG
     accuracy 100
-    pp 15
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2245,7 +2246,7 @@ move MOVE_PSYWAVE
     pss SPLIT_SPECIAL
     basepower 1
     type TYPE_PSYCHIC
-    accuracy 80
+    accuracy 100
     pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -2276,7 +2277,7 @@ move MOVE_ACID_ARMOR
     basepower 0
     type TYPE_POISON
     accuracy 0
-    pp 40
+    pp 20
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -2288,9 +2289,9 @@ move MOVE_ACID_ARMOR
 move MOVE_CRABHAMMER
     battleeffect 43
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 100
     type TYPE_WATER
-    accuracy 85
+    accuracy 90
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -2415,7 +2416,7 @@ move MOVE_CONVERSION
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags FLAG_KEEP_HP_BAR
+    flags FLAG_KEEP_HP_BAR | FLAG_SNATCH
     appeal 0x17
     contesttype CONTEST_BEAUTY
     terminatedata
@@ -2528,10 +2529,10 @@ move MOVE_TRIPLE_KICK
 move MOVE_THIEF
     battleeffect 105
     pss SPLIT_PHYSICAL
-    basepower 40
+    basepower 60
     type TYPE_DARK
     accuracy 100
-    pp 10
+    pp 25
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2550,7 +2551,7 @@ move MOVE_SPIDER_WEB
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT
     appeal 0x0D
     contesttype CONTEST_SMART
     terminatedata
@@ -2603,7 +2604,7 @@ move MOVE_FLAME_WHEEL
 move MOVE_SNORE
     battleeffect 92
     pss SPLIT_SPECIAL
-    basepower 40
+    basepower 50
     type TYPE_NORMAL
     accuracy 100
     pp 15
@@ -2619,7 +2620,7 @@ move MOVE_CURSE
     battleeffect 109
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_MYSTERY
+    type TYPE_GHOST
     accuracy 0
     pp 10
     effectchance 0
@@ -2653,7 +2654,7 @@ move MOVE_CONVERSION_2
     accuracy 0
     pp 30
     effectchance 0
-    target MOVE_TARGET_USER
+    target DEBUG_NEEDS_TESTING ? MOVE_TARGET_FOES_AND_ALLY : MOVE_TARGET_USER
     priority 0
     flags 0
     appeal 0x17
@@ -2680,10 +2681,10 @@ move MOVE_COTTON_SPORE
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
-    accuracy 85
+    accuracy 100
     pp 40
     effectchance 0
-    target MOVE_TARGET_SELECTED
+    target DEBUG_NEEDS_TESTING ? MOVE_TARGET_BOTH : MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
     appeal 0x01
@@ -2715,7 +2716,7 @@ move MOVE_SPITE
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x13
     contesttype CONTEST_TOUGH
     terminatedata
@@ -2744,7 +2745,7 @@ move MOVE_PROTECT
     pp 10
     effectchance 0
     target MOVE_TARGET_USER
-    priority 3
+    priority 4
     flags 0
     appeal 0x10
     contesttype CONTEST_CUTE
@@ -2770,7 +2771,7 @@ move MOVE_SCARY_FACE
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 90
+    accuracy 100
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -2799,7 +2800,7 @@ move MOVE_SWEET_KISS
     battleeffect 49
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type CONFIG_FAIRY_TYPE ? TYPE_FAIRY : TYPE_NORMAL
     accuracy 75
     pp 10
     effectchance 0
@@ -2880,7 +2881,7 @@ move MOVE_SPIKES
     effectchance 0
     target MOVE_TARGET_OPPONENTS_FIELD
     priority 0
-    flags 0
+    flags FLAG_MAGIC_COAT
     appeal 0x0D
     contesttype CONTEST_SMART
     terminatedata
@@ -2910,7 +2911,7 @@ move MOVE_FORESIGHT
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x14
     contesttype CONTEST_SMART
     terminatedata
@@ -2969,7 +2970,7 @@ move MOVE_DETECT
     pp 5
     effectchance 0
     target MOVE_TARGET_USER
-    priority 3
+    priority 4
     flags 0
     appeal 0x10
     contesttype CONTEST_COOL
@@ -2980,7 +2981,7 @@ move MOVE_BONE_RUSH
     pss SPLIT_PHYSICAL
     basepower 25
     type TYPE_GROUND
-    accuracy 80
+    accuracy 90
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -3011,7 +3012,7 @@ move MOVE_OUTRAGE
     basepower 120
     type TYPE_DRAGON
     accuracy 100
-    pp 15
+    pp 10
     effectchance 0
     target MOVE_TARGET_RANDOM
     priority 0
@@ -3038,7 +3039,7 @@ move MOVE_SANDSTORM
 move MOVE_GIGA_DRAIN
     battleeffect 3
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 75
     type TYPE_GRASS
     accuracy 100
     pp 10
@@ -3059,7 +3060,7 @@ move MOVE_ENDURE
     pp 10
     effectchance 0
     target MOVE_TARGET_USER
-    priority 3
+    priority 4
     flags FLAG_KEEP_HP_BAR
     appeal 0x0D
     contesttype CONTEST_TOUGH
@@ -3069,7 +3070,7 @@ move MOVE_CHARM
     battleeffect 58
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type CONFIG_FAIRY_TYPE ? TYPE_FAIRY : TYPE_NORMAL
     accuracy 100
     pp 20
     effectchance 0
@@ -3115,7 +3116,7 @@ move MOVE_SWAGGER
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 90
+    accuracy 85
     pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -3195,7 +3196,7 @@ move MOVE_MEAN_LOOK
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT
     appeal 0x0A
     contesttype CONTEST_BEAUTY
     terminatedata
@@ -3420,7 +3421,7 @@ move MOVE_ENCORE
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x14
     contesttype CONTEST_CUTE
     terminatedata
@@ -3549,7 +3550,7 @@ move MOVE_MOONLIGHT
     battleeffect 132
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type CONFIG_FAIRY_TYPE ? TYPE_FAIRY : TYPE_NORMAL
     accuracy 0
     pp 5
     effectchance 0
@@ -3563,7 +3564,7 @@ move MOVE_MOONLIGHT
 move MOVE_HIDDEN_POWER
     battleeffect 135
     pss SPLIT_SPECIAL
-    basepower 1
+    basepower DEBUG_NEEDS_TESTING ? 60 : 1 // come back and look at this eventually
     type TYPE_NORMAL
     accuracy 100
     pp 15
@@ -3660,7 +3661,7 @@ move MOVE_MIRROR_COAT
     effectchance 0
     target MOVE_TARGET_DEPENDS
     priority -5
-    flags 0
+    flags FLAG_PROTECT
     appeal 0x0F
     contesttype CONTEST_BEAUTY
     terminatedata
@@ -3675,7 +3676,7 @@ move MOVE_PSYCH_UP
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_KEEP_HP_BAR | FLAG_SNATCH
+    flags FLAG_KEEP_HP_BAR
     appeal 0x0B
     contesttype CONTEST_SMART
     terminatedata
@@ -3689,7 +3690,7 @@ move MOVE_EXTREME_SPEED
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
-    priority 1
+    priority 2
     flags FLAG_HIDE_SHADOW | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x01
     contesttype CONTEST_COOL
@@ -3730,7 +3731,7 @@ move MOVE_FUTURE_SIGHT
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_PSYCHIC
-    accuracy 90
+    accuracy 100
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -3758,9 +3759,9 @@ move MOVE_ROCK_SMASH
 move MOVE_WHIRLPOOL
     battleeffect 261
     pss SPLIT_SPECIAL
-    basepower 15
+    basepower 35
     type TYPE_WATER
-    accuracy 70
+    accuracy 85
     pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -3773,7 +3774,7 @@ move MOVE_WHIRLPOOL
 move MOVE_BEAT_UP
     battleeffect 154
     pss SPLIT_PHYSICAL
-    basepower 10
+    basepower DEBUG_NEEDS_TESTING ? 0 : 10 // will beat up still work with base power 0?
     type TYPE_DARK
     accuracy 100
     pp 10
@@ -3794,7 +3795,7 @@ move MOVE_FAKE_OUT
     pp 10
     effectchance 100
     target MOVE_TARGET_SELECTED
-    priority 1
+    priority 3
     flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x11
     contesttype CONTEST_CUTE
@@ -3803,7 +3804,7 @@ move MOVE_FAKE_OUT
 move MOVE_UPROAR
     battleeffect 159
     pss SPLIT_SPECIAL
-    basepower 50
+    basepower 90
     type TYPE_NORMAL
     accuracy 100
     pp 10
@@ -3863,7 +3864,7 @@ move MOVE_SWALLOW
 move MOVE_HEAT_WAVE
     battleeffect 4
     pss SPLIT_SPECIAL
-    basepower 100
+    basepower 95
     type TYPE_FIRE
     accuracy 90
     pp 10
@@ -3900,7 +3901,7 @@ move MOVE_TORMENT
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x10
     contesttype CONTEST_TOUGH
     terminatedata
@@ -3925,7 +3926,7 @@ move MOVE_WILL_O_WISP
     pss SPLIT_STATUS
     basepower 0
     type TYPE_FIRE
-    accuracy 75
+    accuracy 85
     pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -3983,7 +3984,7 @@ move MOVE_FOCUS_PUNCH
 move MOVE_SMELLING_SALT
     battleeffect 171
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 70
     type TYPE_NORMAL
     accuracy 100
     pp 10
@@ -4004,7 +4005,7 @@ move MOVE_FOLLOW_ME
     pp 20
     effectchance 0
     target MOVE_TARGET_USER
-    priority 3
+    priority 2
     flags 0
     appeal 0x0E
     contesttype CONTEST_CUTE
@@ -4050,7 +4051,7 @@ move MOVE_TAUNT
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x10
     contesttype CONTEST_SMART
     terminatedata
@@ -4110,7 +4111,7 @@ move MOVE_WISH
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags FLAG_HIDE_SHADOW
+    flags FLAG_HIDE_SHADOW | FLAG_SNATCH
     appeal 0x08
     contesttype CONTEST_CUTE
     terminatedata
@@ -4185,7 +4186,7 @@ move MOVE_RECYCLE
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags FLAG_KEEP_HP_BAR
+    flags FLAG_KEEP_HP_BAR | FLAG_SNATCH
     appeal 0x0C
     contesttype CONTEST_SMART
     terminatedata
@@ -4238,7 +4239,7 @@ move MOVE_YAWN
 move MOVE_KNOCK_OFF
     battleeffect 188
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 65
     type TYPE_DARK
     accuracy 100
     pp 20
@@ -4305,7 +4306,7 @@ move MOVE_IMPRISON
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags 0
+    flags FLAG_SNATCH
     appeal 0x14
     contesttype CONTEST_SMART
     terminatedata
@@ -4587,7 +4588,7 @@ move MOVE_POISON_FANG
     type TYPE_POISON
     accuracy 100
     pp 15
-    effectchance 30
+    effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
@@ -4643,9 +4644,9 @@ move MOVE_HYDRO_CANNON
 move MOVE_METEOR_MASH
     battleeffect 139
     pss SPLIT_PHYSICAL
-    basepower 100
+    basepower 90
     type TYPE_STEEL
-    accuracy 85
+    accuracy 90
     pp 10
     effectchance 20
     target MOVE_TARGET_SELECTED
@@ -4718,7 +4719,7 @@ move MOVE_FAKE_TEARS
 move MOVE_AIR_CUTTER
     battleeffect 43
     pss SPLIT_SPECIAL
-    basepower 55
+    basepower 60
     type TYPE_FLYING
     accuracy 95
     pp 25
@@ -4733,7 +4734,7 @@ move MOVE_AIR_CUTTER
 move MOVE_OVERHEAT
     battleeffect 204
     pss SPLIT_SPECIAL
-    basepower 140
+    basepower 130
     type TYPE_FIRE
     accuracy 90
     pp 5
@@ -4755,7 +4756,7 @@ move MOVE_ODOR_SLEUTH
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_KEEP_HP_BAR | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x14
     contesttype CONTEST_SMART
     terminatedata
@@ -4763,10 +4764,10 @@ move MOVE_ODOR_SLEUTH
 move MOVE_ROCK_TOMB
     battleeffect 70
     pss SPLIT_PHYSICAL
-    basepower 50
+    basepower 60
     type TYPE_ROCK
-    accuracy 80
-    pp 10
+    accuracy 95
+    pp 15
     effectchance 100
     target MOVE_TARGET_SELECTED
     priority 0
@@ -4901,7 +4902,7 @@ move MOVE_EXTRASENSORY
     basepower 80
     type TYPE_PSYCHIC
     accuracy 100
-    pp 30
+    pp 20
     effectchance 10
     target MOVE_TARGET_SELECTED
     priority 0
@@ -4928,9 +4929,9 @@ move MOVE_SKY_UPPERCUT
 move MOVE_SAND_TOMB
     battleeffect 42
     pss SPLIT_PHYSICAL
-    basepower 15
+    basepower 35
     type TYPE_GROUND
-    accuracy 70
+    accuracy 85
     pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -4958,7 +4959,7 @@ move MOVE_SHEER_COLD
 move MOVE_MUDDY_WATER
     battleeffect 73
     pss SPLIT_SPECIAL
-    basepower 95
+    basepower 90
     type TYPE_WATER
     accuracy 85
     pp 10
@@ -5003,7 +5004,7 @@ move MOVE_AERIAL_ACE
 move MOVE_ICICLE_SPEAR
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 10
+    basepower 25
     type TYPE_ICE
     accuracy 100
     pp 30
@@ -5040,7 +5041,7 @@ move MOVE_BLOCK
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT
     appeal 0x0D
     contesttype CONTEST_CUTE
     terminatedata
@@ -5156,7 +5157,7 @@ move MOVE_COVET
     basepower 60
     type TYPE_NORMAL
     accuracy 100
-    pp 40
+    pp 25
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -5260,7 +5261,7 @@ move MOVE_ROCK_BLAST
     pss SPLIT_PHYSICAL
     basepower 25
     type TYPE_ROCK
-    accuracy 80
+    accuracy 90
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -5305,7 +5306,7 @@ move MOVE_DOOM_DESIRE
     pss SPLIT_SPECIAL
     basepower 140
     type TYPE_STEEL
-    accuracy 85
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -5370,7 +5371,7 @@ move MOVE_MIRACLE_EYE
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x14
     contesttype CONTEST_CUTE
     terminatedata
@@ -5378,7 +5379,7 @@ move MOVE_MIRACLE_EYE
 move MOVE_WAKE_UP_SLAP
     battleeffect 217
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 70
     type TYPE_FIGHTING
     accuracy 100
     pp 10
@@ -5430,7 +5431,7 @@ move MOVE_HEALING_WISH
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags 0
+    flags FLAG_SNATCH
     appeal 0x08
     contesttype CONTEST_CUTE
     terminatedata
@@ -5475,7 +5476,7 @@ move MOVE_FEINT
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 2
-    flags 0
+    flags FLAG_MIRROR_MOVE
     appeal 0x10
     contesttype CONTEST_BEAUTY
     terminatedata
@@ -5501,7 +5502,7 @@ move MOVE_TAILWIND
     basepower 0
     type TYPE_FLYING
     accuracy 0
-    pp 30
+    pp 15
     effectchance 0
     target MOVE_TARGET_USER_SIDE
     priority 0
@@ -5520,7 +5521,7 @@ move MOVE_ACUPRESSURE
     effectchance 0
     target MOVE_TARGET_ACUPRESSURE
     priority 0
-    flags FLAG_KEEP_HP_BAR | FLAG_SNATCH
+    flags FLAG_KEEP_HP_BAR
     appeal 0x0B
     contesttype CONTEST_COOL
     terminatedata
@@ -5535,7 +5536,7 @@ move MOVE_METAL_BURST
     effectchance 0
     target MOVE_TARGET_DEPENDS
     priority 0
-    flags FLAG_MIRROR_MOVE
+    flags FLAG_PROTECT | FLAG_MIRROR_MOVE
     appeal 0x0F
     contesttype CONTEST_BEAUTY
     terminatedata
@@ -5588,7 +5589,7 @@ move MOVE_PAYBACK
 move MOVE_ASSURANCE
     battleeffect 231
     pss SPLIT_PHYSICAL
-    basepower 50
+    basepower 60
     type TYPE_DARK
     accuracy 100
     pp 10
@@ -5610,7 +5611,7 @@ move MOVE_EMBARGO
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x0D
     contesttype CONTEST_CUTE
     terminatedata
@@ -5635,7 +5636,7 @@ move MOVE_PSYCHO_SHIFT
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
-    accuracy 90
+    accuracy 100
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -5670,7 +5671,7 @@ move MOVE_HEAL_BLOCK
     effectchance 0
     target MOVE_TARGET_BOTH
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x0D
     contesttype CONTEST_CUTE
     terminatedata
@@ -5700,7 +5701,7 @@ move MOVE_POWER_TRICK
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags FLAG_KEEP_HP_BAR
+    flags FLAG_KEEP_HP_BAR | FLAG_SNATCH
     appeal 0x10
     contesttype CONTEST_COOL
     terminatedata
@@ -5730,7 +5731,7 @@ move MOVE_LUCKY_CHANT
     effectchance 0
     target MOVE_TARGET_USER_SIDE
     priority 0
-    flags FLAG_KEEP_HP_BAR
+    flags FLAG_KEEP_HP_BAR | FLAG_SNATCH
     appeal 0x0D
     contesttype CONTEST_CUTE
     terminatedata
@@ -5813,7 +5814,7 @@ move MOVE_PUNISHMENT
 move MOVE_LAST_RESORT
     battleeffect 246
     pss SPLIT_PHYSICAL
-    basepower 130
+    basepower 140
     type TYPE_NORMAL
     accuracy 100
     pp 5
@@ -5843,7 +5844,7 @@ move MOVE_WORRY_SEED
 move MOVE_SUCKER_PUNCH
     battleeffect 248
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 70
     type TYPE_DARK
     accuracy 100
     pp 5
@@ -5865,7 +5866,7 @@ move MOVE_TOXIC_SPIKES
     effectchance 0
     target MOVE_TARGET_OPPONENTS_FIELD
     priority 0
-    flags FLAG_KEEP_HP_BAR
+    flags FLAG_KEEP_HP_BAR | FLAG_MAGIC_COAT
     appeal 0x0D
     contesttype CONTEST_SMART
     terminatedata
@@ -5895,7 +5896,7 @@ move MOVE_AQUA_RING
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags 0
+    flags FLAG_SNATCH
     appeal 0x08
     contesttype CONTEST_BEAUTY
     terminatedata
@@ -5910,7 +5911,7 @@ move MOVE_MAGNET_RISE
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags 0
+    flags FLAG_SNATCH
     appeal 0x0D
     contesttype CONTEST_CUTE
     terminatedata
@@ -5948,7 +5949,7 @@ move MOVE_FORCE_PALM
 move MOVE_AURA_SPHERE
     battleeffect 17
     pss SPLIT_SPECIAL
-    basepower 90
+    basepower 80
     type TYPE_FIGHTING
     accuracy 0
     pp 20
@@ -6056,7 +6057,7 @@ move MOVE_AIR_SLASH
     basepower 75
     type TYPE_FLYING
     accuracy 95
-    pp 20
+    pp 15
     effectchance 30
     target MOVE_TARGET_SELECTED
     priority 0
@@ -6098,7 +6099,7 @@ move MOVE_BUG_BUZZ
 move MOVE_DRAGON_PULSE
     battleeffect 0
     pss SPLIT_SPECIAL
-    basepower 90
+    basepower 85
     type TYPE_DRAGON
     accuracy 100
     pp 10
@@ -6128,7 +6129,7 @@ move MOVE_DRAGON_RUSH
 move MOVE_POWER_GEM
     battleeffect 0
     pss SPLIT_SPECIAL
-    basepower 70
+    basepower 80
     type TYPE_ROCK
     accuracy 100
     pp 20
@@ -6188,7 +6189,7 @@ move MOVE_FOCUS_BLAST
 move MOVE_ENERGY_BALL
     battleeffect 72
     pss SPLIT_SPECIAL
-    basepower 80
+    basepower 90
     type TYPE_GRASS
     accuracy 100
     pp 10
@@ -6495,7 +6496,7 @@ move MOVE_DEFOG
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
-    flags FLAG_MIRROR_MOVE | FLAG_PROTECT
+    flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x0D
     contesttype CONTEST_BEAUTY
     terminatedata
@@ -6518,7 +6519,7 @@ move MOVE_TRICK_ROOM
 move MOVE_DRACO_METEOR
     battleeffect 204
     pss SPLIT_SPECIAL
-    basepower 140
+    basepower 130
     type TYPE_DRAGON
     accuracy 90
     pp 5
@@ -6563,7 +6564,7 @@ move MOVE_LAVA_PLUME
 move MOVE_LEAF_STORM
     battleeffect 204
     pss SPLIT_SPECIAL
-    basepower 140
+    basepower 130
     type TYPE_GRASS
     accuracy 90
     pp 5
@@ -6625,7 +6626,7 @@ move MOVE_GUNK_SHOT
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_POISON
-    accuracy 70
+    accuracy 80
     pp 5
     effectchance 30
     target MOVE_TARGET_SELECTED
@@ -6705,7 +6706,7 @@ move MOVE_STEALTH_ROCK
     effectchance 0
     target MOVE_TARGET_OPPONENTS_FIELD
     priority 0
-    flags 0
+    flags FLAG_MAGIC_COAT
     appeal 0x0D
     contesttype CONTEST_COOL
     terminatedata
@@ -6726,13 +6727,13 @@ move MOVE_GRASS_KNOT
     terminatedata
 
 move MOVE_CHATTER
-    battleeffect 267
+    battleeffect DEBUG_NEEDS_TESTING ? 76 : 267 // always confuse
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 65
     type TYPE_FLYING
     accuracy 100
     pp 20
-    effectchance 0
+    effectchance DEBUG_NEEDS_TESTING ? 100 : 0 // always confuse
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_PROTECT
@@ -6930,7 +6931,7 @@ move MOVE_LUNAR_DANCE
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
-    flags FLAG_HIDE_SHADOW
+    flags FLAG_HIDE_SHADOW | FLAG_SNATCH
     appeal 0x08
     contesttype CONTEST_BEAUTY
     terminatedata
@@ -6953,9 +6954,9 @@ move MOVE_CRUSH_GRIP
 move MOVE_MAGMA_STORM
     battleeffect 42
     pss SPLIT_SPECIAL
-    basepower 120
+    basepower 100
     type TYPE_FIRE
-    accuracy 70
+    accuracy 75
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -6970,7 +6971,7 @@ move MOVE_DARK_VOID
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
-    accuracy 80
+    accuracy 50
     pp 10
     effectchance 0
     target MOVE_TARGET_BOTH
@@ -7139,7 +7140,7 @@ move MOVE_WONDER_ROOM
     pp 10
     effectchance 0
     target MOVE_TARGET_USER
-    priority -7
+    priority 0
     flags FLAG_MIRROR_MOVE
     appeal 0x00
     contesttype CONTEST_COOL
@@ -7199,7 +7200,7 @@ move MOVE_RAGE_POWDER
     pp 20
     effectchance 0
     target MOVE_TARGET_USER
-    priority 3
+    priority 2
     flags 0
     appeal 0x00
     contesttype CONTEST_COOL
@@ -7229,7 +7230,7 @@ move MOVE_MAGIC_ROOM
     pp 10
     effectchance 0
     target MOVE_TARGET_USER
-    priority -7
+    priority 0
     flags FLAG_MIRROR_MOVE
     appeal 0x00
     contesttype CONTEST_COOL
@@ -7253,7 +7254,7 @@ move MOVE_SMACK_DOWN
 move MOVE_STORM_THROW
     battleeffect 282
     pss SPLIT_PHYSICAL
-    basepower 40
+    basepower 60
     type TYPE_FIGHTING
     accuracy 100
     pp 10

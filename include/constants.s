@@ -16,6 +16,7 @@ TYPE_BUG              equ 6
 TYPE_GHOST            equ 7
 TYPE_STEEL            equ 8
 TYPE_MYSTERY          equ 9
+TYPE_FAIRY            equ 9 // it is fine
 TYPE_FIRE             equ 10
 TYPE_WATER            equ 11
 TYPE_GRASS            equ 12
