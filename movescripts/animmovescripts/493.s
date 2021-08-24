@@ -10,23 +10,20 @@
 .create "a010\a010_493", 0
 
 a010_493:
-    loadparticlefromspa 0, 486
+    loadparticlefromspa 0, 506 // new spa for low sweep
     waitparticle
 
-    addparticle 0, 2, 3
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    addparticle 0, 0, 3
+// spin
+    callfunction 57, 4, 4, -16, 8, 258, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN" // slide mon down a little bit
     wait 10
+    callfunction 57, 4, 4, 16, -8, 258, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN" // slide mon to original pos
 
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    wait 10
-
-    addparticle 0, 2, 3
-    addparticle 0, 0, 3
+// kick
+    addparticle 0, 2, 4
+    addparticle 0, 1, 4
+    addparticle 0, 0, 4
+    callfunction 36, 5, 4, 0, 1, 4, 264, "NaN", "NaN", "NaN", "NaN", "NaN" // shake target mon
     waitparticle
-
     unloadparticle 0
     waitstate
     end

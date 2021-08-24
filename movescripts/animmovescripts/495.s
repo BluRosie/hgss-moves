@@ -10,26 +10,25 @@
 .create "a010\a010_495", 0
 
 a010_495:
-    loadparticlefromspa 0, 486
+    loadparticlefromspa 0, 508 // new spa for foul play
     waitparticle
 
-    addparticle 0, 2, 3
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    addparticle 0, 0, 3
-    wait 10
+// move
+    callfunction 57, 4, 4, -16, 8, 258, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN" // slide mon down a little bit
+    wait 2
+    callfunction 57, 4, 4, 16, -8, 258, "NaN", "NaN", "NaN", "NaN", "NaN", "NaN" // slide mon to original pos
+    waitstate
 
-    addparticle 0, 1, 3
-    addparticle 0, 1, 3
-    wait 10
-
-    addparticle 0, 2, 3
-    addparticle 0, 0, 3
+// sprite part
+    addparticle 0, 2, 4
+    addparticle 0, 1, 4
+    addparticle 0, 0, 4
+    callfunction 36, 5, 4, 0, 1, 4, 264, "NaN", "NaN", "NaN", "NaN", "NaN" // shake target mon
     waitparticle
 
     unloadparticle 0
     waitstate
     end
-    
+
 
 .close
